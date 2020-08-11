@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="de.rki.coronawarnapp.ui.submission.SubmissionTanViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/submission_tan_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/submission_tan_accessibility_title"
+        android:fillViewport="true"
+        tools:context=".ui.submission.SubmissionTanFragment">
+
+        <include
+            android:id="@+id/submission_tan_header"
+            layout="@layout/include_header"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            app:icon="@{@drawable/ic_close}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{@string/submission_tan_title}" />
+
+        <include
+            android:id="@+id/submission_tan_content"
+            layout="@layout/include_submission_tan"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="@dimen/match_constraint"
+            app:layout_constraintBottom_toTopOf="@id/guideline_action"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/submission_tan_header"
+            app:viewmodel="@{viewmodel}" />
+
+        <ProgressBar
+            android:id="@+id/submission_tan_spinner"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_normal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_action"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start" />
+
+        <Button
+            android:id="@+id/submission_tan_button_enter"
+            style="@style/buttonPrimary"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:enabled="@{viewmodel.isValidTanFormat}"
+            android:text="@string/submission_tan_button_text"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/guideline_action" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/guideline_action" />
+
+        <include layout="@layout/merge_guidelines_side" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

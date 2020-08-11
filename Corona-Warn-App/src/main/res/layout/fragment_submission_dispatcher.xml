@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/submission_dispatcher_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/submission_dispatcher_accessibility_title"
+        android:fillViewport="true"
+        tools:context=".ui.submission.SubmissionDispatcherFragment">
+
+        <include
+            android:id="@+id/submission_dispatcher_header"
+            layout="@layout/include_header"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            app:icon="@{@drawable/ic_back}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{@string/submission_dispatcher_headline}" />
+
+        <include
+            android:id="@+id/submission_dispatcher_content"
+            layout="@layout/include_submission_dispatcher"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="@dimen/match_constraint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/submission_dispatcher_header" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

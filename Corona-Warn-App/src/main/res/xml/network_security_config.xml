@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:tools="http://schemas.android.com/tools">
+
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="false"></domain>
+        <domain includeSubdomains="false"></domain>
+        <pin-set
+            expiration="2024-07-12"
+            tools:ignore="MissingBackupPin">
+            <pin digest="SHA-256"></pin>
+        </pin-set>
+        <trust-anchors>
+            <certificates
+                overridePins="false"
+                src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="false"></domain>
+        <trust-anchors>
+            <certificates
+                overridePins="false"
+                src="system" />
+        </trust-anchors>
+    </domain-config>
+
+</network-security-config>

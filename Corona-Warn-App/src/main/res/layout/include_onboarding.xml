@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="de.rki.coronawarnapp.util.formatter.FormatterHelper" />
+
+        <import type="de.rki.coronawarnapp.util.formatter.FormatterAccessibilityHelper" />
+
+        <variable
+            name="illustration"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="illustrationDescription"
+            type="String" />
+
+        <variable
+            name="headline"
+            type="String" />
+
+        <variable
+            name="headlineCard"
+            type="String" />
+
+        <variable
+            name="bodyCard"
+            type="String" />
+
+        <variable
+            name="subtitle"
+            type="String" />
+
+        <variable
+            name="body"
+            type="CharSequence" />
+
+        <variable
+            name="bodyEmphasized"
+            type="String" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/onboarding_illustration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@{FormatterAccessibilityHelper.formatImage(illustrationDescription)}"
+                android:src="@{illustration}"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_illustration_together" />
+
+            <TextView
+                android:id="@+id/onboarding_headline"
+                style="@style/headline4"
+                android:accessibilityHeading="true"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:text="@{headline}"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/onboarding_illustration"
+                tools:text="@string/onboarding_headline" />
+
+            <TextView
+                android:id="@+id/onboarding_subtitle"
+                style="@style/subtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:text="@{subtitle}"
+                android:visibility="@{FormatterHelper.formatVisibilityText(subtitle)}"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/onboarding_headline"
+                tools:text="@string/onboarding_subtitle" />
+
+            <TextView
+                android:id="@+id/onboarding_body"
+                style="@style/subtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:text="@{body}"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/onboarding_subtitle"
+                tools:text="@string/onboarding_body" />
+
+            <TextView
+                android:id="@+id/onboarding_body_emphasized"
+                style="@style/subtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:text="@{bodyEmphasized}"
+                android:visibility="@{FormatterHelper.formatVisibilityText(bodyEmphasized)}"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/onboarding_body"
+                tools:text="@string/onboarding_body_emphasized" />
+
+            <include
+                android:id="@+id/onboarding_card"
+                layout="@layout/include_tracing_status_card"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_large"
+                android:visibility="@{FormatterHelper.formatVisibilityText(headlineCard)}"
+                app:body="@{bodyCard}"
+                app:headline="@{headlineCard}"
+                android:focusable="true"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_card_end"
+                app:layout_constraintStart_toStartOf="@+id/guideline_card_start"
+                app:layout_constraintTop_toBottomOf="@+id/onboarding_body_emphasized" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/guideline_start" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/guideline_end" />
+
+            <include layout="@layout/merge_guidelines_card" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

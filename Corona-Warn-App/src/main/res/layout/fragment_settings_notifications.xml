@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="de.rki.coronawarnapp.util.formatter.FormatterHelper" />
+
+        <import type="de.rki.coronawarnapp.util.formatter.FormatterSettingsHelper" />
+
+        <variable
+            name="settingsViewModel"
+            type="de.rki.coronawarnapp.ui.viewmodel.SettingsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_notifications_container"
+        android:contentDescription="@string/settings_notifications_title"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/settings_notifications_header"
+            layout="@layout/include_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:icon="@{@drawable/ic_back}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{@string/settings_notifications_title}" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settings_notifications_header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/settings_notifications_header_details"
+                    layout="@layout/include_information_details"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:body="@{FormatterSettingsHelper.formatNotificationsDescription(settingsViewModel.isNotificationsEnabled())}"
+                    app:headline="@{FormatterSettingsHelper.formatNotificationsTitle(settingsViewModel.isNotificationsEnabled())}"
+                    app:illustration="@{FormatterSettingsHelper.formatNotificationImage(settingsViewModel.isNotificationsEnabled())}"
+                    app:illustrationDescription="@{FormatterSettingsHelper.formatNotificationIllustrationText(settingsViewModel.isNotificationsEnabled())}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <include
+                    android:id="@+id/settings_switch_row_notifications_risk"
+                    layout="@layout/include_settings_switch_row"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:visibility="@{FormatterHelper.formatVisibility(settingsViewModel.isNotificationsEnabled())}"
+                    app:enabled="@{true}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/settings_notifications_header_details"
+                    app:showDivider="@{true}"
+                    app:status="@{settingsViewModel.isNotificationsRiskEnabled()}"
+                    app:statusText="@{FormatterSettingsHelper.formatStatus(settingsViewModel.isNotificationsRiskEnabled())}"
+                    app:subtitle="@{@string/settings_notifications_subtitle_update_risk}" />
+
+                <include
+                    android:id="@+id/settings_switch_row_notifications_test"
+                    layout="@layout/include_settings_switch_row"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{FormatterHelper.formatVisibility(settingsViewModel.isNotificationsEnabled())}"
+                    app:enabled="@{true}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/settings_switch_row_notifications_risk"
+                    app:showDivider="@{true}"
+                    app:status="@{settingsViewModel.isNotificationsTestEnabled()}"
+                    app:statusText="@{FormatterSettingsHelper.formatStatus(settingsViewModel.isNotificationsTestEnabled())}"
+                    app:subtitle="@{@string/settings_notifications_subtitle_update_test}" />
+
+                <include
+                    android:id="@+id/settings_notifications_card"
+                    layout="@layout/include_tracing_status_card"
+                    android:layout_width="@dimen/match_constraint"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:visibility="@{FormatterHelper.formatVisibilityInverted(settingsViewModel.isNotificationsEnabled())}"
+                    app:body="@{@string/settings_notifications_body_inactive}"
+                    app:buttonText="@{@string/settings_notifications_button_open_settings}"
+                    app:headline="@{@string/settings_notifications_headline_card}"
+                    app:icon="@{@drawable/ic_settings_notification_circle}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_card_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_card_start"
+                    app:layout_constraintTop_toBottomOf="@+id/settings_switch_row_notifications_test" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/guideline_start" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/guideline_end" />
+
+                <include layout="@layout/merge_guidelines_card" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/guideline_bottom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

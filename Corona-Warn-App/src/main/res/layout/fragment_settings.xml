@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="de.rki.coronawarnapp.util.formatter.FormatterSettingsHelper" />
+
+        <variable
+            name="tracingViewModel"
+            type="de.rki.coronawarnapp.ui.viewmodel.TracingViewModel" />
+
+        <variable
+            name="settingsViewModel"
+            type="de.rki.coronawarnapp.ui.viewmodel.SettingsViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/settings_container"
+        android:contentDescription="@string/settings_title"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/settings_header"
+            layout="@layout/include_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:icon="@{@drawable/ic_close}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{@string/settings_title}" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settings_header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/settings_tracing"
+                    layout="@layout/include_setting_row"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_normal"
+                    app:body="@{@string/settings_tracing_body_description}"
+                    app:color="@{FormatterSettingsHelper.formatSettingsTracingIconColor(tracingViewModel.isTracingEnabled(), settingsViewModel.isBluetoothEnabled(), settingsViewModel.isConnectionEnabled())}"
+                    app:icon="@{FormatterSettingsHelper.formatSettingsTracingIcon(tracingViewModel.isTracingEnabled(), settingsViewModel.isBluetoothEnabled(), settingsViewModel.isConnectionEnabled())}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:showDivider="@{true}"
+                    app:statusText="@{FormatterSettingsHelper.formatTracingStatusText(tracingViewModel.isTracingEnabled(), settingsViewModel.isBluetoothEnabled(), settingsViewModel.isConnectionEnabled())}"
+                    app:subtitle="@{@string/settings_tracing_title}"
+                    app:tracingViewModel="@{tracingViewModel}" />
+
+                <include
+                    android:id="@+id/settings_notifications"
+                    layout="@layout/include_setting_row"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:body="@{@string/settings_notifications_body_description}"
+                    app:color="@{FormatterSettingsHelper.formatNotificationIconColor(settingsViewModel.isNotificationsEnabled(), settingsViewModel.isNotificationsRiskEnabled(), settingsViewModel.isNotificationsTestEnabled())}"
+                    app:icon="@{FormatterSettingsHelper.formatNotificationIcon(settingsViewModel.isNotificationsEnabled(), settingsViewModel.isNotificationsRiskEnabled(), settingsViewModel.isNotificationsTestEnabled())}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/settings_tracing"
+                    app:showDivider="@{true}"
+                    app:statusText="@{FormatterSettingsHelper.formatNotificationsStatusText(settingsViewModel.isNotificationsEnabled(), settingsViewModel.isNotificationsRiskEnabled(), settingsViewModel.isNotificationsTestEnabled())}"
+                    app:subtitle="@{@string/settings_notifications_title}"
+                    app:tracingViewModel="@{tracingViewModel}" />
+
+                <include
+                    android:id="@+id/settings_background_priority"
+                    layout="@layout/include_setting_row"
+                    android:layout_width="@dimen/match_constraint"
+                    android:layout_height="wrap_content"
+                    app:body="@{@string/settings_background_priority_body_description}"
+                    app:color="@{FormatterSettingsHelper.formatSettingsBackgroundPriorityIconColor(settingsViewModel.isBackgroundPriorityEnabled())}"
+                    app:icon="@{FormatterSettingsHelper.formatSettingsBackgroundPriorityIcon(settingsViewModel.isBackgroundPriorityEnabled())}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/settings_notifications"
+                    app:showDivider="@{true}"
+                    app:statusText="@{FormatterSettingsHelper.formatStatus(settingsViewModel.isBackgroundPriorityEnabled())}"
+                    app:subtitle="@{@string/settings_background_priority_title}"
+                    app:tracingViewModel="@{tracingViewModel}" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/settings_reset"
+                    style="@style/row"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/settings_background_priority">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/guideline_body_title"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/settings_reset_subtitle"
+                            style="@style/subtitleSemanticRed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_reset_button_positive"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/settings_reset_body"
+                            style="@style/body2Medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/settings_reset_body_description"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/settings_reset_subtitle" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/guideline_bottom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
