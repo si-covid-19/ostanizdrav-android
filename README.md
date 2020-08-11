@@ -21,14 +21,14 @@ V okviru projekta je objavljena slovenska verzija android aplikacije, ki je je p
 
 ## Arhitektura in Dokumentacija
 
-Celotna dokumentacija za originalno verzijo Corona-Warn-App se nahaja v repozitoriju [cwa-dokumentacije](https://github.com/corona-warn-app/cwa-documentation). Repozitorij dokumentacije vsebuje tehnične dokumente, podatke o arhitekturi, specifikacije za uporabniški vmesnik / UX in referenčne dokumente, povezana s to izvedbo.
+Celotna dokumentacija za originalno verzijo Corona-Warn-App se nahaja v repozitoriju [cwa-dokumentacije](https://github.com/corona-warn-app/cwa-documentation). Repozitorij dokumentacije vsebuje tehnične dokumente, podatke o arhitekturi, specifikacije za uporabniški vmesnik / UX in referenčne dokumente, povezane s to izvedbo.
 
 
 ## Sodelujoči
 
 Nemška vlada je prosila SAP in Deutsche Telekom, naj razvijejo Corona-Warn-App za Nemčijo kot odprtokodno programsko opremo. Deutsche Telekom zagotavlja omrežno in mobilno tehnologijo ter na varen, razširljiv in stabilen način upravlja in poganja zaledje za aplikacijo. SAP je odgovoren za razvoj aplikacije, njen okvir in osnovno platformo. 
 
-Slovenska Vlada je naložila Ministrstvu za javno upravo, da skupaj ob sodelovanju z NIJZ vzpostavi nemški model aplikacije, objavljene na [GitHub](https://github.com/corona-warn-app/cwa-app-android/), za delovanje v Sloveniji. Aplikacije z imenom "ostanizdrav" se pripravijo za variante android in IoS mobilne telefone.
+Slovenska Vlada je naložila Ministrstvu za javno upravo, da skupaj ob sodelovanju z NIJZ vzpostavi nemški model aplikacije, objavljene na [GitHub](https://github.com/corona-warn-app/cwa-app-android/), za delovanje v Sloveniji. Aplikacije z imenom "ostanizdrav" so prilagojene za android in IoS mobilne telefone.
 Podjetje RSTeam je kot izvajalec vključil prevode, ki jih je pripravila prevajalska služba Generalnega sekretariata Vlade RS skupaj z Ministrstvom za javno upravo.
 Ministrstvo za javno upravo, kot upravljavec centralne informacijske infrastrukture zagotavlja delovanje zalednega sistema, prav tako povzetega po originalni nemški različici objavljeni na [GitHub](https://github.com/corona-warn-app/cwa-documentation), za potrebe delovanja aplikacij ostanizdrav.
 
