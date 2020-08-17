@@ -292,7 +292,7 @@
     <!-- XMSG: risk details - stay 1,5 away, something like a bullet point -->
     <string name="risk_details_behavior_body_stay_away">"Vzdržujte medosebno razdaljo najmanj 1,5 metra. V zaprtih prostorih, kjer ni mogoče vzdrževati zadostne medosebne razdalje, svetujemo uporabo maske."</string>
     <!-- XMSG: risk details - cough/sneeze, something like a bullet point -->
-    <string name="risk_details_behavior_body_cough_sneeze">"Preden zakašljate ali kihnete, si pokrite usta in nos s papirnatim robčkom ali pa zakašljajte ali kihnite v zgornji del rokava."</string>
+    <string name="risk_details_behavior_body_cough_sneeze">"Preden zakašljate ali kihnete, si pokrijte usta in nos s papirnatim robčkom ali pa zakašljajte ali kihnite v zgornji del rokava."</string>
     <!-- XMSG: risk details - contact your doctor, bullet point -->
     <string name="risk_details_behavior_increased_body_1">"Slabo počutje, prehladni znaki, kašelj, vročina, težko dihanje, glavobol, bolečine v mišicah, izguba vonja ali okusa, bolečine v žrelu."</string>
     <!-- XMSG: risk details - panel doctor on-call service, bullet point -->
