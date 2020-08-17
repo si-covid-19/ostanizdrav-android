@@ -292,7 +292,7 @@
     <!-- XMSG: risk details - stay 1,5 away, something like a bullet point -->
     <string name="risk_details_behavior_body_stay_away">"Vzdržujte medosebno razdaljo najmanj 1,5 metra. V zaprtih prostorih, kjer ni mogoče vzdrževati zadostne medosebne razdalje, svetujemo uporabo maske."</string>
     <!-- XMSG: risk details - cough/sneeze, something like a bullet point -->
-    <string name="risk_details_behavior_body_cough_sneeze">"Preden zakašljate ali kihnete, si pokrite usta in nos s papirnatim robčkom ali pa zakašljajte ali kihnete v zgornji del rokava."</string>
+    <string name="risk_details_behavior_body_cough_sneeze">"Preden zakašljate ali kihnete, si pokrijte usta in nos s papirnatim robčkom ali pa zakašljajte ali kihnite v zgornji del rokava."</string>
     <!-- XMSG: risk details - contact your doctor, bullet point -->
     <string name="risk_details_behavior_increased_body_1">"Slabo počutje, prehladni znaki, kašelj, vročina, težko dihanje, glavobol, bolečine v mišicah, izguba vonja ali okusa, bolečine v žrelu."</string>
     <!-- XMSG: risk details - panel doctor on-call service, bullet point -->
@@ -306,7 +306,7 @@
     <!-- XHED: risk details - infection period logged subtitle, below behaviors -->
     <string name="risk_details_subtitle_period_logged">"To obdobje je vključeno v oceno."</string>
     <!-- XHED: risk details - infection period logged information body, below behaviors -->
-    <string name="risk_details_information_body_period_logged">"Vaša stopnja tveganja za okužbo se lahko oceni samo za obdobje v katerem je bilo aktivno beleženje izpostavljenosti, zato mora beleženje izpostavljenosti delovati tudi v ozadju."</string>
+    <string name="risk_details_information_body_period_logged">"Vaša stopnja tveganja za okužbo se lahko oceni samo za obdobje, v katerem je bilo aktivno beleženje izpostavljenosti, zato mora beleženje izpostavljenosti delovati tudi v ozadju."</string>
     <!-- XHED: risk details - infection period logged information body, below behaviors -->
     <string name="risk_details_information_body_period_logged_assessment">"Beleženje izpostavljenosti zajema zadnjih 14 dni. V tem času je bila funkcija beleženja aktivna  %1$s dni. Aplikacija samodejno briše starejše zapise, saj te izpostavljenosti nimajo več vpliva na stopnjo tveganja za okužbo."</string>
     <!-- XHED: risk details - how your risk level was calculated, below behaviors -->
@@ -382,13 +382,13 @@
     <!-- XHED: onboarding(tracing) - two/three line headline under an illustration -->
     <string name="onboarding_tracing_subtitle">"Da bi ugotovili, ali ste bili izpostavljeni COVID-19, morate vklopiti funkcijo beleženja izpostavljenosti."</string>
     <!-- YTXT: onboarding(tracing) - explain tracing -->
-    <string name="onboarding_tracing_body">"Beleženje izpostavljenosti deluje tako, da vaša naprava prek bluetootha prejme naključne oddajne kode drugih uporabnikov, vašo oddajno kodo pa posreduje njihovim napravam. To funkcijo lahko izklopite kadar koli."</string>
+    <string name="onboarding_tracing_body">"Beleženje izpostavljenosti deluje tako, da vaša naprava prek Bluetootha prejme naključne oddajne kode drugih uporabnikov, vašo oddajno kodo pa posreduje njihovim napravam. To funkcijo lahko izklopite kadar koli."</string>
     <!-- YTXT: onboarding(tracing) - explain tracing -->
     <string name="onboarding_tracing_body_emphasized">"Z naključnimi oddajnimi kodami se posredujejo le informacije o datumu, trajanju in bližini do drugih naprav, ki je izračunana s pomočjo jakosti Bluetooth signala. Osebni podatki, kot so ime, naslov in lokacija, se ne beležijo in tudi ne izmenjujejo. Posameznikov ni mogoče prepoznati."</string>
     <!-- XHED: onboarding(tracing) - headline for consent information -->
     <string name="onboarding_tracing_headline_consent">"Izjava o soglasju"</string>
     <!-- YTXT: onboarding(tracing) - body for consent information -->
-    <string name="onboarding_tracing_body_consent">"Če želite ugotoviti stopnjo tveganja za okužbo s SARS-CoV-2 morate omogočiti funkcijo beleženja izpostavljenosti v aplikaciji. S klikom na gumb »Omogoči«, soglašate z vklopom funkcije beleženja izpostavljenosti v aplikaciji in obdelavo s tem povezanih podatkov."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za celovito delovanje aplikacije mora biti omogočena funkcija beleženja izpostavljenosti COVID-19, ki jo na vašem pametnem telefonu zagotavlja Google. Aplikaciji #OstaniZdrav morate dovoliti, da funkcijo uporablja."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Ko boste omogočili beleženje izpostavljenosti, bo vaš pametni telefon prek Bluetootha nenehno ustvarjal in prenašal naključne oddajne kode, ki jih bodo sprejemali drugi pametni telefoni Android ali Apple v bližini, in sicer pod pogojem, da je tudi na njih omogočeno beleženje izpostavljenosti. Vaš pametni telefon pa ob tem prejema naključne oddajne kode drugih pametnih telefonov. Vaši dnevni ključi in naključne oddajne kode, ki ste jih prejeli od drugih pametnih telefonov, se zabeležijo v dnevnik izpostavljenosti, v katerem se hranijo 14 dni."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za potrebe spremljanja vašega tveganja za okužbo, bo aplikacija dnevno naložila seznam dnevnih ključev vseh uporabnikov, ki so svoji aplikaciji sporočili, da so okuženi s SARS-CoV-2. Ta seznam se nato primerja z naključnimi oddajnimi kodami v dnevniku izpostavljenosti. Če aplikacija odkrije, da ste bili v stiku z okuženim uporabnikom, vas bo o tem obvestila in vam sporočila, da obstaja tveganje za okužbo."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Z jakostjo Bluetooth signala se določi fizična oddaljenost (močnejši kot je signal, manjša je oddaljenost). Aplikacija nato analizira te informacije in oceni verjetnost okužbe s SARS-CoV-2 ter vam poda priporočila, kako ukrepati. Ta ocena se izvede le lokalno, na vašem pametnem telefonu. Razen vas ne bo nihče vedel, ali ste bili v stiku z okuženo osebo in kakšno je vaše tveganje za okužbo."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za preklic soglasja glede uporabe funkcije beleženja izpostavljenosti lahko to funkcijo onemogočite s preklopnim gumbom v aplikaciji ali pa aplikacijo izbrišete. Če se odločite, da boste funkcijo beleženja izpostavljenosti ponovno uporabljali, lahko funkcijo ponovno vklopite s preklopnim gumbom ali si ponovno namestite aplikacijo. Če izklopite funkcijo beleženja izpostavljenosti, aplikacija ne bo več preverjala, ali ste bili v stiku z okuženim uporabnikom. Če bi prav tako želeli, da vaša naprava preneha pošiljati in prejemati naključne oddajne kode, boste morali v nastavitvah svojega pametnega telefona onemogočiti beleženje izpostavljenosti COVID-19. Ne pozabite, da vaše naključne oddajne kode in tiste, ki ste jih prejeli z drugih pametnih telefonov in so shranjene v dnevniku izpostavljenosti, v aplikaciji ne bodo izbrisane. Podatke, shranjene v dnevniku izpostavljenosti, lahko trajno izbrišete le v nastavitvah svojega pametnega telefona."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Obvestilo o zasebnosti v aplikaciji (vključno z razlago obdelave podatkov, ki se izvaja za funkcijo beleženja izpostavljenosti) lahko najdete v meniju pod naslovom »Zasebnost."</string>
+    <string name="onboarding_tracing_body_consent">"Če želite ugotoviti stopnjo tveganja za okužbo s SARS-CoV-2, morate omogočiti funkcijo beleženja izpostavljenosti v aplikaciji. S klikom na gumb »Omogoči« soglašate z vklopom funkcije beleženja izpostavljenosti v aplikaciji in obdelavo s tem povezanih podatkov."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za celovito delovanje aplikacije mora biti omogočena funkcija beleženja izpostavljenosti COVID-19, ki jo na vašem pametnem telefonu zagotavlja Google. Aplikaciji #OstaniZdrav morate dovoliti, da funkcijo uporablja."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Ko boste omogočili beleženje izpostavljenosti, bo vaš pametni telefon prek Bluetootha nenehno ustvarjal in prenašal naključne oddajne kode, ki jih bodo sprejemali drugi pametni telefoni Android ali Apple v bližini, in sicer pod pogojem, da je tudi na njih omogočeno beleženje izpostavljenosti. Vaš pametni telefon pa ob tem prejema naključne oddajne kode drugih pametnih telefonov. Vaši dnevni ključi in naključne oddajne kode, ki ste jih prejeli od drugih pametnih telefonov, se zabeležijo v dnevnik izpostavljenosti, v katerem se hranijo 14 dni."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za potrebe spremljanja vašega tveganja za okužbo bo aplikacija dnevno naložila seznam dnevnih ključev vseh uporabnikov, ki so svoji aplikaciji sporočili, da so okuženi s SARS-CoV-2. Ta seznam se nato primerja z naključnimi oddajnimi kodami v dnevniku izpostavljenosti. Če aplikacija odkrije, da ste bili v stiku z okuženim uporabnikom, vas bo o tem obvestila in vam sporočila, da obstaja tveganje za okužbo."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Z jakostjo Bluetooth signala se določi fizična oddaljenost (močnejši kot je signal, manjša je oddaljenost). Aplikacija nato analizira te informacije in oceni verjetnost okužbe s SARS-CoV-2 ter vam poda priporočila, kako ukrepati. Ta ocena se izvede le lokalno, na vašem pametnem telefonu. Razen vas ne bo nihče vedel, ali ste bili v stiku z okuženo osebo in kakšno je vaše tveganje za okužbo."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za preklic soglasja glede uporabe funkcije beleženja izpostavljenosti lahko to funkcijo onemogočite s preklopnim gumbom v aplikaciji ali pa tako, da aplikacijo izbrišete. Če se odločite, da boste funkcijo beleženja izpostavljenosti ponovno uporabljali, jo lahko ponovno vklopite s preklopnim gumbom ali pa tako, da si ponovno namestite aplikacijo. Če izklopite funkcijo beleženja izpostavljenosti, aplikacija ne bo več preverjala, ali ste bili v stiku z okuženim uporabnikom. Če bi prav tako želeli, da vaša naprava preneha pošiljati in prejemati naključne oddajne kode, boste morali v nastavitvah svojega pametnega telefona onemogočiti beleženje izpostavljenosti COVID-19. Ne pozabite, da vaše naključne oddajne kode in tiste, ki ste jih prejeli z drugih pametnih telefonov in so shranjene v dnevniku izpostavljenosti, v aplikaciji ne bodo izbrisane. Podatke, shranjene v dnevniku izpostavljenosti, lahko trajno izbrišete le v nastavitvah svojega pametnega telefona."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Obvestilo o zasebnosti v aplikaciji (vključno z razlago obdelave podatkov, ki se izvaja za funkcijo beleženja izpostavljenosti) lahko najdete v meniju pod naslovom »Zasebnost."</string>
     <!-- XBUT: onboarding(tracing) - button enable tracing -->
     <string name="onboarding_tracing_button_next">"Omogoči"</string>
     <!-- XTXT: onboarding(tracing) - dialog about tracing permission declined -->
@@ -400,7 +400,7 @@
     <!-- XBUT: onboarding(tracing) - negative button (right) -->
     <string name="onboarding_tracing_dialog_button_negative">"Nazaj"</string>
     <!-- XACT: onboarding(tracing) - illustraction description, header image -->
-    <string name="onboarding_tracing_illustration_description">"Tri osebe so na svojih napravah aktivirali beleženje izpostavljenosti, s čimer bodo beležili medsebojne stike."</string>
+    <string name="onboarding_tracing_illustration_description">"Tri osebe so na svojih napravah aktivirale beleženje izpostavljenosti, s čimer bodo beležile medsebojne stike."</string>
     <!-- XACT: Onboarding (test) page title -->
     <string name="onboarding_test_accessibility_title">"Začetni prikazni zaslon, stran 4 od 5: Če je bila pri vas potrjena okužba s SARS-CoV-2 …"</string>
     <!-- XHED: onboarding(test) - about positive tests -->
@@ -468,10 +468,10 @@
     <string name="settings_tracing_status_connection_button">"Odprite nastavitve naprave"</string>
     <!-- XTXT: settings(tracing) - explains the circle progress indicator to the right with the current value -->
     <plurals name="settings_tracing_status_body_active">
-        <item quantity="one">"Beleženje izpostavljenosti je aktivno že %1$s dan.\nPreverjanje izpostavljenosti je lahko zanesljivo, le če je beleženje trajno aktivirano."</item>
-        <item quantity="two">"Beleženje izpostavljenosti je aktivno že %1$s dneva.\nPreverjanje izpostavljenosti je lahko zanesljivo, le če je beleženje trajno aktivirano."</item>
-        <item quantity="few">"Beleženje izpostavljenosti je aktivno že %1$s dni.\nPreverjanje izpostavljenosti je lahko zanesljivo, le če je beleženje trajno aktivirano."</item>
-        <item quantity="other">"Beleženje izpostavljenosti je aktivno že %1$s dni.\nPreverjanje izpostavljenosti je lahko zanesljivo, le če je beleženje trajno aktivirano."</item>
+        <item quantity="one">"Beleženje izpostavljenosti je aktivno že %1$s dan.\nPreverjanje izpostavljenosti je lahko zanesljivo le, če je beleženje trajno aktivirano."</item>
+        <item quantity="two">"Beleženje izpostavljenosti je aktivno že %1$s dneva.\nPreverjanje izpostavljenosti je lahko zanesljivo le, če je beleženje trajno aktivirano."</item>
+        <item quantity="few">"Beleženje izpostavljenosti je aktivno že %1$s dni.\nPreverjanje izpostavljenosti je lahko zanesljivo le, če je beleženje trajno aktivirano."</item>
+        <item quantity="other">"Beleženje izpostavljenosti je aktivno že %1$s dni.\nPreverjanje izpostavljenosti je lahko zanesljivo le, če je beleženje trajno aktivirano."</item>
     </plurals>
     <!-- XACT: settings(tracing) - describes illustration -->
     <string name="settings_tracing_illustration_description_active">"Tri osebe so na svojih napravah aktivirale beleženje izpostavljenosti, s čimer bodo beležile medsebojne stike."</string>
@@ -505,7 +505,7 @@
     <!-- XBUT: settings(notification) - go to operating settings -->
     <string name="settings_notifications_button_open_settings">"Odprite nastavitve naprave"</string>
     <!-- XACT: main (overview) - illustraction description, explanation image, displays notificatin status, active -->
-    <string name="settings_notifications_illustration_description_active">"Ena ženska je prejela obvestilo od svoje aplikacijo #OstaniZdrav."</string>
+    <string name="settings_notifications_illustration_description_active">"Ena ženska je prejela obvestilo od svoje aplikacije #OstaniZdrav."</string>
     <!-- XACT: main (overview) - illustraction description, explanation image, displays notificatin status, inactive -->
     <string name="settings_notifications_illustration_description_inactive">"Ena ženska je izklopila prejemanje obvestil za svojo aplikacijo #OstaniZdrav."</string>
     <!-- XBUT: settings - go to reset application -->
@@ -656,7 +656,7 @@
     <!-- XHED: Dialog title for could not create submission tan -->
     <string name="submission_error_dialog_web_paring_invalid_title">"Error"</string>
     <!-- XMSG: Dialog body for could not create submission tan -->
-    <string name="submission_error_dialog_web_paring_invalid_body">"A TAN for submission could not be generated. Please contact the technical hotline via App Information → Technical Hotline."</string>
+    <string name="submission_error_dialog_web_paring_invalid_body">"Nismo uspeli ustvariti številke TAN za oddajo. Pokličite klicni center za tehnično pomoč: Informacije o aplikaciji → Klicni center za tehnično pomoč."</string>
     <!-- XBUT: Positive button for could not create submission tan -->
     <string name="submission_error_dialog_web_paring_invalid_button_positive">"Nazaj"</string>
 
@@ -681,7 +681,7 @@
     <!-- XHED: Dialog headline QR Scan permission denied  -->
     <string name="submission_qr_code_scan_permission_denied_dialog_headline">"Potreben je dostop do fotoaparata."</string>
     <!-- YTXT: Dialog Body text for QR Scan permission denied -->
-    <string name="submission_qr_code_scan_permission_denied_dialog_body">"Prikličite sistemske nastavitve in aplikaciji dovolite, da uporabi fotoaparat za skeniranje kode QR."</string>
+    <string name="submission_qr_code_scan_permission_denied_dialog_body">"Odprite sistemske nastavitve in aplikaciji dovolite, da uporabi fotoaparat za skeniranje kode QR."</string>
     <!-- XBUT: Dialog(QR Scan permission denied) - button -->
     <string name="submission_qr_code_scan_permission_denied_dialog_button">"V redu"</string>
 
@@ -785,7 +785,7 @@
     <string name="submission_intro_illustration_description">"Šifrirana potrditev okužbe s SARS-CoV-2 se prenese v sistem, ki bo opozoril druge uporabnike."</string>
     <!-- YTXT: submission introduction bullet points -->
     <string-array name="submission_intro_bullet_points">
-        <item>"Če je bila pri vas potrjena okužbas SARS-CoV-2, lahko z vnosom številke TAN o tem obvestite druge."</item>
+        <item>"Če je bila pri vas potrjena okužba s SARS-CoV-2, lahko z vnosom številke TAN o tem obvestite druge."</item>
     </string-array>
     <!-- XACT: Submission Intro page title -->
     <string name="submission_intro_accessibility_title">"Ali ste bili testirani? Delovanje aplikacije #OstaniZdrav"</string>
@@ -802,7 +802,7 @@
     <!-- XHED: Dialog headline for dispatcher QR prviacy dialog  -->
     <string name="submission_dispatcher_qr_privacy_dialog_headline">"Izjava o soglasju"</string>
     <!-- YTXT: Dialog Body text for dispatcher QR privacy dialog -->
-    <string name="submission_dispatcher_qr_privacy_dialog_body">"S klikom na »Sprejmi«, boste oddali svoje soglasje, s katerim dovoljujete, da aplikacija izvede poizvedbo o stanju vašega testiranja na SARS-VoV-2 in ga prikaže v aplikaciji. Ta funkcija vam je na voljo, če ste prejeli kodo QR in dali soglasje, s katerim dovoljujete, da se rezultat vašega testa prenese v strežniški sistem aplikacije. Takoj ko laboratorij, ki izvaja testiranje, shrani rezultat vašega testa na strežnik, boste lahko rezultat videli v aplikaciji. Če ste omogočili obvestila, boste prav tako prejeli obvestilo zunaj aplikacije, ki vam bo sporočilo, da ste prejeli rezultat testa. Zaradi varovanja zasebnosti pa sam rezultat testa ne bo prikazan v aplikaciji. Svoje soglasje lahko umaknete kadar koli, in sicer tako, da izbrišete registracijo testa v aplikaciji. Preklic ne vpliva na zakonitost obdelave, ki je bila izvedena pred vašim preklicem. Dodatne informacije lahko najdete v meniju pod naslovom »Informacije o zasebnosti podatkov«"</string>
+    <string name="submission_dispatcher_qr_privacy_dialog_body">"S klikom na »Sprejmi«, boste oddali svoje soglasje, s katerim dovoljujete, da aplikacija izvede poizvedbo o stanju vašega testiranja na SARS-VoV-2 in ga prikaže v aplikaciji. Ta funkcija vam je na voljo, če ste prejeli kodo QR in dali soglasje, s katerim dovoljujete, da se rezultat vašega testa prenese v strežniški sistem aplikacije. Takoj ko laboratorij, ki izvaja testiranje, shrani rezultat vašega testa na strežnik, boste lahko rezultat videli v aplikaciji. Če ste omogočili obvestila, boste prav tako prejeli obvestilo zunaj aplikacije, ki vam bo sporočilo, da ste prejeli rezultat testa. Zaradi varovanja zasebnosti pa sam rezultat testa ne bo prikazan v aplikaciji. Svoje soglasje lahko umaknete kadar koli in sicer tako, da izbrišete registracijo testa v aplikaciji. Preklic ne vpliva na zakonitost obdelave, ki je bila izvedena pred vašim preklicem. Dodatne informacije lahko najdete v meniju pod naslovom »Informacije o zasebnosti podatkov«"</string>
     <!-- XBUT: submission(dispatcher QR Dialog) - positive button (right) -->
     <string name="submission_dispatcher_qr_privacy_dialog_button_positive">"Sprejmi"</string>
     <!-- XBUT: submission(dispatcher QR Dialog) - negative button (left) -->
