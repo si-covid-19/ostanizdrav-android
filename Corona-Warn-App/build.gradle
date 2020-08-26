@@ -33,7 +33,7 @@ android {
         applicationId 'si.gov.ostanizdrav'
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 47
+        versionCode 56
         versionName "1.1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         
