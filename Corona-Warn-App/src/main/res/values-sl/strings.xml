@@ -210,7 +210,7 @@
     <!-- YTXT: Share app link page body -->
     <string name="main_share_body">"Več kot je uporabnikov aplikacije, hitreje bomo prekinili verigo prenosa okužb. Prosimo, povabite svoje sorodnike in prijatelje, da si namestijo aplikacijo."</string>
     <!-- XBUT: Share app link page button -->
-    <string name="main_share_button">"Pošljite povezavo za prenos aplikacije."</string>
+    <string name="main_share_button">"Pošljite povezavo za prenos aplikacije"</string>
     <!-- YMSG: Message when sharing is executed -->
     <string name="main_share_message">"Skupaj proti COVID-19<xliff:g id="line_break">"\n"</xliff:g>"Jaz sodelujem, kaj pa vi?"<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="link_play_store">"https://gov.si/ostanizdrav"</xliff:g>"\n"<xliff:g id="line_break">"\n"</xliff:g></string>
     <!-- XACT: main (share) - illustraction description, explanation image -->
@@ -227,7 +227,7 @@
     <!-- XHED: App overview subtitle for tracing explanation-->
     <string name="main_overview_subtitle_tracing">"Beleženje izpostavljenosti"</string>
     <!-- YTXT: App overview body text about tracing -->
-    <string name="main_overview_body_tracing">"Beleženje izpostavljenosti je ena izmed treh osrednjih funkcij aplikacije. Ko jo boste aktivirali, boste začeli beležiti stike z napravami drugih oseb. Ni vam treba storiti ničesar drugega."</string>
+    <string name="main_overview_body_tracing">"Beleženje izpostavljenosti je ena izmed treh osrednjih funkcij aplikacije. Ko jo boste aktivirali, boste začeli beležiti stike z napravami drugih oseb. V nastavitvah aplikacije vklopite delovanje v ozadju."</string>
     <!-- XHED: App overview subtitle for risk explanation -->
     <string name="main_overview_subtitle_risk">"Tveganje za okužbo"</string>
     <!-- YTXT: App overview body text about risk levels -->
@@ -243,7 +243,7 @@
     <!-- XHED: App overview subtitle for test procedure explanation -->
     <string name="main_overview_headline_test">"Obveščanje drugih uporabnikov"</string>
     <!-- YTXT: App overview body text about rest procedure -->
-    <string name="main_overview_body_test">"Še ena osrednja funkcija je deljenje vašega pozitivnega rezultata testa. Če so vam potrdili okužbo s SARS-CoV-2, lahko o tem obvestite druge in prekinete verigo prenosa okužbe."</string>
+    <string name="main_overview_body_test">"Še ena osrednja funkcija je deljenje vašega pozitivnega rezultata testa. Če so vam potrdili okužbo s SARS-CoV-2, lahko o tem obvestite druge in prekinete verigo prenosa okužb."</string>
     <!-- XHED: App overview headline for glossary -->
     <string name="main_overview_headline_glossary">"Opredelitev izrazov:"</string>
     <!-- XHED: App overview subtitle for glossary key storage -->
@@ -265,7 +265,7 @@
     <!-- XHED: App overview subtitle for glossary keys -->
     <string name="main_overview_subtitle_glossary_keys">"Naključne oddajne kode"</string>
     <!-- YTXT: App overview body for glossary keys -->
-    <string name="main_overview_body_glossary_keys">"Naključne oddajne kode so naključno ustvarjene kombinacije števk in črk. Izmenjajo si jih naprave, ki so si blizu. Naključne oddajne kode se ne morejo dodeliti konkretni osebi in se samodejno izbrišejo po 14 dneh. Osebe, pri katerih je bila potrjena okužba s SARS-CoV-2, se lahko odločijo, da bodo svoje naključne dnevne ključe iz preteklih 14 dni delile z drugimi uporabniki aplikacije."</string>
+    <string name="main_overview_body_glossary_keys">"Naključne oddajne kode so naključno ustvarjene kombinacije številk in črk. Izmenjajo si jih naprave, ki so si blizu. Naključne oddajne kode se ne morejo dodeliti konkretni osebi in se samodejno izbrišejo po 14 dneh. Osebe, pri katerih je bila potrjena okužba s SARS-CoV-2, se lahko odločijo, da bodo svoje naključne dnevne ključe iz preteklih 14 dni delile z drugimi uporabniki aplikacije."</string>
     <!-- XACT: main (overview) - illustraction description, explanation image -->
     <string name="main_overview_illustration_description">"Naprava prikazuje različne vsebine, označene s številkami od 1 do 3."</string>
     <!-- XACT: App main page title -->
@@ -282,7 +282,7 @@
     <!-- XHED: risk details - multiline headline, bold, how to act correct -->
     <string name="risk_details_subtitle_behavior">"Kaj morate narediti?"</string>
     <!-- XMSG: risk details - go/stay home, something like a bullet point -->
-    <string name="risk_details_behavior_body_stay_home">"Izogibajte se nenujnim stikom z drugimi ljudmi, še posebej osebam s povečanim tveganjem za hujši potek bolezni, kot so starejši in kronični bolniki."</string>
+    <string name="risk_details_behavior_body_stay_home">"Izogibajte se nenujnim stikom z drugimi ljudmi, še posebej osebam s povečanim tveganjem za hujši potek bolezni, kot so starejši in kronični bolniki. V zaprtih prostorih, kjer ni mogoče vzdrževati zadostne medosebne razdalje, svetujemo uporabo maske."</string>
     <!-- XMSG: risk details - get in touch with the corresponding people, something like a bullet point -->
     <string name="risk_details_behavior_body_contact_doctor">"<b>Spremljajte svoje zdravstveno stanje</b>. Če se pri vas pojavi kateri od naštetih simptomov ali znakov, ostanite doma in po telefonu kontaktirajte izbranega ali dežurnega zdravnika:"</string>
     <!-- XMSG: risk details - wash your hands, something like a bullet point -->
@@ -290,9 +290,9 @@
     <!-- XMSG: risk details - wear a face mask, something like a bullet point -->
     <string name="risk_details_behavior_body_wear_mask">"V zaprtih prostorih, kjer ni mogoče vzdrževati zadostne medosebne razdalje, svetujemo uporabo maske. Redno zračite prostore."</string>
     <!-- XMSG: risk details - stay 1,5 away, something like a bullet point -->
-    <string name="risk_details_behavior_body_stay_away">"Vzdržujte medosebno razdaljo najmanj 1,5 metra. V zaprtih prostorih, kjer ni mogoče vzdrževati zadostne medosebne razdalje, svetujemo uporabo maske."</string>
+    <string name="risk_details_behavior_body_stay_away">"Vzdržujte medosebno razdaljo najmanj 1,5 metra."</string>
     <!-- XMSG: risk details - cough/sneeze, something like a bullet point -->
-    <string name="risk_details_behavior_body_cough_sneeze">"Preden zakašljate ali kihnete, si pokrite usta in nos s papirnatim robčkom ali pa zakašljajte ali kihnete v zgornji del rokava."</string>
+    <string name="risk_details_behavior_body_cough_sneeze">"Preden zakašljate ali kihnete, si pokrijte usta in nos s papirnatim robčkom ali pa zakašljajte ali kihnite v zgornji del rokava."</string>
     <!-- XMSG: risk details - contact your doctor, bullet point -->
     <string name="risk_details_behavior_increased_body_1">"Slabo počutje, prehladni znaki, kašelj, vročina, težko dihanje, glavobol, bolečine v mišicah, izguba vonja ali okusa, bolečine v žrelu."</string>
     <!-- XMSG: risk details - panel doctor on-call service, bullet point -->
@@ -306,9 +306,9 @@
     <!-- XHED: risk details - infection period logged subtitle, below behaviors -->
     <string name="risk_details_subtitle_period_logged">"To obdobje je vključeno v oceno."</string>
     <!-- XHED: risk details - infection period logged information body, below behaviors -->
-    <string name="risk_details_information_body_period_logged">"Vaša stopnja tveganja za okužbo se lahko oceni samo za obdobje v katerem je bilo aktivno beleženje izpostavljenosti, zato mora beleženje izpostavljenosti delovati tudi v ozadju."</string>
+    <string name="risk_details_information_body_period_logged">"Vaša stopnja tveganja za okužbo se lahko oceni samo za obdobje v katerem je bilo aktivirano beleženje izpostavljenosti, zato mora beleženje izpostavljenosti delovati tudi v ozadju."</string>
     <!-- XHED: risk details - infection period logged information body, below behaviors -->
-    <string name="risk_details_information_body_period_logged_assessment">"Beleženje izpostavljenosti zajema zadnjih 14 dni. V tem času je bila funkcija beleženja aktivna  %1$s dni. Aplikacija samodejno briše starejše zapise, saj te izpostavljenosti nimajo več vpliva na stopnjo tveganja za okužbo."</string>
+    <string name="risk_details_information_body_period_logged_assessment">"Beleženje izpostavljenosti zajema zadnjih 14 dni. V tem času je bila funkcija beleženja aktivna %1$s dni. Aplikacija samodejno briše starejše zapise, saj te izpostavljenosti nimajo več vpliva na stopnjo tveganja za okužbo."</string>
     <!-- XHED: risk details - how your risk level was calculated, below behaviors -->
     <string name="risk_details_subtitle_infection_risk_past">""</string>
     <!-- XHED: risk details - how your risk level will be calculated, below behaviors -->
@@ -382,13 +382,13 @@
     <!-- XHED: onboarding(tracing) - two/three line headline under an illustration -->
     <string name="onboarding_tracing_subtitle">"Da bi ugotovili, ali ste bili izpostavljeni COVID-19, morate vklopiti funkcijo beleženja izpostavljenosti."</string>
     <!-- YTXT: onboarding(tracing) - explain tracing -->
-    <string name="onboarding_tracing_body">"Beleženje izpostavljenosti deluje tako, da vaša naprava prek bluetootha prejme naključne oddajne kode drugih uporabnikov, vašo oddajno kodo pa posreduje njihovim napravam. To funkcijo lahko izklopite kadar koli."</string>
+    <string name="onboarding_tracing_body">"Beleženje izpostavljenosti deluje tako, da vaša naprava prek Bluetootha prejme naključne oddajne kode drugih uporabnikov, vašo oddajno kodo pa posreduje njihovim napravam. To funkcijo lahko izklopite kadar koli."</string>
     <!-- YTXT: onboarding(tracing) - explain tracing -->
     <string name="onboarding_tracing_body_emphasized">"Z naključnimi oddajnimi kodami se posredujejo le informacije o datumu, trajanju in bližini do drugih naprav, ki je izračunana s pomočjo jakosti Bluetooth signala. Osebni podatki, kot so ime, naslov in lokacija, se ne beležijo in tudi ne izmenjujejo. Posameznikov ni mogoče prepoznati."</string>
     <!-- XHED: onboarding(tracing) - headline for consent information -->
     <string name="onboarding_tracing_headline_consent">"Izjava o soglasju"</string>
     <!-- YTXT: onboarding(tracing) - body for consent information -->
-    <string name="onboarding_tracing_body_consent">"Če želite ugotoviti stopnjo tveganja za okužbo s SARS-CoV-2 morate omogočiti funkcijo beleženja izpostavljenosti v aplikaciji. S klikom na gumb »Omogoči«, soglašate z vklopom funkcije beleženja izpostavljenosti v aplikaciji in obdelavo s tem povezanih podatkov."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za celovito delovanje aplikacije mora biti omogočena funkcija beleženja izpostavljenosti COVID-19, ki jo na vašem pametnem telefonu zagotavlja Google. Aplikaciji #OstaniZdrav morate dovoliti, da funkcijo uporablja."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Ko boste omogočili beleženje izpostavljenosti, bo vaš pametni telefon prek Bluetootha nenehno ustvarjal in prenašal naključne oddajne kode, ki jih bodo sprejemali drugi pametni telefoni Android ali Apple v bližini, in sicer pod pogojem, da je tudi na njih omogočeno beleženje izpostavljenosti. Vaš pametni telefon pa ob tem prejema naključne oddajne kode drugih pametnih telefonov. Vaši dnevni ključi in naključne oddajne kode, ki ste jih prejeli od drugih pametnih telefonov, se zabeležijo v dnevnik izpostavljenosti, v katerem se hranijo 14 dni."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za potrebe spremljanja vašega tveganja za okužbo, bo aplikacija dnevno naložila seznam dnevnih ključev vseh uporabnikov, ki so svoji aplikaciji sporočili, da so okuženi s SARS-CoV-2. Ta seznam se nato primerja z naključnimi oddajnimi kodami v dnevniku izpostavljenosti. Če aplikacija odkrije, da ste bili v stiku z okuženim uporabnikom, vas bo o tem obvestila in vam sporočila, da obstaja tveganje za okužbo."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Z jakostjo Bluetooth signala se določi fizična oddaljenost (močnejši kot je signal, manjša je oddaljenost). Aplikacija nato analizira te informacije in oceni verjetnost okužbe s SARS-CoV-2 ter vam poda priporočila, kako ukrepati. Ta ocena se izvede le lokalno, na vašem pametnem telefonu. Razen vas ne bo nihče vedel, ali ste bili v stiku z okuženo osebo in kakšno je vaše tveganje za okužbo."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za preklic soglasja glede uporabe funkcije beleženja izpostavljenosti lahko to funkcijo onemogočite s preklopnim gumbom v aplikaciji ali pa aplikacijo izbrišete. Če se odločite, da boste funkcijo beleženja izpostavljenosti ponovno uporabljali, lahko funkcijo ponovno vklopite s preklopnim gumbom ali si ponovno namestite aplikacijo. Če izklopite funkcijo beleženja izpostavljenosti, aplikacija ne bo več preverjala, ali ste bili v stiku z okuženim uporabnikom. Če bi prav tako želeli, da vaša naprava preneha pošiljati in prejemati naključne oddajne kode, boste morali v nastavitvah svojega pametnega telefona onemogočiti beleženje izpostavljenosti COVID-19. Ne pozabite, da vaše naključne oddajne kode in tiste, ki ste jih prejeli z drugih pametnih telefonov in so shranjene v dnevniku izpostavljenosti, v aplikaciji ne bodo izbrisane. Podatke, shranjene v dnevniku izpostavljenosti, lahko trajno izbrišete le v nastavitvah svojega pametnega telefona."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Obvestilo o zasebnosti v aplikaciji (vključno z razlago obdelave podatkov, ki se izvaja za funkcijo beleženja izpostavljenosti) lahko najdete v meniju pod naslovom »Zasebnost."</string>
+    <string name="onboarding_tracing_body_consent">"Če želite ugotoviti stopnjo tveganja za okužbo s SARS-CoV-2, morate omogočiti funkcijo beleženja izpostavljenosti v aplikaciji. S klikom na gumb »Omogoči« soglašate z vklopom funkcije beleženja izpostavljenosti v aplikaciji in obdelavo s tem povezanih podatkov."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za celovito delovanje aplikacije mora biti omogočena funkcija beleženja izpostavljenosti COVID-19, ki jo na vašem pametnem telefonu zagotavlja Google. Aplikaciji #OstaniZdrav morate dovoliti, da funkcijo uporablja."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Ko boste omogočili beleženje izpostavljenosti, bo vaš pametni telefon prek Bluetootha nenehno ustvarjal in prenašal naključne oddajne kode, ki jih bodo sprejemali drugi pametni telefoni Android ali Apple v bližini, in sicer pod pogojem, da je tudi na njih omogočeno beleženje izpostavljenosti. Vaš pametni telefon pa ob tem prejema naključne oddajne kode drugih pametnih telefonov. Vaši dnevni ključi in naključne oddajne kode, ki ste jih prejeli od drugih pametnih telefonov, se zabeležijo v dnevnik izpostavljenosti, v katerem se hranijo 14 dni."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za potrebe spremljanja vašega tveganja za okužbo bo aplikacija dnevno naložila seznam dnevnih ključev vseh uporabnikov, ki so svoji aplikaciji sporočili, da so okuženi s SARS-CoV-2. Ta seznam se nato primerja z naključnimi oddajnimi kodami v dnevniku izpostavljenosti. Če aplikacija odkrije, da ste bili v stiku z okuženim uporabnikom, vas bo o tem obvestila in vam sporočila, da obstaja tveganje za okužbo."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Z jakostjo Bluetooth signala se določi fizična oddaljenost (močnejši kot je signal, manjša je oddaljenost). Aplikacija nato analizira te informacije in oceni verjetnost okužbe s SARS-CoV-2 ter vam poda priporočila, kako ukrepati. Ta ocena se izvede le lokalno, na vašem pametnem telefonu. Razen vas ne bo nihče vedel, ali ste bili v stiku z okuženo osebo in kakšno je vaše tveganje za okužbo."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Za preklic soglasja glede uporabe funkcije beleženja izpostavljenosti lahko to funkcijo onemogočite s preklopnim gumbom v aplikaciji ali pa aplikacijo izbrišete. Če se odločite, da boste funkcijo beleženja izpostavljenosti ponovno uporabljali, lahko funkcijo ponovno vklopite s preklopnim gumbom ali si ponovno namestite aplikacijo. Če izklopite funkcijo beleženja izpostavljenosti, aplikacija ne bo več preverjala, ali ste bili v stiku z okuženim uporabnikom. Če bi prav tako želeli, da vaša naprava preneha pošiljati in prejemati naključne oddajne kode, boste morali v nastavitvah svojega pametnega telefona onemogočiti beleženje izpostavljenosti COVID-19. Ne pozabite, da vaše naključne oddajne kode in tiste, ki ste jih prejeli z drugih pametnih telefonov in so shranjene v dnevniku izpostavljenosti, v aplikaciji ne bodo izbrisane. Podatke, shranjene v dnevniku izpostavljenosti, lahko trajno izbrišete le v nastavitvah svojega pametnega telefona."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Obvestilo o zasebnosti v aplikaciji (vključno z razlago obdelave podatkov, ki se izvaja za funkcijo beleženja izpostavljenosti) lahko najdete v meniju pod naslovom "Zasebnost." "</string>
     <!-- XBUT: onboarding(tracing) - button enable tracing -->
     <string name="onboarding_tracing_button_next">"Omogoči"</string>
     <!-- XTXT: onboarding(tracing) - dialog about tracing permission declined -->
@@ -416,7 +416,7 @@
     <!-- XHED: onboarding(datashare) - about positive tests -->
     <string name="onboarding_notifications_headline">"Prejemajte opozorila in prepoznajte tveganja"</string>
     <!-- XHED: onboarding(datashare) - two/three line headline under an illustration -->
-    <string name="onboarding_notifications_subtitle">"Aplikacija vas lahko samodejno obvesti o vašem stanju tveganja za okužbo. Dovolite aplikaciji, da vas obvešča."</string>
+    <string name="onboarding_notifications_subtitle">"Aplikacija vas lahko samodejno obvesti o vašem stanju tveganja za okužbo."</string>
     <!-- YTXT: onboarding(datashare) - explain test -->
     <string name="onboarding_notifications_body">"Če boste aplikaciji dovolili, da vas obvešča, boste lahko prejeli obvestilo o vašem tveganju za okužbo in priporočila za nadaljnje ukrepanje."</string>
     <!-- XACT: onboarding(notifications) - illustraction description, header image -->
@@ -468,10 +468,10 @@
     <string name="settings_tracing_status_connection_button">"Odprite nastavitve naprave"</string>
     <!-- XTXT: settings(tracing) - explains the circle progress indicator to the right with the current value -->
     <plurals name="settings_tracing_status_body_active">
-        <item quantity="one">"Beleženje izpostavljenosti je aktivno že %1$s dan.\nPreverjanje izpostavljenosti je lahko zanesljivo, le če je beleženje trajno aktivirano."</item>
-        <item quantity="two">"Beleženje izpostavljenosti je aktivno že %1$s dneva.\nPreverjanje izpostavljenosti je lahko zanesljivo, le če je beleženje trajno aktivirano."</item>
-        <item quantity="few">"Beleženje izpostavljenosti je aktivno že %1$s dni.\nPreverjanje izpostavljenosti je lahko zanesljivo, le če je beleženje trajno aktivirano."</item>
-        <item quantity="other">"Beleženje izpostavljenosti je aktivno že %1$s dni.\nPreverjanje izpostavljenosti je lahko zanesljivo, le če je beleženje trajno aktivirano."</item>
+        <item quantity="one">"Beleženje izpostavljenosti je aktivno že %1$s dan.\nPreverjanje izpostavljenosti je lahko zanesljivo le, če je beleženje trajno aktivirano."</item>
+        <item quantity="two">"Beleženje izpostavljenosti je aktivno že %1$s dneva.\nPreverjanje izpostavljenosti je lahko zanesljivo le, če je beleženje trajno aktivirano."</item>
+        <item quantity="few">"Beleženje izpostavljenosti je aktivno že %1$s dni.\nPreverjanje izpostavljenosti je lahko zanesljivo le, če je beleženje trajno aktivirano."</item>
+        <item quantity="other">"Beleženje izpostavljenosti je aktivno že %1$s dni.\nPreverjanje izpostavljenosti je lahko zanesljivo le, če je beleženje trajno aktivirano."</item>
     </plurals>
     <!-- XACT: settings(tracing) - describes illustration -->
     <string name="settings_tracing_illustration_description_active">"Tri osebe so na svojih napravah aktivirale beleženje izpostavljenosti, s čimer bodo beležile medsebojne stike."</string>
@@ -491,7 +491,7 @@
     <!-- XTXT: settings(notification) - text in row on settings overview -->
     <string name="settings_notifications_body_description">"Dovolite samodejna obvestila o stanju tveganja za okužbo s SARS-CoV-2."</string>
     <!-- YTXT: settings(notification) - description text when it notifications are enabled -->
-    <string name="settings_notifications_body_active">"Izberite, za katera področja želite še vedno prejemati obvestila."</string>
+    <string name="settings_notifications_body_active">"</string>
     <!-- XTXT: settings(notification) - explains what the user has to do to activate settings -->
     <string name="settings_notifications_body_inactive">"Da aktivirate obvestila, jih morate za aplikacijo #OstaniZdrav dovoliti v nastavitvah svoje naprave."</string>
     <!-- XHED: settings(notification) - card headline -->
@@ -501,7 +501,7 @@
     <!-- XTXT: settings(notification) - next to a switch -->
     <string name="settings_notifications_subtitle_update_risk">"Vaše tveganje za okužbo se je spremenilo."</string>
     <!-- XTXT: settings(notification) - next to a switch -->
-    <string name="settings_notifications_subtitle_update_test">"Stanje vašega testa za Covid-19"</string>
+    <string name="settings_notifications_subtitle_update_test">"Stanje vašega testa na SARS-CoV-2"</string>
     <!-- XBUT: settings(notification) - go to operating settings -->
     <string name="settings_notifications_button_open_settings">"Odprite nastavitve naprave"</string>
     <!-- XACT: main (overview) - illustraction description, explanation image, displays notificatin status, active -->
@@ -517,7 +517,7 @@
     <!-- XTXT: settings(reset) - explains the consequences -->
     <string name="settings_reset_body">"Ne boste več prejemali obvestil o izpostavljenosti in ne boste več mogli opozarjati drugih uporabnikov."</string>
     <!-- XHED: settings(reset) - on card, explains user to go to the operating system settings -->
-    <string name="settings_reset_headline_keys">"Izbrišite izpostavljenost "<xliff:g id="line_break">"\n"</xliff:g>""</string>
+    <string name="settings_reset_headline_keys">"Izbrišite izpostavljenost"<xliff:g id="line_break">"\n"</xliff:g>""</string>
     <!-- XTXT: settings(reset) - on card -->
     <string name="settings_reset_body_keys">"Dnevnik izpostavljenosti morate izbrisati ločeno v nastavitvah svoje naprave."</string>
     <!-- XBUT: settings(reset) - triggers reset -->
@@ -564,9 +564,9 @@
     <!-- XHED: Subtitle for about information page -->
     <string name="information_about_headline">"Obvarujmo sebe in druge pred COVID-19."</string>
     <!-- YTXT: Body text for about information page -->
-    <string name="information_about_body_emphasized">"Nacionalni inštitut za javno zdravje (NIJZ) je osrednja ustanova za varovanje zdravja v Sloveniji. NIJZ zagotavlja strokovno oziroma vsebinsko podporo aplikaciji, ki jo upravlja in vzdržuje Ministrstvo za javno upravo RS. Poleg doslednega upoštevanja preventivnih ukrepov za preprečevanje okužbe s SARS-CoV-2, lahko s pomočjo aplikacije še dodatno omejimo širjenje bolezni.</string>
+    <string name="information_about_body_emphasized">"Nacionalni inštitut za javno zdravje (NIJZ) je osrednja ustanova za varovanje zdravja v Sloveniji. NIJZ zagotavlja strokovno oziroma vsebinsko podporo aplikaciji, ki jo upravlja in vzdržuje Ministrstvo za javno upravo RS. Poleg doslednega upoštevanja preventivnih ukrepov za preprečevanje okužbe s SARS-CoV-2 lahko s pomočjo aplikacije še dodatno omejimo širjenje bolezni."</string>
     <!-- YTXT: Body text for about information page -->
-    <string name="information_about_body">"Kdor uporablja aplikacijo, pomaga pri spremljanju in prekinitvi verige okužb. V aplikaciji se lokalno na vaši napravi shranijo stiki z drugimi napravami. Aplikacija vas obvesti, če ste bili v stiku z osebami, pri katerih je pozneje bila potrjena okužba s SARS-CoV-2. Vaša identiteta in zasebnost sta vedno zaščiteni."</string>
+    <string name="information_about_body">"Kdor uporablja aplikacijo, pomaga pri spremljanju in prekinitvi verige prenosa okužb. V aplikaciji se lokalno na vaši napravi shranijo stiki z drugimi napravami. Aplikacija vas obvesti, če ste bili v stiku z osebami, pri katerih je bila pozneje  potrjena okužba s SARS-CoV-2. Vaša identiteta in zasebnost sta vedno zaščiteni."</string>
     <!-- XACT: describes illustration -->
     <string name="information_about_illustration_description">"Skupina ljudi uporablja svoje pametne telefone v mestu."</string>
     <!-- XHED: Page title for privacy information page, also menu item / button text -->
@@ -598,7 +598,7 @@
     <!-- XTXT: Body text for technical contact and hotline information page -->
     <string name="information_contact_body_phone">"Naš Enotni kontaktni center za pomoč uporabnikom je na voljo, da vam ponudi pomoč."</string>
     <!-- YTXT: Body text for technical contact and hotline information page -->
-    <string name="information_contact_body_open">"Jeziki: slovenščina in angleščina\nDelovni čas:"<xliff:g id="line_break">"\n"</xliff:g>"Od ponedeljka do nedelje: 8.00–20.00"<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\nKlic je brezplačen.\nKlici iz tujine: +386 1 478 7557"</xliff:g></string>
+    <string name="information_contact_body_open">"Jeziki: \nslovenščina in angleščina\nDelovni čas:"<xliff:g id="line_break">"\n"</xliff:g>"Od ponedeljka do nedelje: 8.00–20.00"<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\nKlic je brezplačen.\nKlici iz tujine: +386 1 478 7557"</xliff:g></string>
     <!-- YTXT: Body text for technical contact and hotline information page -->
     <string name="information_contact_body_other">"Splošne informacije o COVID-19 so dostopne na spletni strani Nacionalnega inštituta za javno zdravje in Ministrstva za zdravje"</string>
     <!-- XACT: describes illustration -->
@@ -620,7 +620,7 @@
     <!-- YTXT: subtitle for legal information page, publisher section -->
     <string name="information_legal_subtitle_publisher">""</string>
     <!-- YTXT: body for legal information page, publisher section -->
-    <string name="information_legal_body_publisher">"Aplikacijo #OstaniZdrav sta pripravila Nacionalni inštitut za javno zdravje in Ministrstvo za javno upravo, pri čemer NIJZ skrbi za vsebinski del aplikacije, MJU pa za tehničnega. Oba sta tako skupna upravljavca podatkov, ki se obdelujejo v okviru aplikacije #OstaniZdrav"</string>
+    <string name="information_legal_body_publisher">"Aplikacijo #OstaniZdrav sta pripravila Nacionalni inštitut za javno zdravje in Ministrstvo za javno upravo, pri čemer NIJZ skrbi za vsebinski del aplikacije, MJU pa za tehničnega. Oba sta tako skupna upravljavca podatkov, ki se obdelujejo v okviru aplikacije #OstaniZdrav."</string>
     <!-- XHED: Headline for legal information page, contact section -->
     <string name="information_legal_headline_contact">"Stik"</string>
     <!-- YTXT: subtitle for legal information page, contact section -->
@@ -726,7 +726,7 @@
     <!-- XHED: Page headline for positive test result screen  -->
     <string name="submission_test_result_positive_steps_positive_heading">"Opozarjanje drugih"</string>
     <!-- YTXT: Body text for next steps section of test positive result-->
-    <string name="submission_test_result_positive_steps_positive_body">"Delite svoje dnevne ključe iz preteklih 14 dni, da zaščitite druge in prekinete verigo prenosa okužb."</string>
+    <string name="submission_test_result_positive_steps_positive_body">"Delite svoje naključne oddajne kode iz preteklih 14 dni, da zaščitite druge in prekinete verigo prenosa okužb."</string>
     <!-- XHED: Page headline for other warnings screen  -->
     <string name="submission_test_result_positive_steps_warning_others_heading">"Naj drugi ostanejo zdravi"</string>
     <!-- YTXT: Body text for for other warnings screen-->
@@ -754,7 +754,7 @@
     <!-- XBUT: Negative button for test removal -->
     <string name="submission_test_result_dialog_remove_test_button_negative">"Prekličite"</string>
     <!-- XHED: Title for test result card positive -->
-    <string name="submission_test_result_card_positive_title">"Potrjena okužba SARS-CoV-2"</string>
+    <string name="submission_test_result_card_positive_title">"Potrjena okužba s SARS-CoV-2"</string>
     <!-- YTXT: Body text for test result card positive -->
     <string name="submission_test_result_card_positive_body">"Potrdili so vam okužbo z virusom SARS-CoV-2."</string>
 
@@ -778,14 +778,14 @@
     <!-- XHED: Page headline for menu the at start of the submission process  -->
     <string name="submission_intro_headline">"Delovanje aplikacije #OstaniZdrav"</string>
     <!-- YTXT: submission introduction text -->
-    <string name="submission_intro_text">"Da bi lahko aplikacija dobro delovala, se zanašamo na podporo ljudi, pri katerih je bila potrjena okužba s SARS-CoV-2.\n\n Ker se izmenjujejo le naključne oddajne kode, boste ostali anonimni. Nadaljujete lahko, kot sledi:"</string>
+    <string name="submission_intro_text">"Da bi lahko aplikacija dobro delovala, se zanašamo na podporo ljudi, pri katerih je bila potrjena okužba s SARS-CoV-2.\n\nKer se izmenjujejo le naključne oddajne kode, boste ostali anonimni. Nadaljujete lahko, kot sledi:"</string>
     <!-- XBUT: Submission introduction next button-->
     <string name="submission_intro_button_next">"Naprej"</string>
     <!-- XACT: Submission intro - illustration description, explanation image -->
     <string name="submission_intro_illustration_description">"Šifrirana potrditev okužbe s SARS-CoV-2 se prenese v sistem, ki bo opozoril druge uporabnike."</string>
     <!-- YTXT: submission introduction bullet points -->
     <string-array name="submission_intro_bullet_points">
-        <item>"Če je bila pri vas potrjena okužbas SARS-CoV-2, lahko z vnosom številke TAN o tem obvestite druge."</item>
+        <item>"Če je bila pri vas potrjena okužba s SARS-CoV-2, lahko z vnosom številke TAN o tem obvestite druge."</item>
     </string-array>
     <!-- XACT: Submission Intro page title -->
     <string name="submission_intro_accessibility_title">"Ali ste bili testirani? Delovanje aplikacije #OstaniZdrav"</string>
@@ -794,7 +794,7 @@
     <!-- XHED: Page headline for dispatcher menu  -->
     <string name="submission_dispatcher_headline">"Izbor"</string>
     <!-- XHED: Page subheadline for dispatcher menu  -->
-    <string name="submission_dispatcher_subheadline">"Katere informacije imate?"</string>
+    <string name="submission_dispatcher_subheadline">""</string>
     <!-- YTXT: Dispatcher text for QR code option -->
     <string name="submission_dispatcher_card_qr">"Dokumentiraj s kodo QR"</string>
     <!-- YTXT: Body text for QR code dispatcher option -->
@@ -816,7 +816,7 @@
     <!-- YTXT: Body text for TELE_TAN dispatcher option -->
     <string name="submission_dispatcher_tan_tele_card_text">"Pokličite nas, če je bila pri vas potrjena okužba s SARS-CoV-2."</string>
     <!-- XACT: Dispatcher Tan page title -->
-    <string name="submission_dispatcher_accessibility_title">"Katere informacije imate?"</string>
+    <string name="submission_dispatcher_accessibility_title">""</string>
 
     <!-- Submission Positive Other Warning -->
     <!-- XHED: Page title for the positive result additional warning page-->
@@ -824,11 +824,11 @@
     <!-- XHED: Page headline for the positive result additional warning page-->
     <string name="submission_positive_other_warning_headline">"Prosimo, pomagajte vsem nam."</string>
     <!-- YTXT: Body text for the positive result additional warning page-->
-    <string name="submission_positive_other_warning_body">"Nato lahko omogočite, da aplikacija #OstaniZdrav vaše dnevne ključe iz preteklih 14 dni anonimno deli z drugimi. Če boste to storili, boste lahko opozorili druge in pomagali, da se prekine veriga prenosa okužb.\n\n Prenašajo se le neosebne naključne oddajne kode, torej bo vaša identiteta ostala anonimna."</string>
+    <string name="submission_positive_other_warning_body">"Omogočite lahko, da aplikacija #OstaniZdrav vaše naključne dnevne ključe iz preteklih 14 dni anonimno deli z drugimi. Če boste to storili, boste lahko opozorili druge in pomagali, da se prekine veriga prenosa okužb.\n\n Prenašajo se le neosebne naključne oddajne kode, torej bo vaša identiteta ostala anonimna."</string>
     <!-- XHED: Title for the privacy card-->
     <string name="submission_positive_other_warning_privacy_title">"Zasebnost"</string>
     <!-- YTXT: Body text for the privacy card-->
-    <string name="submission_positive_other_warning_privacy_body">"S klikom na »Sprejmi«, boste oddali svoje soglasje, s katerim dovoljujete, da aplikacija vaše dnevne ključe iz preteklih 14 dni posreduje strežniškemu sistemu. Tako lahko drugi uporabniki, ki so omogočili funkcijo beleženja izpostavljenosti, prejmejo samodejna obvestila o tem, da so bili mogoče izpostavljeni tveganju za okužbo. Dnevni ključi, ki se prenesejo v ta namen, ne vsebujejo nikakršnih informacij, na podlagi katerih bi lahko sklepali o vaši identiteti ali o vas kot osebi. \n\n Vnos rezultata vašega testa v aplikacijo je prostovoljen. Ne boste kaznovani, če rezultata svojega testa ne boste vnesli. Ker ni mogoče slediti ali preveriti, ali uporabljate aplikacijo oziroma kako jo uporabljate, ne bo nihče razen vas vedel, ali ste vnesli informacijo o tem, da ste okuženi.\n\n Svoje soglasje lahko kadar koli umaknete z izbrisom aplikacije. Preklic soglasja ne vpliva na zakonitost obdelave, ki je bila izvedena na podlagi soglasja pred vašim preklicem soglasja. Dodatne informacije lahko najdete v meniju pod naslovom »Zasebnost«."</string>
+    <string name="submission_positive_other_warning_privacy_body">"S klikom na »Sprejmi« boste oddali svoje soglasje, s katerim dovoljujete, da aplikacija vaše naključne dnevne ključe iz preteklih 14 dni posreduje strežniškemu sistemu. Tako lahko drugi uporabniki, ki so omogočili funkcijo beleženja izpostavljenosti, prejmejo samodejna obvestila o tem, da so bili mogoče izpostavljeni COVID-19. Naključne oddajne kode, ki se prenesejo v ta namen, ne vsebujejo nikakršnih informacij, na podlagi katerih bi lahko sklepali o vaši identiteti ali o vas kot osebi. \n\n Vnos rezultata vašega testa v aplikacijo je prostovoljen. Ne boste kaznovani, če rezultata svojega testa ne boste vnesli. Ker ni mogoče slediti ali preveriti, ali uporabljate aplikacijo oziroma kako jo uporabljate, ne bo nihče razen vas vedel, ali ste vnesli informacijo o tem, da ste okuženi.\n\n Svoje soglasje lahko kadar koli umaknete z izbrisom aplikacije. Preklic soglasja ne vpliva na zakonitost obdelave, ki je bila izvedena na podlagi soglasja pred vašim preklicem soglasja. Dodatne informacije lahko najdete v meniju pod naslovom »Informacije o zasebnosti«."</string>
     <!-- XBUT: other warning continue button -->
     <string name="submission_positive_other_warning_button">"Sprejmi"</string>
     <!-- XACT: other warning - illustration description, explanation image -->
@@ -850,7 +850,7 @@
     <string name="submission_done_further_info_title">"Druge informacije:"</string>
     <!-- YTXT: submission done further info bullet points -->
     <string-array name="submission_done_further_info_bullet_points">
-        <item>"Obdobje izolacije se zaključi predvidoma 14 dni po umiritvi simptomov in znakov. O trajanju izolacije presoja vaš lečeči zdravnik."</item>
+        <item>"Obdobje izolacije se predvidoma zaključi 14 dni po umiritvi simptomov in znakov. O trajanju izolacije presoja vaš lečeči zdravnik."</item>
         <item>"V primeru poslabšanja bolezni se po telefonu posvetujte z vašim izbranim osebnim ali dežurnim zdravnikom. V nujnih primerih pokličite 112. Povejte, da je bila pri vas potrjena okužba s SARS-CoV-2."</item>
     </string-array>
     <!-- XBUT: submission finished button -->
@@ -878,14 +878,14 @@
     <!-- YTXT: Body text for step 2 of contact page-->
     <string name="submission_contact_step_2_body">"Rezultat testa delite z vnosom številke TAN v aplikacijo."</string>
     <!-- YTXT: Body text for operating hours in contact page-->
-    <string name="submission_contact_operating_hours_body">"Jeziki: \nslovenščina in angleščina, \n\nDelovni čas:\nOd ponedeljka do nedelje: 8:00 do 20:00\n\nKlic je brezplačen."</string>
+    <string name="submission_contact_operating_hours_body">"Jeziki: \nslovenščina in angleščina \n\nDelovni čas:\nOd ponedeljka do nedelje: 8:00 do 20:00\n\nKlic je brezplačen."</string>
 
     <!-- XACT: Submission contact page title -->
     <string name="submission_contact_accessibility_title">""</string>
     <!-- XACT: Content Description for submission contact step 1, number has to sync with the display number -->
     <string name="submission_contact_step_1_content">""</string>
     <!-- XACT: Content Description for submission contact step 2 -->
-    <string name="submission_contact_step_2_content">"V drugem koraku boste v aplikaciji delili potrjeno okužbo s pomočjo številke TAN."</string>
+    <string name="submission_contact_step_2_content">"V drugem koraku boste v aplikaciji delili podatek o potrjeni okužbi s pomočjo številke TAN."</string>
 
     <!-- Submission Status Card -->
     <!-- XHED: Page title for the various submission status: fetching -->
@@ -901,8 +901,8 @@
     <!-- XHED: Subtitle for the submission status card: invalid -->
     <string name="submission_status_card_subtitle_invalid">"Neveljaven test"</string>
     <!-- XHED: Subtitle for the submission status card: negative -->
-    <string name="submission_status_card_subtitle_negative">"Negativna diagnoza"</string>
-    <!-- YTXT: Body text for submission status: fetching -->
+    <string name="submission_status_card_subtitle_negative">"Negativen rezultat testa na SARS-CoV-2"</string>
+    <!-- YTXT: Body text for submission status: fetching -->submission_contact_step_2_content
     <string name="submission_status_card_body_fetching">"Vaš rezultat se posodablja."</string>
     <!-- YTXT: Body text for submission status: unregistered -->
     <string name="submission_status_card_body_unregistered">"Z obveščanjem drugih pomagajte prekiniti verigo prenosa okužb."</string>
@@ -911,9 +911,9 @@
     <!-- YTXT: Body text for submission status: invalid -->
     <string name="submission_status_card_body_invalid">"Vaš test ni mogel biti ocenjen."</string>
     <!-- YTXT: Body text for submission status: positive -->
-    <string name="submission_status_card_body_positive">"Prejeli ste pozitivno diagnozo za okužbo z virusom SARS-CoV-2."</string>
+    <string name="submission_status_card_body_positive">"Pri vas je bila potrjena okužba z virusom SARS-CoV-2."</string>
     <!-- YTXT: Body text for submission status: negative -->
-    <string name="submission_status_card_body_negative">"Prejeli ste negativno diagnozo za okužbo z virusom SARS-CoV-2."</string>
+    <string name="submission_status_card_body_negative">"Pri vas ni bila potrjena okužba z virusom SARS-CoV-2."</string>
     <!-- XBUT: submission status card unregistered button -->
     <string name="submission_status_card_button_unregistered">"Vnesite potrditev okužbe"</string>
     <!-- XBUT: submission status card show results button -->
@@ -978,7 +978,7 @@
     <!-- XTXT: error dialog - detailed text if there is an error during external navigation / external action -->
     <string name="errors_external_action">"Tega dejanja ni možno izvesti. Pokličite Enotni kontaktni center za pomoč uporabnikom."</string>
     <!-- XTXT: error dialog - phone still needs Google Play Services or Google Mobile Services update -->
-    <string name="errors_google_update_needed">"Aplikacija #OstaniZdrav je bila uspešno nameščena. Obvestila o izpostavljenosti tveganju za okužbo s SARS-CoV-2 na žalost trenutno niso na voljo na vaši napravi in ne morete uporabljati aplikacije #OstaniZdrav. Več informacij je na voljo na strani : https://www.gov.si/ostanizdrav \n"</string>
+    <string name="errors_google_update_needed">"Aplikacija #OstaniZdrav je bila uspešno nameščena. Obvestila o izpostavljenosti COVID-19 na žalost trenutno niso na voljo na vaši napravi in ne morete uporabljati aplikacije #OstaniZdrav. Več informacij je na voljo na strani : https://www.gov.si/ostanizdrav \n"</string>
 
     <!-- ####################################
                Generic Error Messages
