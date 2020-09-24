@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8"?><resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+
+    <!-- ####################################
+               Preference Keys
+    ######################################
+    TODO: Check what is needed -->
+
+    <!-- NOTR -->
+    <string name="preference_name"><xliff:g id="preference">"shared_preferences_cwa"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_onboarding_completed"><xliff:g id="preference">"preference_onboarding_completed"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_onboarding_completed_timestamp"><xliff:g id="preference">"preference_onboarding_completed_timestamp"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_reset_app"><xliff:g id="preference">"preference_reset_app"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_only_wifi"><xliff:g id="preference">"preference_only_wifi"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_tracing"><xliff:g id="preference">"preference_tracing"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_timestamp_diagnosis_keys_fetch"><xliff:g id="preference">"preference_timestamp_diagnosis_keys_fetch"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_timestamp_manual_diagnosis_keys_retrieval"><xliff:g id="preference">"preference_timestamp_manual_diagnosis_keys_retrieval"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_string_google_api_token"><xliff:g id="preference">"preference_m_string_google_api_token"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_notifications_enabled"><xliff:g id="preference">"preference_notifications_enabled"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_notifications_risk_enabled"><xliff:g id="preference">"preference_notifications_risk_enabled"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_notifications_test_enabled"><xliff:g id="preference">"preference_notifications_test_enabled"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_background_job_allowed"><xliff:g id="preference">"preference_background_job_enabled"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_mobile_data_allowed"><xliff:g id="preference">"preference_mobile_data_enabled"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_registration_token"><xliff:g id="preference">"preference_registration_token"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_device_pairing_successful_time"><xliff:g id="preference">"preference_device_pairing_successful_time"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_initial_tracing_activation_time"><xliff:g id="preference">"preference_initial_tracing_activation_time"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_initial_result_received_time"><xliff:g id="preference">"preference_initial_result_received_time"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_risk_level_score"><xliff:g id="preference">"preference_risk_level_score"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_risk_level_score_successful"><xliff:g id="preference">"preference_risk_level_score_successful"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_timestamp_risk_level_calculation"><xliff:g id="preference">"preference_timestamp_risk_level_calculation"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_test_guid"><xliff:g id="preference">"preference_test_guid"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_is_allowed_to_submit_diagnosis_keys"><xliff:g id="preference">"preference_is_allowed_to_submit_diagnosis_keys"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_auth_code"><xliff:g id="preference">"preference_auth_code"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_database_password"><xliff:g id="preference">"preference_database_password"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_total_non_active_tracing"><xliff:g id="preference">"preference_total_non_active_tracing"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_last_non_active_tracing_timestamp"><xliff:g id="preference">"preference_last_non_active_tracing_timestamp"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_number_successful_submissions"><xliff:g id="preference">"preference_number_successful_submissions"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_teletan"><xliff:g id="preference">"preference_teletan"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_last_three_hours_from_server"><xliff:g id="preference">"preference_last_three_hours_from_server"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_polling_test_result_started"><xliff:g id="preference">"preference_polling_test_result_started"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_test_result_notification"><xliff:g id="preference">"preference_test_result_notification"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="preference_risk_days_explanation_shown"><xliff:g id="preference">"preference_risk_days_explanation_shown"</xliff:g></string>
+
+    <!-- ####################################
+                     Generics
+    ###################################### -->
+
+    <!-- XACT: back description for screen readers -->
+    <string name="accessibility_back">"Vissza"</string>
+    <!-- XACT: next description for screen readers -->
+    <string name="accessibility_next">"Tovább"</string>
+    <!-- XACT: menu description for screen readers -->
+    <string name="accessibility_menu">"Menü"</string>
+    <!-- XACT: menu description for screen readers -->
+    <string name="accessibility_close">"Bezár"</string>
+    <!-- XACT: menu description for screen readers -->
+    <string name="accessibility_logo">"#OstaniZdrav"</string>
+    <!-- XACT: button description for screen readers to be appended at the end of content without focusable subcontent that are explored by touch -->
+    <string name="accessibility_button">"Gomb"</string>
+
+    <!-- ####################################
+                     Menu
+    ###################################### -->
+
+    <!-- XMIT: application overview -->
+    <string name="menu_help">"Áttekintés"</string>
+    <!-- XMIT: application information -->
+    <string name="menu_information">"Információk az alkalmazásról"</string>
+    <!-- XMIT: application settings -->
+    <string name="menu_settings">"Beállítások"</string>
+
+    <!-- ####################################
+               Notification
+    ###################################### -->
+    <!-- NOTR -->
+    <string name="notification_channel_id"><xliff:g id="notification_channel_id">"de.rki.coronawarnapp.notification.exposureNotificationChannelId"</xliff:g></string>
+    <!-- NOTR -->
+    <string name="notification_id"><xliff:g id="notification_id">"1"</xliff:g></string>
+    <!-- XTXT: Notification channel name for os settings -->
+    <string name="notification_name">"#OstaniZdrav"</string>
+    <!-- XTXT: Notification channel description for os settings -->
+    <string name="notification_description">"Értesítések a #OstaniZdrav" alkalmazásból."</string>
+    <!-- XHED: Notification title -->
+    <string name="notification_headline">"#OstaniZdrav"</string>
+    <!-- XTXT: Notification body -->
+    <string name="notification_body">"Új üzenete van az #OstaniZdrav alkalmazásban"</string>
+
+    <!-- ####################################
+              App Auto Update
+    ###################################### -->
+
+    <!-- XHED: App Auto Update dialog title -->
+    <string name="update_dialog_title">"Rendelkezésre áll frissítés."</string>
+    <!-- XTXT: App Auto Update dialog message -->
+    <string name="update_dialog_message">"Az #OstaniZdrav alkalmazást csak akkor tudja ismét használni, miután letölti a legújabb frissítést."</string>
+    <!-- XBUT: App Auto Update button -->
+    <string name="update_dialog_button">"Frissítés"</string>
+
+    <!-- ####################################
+                  Risk Card
+    ###################################### -->
+
+    <!-- XTXT: risk card - no contact yet -->
+    <string name="risk_card_body_contact">"Eddig még nem érintkezett fertőzött személlyel."</string>
+    <!-- XTXT: risk card - number of contacts for one or more -->
+    <plurals name="risk_card_body_contact_value">
+        <item quantity="one">"%1$s fertőzött személynek való kitettség"</item>
+        <item quantity="two">"%1$s fertőzött személynek való kitettség"</item>
+        <item quantity="few">"%1$s fertőzött személynek való kitettség"</item>
+        <item quantity="other">"%1$s fertőzött személynek való kitettség"</item>
+    </plurals>
+    <!-- XTXT: risk card - tracing active for x out of 14 days -->
+    <string name="risk_card_body_saved_days">"14 napból %1$s aktivált"</string>
+    <!-- XTXT: risk card- tracing active for 14 out of 14 days -->
+    <string name="risk_card_body_saved_days_full">A kitettség naplózás  állandóan aktív</string>
+    <!-- XTXT; risk card - no update done yet -->
+    <string name="risk_card_body_not_yet_fetched">"A kapcsolatokat még nem frissítették."</string>
+    <!-- XTXT: risk card - last successful update -->
+    <string name="risk_card_body_time_fetched">"Frissített: %1$s"</string>
+    <!-- XTXT: risk card - next update -->
+    <string name="risk_card_body_next_update">"Frissítés naponta."</string>
+    <!-- XBUT: risk card - update risk -->
+    <string name="risk_card_button_update">"Frissítés"</string>
+    <!-- XBUT: risk card - update risk with time display -->
+    <string name="risk_card_button_cooldown">"Frissítés %1$s múlva"</string>
+    <!-- XBUT: risk card - activate tracing -->
+    <string name="risk_card_button_enable_tracing">"Kapcsolja be a kitettség naplózást!"</string>
+    <!-- XTXT: risk card - tracing is off, user should activate to get an updated risk level -->
+    <string name="risk_card_body_tracing_off">"Kapcsolja be a kitettség naplózást a mai napi fertőzéskockázat értékeléséhez!"</string>
+    <!-- XHED: risk card - low risk headline -->
+    <string name="risk_card_low_risk_headline">"Alacsony kockázat"</string>
+    <!-- XHED: risk card - increased risk headline -->
+    <string name="risk_card_increased_risk_headline">"Nagyobb kockázat"</string>
+    <!-- XTXT: risk card - increased risk days since last contact -->
+    <plurals name="risk_card_increased_risk_body_contact_last">
+        <item quantity="one">"%1$s nap a legutóbbi, fertőzött személynek való kitettségtől"</item>
+        <item quantity="two">"%1$s nap a legutóbbi, fertőzött személynek való kitettségtől"</item>
+        <item quantity="few">"%1$s nap a legutóbbi, fertőzött személynek való kitettségtől"</item>
+        <item quantity="other">"%1$s nap a legutóbbi, fertőzött személynek való kitettségtől"</item>
+    </plurals>
+    <!-- XHED: risk card - unknown risk headline -->
+    <string name="risk_card_unknown_risk_headline">"Ismeretlen kockázat"</string>
+    <!-- XTXT: risk card - tracing isn't active long enough, so a new risk level can't be calculated -->
+    <string name="risk_card_unknown_risk_body">"A kitettség naplózás nem volt elégendő ideig bekapcsolva, ezért nem tudtuk értékelni, milyen fertőzési kockázatnak volt kitéve."</string>
+    <!-- XHED: risk card - tracing stopped headline, due to no possible calculation -->
+    <string name="risk_card_no_calculation_possible_headline">"Kitettség naplózás leállítva."</string>
+    <!-- XTXT: risk card - last successfully calculated risk level -->
+    <string name="risk_card_no_calculation_possible_body_saved_risk">"A legutóbbi kitettség naplózás:"<xliff:g id="line_break">"\n"</xliff:g>"%1$s"</string>
+    <!-- XHED: risk card -  outdated risk headline, calculation isn't possible -->
+    <string name="risk_card_outdated_risk_headline">"A kitettség naplózás nem lehetséges."</string>
+    <!-- XTXT: risk card - outdated risk, calculation couldn't be updated in the last 24 hours -->
+    <string name="risk_card_outdated_risk_body">"A kitettség naplózást több mint 24 órája nem tudtuk frissíteni."</string>
+    <!-- XHED: risk card - loading headline, update is ongoing -->
+    <string name="risk_card_loading_headline">"Ellenőrzés folyamatban …"</string>
+    <!-- XTXT: risk card - loading, data is downloaded and will be checked, this can take several minutes -->
+    <string name="risk_card_loading_body">"Friss adatok letöltése és ellenőrzése\n Ez percekig eltarthat."</string>
+
+    <!-- ####################################
+                    Main
+    ###################################### -->
+
+    <!-- XHED: main, FAQ -->
+    <string name="main_about_headline">"Információk az alkalmazásról"</string>
+    <!-- XTXT: main, explains faq on card -->
+    <string name="main_about_body">"Itt megtalálja az #OstaniZdrav alkalmazásról szóló információkat. Átirányítjuk külső weboldalra."</string>
+    <!-- XTXT: FAQ link, should be translated  -->
+    <string name="main_about_link">"https://www.gov.si/hu/temak/covid-19-jarvany/mobilna-aplikacija-ostanizdrav/ "</string>
+    <!-- XACT: Opens external webpage -->
+    <string name="hint_external_webpage">"Itt megtalálja az #OstaniZdrav alkalmazásról szóló információkat. Átirányítjuk külső weboldalra."</string>
+
+    <!-- ####################################
+               Main - Share
+    ###################################### -->
+
+    <!-- XHED: Share app link page title -->
+    <string name="main_share_title">"Ossza meg a #OstaniZdrav« alkalmazást!"</string>
+    <!-- XHED: Share app link page subtitle -->
+    <string name="main_share_headline">"Védjük magunkat és másokat a COVID-19 fertőzéssel szemben!"</string>
+    <!-- YTXT: Share app link page body -->
+    <string name="main_share_body">"Minél többen használják az alkalmazást, annál gyorsabban megszakíthatjuk a fertőzések terjedési láncát. Kérjük, ajánlja az alkalmazást rokonainak és barátainak!"</string>
+    <!-- XBUT: Share app link page button -->
+    <string name="main_share_button">"Küldje el a linket a telepítés letöltéséhez!"</string>
+    <!-- YMSG: Message when sharing is executed -->
+    <string name="main_share_message">"Együtt a COVID-19 ellen<xliff:g id="line_break">"\n"</xliff:g>"Én közreműködök, és Ön?"<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="link_play_store">"https://www.gov.si/hu/temak/covid-19-jarvany/mobilna-aplikacija-ostanizdrav/ "</xliff:g>"\n"<xliff:g id="line_break">"\n"</xliff:g></string>
+    <!-- XACT: main (share) - illustraction description, explanation image -->
+    <string name="main_share_illustration_description">"Egy férfi megosztja az #OstaniZdrav« alkalmazást négy más személlyel."</string>
+
+    <!-- ####################################
+                Main - Overview
+    ###################################### -->
+
+    <!-- XHED: App overview page title -->
+    <string name="main_overview_title">"Áttekintés"</string>
+    <!-- XACT: main overview page title -->
+    <string name="main_overview_accessibility_title">"Áttekintés"</string>
+    <!-- XHED: App overview subtitle for tracing explanation-->
+    <string name="main_overview_subtitle_tracing">"Kitettség naplózás"</string>
+    <!-- YTXT: App overview body text about tracing -->
+    <string name="main_overview_body_tracing">"A kitettség naplózás az alkalmazás három fő funkciója közül az egyik. Amikor aktiválja, megkezdődik a mások készülékével való kontaktusok naplózása. A beállításoknál kapcsolja be a háttérben való futtatást!"</string>
+    <!-- XHED: App overview subtitle for risk explanation -->
+    <string name="main_overview_subtitle_risk">"Nagyobb kockázat"</string>
+    <!-- YTXT: App overview body text about risk levels -->
+    <string name="main_overview_body_risk">"Ha az elmúlt 14 napban érintkezett olyan személlyel, akiről megerősítést nyert, hogy SARS-CoV-2-vel fertőzött, az alkalmazás a kitettség időtartama és közelsége alapján értékeli a fertőzéskockázatot"</string>
+    <!-- XHED: App overview subtitle for risk level list -->
+    <string name="main_overview_subtitle_risk_levels">"A következő kockázati szintek egyike jelenhet meg:"</string>
+    <!-- XTXT: App overview increased risk level -->
+    <string name="main_overview_subtitle_increased_risk">"Nagyobb kockázat"</string>
+    <!-- XTXT: App overview low risk level -->
+    <string name="main_overview_subtitle_low_risk">"Alacsony kockázat"</string>
+    <!-- XTXT: App overview unknown risk level -->
+    <string name="main_overview_subtitle_unknown_risk">"Ismeretlen kockázat"</string>
+    <!-- XHED: App overview subtitle for test procedure explanation -->
+    <string name="main_overview_headline_test">"A többi felhasználó értesítése"</string>
+    <!-- YTXT: App overview body text about rest procedure -->
+    <string name="main_overview_body_test">"A másik fő funkció az, hogy megoszthatja, ha pozitív volt a teszteredménye. Ha önnél igazolták a SARS-CoV-2 fertőzést, erről értesíthet másokat és megszakíthatja a fertőzési láncot."</string>
+    <!-- XHED: App overview headline for glossary -->
+    <string name="main_overview_headline_glossary">"A kifejezések meghatározása:"</string>
+    <!-- XHED: App overview subtitle for glossary key storage -->
+    <string name="main_overview_subtitle_glossary_tracing">"Kitettségi napló"</string>
+    <!-- YTXT: App overview body for glossary key storage -->
+    <string name="main_overview_body_glossary_tracing">"A fogadott és elküldött, ideiglenes, véletlenszerű azonosítók listája, amelyek ideiglenesen tárolódnak az operációs rendszer memóriájában. Ezt a listát a kitettség ellenőrzése során olvassák le. Az összes véletlenszerű azonosítók automatikusan törlődik 14 nap elteltével."</string>
+    <!-- XHED: App overview subtitle for glossary risk calculation  -->
+    <string name="main_overview_subtitle_glossary_calculation">"Kitettség ellenőrzése"</string>
+    <!-- YTXT: App overview body for glossary risk calculation -->
+    <string name="main_overview_body_glossary_calculation">"A kitettség naplózási adatait be leolvassák, majd összehangolják más felhasználók bejelentett fertőzéseivel."</string>
+    <!-- XHED: App overview subtitle for glossary contact  -->
+    <string name="main_overview_subtitle_glossary_contact">"Kitettség"</string>
+    <!-- YTXT: App overview body for glossary contact -->
+    <string name="main_overview_body_glossary_contact">"Szorosabb és hosszabb ideig tartó kontaktus olyan személyekkel, akiknél megerősítették a SARS-CoV-2 fertőzést."</string>
+    <!-- XHED: App overview subtitle for glossary notifications -->
+    <string name="main_overview_subtitle_glossary_notification">"Értesítés a kitettségről"</string>
+    <!-- YTXT: App overview body for glossary notifications -->
+    <string name="main_overview_body_glossary_notification">"Fertőzési kockázat megjelenítése az #OstaniZdrav" alkalmazásban."</string>
+    <!-- XHED: App overview subtitle for glossary keys -->
+    <string name="main_overview_subtitle_glossary_keys">"Véletlenszerű azonosítók"</string>
+    <!-- YTXT: App overview body for glossary keys -->
+    <string name="main_overview_body_glossary_keys">"A véletlenszerű azonosítók véletlenszerűen létrehozott szám- és betűkombinációk. A készülék megosztja azokat a közelébe kerülő telefonnal. A véletlenszerű azonosítók  nem lehet konkrét személyhez társítani, és automatikusan törlődnek 14 nap elteltével. Akinél megerősítették a SARS-CoV-2 fertőzést, dönthet arról, hogy az elmúlt 14 nap alatt kapott véletlenszerű azonosítók megosztja-e az alkalmazás többi felhasználójával."</string>
+    <!-- XACT: main (overview) - illustraction description, explanation image -->
+    <string name="main_overview_illustration_description">"A készülék eltérő,  különböző , 1-től 3-ig terjedő számokkal jelölt tartalmakat jelenít meg."</string>
+    <!-- XACT: App main page title -->
+    <string name="main_title">"Az #OstaniZdrav" alkalmazás főoldala."</string>
+
+    <!-- ####################################
+               Risk Details
+    ###################################### -->
+
+    <!-- XHED: risk details - page title, in toolbar -->
+    <string name="risk_details_title">"Fertőzési kockázat"</string>
+    <!-- XHED: risk details - headline, how a user should act -->
+    <string name="risk_details_headline_behavior">"Ajánlások"</string>
+    <!-- XHED: risk details - multiline headline, bold, how to act correct -->
+    <string name="risk_details_subtitle_behavior">"Mit kell tennie?"</string>
+    <!-- XMSG: risk details - go/stay home, something like a bullet point -->
+    <string name="risk_details_behavior_body_stay_home">"Kerülje a felesleges érintkezést másokkal, különösen azokkal, akiknél fokozott a betegség súlyosabb lefolyásának kockázata, például az időseknél és krónikus betegeknél. Beltéri helyiségekben, ahol nem lehet betartani az elegendő egymás közötti távolságot, tanácsos a maszkviselés."</string>
+    <!-- XMSG: risk details - get in touch with the corresponding people, something like a bullet point -->
+    <string name="risk_details_behavior_body_contact_doctor">"<b>Kövesse figyelemmel egészégi állapotát</b>. Ha észleli a felsorolt tünetek valamelyikét, maradjon otthon és telefonon vegye fel a kapcsolatot háziorvosával, vagy az ügyeletes orvossal:"</string>
+    <!-- XMSG: risk details - wash your hands, something like a bullet point -->
+    <string name="risk_details_behavior_body_wash_hands">"Rendszeresen és alaposan mosson szappanos vízzel kezet. Ha nincs víz vagy szappan, fertőtlenítse kezét. Mosatlan vagy nem fertőtlenített kézzel ne érjen szeméhez, orrához, szájához!"</string>
+    <!-- XMSG: risk details - wear a face mask, something like a bullet point -->
+    <string name="risk_details_behavior_body_wear_mask">"Beltéri helyiségekben, ahol nem lehet betartani az elegendő egymás közötti távolságot, tanácsos a maszkviselés. Rendszeresen szellőztessen!"</string>
+    <!-- XMSG: risk details - stay 1,5 away, something like a bullet point -->
+    <string name="risk_details_behavior_body_stay_away">"Tartsa be a legalább 1,5 méteres egymás közötti távolságot."</string>
+    <!-- XMSG: risk details - cough/sneeze, something like a bullet point -->
+    <string name="risk_details_behavior_body_cough_sneeze">"Köhögéskor vagy tüsszentéskor takarja száját és orrát papírzsebkendővel, vagy könyökhajlatába köhögjön vagy tüsszentsen!"</string>
+    <!-- XMSG: risk details - contact your doctor, bullet point -->
+    <string name="risk_details_behavior_increased_body_1">"Rossz közérzet, megfázásos tünetek, köhögés, láz, nehézlégzés, fejfájás, izomfájdalmak, szaglás vagy ízérzés elvesztése, torokfájás."</string>
+    <!-- XMSG: risk details - panel doctor on-call service, bullet point -->
+    <string name="risk_details_behavior_increased_body_2">"Továbbra is tartsa be a fertőzés megfékezésére szolgáló általános intézkedéseket."</string>
+    <!-- XMSG: risk details - public health department, bullet point -->
+    <string name="risk_details_behavior_increased_body_3">"A COVID-19 re vonatkozó általános információkat az Országos Népegészségügyi Intézet és az Egészségügyi Minisztérium weboldalán találja."</string>
+    <!-- XHED: risk details - infection risk headline, below behaviors -->
+    <string name="risk_details_headline_infection_risk">"Fertőzési kockázat"</string>
+    <!-- XHED: risk details - infection period logged heading, below behaviors -->
+    <string name="risk_details_headline_period_logged">"Naplózott időszak"</string>
+    <!-- XHED: risk details - infection period logged subtitle, below behaviors -->
+    <string name="risk_details_subtitle_period_logged">"Az értékelés ezt az időszakot tartalmazza."</string>
+    <!-- XHED: risk details - infection period logged information body, below behaviors -->
+    <string name="risk_details_information_body_period_logged">"Az ön fertőzési kockázatának szintjét csak arra az időszakra lehet értékelni, amely során a kitettség naplózás aktív volt, ezért a kitettség naplózásnak álandóan aktívnak kell lennie."</string>
+    <!-- XHED: risk details - infection period logged information body, below behaviors -->
+    <string name="risk_details_information_body_period_logged_assessment">"A kitettség naplózás az utolsó 14 napot tartalmazza. Ezalatt az idő alatt a naplózási funkció %1$s napot volt aktív. Az alkalmazás automatikusan törli a régebbi adatokat, mivel azok már nem befolyásolják a fertőzési kockázat szintjét."</string>
+    <!-- XHED: risk details - how your risk level was calculated, below behaviors -->
+    <string name="risk_details_subtitle_infection_risk_past">""</string>
+    <!-- XHED: risk details - how your risk level will be calculated, below behaviors -->
+    <string name="risk_details_subtitle_infection_risk">""</string>
+    <!-- XMSG: risk details - risk couldn't be calculated tracing wasn't enabled long enough, below behaviors -->
+    <string name="risk_details_information_body_unknown_risk">"A kitettség naplózás nem volt elegendő ideig bekapcsolva, ezért az ön esetében nem tudtuk értékelni a fertőzés kockázatát."</string>
+    <!-- XMSG: risk details - risk calculation wasn't possible for 24h, below behaviors -->
+    <string name="risk_details_information_body_outdated_risk">"A kitettség naplózást több mint 24 órája nem tudtuk frissíteni."</string>
+    <!-- YTXT: risk details - low risk explanation text -->
+    <string name="risk_details_information_body_low_risk">"Fertőzési kockázata alacsony, mivel nem érintkezett olyan személyekkel, akiknél később igazolták volna a SARS-CoV-2 fertőzést, illetve kontaktusai rövid ideig tartottak vagy nagyobb távolságra voltak."</string>
+    <!-- YTXT: risk details - increased risk explanation text with variable for day(s) since last contact -->
+    <plurals name="risk_details_information_body_increased_risk">
+        <item quantity="one">"Fertőzési kockázata nagyobb, mivel legutóbb %1$s nappal ezelőtt, hosszabb ideig és legalább egy személy közelében tartózkodott, akinél igazolták a SARS-CoV-2 fertőzést."</item>
+        <item quantity="two">"Fertőzési kockázata nagyobb, mivel legutóbb %1$s nappal ezelőtt, hosszabb ideig és legalább egy személy közelében tartózkodott, akinél igazolták a SARS-CoV-2 fertőzést."</item>
+        <item quantity="other">"Fertőzési kockázata nagyobb, mivel legutóbb %1$s nappal ezelőtt, hosszabb ideig és legalább egy személy közelében tartózkodott, akinél igazolták a SARS-CoV-2 fertőzést."</item>
+        <item quantity="few">"Fertőzési kockázata nagyobb, mivel legutóbb %1$s nappal ezelőtt, hosszabb ideig és legalább egy személy közelében tartózkodott, akinél igazolták a SARS-CoV-2 fertőzést."</item>
+    </plurals>
+    <!-- YTXT: risk details - risk calculation explanation -->
+    <string name="risk_details_information_body_notice">"A kitettség naplózási adatai (időtartam és közelség) alapján csak az ön készülékén, helyben mértük fél a fertőzési kockázatát. A fertőzési kockázatát senki más nem láthatja, és senkinek sem továbbíthatja."</string>
+    <!-- NOTR -->
+    <string name="risk_details_button_update">@string/risk_card_button_update</string>
+    <!-- NOTR -->
+    <string name="risk_details_button_enable_tracing">@string/risk_card_button_enable_tracing</string>
+    <!-- XACT: risk details page title -->
+    <string name="risk_details_accessibility_title">"Fertőzési kockázat"</string>
+
+    <!-- XHED: one time risk explanation dialog title  -->
+    <string name="risk_details_explanation_dialog_title">Informazioni sulla funzionalità di registrazione dell\'esposizione</string>
+    <!-- YTXT: one time risk explanation dialog - pointing to the faq page for more information-->
+    <string name="risk_details_explanation_dialog_faq_body">További információkat a weboldalunkon talál.</string>
+
+    <!-- ####################################
+              Onboarding
+    ###################################### -->
+
+    <!-- XBUT: onboarding - forward and deny -->
+    <string name="onboarding_button_disable">"Ne aktiváld"</string>
+    <!-- XBUT: onboarding - forward and allow -->
+    <string name="onboarding_button_enable">"Aktiváld"</string>
+    <!-- XBUT: onboarding - back and cancel -->
+    <string name="onboarding_button_cancel">"Visszavon"</string>
+    <!-- XBUT: onboarding - next -->
+    <string name="onboarding_button_next">"Tovább"</string>
+    <!-- XBUT: onboarding - start -->
+    <string name="onboarding_button_start">"Kezdés"</string>
+    <!-- XTXT: onboarding - back description for screen reader -->
+    <string name="onboarding_button_back_description">"Vissza"</string>
+    <!-- XACT: Onboarding (together) page title -->
+    <string name="onboarding_onboarding_accessibility_title">"Kezdőoldal, 1/5 oldal: Együtt a COVID-19 ellen"</string>
+    <!-- XHED: onboarding(together) - fight corona -->
+    <string name="onboarding_headline">"Védjük magunkat és másokat a Covid-19 fertőzéssel szemben!"</string>
+    <!-- XHED: onboarding(together) - two/three line headline under an illustration -->
+    <string name="onboarding_subtitle">"Nagyobb védelem Önnek és mindannyiunknak. Ha használjuk az #OstaniZdrav alkalmazást, sokkal gyorsabban megszakíthatjuk a fertőzési láncot."</string>
+    <!-- YTXT: onboarding(together) - inform about the app -->
+    <string name="onboarding_body">"Használja okostelefonját figyelmeztető rendszerként az új koronavírusnak (SARS-CoV-2) való kitettség követésére. A COVID-19 vírusfertőzés okozhat betegséget, vagy tünetmentesen is lefolyhat."\"<xliff:g id="line_break">"\n"</xliff:g>"Értesüljön a fertőzési kockázatról, és derítse ki, érintkezett-e valakivel, akinél az elmúlt 14 napban megerősítették, hogy SARS-CoV-2 fertőzése van."</string>
+    <!-- YTXT: onboarding(together) - explain application -->
+    <string name="onboarding_body_emphasized">"Az alkalmazás a véletlenszerű azonosítók megosztásával naplózza a kontaktusokat, de nincs hozzáférése a személyes adatokhoz."</string>
+    <!-- XACT: onboarding(together) - illustraction description, header image -->
+    <string name="onboarding_illustration_description">"Egy csoport ember használja a mobiltelefonját a városban."</string>
+    <!-- XACT: Onboarding (privacy) page title -->
+    <string name="onboarding_privacy_accessibility_title">"Kezdőlap, 2/5 oldal: adatvédelem. Hosszabb szöveg következik. A folytatáshoz használja a képernyő alján található gombot."</string>
+    <!-- XHED: onboarding(privacy) - title -->
+    <string name="onboarding_privacy_headline">"Adatvédelem"</string>
+
+    <!-- XACT: onboarding(privacy) - illustraction description, header image -->
+    <string name="onboarding_privacy_illustration_description">"Az egyik nő használja az #OstaniZdrav« alkalmazást a mobiltelefonján. A pajzson látható lakat a kódolt adatokat jelképezi."</string>
+    <!-- XACT: Onboarding (tracing) page title -->
+    <string name="onboarding_tracing_accessibility_title">"Kezdőlap, 3/5 oldal: Hogyan kell bekapcsolni a kitettség naplózást?"</string>
+    <!-- XHED: onboarding(tracing) - how to enable tracing -->
+    <string name="onboarding_tracing_headline">"Hogyan kell bekapcsolni a kitettség naplózást?"</string>
+    <!-- XHED: onboarding(tracing) - two/three line headline under an illustration -->
+    <string name="onboarding_tracing_subtitle">"Ahhoz, hogy megtudja, hogy ki volt-e téve a COVID-19-nek, be kell kapcsolni a kitettség naplózás funkciót."</string>
+    <!-- YTXT: onboarding(tracing) - explain tracing -->
+    <string name="onboarding_tracing_body">"A kitettség naplózás úgy működik, hogy a készüléke a bluetooth használatával megosztja a véletlenszerű azonosítókat más felhasználók készülékeivel. Ezt a funkciót bármikor kikapcsolhatja."</string>
+    <!-- YTXT: onboarding(tracing) - explain tracing -->
+    <string name="onboarding_tracing_body_emphasized">"A véletlenszerű azonosítók csak a dátumról, az időtartamról és a többi eszközhöz való közelségről adnak információt, amelyet a jelerősség segítségével határoznak meg. A személyes adatokat, például a nevet, a címet és a helyet, nem rögzítik vagy osztják meg. A személyeket nem lehet beazonosítani."</string>
+    <!-- XHED: onboarding(tracing) - headline for consent information -->
+    <string name="onboarding_tracing_headline_consent">"Hozzájárulási nyilatkozat"</string>
+    <!-- YTXT: onboarding(tracing) - body for consent information -->
+    <string name="onboarding_tracing_body_consent">"Ha szeretné megtudni a SARS-CoV-2 fertőzésnek való kitettségi kockázata mértékét, engedélyeznie kell a kitettség naplózást funkciót az alkalmazásban. Az »Engedélyez« gombra koppintva, hozzájárul a kitettség naplózás funkció bekapcsolásához az alkalmazásban és az ezzel kapcsolatos adatok feldolgozásához. "<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Az alkalmazás teljes működéséhez engedélyezni kell a COVID-19 kitettség naplózás funkciót, amit az okostelefonján a Google biztosít. Az #OstaniZdrav alkalmazásnak engedélyt kell adnia, hogy használja ezt a funkciót."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Amikor engedélyezi a kitettség naplózást, az okostelefonja a bluetooth-on keresztül folyamatosan véletlenszerű azonosítókat hoz létre és oszt meg más, a közelben lévő Android vagy Apple okostelefonokkal, azzal a feltétellel, hogy azokon is engedélyezték a kitettség naplózást. Az okostelefonja eközben a többi, ugyancsak kitettséget naplózó más okostelefonok véletlenszerű azonosítóját fogadja. Az ön napi kulcsai és a véletlenszerű azonosítók, amelyeket más okostelefonoktól kapott, eltárolódnak a kitettségi naplóban 14 napig."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"A fertőzés kockázatának követése érdekében az alkalmazás minden nap feltölti azoknak a felhasználóknak a napi kulcsait, akik bejelentették az alkalmazásukon, hogy SARS-CoV-2-vel fertőzöttek. Ezt a listát ezután összehasonlítják a kitettségi naplóban szereplő véletlenszerű azonosítókkal. Ha az alkalmazás észleli, hogy kapcsolatba lépett fertőzött felhasználóval, erről értesíti Önt, és tudatja Önnel, hogy fennáll a fertőzés veszélye."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"A bluetooth jel erősségével határozza meg a fizikai távolságot (minél erősebb a jel, annál kisebb a távolság). Az alkalmazás ezután elemzi ezt az információt, felbecsüli a SARS-CoV-2 fertőzés valószínűségét, és javaslatokat ad Önnek, mi a teendő. Ez az értékelés egészében csak helyben, az Ön okostelefonján zajlik. Az Ön kivételével senki sem fogja tudni, hogy kapcsolatba lépett-e fertőzött személlyel, és milyen a fertőzés kockázata."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"A kitettség naplózás funkció engedélyezésének visszavonásánál ezt a funkciót az alkalmazás kapcsológombjával tilthatja le, vagy törölheti az alkalmazást. Ha úgy dönt, hogy a kitettség naplózás funkciót újból használni szeretné, a kapcsológombbal újra bekapcsolhatja a funkciót, vagy újratelepítheti az alkalmazást. Ha kikapcsolja a kitettség naplózási funkciót, az alkalmazás nem fogja ellenőrizni, hogy kapcsolatba lépett-e fertőzött felhasználóval. Ha azt is szeretné, hogy az eszköz leállítsa a véletlenszerű azonosítók küldését és fogadását, akkor az okostelefon beállításainál ki kell kapcsolnia a COVID-19 kitettség naplózást. Ne felejtse el, hogy a más okostelefonokról kapott és a kitettségi naplóban tárolt véletlenszerű azonosítók, nem törlődnek az alkalmazásban. A kitettségi naplóban tárolt adatokat az okostelefon beállításaiban törölheti véglegesen."<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\n"</xliff:g>"Az Adatvédelmi értesítést az alkalmazásban (beleértve a kitettség naplózási funkcióval végzett adatfeldolgozás magyarázatát) az "Adatvédelmi információk" menüpont alatt találja."</string>
+    <!-- XBUT: onboarding(tracing) - button enable tracing -->
+    <string name="onboarding_tracing_button_next">"Kapcsolja be a kitettség naplózást!"</string>
+    <!-- XTXT: onboarding(tracing) - dialog about tracing permission declined -->
+    <string name="onboarding_tracing_dialog_headline">"Megerősítés"</string>
+    <!-- YMSI: onboarding(tracing) - dialog about tracing -->
+    <string name="onboarding_tracing_dialog_body">"Ez azt jelenti, hogy az #OstaniZdrav« alkalmazás nem küldhet vagy fogadhat az Ön SARS-CoV-2 fertőzési kockázatáról értesítéseket. Ezt a funkciót bármikor kikapcsolhatja."</string>
+    <!-- XBUT: onboarding(tracing) - positive button (right) -->
+    <string name="onboarding_tracing_dialog_button_positive">"Ne aktiváld"</string>
+    <!-- XBUT: onboarding(tracing) - negative button (right) -->
+    <string name="onboarding_tracing_dialog_button_negative">"Vissza"</string>
+    <!-- XACT: onboarding(tracing) - illustraction description, header image -->
+    <string name="onboarding_tracing_illustration_description">"Három ember aktiválta a készülékén a kitettség naplózást, hogy felvegye a kapcsolatot egymással, ezzel az egymás közti kontaktusokat naplózzák."</string>
+    <!-- XACT: Onboarding (test) page title -->
+    <string name="onboarding_test_accessibility_title">"Kezdőlap, 4/5 oldal: Ha önnél igazolták a SARS-CoV-2 fertőzést…"</string>
+    <!-- XHED: onboarding(test) - about positive tests -->
+    <string name="onboarding_test_headline">"Ha önnél igazolták a SARS-CoV-2 fertőzést…"</string>
+    <!-- XHED: onboarding(test) - two/three line headline under an illustration -->
+    <string name="onboarding_test_subtitle">"… kérjük ossza meg ezt az #OstaniZdrav alkalmazásban. A fertőzésére vonatkozó információt önkéntesen és biztonságosan oszthatja meg. Tegye meg ezt mások egészségének védelme érdekében!"</string>
+    <!-- YTXT: onboarding(test) - explain test -->
+    <string name="onboarding_test_body">"A fertőzésről szóló bejelentése kódolt és biztonságos szerveren kezelt. Azok a személyek, akiknél tároldódott véletlenszerű azonosítója, az észlelt kockázat esetén értesítést és információkat kapnak arról, hogy mi a teendőjük."</string>
+    <!-- XACT: onboarding(test) - illustraction description, header image -->
+    <string name="onboarding_test_illustration_description">"A kódolt fertőzésre vonatkozó értesítés bekerül a rendszerbe és figyelmezteti a többi felhasználót."</string>
+    <!-- XACT: Onboarding (datashare) page title -->
+    <string name="onboarding_notifications_accessibility_title">"Kezdőlap, 5/5 oldal: Fogadja az értesítéseket és ismerje fel a kockázatot!"</string>
+    <!-- XHED: onboarding(datashare) - about positive tests -->
+    <string name="onboarding_notifications_headline">"Fogadja az értesítéseket és ismerje fel a kockázatot!"</string>
+    <!-- XHED: onboarding(datashare) - two/three line headline under an illustration -->
+    <string name="onboarding_notifications_subtitle">"Az alkalmazás automatikusan értesítheti, mekkora a fertőzési kockázata."</string>
+    <!-- YTXT: onboarding(datashare) - explain test -->
+    <string name="onboarding_notifications_body">"Ha engedélyezi az alkalmazás számára, hogy értesítse Önt, értesítést kaphat a fertőzési kockázatról és tanácsokat a további teendőkről. "</string>
+    <!-- XACT: onboarding(notifications) - illustraction description, header image -->
+    <string name="onboarding_notifications_illustration_description">"Egy nő értesítést kapott az #OstaniZdrav alkalmazásán."</string>
+
+    <!-- ####################################
+                  Settings
+    ###################################### -->
+
+    <!-- XHED: settings - settings overview page title -->
+    <string name="settings_title">"Beállítások"</string>
+    <!-- XTXT: settings - on, like a label next to a setting -->
+    <string name="settings_on">"Bekapcsolt"</string>
+    <!-- XTXT: settings - off, like a label next to a setting -->
+    <string name="settings_off">"Kikapcsolt"</string>
+    <!-- XHED: settings(tracing) - page title -->
+    <string name="settings_tracing_title">"Kitettség naplózás"</string>
+    <!-- XHED: settings(tracing) - headline bellow illustration -->
+    <string name="settings_tracing_headline">"Így működik a kitettség naplózás."</string>
+    <!-- XTXT: settings(tracing) - explain text in settings overview under headline -->
+    <string name="settings_tracing_body_description">"Engedélyezze, hogy véletlenszerű azonosítókat hozzanak létre és osszanak meg a kitettség naplózáshoz."</string>
+    <!-- XTXT: settings(tracing) - shows status under header in home, active -->
+    <string name="settings_tracing_body_active">"Kitettség naplózás aktiválva."</string>
+    <!-- XTXT: settings(tracing) - shows status under header in home, inactive -->
+    <string name="settings_tracing_body_inactive">"Kitettség naplózás leállítva."</string>
+    <!-- YTXT: settings(tracing) - explains tracings -->
+    <string name="settings_tracing_body_text">"A kitettség naplózás úgy működik, hogy a készüléke a bluetooth  használatával megosztja a véletlenszerű azonosítókat más felhasználók készülékeivel és a másik készülékek véletlenszerű azonosítóit az ön készülékével. Ezt a funkciót bármikor kikapcsolhatja. "<xliff:g id="line_break">"\n"</xliff:g>"A véletlenszerű azonosítók csak a dátumról, az időtartamról és a többi eszközhöz való közelségről adnak információt, amelyet a jelerősség segítségével határoznak meg. A személyes adatokat, például a nevet, a címet és a helyet, nem rögzítik vagy osztják meg. A személyeket nem lehet beazonosítani."</string>
+    <!-- XTXT: settings(tracing) - status next to switch under title -->
+    <string name="settings_tracing_status_active">"Aktivált"</string>
+    <!-- XTXT: settings(tracing) - status next to switch under title -->
+    <string name="settings_tracing_status_inactive">"Leállított"</string>
+    <!-- XTXT: settings(tracing) - status next to switch under title -->
+    <string name="settings_tracing_status_restricted">"Korlátozott"</string>
+    <!-- XTXT: settings(tracing) - shows status under header in home, no internet -->
+    <string name="settings_tracing_body_connection_inactive">"Nincs internet kapcsolat."</string>
+    <!-- XTXT: settings(tracing) - shows status under header in home, no bluetooth -->
+    <string name="settings_tracing_body_bluetooth_inactive">"A Bluetooth ki van kapcsolva."</string>
+    <!--XHED : settings(tracing) - headline on card about the current status and what to do -->
+    <string name="settings_tracing_status_bluetooth_headline">"Kapcsolja be a bluetooth-t"</string>
+    <!-- XTXT: settings(tracing) - explains user what to do on card if bluetooth is disabled -->
+    <string name="settings_tracing_status_bluetooth_body">"A kontaktkövetéshez, a kitettség naplózáshoz be kell kapcsolni a bluetooth-t. Kapcsolja be a bluetooth-t készüléke Beállításaiban."</string>
+    <!-- XBUT: settings(tracing) - go to operating system settings button on card -->
+    <string name="settings_tracing_status_bluetooth_button">"Nyissa meg a Beállításokat a készülékén"</string>
+    <!--XHED : settings(tracing) - headline on card about the current status and what to do -->
+    <string name="settings_tracing_status_connection_headline">"Nyissa meg a Kapcsolatokat"</string>
+    <!-- XTXT: settings(tracing) - explains user what to do on card if connection is disabled -->
+    <string name="settings_tracing_status_connection_body">"A kitettség értékeléséhez internet kapcsolat szükséges. Kapcsolja be a vezeték nélküli kapcsolatot vagy a mobil adatátvitelt a készülék beállításaiban."</string>
+    <!-- XBUT: settings(tracing) - go to operating system settings button on card -->
+    <string name="settings_tracing_status_connection_button">"Nyissa meg a készülék Beállításait"</string>
+    <!-- XTXT: settings(tracing) - explains the circle progress indicator to the right with the current value -->
+    <plurals name="settings_tracing_status_body_active">
+        <item quantity="one">"A kitettség naplózás már %1$s napja aktivált.\nA kitettség ellenőrzés csak akkor megbízható, ha a naplózás folyamatosan aktivált."</item>
+        <item quantity="two">"A kitettség naplózás már %1$s napja aktivált.\nA kitettség ellenőrzés csak akkor megbízható, ha a naplózás folyamatosan aktivált."</item>
+        <item quantity="few">"A kitettség naplózás már %1$s napja aktivált.\nA kitettség ellenőrzés csak akkor megbízható, ha a naplózás folyamatosan aktivált."</item>
+        <item quantity="other">"A kitettség naplózás már %1$s napja aktivált.\nA kitettség ellenőrzés csak akkor megbízható, ha a naplózás folyamatosan aktivált."</item>
+    </plurals>
+    <!-- XACT: settings(tracing) - describes illustration -->
+    <string name="settings_tracing_illustration_description_active">"Hárman aktiválták a készülékükön a kitettség naplózást, ezzel naplózzák az egymás közötti kontaktusokat."</string>
+    <!-- XACT: settings(tracing) - describes illustration -->
+    <string name="settings_tracing_illustration_description_inactive">"Egy személy a készülékén kikapcsolta a kitettség naplózást, így két másik személlyel való kontaktus nem lett naplózva."</string>
+    <!-- XACT: settings(tracing) - describes illustration -->
+    <string name="settings_tracing_bluetooth_illustration_description_inactive">"Egy személy a készülékén kikapcsolta a bluetooth-t, így két másik személlyel való kontaktus nem lett naplózva."</string>
+    <!-- XACT: settings(tracing) - describes illustration -->
+    <string name="settings_tracing_connection_illustration_description_inactive">"Egy személy a készülékén kikapcsolta az internet kapcsolatot, ezért a készülék nem tudja értékelni a fertőzéskockázatot."</string>
+
+    <!-- XHED: settings(notification) - notification page title -->
+    <string name="settings_notifications_title">"Értesítések"</string>
+    <!-- XHED: settings(notification) - multiline headline below illustration, active -->
+    <string name="settings_notifications_headline_active">"Szeretne értesítést kapni, mekkora a SARS-CoV-2 fertőzésnek való kitettségi kockázata?"</string>
+    <!-- XHED: settings(notification) - multiline headline below illustration, inactive -->
+    <string name="settings_notifications_headline_inactive">"Értesítések kikapcsolva."</string>
+    <!-- XTXT: settings(notification) - text in row on settings overview -->
+    <string name="settings_notifications_body_description">"Engedélyezze az automatikus értesítéseket a SARS-CoV-2-dal való fertőzés kockázatáról!"</string>
+    <!-- YTXT: settings(notification) - description text when it notifications are enabled -->
+    <string name="settings_notifications_body_active">"Tüntesse fel milyen területről szeretne továbbra is értesítéseket kapni!"</string>
+    <!-- XTXT: settings(notification) - explains what the user has to do to activate settings -->
+    <string name="settings_notifications_body_inactive">"Az értesítések aktiválását készüléke beállításaiban az #OstaniZdrav« alkalmazásban kell engedélyezni."</string>
+    <!-- XHED: settings(notification) - card headline -->
+    <string name="settings_notifications_headline_card">"Kapcsolja be az értesítések fogadását!"</string>
+    <!-- XHED: settings - notification headline on settings overview -->
+    <string name="settings_notifications_subtitle_notification">"Értesítések"</string>
+    <!-- XTXT: settings(notification) - next to a switch -->
+    <string name="settings_notifications_subtitle_update_risk">"Fertőzési kockázata megváltozott."</string>
+    <!-- XTXT: settings(notification) - next to a switch -->
+    <string name="settings_notifications_subtitle_update_test">"SARS-CoV-2 tesztjének eredménye"</string>
+    <!-- XBUT: settings(notification) - go to operating settings -->
+    <string name="settings_notifications_button_open_settings">"Nyissa meg készüléke Beállításait!"</string>
+    <!-- XACT: main (overview) - illustraction description, explanation image, displays notificatin status, active -->
+    <string name="settings_notifications_illustration_description_active">"Egy nő értesítést kapott az #OstaniZdrav alkalmazásból."</string>
+    <!-- XACT: main (overview) - illustraction description, explanation image, displays notificatin status, inactive -->
+    <string name="settings_notifications_illustration_description_inactive">"Egy nő kikapcsolta az értesítések fogadását az #OstaniZdrav alkalmazásban."</string>
+    <!-- XBUT: settings - go to reset application -->
+    <string name="settings_reset_title">"Állítsa alapállapotba az alkalmazást"</string>
+    <!-- XTXT: settings(reset) - explains the user what do expect when he navigates to reset -->
+    <string name="settings_reset_body_description">"Törölje az összes adatát az alkalmazásban."</string>
+    <!-- XHED: settings(reset) - multiline headline below illustration -->
+    <string name="settings_reset_headline">"Biztos benne, hogy alapállapotba szeretné állítani az alkalmazást?"</string>
+    <!-- XTXT: settings(reset) - explains the consequences -->
+    <string name="settings_reset_body">"Nem fog több kitettségi értesítést kapni és nem tudja figyelmeztetni a többi felhasználót."</string>
+    <!-- XHED: settings(reset) - on card, explains user to go to the operating system settings -->
+    <string name="settings_reset_headline_keys">"Törölje a kitettséget "<xliff:g id="line_break">"\n"</xliff:g>""</string>
+    <!-- XTXT: settings(reset) - on card -->
+    <string name="settings_reset_body_keys">"A kitettségi naplót külön kell törölni készüléke Beállításaiban."</string>
+    <!-- XBUT: settings(reset) - triggers reset -->
+    <string name="settings_reset_button_positive">"Állítsa alapállapotba az alkalmazást!"</string>
+    <!-- XBUT: settings(reset) - cancel reset and navigates the suer back to the settings -->
+    <string name="settings_reset_button_negative">"Visszavon"</string>
+    <!-- XACT: main (overview) - illustraction description, explanation image -->
+    <string name="settings_reset_illustration_description">"Egy személy készüléket tart a kezében, amelyen látható az a szimbólum, ami azt jelenti, hogy az alkalmazás alapállapotba állítása zajlik."</string>
+    <!-- XHED: settings(reset) - dialog headline -->
+    <string name="settings_reset_dialog_headline">"Állítsd alapállapotba az alkalmazást"</string>
+    <!-- XTXT: settings(reset) - dialog content -->
+    <string name="settings_reset_dialog_body">"Nem fog több kitettségi értesítést kapni és nem tudja figyelmeztetni a többi felhasználót. Az eljárást nem tudja visszavonni."</string>
+    <!-- XBUT: settings(reset) - dialog cancel -->
+    <string name="settings_reset_dialog_button_cancel">"Visszavon"</string>
+    <!-- XBUT: settings(reset) - dialog confirm -->
+    <string name="settings_reset_dialog_button_confirm">"Alapállapotba állítás"</string>
+    <!-- XHED: settings(background priority) - notification page title -->
+    <string name="settings_background_priority_title">"Elsőbbségi működés a háttérben"</string>
+    <!-- XTXT: settings(background priority) - text in row on settings overview -->
+    <string name="settings_background_priority_body_description">"Engedélyezd a kockázati állapot automatikus frissítését!"</string>
+    <!-- XHED: settings(background priority) - multiline headline below illustration -->
+    <string name="settings_background_priority_headline">"Az #OstaniZdrav« alkalmazás a háttérben fusson"</string>
+    <!-- YTXT: settings(background priority) - description text -->
+    <string name="settings_background_priority_body">"Az #OstaniZdrav alkalmazás háttérben zajló, megfelelő működéséhez, az #OstaniZdrav Beállításokban tiltsa le az energiafelhasználás optimalizálást. Ezzel lehetővé teszi, hogy az alkalmazás bármikor értékelni tudja a fertőzési kockázatot."</string>
+    <!-- XACT: settings(background priority) - illustraction description -->
+    <string name="settings_background_priority_illustration_description">@string/lorem_ipsum</string>
+    <!-- XTXT: settings(background priority) - explains user what to do on card if background priority is enabled -->
+    <string name="settings_background_priority_card_body">"Az #OstaniZdrav alkalmazás háttérben zajló működését a telefon Beállításaiban kapcsolhatja ki."</string>
+    <!-- XBUT: settings(background priority) - go to operating system settings button on card -->
+    <string name="settings_background_priority_card_button">"Nyissa meg az eszköz Beállításait! "</string>
+    <!-- XHED : settings(background priority) - headline on card about the current status and what to do -->
+    <string name="settings_background_priority_card_headline">"Kapcsold ki az alkalmazás háttérben zajló működését! "</string>
+
+    <!-- ####################################
+               App Information
+    ###################################### -->
+
+    <!-- XHED: Page title for menu information page -->
+    <string name="information_title">"Információk az alkalmazásról"</string>
+    <!-- XTXT: Version information text -->
+    <string name="information_version">"%1s verzió"</string>
+    <!-- XHED: Page title for about information page, also menu item / button text -->
+    <string name="information_about_title">"Az alkalmazásról"</string>
+    <!-- XHED: Subtitle for about information page -->
+    <string name="information_about_headline">"Védjük magunkat és másokat a COVID-19-cel szemben!"</string>
+    <!-- YTXT: Body text for about information page -->
+    <string name="information_about_body_emphasized">"Az Országos Népegészségügyi Intézet (NIJZ) központi egészségvédelmi intézmény Szlovéniában. A NIJZ szakmai, illetve tartalmi támogatást nyújt az alkalmazáshoz, amelyet a Szlovén Köztársaság Közigazgatási Minisztériuma üzemeltet és tart fenn. A SARS-CoV-2 fertőzés megelőzésére irányuló megfékező intézkedések következetes betartása mellett, az alkalmazás tovább korlátozhatja a betegség terjedését."</string>
+    <!-- YTXT: Body text for about information page -->
+    <string name="information_about_body">"Bárki, aki az alkalmazást használja, segít a fertőzések követésében és a terjedési lánc megszakításában. Az alkalmazás a más készülékekkel való kontaktusokat helyben az Ön készülékén tárolja el. Az alkalmazás értesíti, ha érintkezett olyan emberekkel, akiknél később megerősítették, hogy SARS-CoV-2 fertőzésben betegedtek meg. Az Ön személyazonossága és magánélete mindig védett."</string>
+    <!-- XACT: describes illustration -->
+    <string name="information_about_illustration_description">"Egy csoport használja az okostelefonját a városban."</string>
+    <!-- XHED: Page title for privacy information page, also menu item / button text -->
+    <string name="information_privacy_title">"Adatvédelem"</string>
+    <!-- XACT: describes illustration -->
+    <string name="information_privacy_illustration_description">"Az egyik nő használja az #OstaniZdrav« alkalmazást a készülékén. A pajzson látható lakat a kódolt adatok szimbóluma."</string>
+    <!-- XTXT: Path to the full blown privacy html, to translate it exchange "_de" to "_en" and provide the corresponding html file -->
+    <string name="information_privacy_html_path">"privacy_hu.html"</string>
+    <!-- XHED: Page title for terms of use information page, also menu item / button text -->
+    <string name="information_terms_title">"Használati feltételek"</string>
+    <!-- XHED: Page headline for terms of use information page -->
+    <string name="information_terms_headline">"Tartalom"</string>
+    <!-- XACT: describes illustration -->
+    <string name="information_terms_illustration_description">"Egy személy készüléket tart a kezében, hosszú szöveggel a képernyőn. A szöveg mellett pipajel látható, ami a használati feltételek elfogadását jelképezi."</string>
+    <!-- XTXT: Path to the full blown terms html, to translate it exchange "_de" to "_en" and provide the corresponding html file -->
+    <string name="information_terms_html_path">"terms_hu.html"</string>
+    <!-- XHED: Page title for technical contact and hotline information page, also menu item / button text -->
+    <string name="information_contact_title">"Egységes ügyfélszolgálat"</string>
+    <!-- XHED: Subtitle for technical contact and hotline information page -->
+    <string name="information_contact_headline">"Miben segíthetünk Önnek?"</string>
+    <!-- YTXT: Body text for technical contact and hotline information page -->
+    <string name="information_contact_body">"Ha kérdése van az #OstaniZdrav alkalmazásról, tárcsázza az ügyfélszolgálatunkat."</string>
+    <!-- XHED: Subtitle for technical contact and hotline information page -->
+    <string name="information_contact_subtitle_phone">"Ügyfélszolgálat:"</string>
+    <!-- XLNK: Button / hyperlink to phone call for technical contact and hotline information page -->
+    <string name="information_contact_button_phone">"080 1787"</string>
+    <!-- XBUT: CAUTION - ONLY UPDATE THE NUMBER IF NEEDED, ONLY NUMBERS AND NO SPECIAL CHARACTERS EXCEPT "+" and "space" ALLOWED IN THIS FIELD; -->
+    <string name="information_contact_phone_call_number">"080 1787"</string>
+    <!-- XTXT: Body text for technical contact and hotline information page -->
+    <string name="information_contact_body_phone">"Ügyfélszolgáltunk felhasználóink számára nyújt segítséget."</string>
+    <!-- YTXT: Body text for technical contact and hotline information page -->
+    <string name="information_contact_body_open">"Nyelvek: \nszlovén és angol\nMunkaidő:"<xliff:g id="line_break">"\n"</xliff:g>"Hétfőtől vasárnapig: 8.00–20.00"<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="line_break">"\nHívása díjmentes.\nKülföldi hívás: +386 1 478 7557"</xliff:g></string>
+    <!-- YTXT: Body text for technical contact and hotline information page -->
+    <string name="information_contact_body_other">"Általános információk a COVID-19-ről az Országos Nápegészségügyi Intézet és az Egészségügyi Minisztérium honlapján érhetők el."</string>
+    <!-- XACT: describes illustration -->
+    <string name="information_contact_illustration_description">"Egy férfi telefonálás közben mikrofonos fejhallgatóval."</string>
+    <!-- XLNK: Menu item / hyper link / button text for navigation to FAQ website -->
+    <string name="information_help_title">"További információ az alkalmazásról"</string>
+    <!-- XACT: accessibility hint -->
+    <string name="information_help_title_accessibility">"További információ az alkalmazásról. Átirányítjuk külső weboldalra."</string>
+    <!-- XHED: Page title for technical information page, also menu item / button text -->
+    <string name="information_technical_title">"Jogi közlemények"</string>
+    <!-- XACT: describes illustration -->
+    <string name="information_technical_illustration_description">"Egy személy készüléket tart a kezében, hosszú szöveggel a képernyőn. A szöveg mellett mérleg látható, ami a jogi közleményeket jelképezi."</string>
+    <!-- XTXT: Path to the full blown legal html, to translate it exchange "_de" to "_en" and provide the corresponding html file -->
+    <string name="information_technical_html_path">"technical_hu.html"</string>
+    <!-- XHED: Page title for legal information page, also menu item / button text -->
+    <string name="information_legal_title">"Impresszum"</string>
+    <!-- XHED: Headline for legal information page, publisher section -->
+    <string name="information_legal_headline_publisher">"Kiadta"</string>
+    <!-- YTXT: subtitle for legal information page, publisher section -->
+    <string name="information_legal_subtitle_publisher">""</string>
+    <!-- YTXT: body for legal information page, publisher section -->
+    <string name="information_legal_body_publisher">"Az #OstaniZdrav« alkalmazást az  Országos Nápegészségügyi Intézet és az Egészségügyi Minisztérium készítette. A NIJZ az alkalmazás tartalmi részéről gondoskodik, a MJU pedig a műszaki részéért.  Mindkét intézmény az #OstaniZdrav" alkalmazáson keresztül kezelt adatok közös adatkezelője."</string>
+    <!-- XHED: Headline for legal information page, contact section -->
+    <string name="information_legal_headline_contact">"Kapcsolat"</string>
+    <!-- YTXT: subtitle for legal information page, contact section -->
+    <string name="information_legal_subtitle_contact">"E-mail: ekc@gov.si"<xliff:g id="line_break">"\n"</xliff:g>"Tel. szám.: 080 1787; külföldről: +386 1 478 7557"</string>
+    <!-- XHED: Headline for legal information page, tax section -->
+    <string name="information_legal_headline_taxid">""</string>
+    <!-- YTXT: subtitle for legal information page, tax section -->
+    <string name="information_legal_subtitle_taxid">""</string>
+    <!-- XACT: describes illustration -->
+    <string name="information_legal_illustration_description">"Egy személy készüléket tart a kezében, hosszú szöveggel a képernyőn. A szöveg mellett bekezdésjelző látható, ami az impresszumot jelképezi."</string>
+
+
+    <!-- ####################################
+             Submission
+    ###################################### -->
+
+    <!-- XHED: Dialog title for generic web request error -->
+    <string name="submission_error_dialog_web_generic_error_title">"Hiba"</string>
+    <!-- XMSG: Dialog body for generic web request network error with status code -->
+    <string name="submission_error_dialog_web_generic_network_error_body">"Nem lehetett kapcsolatot létesíteni(%1$d). Próbálja újra."</string>
+    <!-- XMSG: Dialog body for generic web request error without status code -->
+    <string name="submission_error_dialog_web_generic_error_body">"Nem lehetett kapcsolatot létesíteni. Próbálja újra."</string>
+    <!-- XBUT: Positive button for generic web request error -->
+    <string name="submission_error_dialog_web_generic_error_button_positive">"Vissza"</string>
+
+    <!-- XHED: Dialog title for already paired test error -->
+    <string name="submission_error_dialog_web_test_paired_title">"Hiba"</string>
+    <!-- XMSG: Dialog body for already paired test error -->
+    <string name="submission_error_dialog_web_test_paired_body">"A TAN szám érvénytelen vagy már felhasználták. Próbálja újra vagy vegye fel a kapcsolatot a járványügyi szolgálattal, ahonnan a számot kapta."</string>
+    <!-- XBUT: Positive button for already paired test error -->
+    <string name="submission_error_dialog_web_test_paired_button_positive">"Vissza"</string>
+
+    <!-- XHED: Dialog title for could not create submission tan -->
+    <string name="submission_error_dialog_web_paring_invalid_title">"Error"</string>
+    <!-- XMSG: Dialog body for could not create submission tan -->
+    <string name="submission_error_dialog_web_paring_invalid_body">"A TAN for submission could not be generated. Please contact the technical hotline via App Information → Technical Hotline."</string>
+    <!-- XBUT: Positive button for could not create submission tan -->
+    <string name="submission_error_dialog_web_paring_invalid_button_positive">"Vissza"</string>
+
+    <!-- XHED: Dialog title for submission tan invalid -->
+    <string name="submission_error_dialog_web_tan_invalid_title">"Hiba"</string>
+    <!-- XMSG: Dialog body for submission tan invalid -->
+    <string name="submission_error_dialog_web_tan_invalid_body">"Nem tudtuk létrehozni a TAN számot. Tárcsázza a műszaki segítséget nyújtó ügyfélszolgálatot: Információk az alkalmazásról → Műszaki segítséget nyújtó ügyfélszolgálat."</string>
+    <!-- XBUT: Positive button for submission tan invalid -->
+    <string name="submission_error_dialog_web_tan_invalid_button_positive">"Vissza"</string>
+
+    <!-- Permission Rationale Dialog -->
+    <!-- XHED: Dialog headline QR Scan permission rationale  -->
+    <string name="submission_qr_code_scan_permission_rationale_dialog_headline">"A fényképezőgép használatának engedélyezése szükséges."</string>
+    <!-- YTXT: Dialog Body text for QR Scan permission rationale -->
+    <string name="submission_qr_code_scan_permission_rationale_dialog_body">"Engedélyezze az alkalmazásnak, hogy használja a fényképezőgépet a QR-kód beszkenneléséhez."</string>
+    <!-- XBUT: Dialog(QR Scan permission rationale) - positive button (right) -->
+    <string name="submission_qr_code_scan_permission_rationale_dialog_button_positive">"Engedélyez"</string>
+    <!-- XBUT: Dialog(QR Scan permission rationale) - negative button (left) -->
+    <string name="submission_qr_code_scan_permission_rationale_dialog_button_negative">"Nem engedélyez"</string>
+
+    <!-- Permission Denied Dialog -->
+    <!-- XHED: Dialog headline QR Scan permission denied  -->
+    <string name="submission_qr_code_scan_permission_denied_dialog_headline">"Fényképezőgéphez való hozzáférésre van szükség."</string>
+    <!-- YTXT: Dialog Body text for QR Scan permission denied -->
+    <string name="submission_qr_code_scan_permission_denied_dialog_body">"Hívja le a rendszerbeállításokat és engedélyezze az alkalmazásnak, hogy használja a fényképezőgépet a QR-kód beszkennelésére."</string>
+    <!-- XBUT: Dialog(QR Scan permission denied) - button -->
+    <string name="submission_qr_code_scan_permission_denied_dialog_button">"Rendben"</string>
+
+    <!-- QR Code Scan Invalid Dialog -->
+    <!-- XHED: Dialog headline for invalid QR code  -->
+    <string name="submission_qr_code_scan_invalid_dialog_headline">"Helytelen QR kód."</string>
+    <!-- YTXT: Dialog Body text for invalid QR code -->
+    <string name="submission_qr_code_scan_invalid_dialog_body">"A QR kód helytelen. Próbálja újra."</string>
+    <!-- XBUT: Dialog(Invalid QR code) - positive button (right) -->
+    <string name="submission_qr_code_scan_invalid_dialog_button_positive">"Próbálja újra"</string>
+    <!-- XBUT: Dialog(Invalid QR code) - negative button (left) -->
+    <string name="submission_qr_code_scan_invalid_dialog_button_negative">"Visszavon"</string>
+
+    <!-- QR Code Scan Screen -->
+    <string name="submission_qr_code_scan_title">"A QR kódot helyezze a keretbe."</string>
+    <!-- YTXT: instruction text for QR code scanning  -->
+    <string name="submission_qr_code_scan_body">"P QR kódot helyezze a keretbe."</string>
+
+    <!-- Submission Test Result -->
+    <!-- XHED: Page headline for test result  -->
+    <string name="submission_test_result_headline">"Köszönjük a bevitelt"</string>
+    <!-- XHED: Page subheadline for test result  -->
+    <string name="submission_test_result_subtitle">""</string>
+    <!-- XHED: Page headline for results next steps  -->
+    <string name="submission_test_result_steps_added_heading">"Teszteredménye sikeresen tárolódott"</string>
+    <!-- YTXT: Body text for for results next steps  -->
+    <string name="submission_test_result_steps_added_body">"Teszteredménye igazolt."</string>
+    <!-- XHED: Page headline for pending test result next steps  -->
+    <string name="submission_test_result_pending_steps_waiting_heading">"Teszteredménye még nem áll rendelkezésre."</string>
+    <!-- YTXT: Body text for next steps section of waiting test result page -->
+    <string name="submission_test_result_pending_steps_waiting_body">"Teszteredménye még nem áll rendelkezésre."</string>
+    <!-- XBUT: test result pending : refresh button -->
+    <string name="submission_test_result_pending_refresh_button">"Frissítés"</string>
+    <!-- XBUT: test result pending : remove the test button -->
+    <string name="submission_test_result_pending_remove_test_button">"Törölje a tesztet"</string>
+    <!-- XHED: Page headline for negative test result next steps  -->
+    <string name="submission_test_result_negative_steps_negative_heading">"Teszteredménye"</string>
+    <!-- YTXT: Body text for next steps section of test negative result -->
+    <string name="submission_test_result_negative_steps_negative_body">"A laboratóriumi eredmények nem igazolták, hogy SARS-CoV-2 koronavírussal fertőződött volna meg.\n\nTörölje a tesztet az #OstaniZdrav alkalmazásból, hogy szükség esetén új teszt kódot tudjon elmenteni."</string>
+    <!-- XBUT: negative test result : remove the test button -->
+    <string name="submission_test_result_negative_remove_test_button">"Törölje a tesztet"</string>
+    <!-- XHED: Page headline for positive test result screen  -->
+    <string name="submission_test_result_positive_steps_positive_heading">"Mások figyelmeztetése"</string>
+    <!-- YTXT: Body text for next steps section of test positive result-->
+    <string name="submission_test_result_positive_steps_positive_body">"Ossza meg az elmúlt 14 nap véletlenszerű azonosítót, hogy védjen másokat és megszakítsa a fertőzési láncot!"</string>
+    <!-- XHED: Page headline for other warnings screen  -->
+    <string name="submission_test_result_positive_steps_warning_others_heading">"Mások maradjanak egészségesek"</string>
+    <!-- YTXT: Body text for for other warnings screen-->
+    <string name="submission_test_result_positive_steps_warning_others_body">"Koppintson a Tovább gombra"</string>
+    <!-- XBUT: positive test result : continue button -->
+    <string name="submission_test_result_positive_continue_button">"Tovább"</string>
+    <!-- XHED: Page headline for invalid test result screen  -->
+    <string name="submission_test_result_invalid_steps_invalid_heading">"Teszteredménye"</string>
+    <!-- YTXT: Body text for next steps section of invalid test result-->
+    <string name="submission_test_result_invalid_steps_invalid_body">"Probléma merült fel tesztje értékelésekor. Vegye fel a kapcsolatot közegészségügyi intézménnyel, hogy megtudja, mi a következő teendő!\n\nTörölje az #OstaniZdrav alkalmazásból a tesztjét, hogy szükség esetén új tesztkódot tudjon elmenteni benne!"</string>
+    <!-- XBUT: invalid test result : remove the test button -->
+    <string name="submission_test_result_invalid_remove_test_button">"Törölje a tesztet"</string>
+    <!-- XHED: Dialog title for tracing required dailog  -->
+    <string name="submission_test_result_dialog_tracing_required_title">"Kitettség naplózás szükséges."</string>
+    <!-- YTXT: Dialog text for tracing required dialog-->
+    <string name="submission_test_result_dialog_tracing_required_message">"Aktiválja a kitettség naplózást, hogy másokat figyelmeztessen!"</string>
+    <!-- XBUT: tracing required : OK button -->
+    <string name="submission_test_result_dialog_tracing_required_button">"Rendben"</string>
+    <!-- XHED: Dialog title for test removal  -->
+    <string name="submission_test_result_dialog_remove_test_title">"Szeretné törölni a tesztet?"</string>
+    <!-- YTXT: Dialog text for test removal -->
+    <string name="submission_test_result_dialog_remove_test_message">"A tesztet véglegesen törli az #OstaniZdrav alkalmazásban és nem tudja újból hozzárendelni. Az eljárást nem tudja visszavonni."</string>
+    <!-- XBUT: Positive button for test removal -->
+    <string name="submission_test_result_dialog_remove_test_button_positive">"Távolítsa el"</string>
+    <!-- XBUT: Negative button for test removal -->
+    <string name="submission_test_result_dialog_remove_test_button_negative">"Visszavon"</string>
+    <!-- XHED: Title for test result card positive -->
+    <string name="submission_test_result_card_positive_title">"Megerősített SARS-CoV-2 fertőzés"</string>
+    <!-- YTXT: Body text for test result card positive -->
+    <string name="submission_test_result_card_positive_body">"Megerősítették, hogy SARS-CoV-2 vírus fertőzése van."</string>
+
+    <!-- Submission Tan -->
+    <!-- XHED: Page title for TAN submission pge -->
+    <string name="submission_tan_title">"TAN-szám bevitele"</string>
+    <!-- YTXT: Body text for the tan submission page -->
+    <string name="submission_tan_body">"Vigye be az átvett, tízjegyű TAN-számot."</string>
+    <!-- XBUT: Submit TAN button -->
+    <string name="submission_tan_button_text">"Tovább"</string>
+    <!-- XACT: Submission Tan page title -->
+    <string name="submission_tan_accessibility_title">"TAN-szám bevitele"</string>
+    <!-- YTXT: Error text for the tan submission page -->
+    <string name="submission_tan_error">"Érvénytelen TAN-szám, ellenőrizze a bevitelt."</string>
+    <!-- YTXT: Error text for the tan submission page (wrong characters) -->
+    <string name="submission_tan_character_error">"Érvénytelen bevitel. Ellenőrizze a bevitelt."</string>
+
+    <!-- Submission Intro -->
+    <!-- XHED: Page title for menu at the start of the submission process  -->
+    <string name="submission_intro_title">"Elvégezték önnél a tesztet?"</string>
+    <!-- XHED: Page headline for menu the at start of the submission process  -->
+    <string name="submission_intro_headline">"Az #OstaniZdrav alkalmazás működése"</string>
+    <!-- YTXT: submission introduction text -->
+    <string name="submission_intro_text">"Ahhoz, hogy az alkalmazás jól működjön, számítunk azoknak a támogatására, akiknél megerősítették a SARS-CoV-2 fertőzést. \n\n Mivel csak véletlenszerű azonosítók kerülnek megosztásra, ezért az Ön személyazonossága ismeretlen marad. Folytathatja a következők szerint:"</string>
+    <!-- XBUT: Submission introduction next button-->
+    <string name="submission_intro_button_next">"Tovább"</string>
+    <!-- XACT: Submission intro - illustration description, explanation image -->
+    <string name="submission_intro_illustration_description">"A SARS-CoV-2 vírusfertőzés kódolt megerősítése közvetítésre kerül a felhasználókat értesítő rendszerbe."</string>
+    <!-- YTXT: submission introduction bullet points -->
+    <string-array name="submission_intro_bullet_points">
+        <item>"Ha megerősítést nyert, hogy SARS-CoV-2 vírussal fertőzött, a TAN-szám bevitelével erről értesíthet másokat."</item>
+    </string-array>
+    <!-- XACT: Submission Intro page title -->
+    <string name="submission_intro_accessibility_title">"Elvégezték Önnél a tesztet? Az #OstaniZdrav alkalmazás működése"</string>
+
+    <!-- Dispatcher -->
+    <!-- XHED: Page headline for dispatcher menu  -->
+    <string name="submission_dispatcher_headline">"Választás"</string>
+    <!-- XHED: Page subheadline for dispatcher menu  -->
+    <string name="submission_dispatcher_subheadline">""</string>
+    <!-- YTXT: Dispatcher text for QR code option -->
+    <string name="submission_dispatcher_card_qr">"QR-kóddal dokumentáld"</string>
+    <!-- YTXT: Body text for QR code dispatcher option -->
+    <string name="submission_dispatcher_qr_card_text">"Úgy regisztrálhatja a tesztjét, hogy beszkenneli a teszthez tartozó iraton található QR-kódot."</string>
+    <!-- XHED: Dialog headline for dispatcher QR prviacy dialog  -->
+    <string name="submission_dispatcher_qr_privacy_dialog_headline">"Hozzájárulási nyilatkozat"</string>
+    <!-- YTXT: Dialog Body text for dispatcher QR privacy dialog -->
+    <string name="submission_dispatcher_qr_privacy_dialog_body">"Az »Elfogad« gombra kattintva, beleegyezik abba, hogy engedélyezi az alkalmazásnak a SARS-CoV-2 tesztje állapotáról szóló lekérdezést, és azt megjeleníti az alkalmazásban. Ez a funkció akkor érhető el, ha QR-kódot kapott és beleegyezését adta a teszt eredményének feltöltéséhez az alkalmazás szerver rendszerébe. Amint a tesztelést végző laboratórium tárolja a tesztje eredményét a szerveren, láthatja az eredményt az alkalmazásban. Ha engedélyezte az értesítéseket, akkor az alkalmazáson  kívül is kap értesítést arról, hogy megérkezett a teszteredménye. Magánélete védelme érdekében azonban a teszt eredménye nem jelenik meg az alkalmazásban. A teszt regisztrációjának törlésével bármikor visszavonhatja hozzájárulását. A visszavonás nem érinti a visszavonása előtti feldolgozás jogszerűségét. További információk a menüben, az »Adatvédelmi információk« címsor alatt találhatók."</string>
+    <!-- XBUT: submission(dispatcher QR Dialog) - positive button (right) -->
+    <string name="submission_dispatcher_qr_privacy_dialog_button_positive">"Elfogad"</string>
+    <!-- XBUT: submission(dispatcher QR Dialog) - negative button (left) -->
+    <string name="submission_dispatcher_qr_privacy_dialog_button_negative">"Nem fogad el"</string>
+    <!-- YTXT: Dispatcher text for TAN code option -->
+    <string name="submission_dispatcher_card_tan_code">"TAN"</string>
+    <!-- YTXT: Body text for TAN code dispatcher option -->
+    <string name="submission_dispatcher_tan_code_card_text">"A SARS-CoV-2-vel való fertőzésről szóló adatot a TAN-számnak az alkalmazásba való bevitelével osztja meg."</string>
+    <!-- YTXT: Dispatcher text for TELE-TAN option -->
+    <string name="submission_dispatcher_card_tan_tele">"Kérjen TAN-számot!"</string>
+    <!-- YTXT: Body text for TELE_TAN dispatcher option -->
+    <string name="submission_dispatcher_tan_tele_card_text">"Hívjon fel bennünket, ha megerősítést nyert, hogy SARS-CoV-2 fertőzése van!"</string>
+    <!-- XACT: Dispatcher Tan page title -->
+    <string name="submission_dispatcher_accessibility_title">"Milyen információkkal rendelkezik?"</string>
+
+    <!-- Submission Positive Other Warning -->
+    <!-- XHED: Page title for the positive result additional warning page-->
+    <string name="submission_positive_other_warning_title">"Mások értesítése"</string>
+    <!-- XHED: Page headline for the positive result additional warning page-->
+    <string name="submission_positive_other_warning_headline">"Kérjük, segítsen mindannyiunknak!"</string>
+    <!-- YTXT: Body text for the positive result additional warning page-->
+    <string name="submission_positive_other_warning_body">"Ezután engedélyezheti, hogy az #OstaniZdrav« alkalmazás az elmúlt 14 nap során kapott véletlenszerű azonosítóit névtelenül megossza másokkal. Ezzel másokat figyelmeztet és segít abban, hogy megszakadjon a fertőzési lánc.\n\n Csak a személyhez nem kötődő, véletlenszerű azonosítók kerülnek megosztásra, tehát személyazonosságát nem fedi fel."</string>
+    <!-- XHED: Title for the privacy card-->
+    <string name="submission_positive_other_warning_privacy_title">"Adatvédelem"</string>
+    <!-- YTXT: Body text for the privacy card-->
+    <string name="submission_positive_other_warning_privacy_body">"Az „Elfogad” gombra kattintva elküldi beleegyezését, amely lehetővé teszi, hogy az alkalmazás az elmúlt 14 nap során kapott véletlenszerű azonosítóit továbbítsa a szerverrendszerbe. Így más felhasználók, akik engedélyezték a kitettség-naplózási funkciót, automatikus értesítést kaphatnak arról, hogy esetleg ki voltak-e téve fertőzéskockázatnak. Az erre a célra továbbított véletlenszerű azonosítók nem tartalmaznak olyan információt, amely alapján személyazonosságáról vagy önről, személyként feltételezéseket vonhatnának le. \n\n A teszt eredményének bevitele az alkalmazásba önkéntes. Nem büntetik Önt, ha nem viszi be a tesztje eredményét. Mivel nem lehet nyomon követni vagy ellenőrizni, hogy Ön használja-e az alkalmazást, vagy hogyan használja, senki sem fogja tudni, hogy megadta-e a fertőzésére vonatkozó információkat.  \n\n Az alkalmazás törlésével bármikor visszavonhatja hozzájárulását. A hozzájárulás visszavonása nem befolyásolja a hozzájárulása alapján a hozzájárulás visszavonása előtt zajlott feldolgozás jogszerűségét. További információk a menüben, az »Adatvédelmi információk« címsor alatt találhatók."</string>
+    <!-- XBUT: other warning continue button -->
+    <string name="submission_positive_other_warning_button">"Elfogad"</string>
+    <!-- XACT: other warning - illustration description, explanation image -->
+    <string name="submission_positive_other_illustration_description">"A készülék a kódolt,  a megerősített fertőzésre vonatkozó adatot továbbítja a rendszerbe."</string>
+
+
+    <!-- Submission Done -->
+    <!-- XHED: Page title for completed submission page -->
+    <string name="submission_done_title">"Köszönjük!"</string>
+    <!-- YTXT: Body text for completed submission page -->
+    <string name="submission_done_body">"Hozzájárulása nagyon értékes. Köszönjük a támogatást. Most mások figyelmeztetést kaphatnak, és megfelelően reagálhatnak."</string>
+    <!-- XHED: Page subtitle for completed submission page -->
+    <string name="submission_done_subtitle">"Ne felejtse el:"</string>
+    <!-- YTXT: text after submission: contagious -->
+    <string name="submission_done_contagious">"Önnél megerősítették a SARS-CoV-2 fertőzést."</string>
+    <!-- YTXT: text after submission: isolate -->
+    <string name="submission_done_isolate">"Kövesse az egészségügyi szolgáltatótól kapott, az izolációra vonatkozó utasításokat."</string>
+    <!-- XHED: Title for further info -->
+    <string name="submission_done_further_info_title">"Egyéb információk:"</string>
+    <!-- YTXT: submission done further info bullet points -->
+    <string-array name="submission_done_further_info_bullet_points">
+        <item>"Az izolációs időszak várhatólag 14 nappal a tünetek enyhülése után ér véget. Az izoláció időtartamát háziorvosa határozza meg."</item>
+        <item>"A betegség súlyosbodása esetén telefonon konzultáljon a háziorvosával vagy az ügyeleti orvossal. Vészhelyzetben hívja a 112-es számot. Mondja el neki, hogy Önnél megerősítették a SARS-CoV-2 fertőzést."</item>
+    </string-array>
+    <!-- XBUT: submission finished button -->
+    <string name="submission_done_button_done">"Befejezve"</string>
+    <!-- XACT: submission finished - illustration description, explanation image -->
+    <string name="submission_done_illustration_description">"A csoportban mindenki örül, mert valaki megosztotta a fertőzésére vonatkozó adatot."</string>
+
+    <!-- Submission Contact -->
+    <!-- XHED: Page title for contact page in submission flow -->
+    <string name="submission_contact_title">"Kérjen TAN-számot"</string>
+    <!-- XHED: Page headline for contact page in submission flow -->
+    <string name="submission_contact_headline">"Hogyan működik:"</string>
+    <!-- YTXT: Body text for contact page in submission flow-->
+    <string name="submission_contact_body">"Legyen kéznél a teszt eredménye (ha rendelkezésre áll) és a telefonszáma, ha TAN-számot szeretne kérni "</string>
+    <!-- XBUT: submission contact call button -->
+    <string name="submission_contact_button_call">"Tárcsázzon."</string>
+    <!-- XBUT: submission contact enter tan button -->
+    <string name="submission_contact_button_enter">"Vigye be a TAN-számot."</string>
+    <!-- YTXT: Body text for step 1 of contact page -->
+    <string name="submission_contact_step_1_body">"Hívja fel a hívóközpontot és kérjen TAN-számot:"</string>
+    <!-- XLNK: Button / hyperlink to phone call for TAN contact page -->
+    <string name="submission_contact_number_display">"080 1787"</string>
+    <!-- XLNK: Technical number which is called when the user clicks on the display number -->
+    <string name="submission_contact_number_dial">"080 1787"</string>
+    <!-- YTXT: Body text for step 2 of contact page-->
+    <string name="submission_contact_step_2_body">"A teszteredményt a TAN-szám alkalmazásba történő bevitelével osztja meg."</string>
+    <!-- YTXT: Body text for operating hours in contact page-->
+    <string name="submission_contact_operating_hours_body">"Nyelvek: \nszlovén, angol, \n\nMunkaidő:\nHétfőtől vasárnapig: 8:00 – 20:00un\nHívása díjmentes."</string>
+
+    <!-- XACT: Submission contact page title -->
+    <string name="submission_contact_accessibility_title">""</string>
+    <!-- XACT: Content Description for submission contact step 1, number has to sync with the display number -->
+    <string name="submission_contact_step_1_content">""</string>
+    <!-- XACT: Content Description for submission contact step 2 -->
+    <string name="submission_contact_step_2_content">"Második lépésként az alkalmazásban a TAN-szám segítségével fogja megosztani a megerősített fertőzésre vonatkozó adatot."</string>
+
+    <!-- Submission Status Card -->
+    <!-- XHED: Page title for the various submission status: fetching -->
+    <string name="submission_status_card_title_fetching">"Adatok lekérdezése folyamatban ...."</string>
+    <!-- XHED: Page title for the various submission status: unregistered -->
+    <string name="submission_status_card_title_unregistered">"Elvégezték Önnél a tesztet?"</string>
+    <!-- XHED: Page title for the various submission status: pending -->
+    <string name="submission_status_card_title_pending">"Eredménye még nem áll rendelkezésre."</string>
+    <!-- XHED: Page title for the various submission status: available -->
+    <string name="submission_status_card_title_available">"Eredménye rendelkezésre áll."</string>
+    <!-- XHED: Page title for the various submission status: positive -->
+    <string name="submission_status_card_title_positive">"Figyelmeztessen másokat"</string>
+    <!-- XHED: Subtitle for the submission status card: invalid -->
+    <string name="submission_status_card_subtitle_invalid">"Érvénytelen teszt"</string>
+    <!-- XHED: Subtitle for the submission status card: negative -->
+    <string name="submission_status_card_subtitle_negative">"A SARS-CoV-2 teszt eredménye negatív."</string>
+    <!-- YTXT: Body text for submission status: fetching -->
+    <string name="submission_status_card_body_fetching">"Eredménye frissítés alatt."</string>
+    <!-- YTXT: Body text for submission status: unregistered -->
+    <string name="submission_status_card_body_unregistered">"Mások értesítésével segítsen megszakítani a fertőzési láncot."</string>
+    <!-- YTXT: Body text for submission status: pending -->
+    <string name="submission_status_card_body_pending">"Teszteredményének értékelése még nem készült el."</string>
+    <!-- YTXT: Body text for submission status: invalid -->
+    <string name="submission_status_card_body_invalid">"Tesztjét nem lehetett értékelni."</string>
+    <!-- YTXT: Body text for submission status: positive -->
+    <string name="submission_status_card_body_positive">"Megerősítették, hogy SARS-CoV-2 vírussal fertőződött meg."</string>
+    <!-- YTXT: Body text for submission status: negative -->
+    <string name="submission_status_card_body_negative">"Nem erősítették meg, hogy SARS-CoV-2 vírussal fertőződött meg."</string>
+    <!-- XBUT: submission status card unregistered button -->
+    <string name="submission_status_card_button_unregistered">"Vigye be a fertőzés megerősítését"</string>
+    <!-- XBUT: submission status card show results button -->
+    <string name="submission_status_card_button_show_results">"Mutassa meg a tesztet"</string>
+    <!-- XHED: submission status card positive result subtitle -->
+    <string name="submission_status_card_positive_result_subtitle">"Ne felejtse:"</string>
+    <!-- YTXT: text for contagious card -->
+    <string name="submission_status_card_positive_result_contagious">"Önnél SARS-CoV-2 fertőzést állapítottak meg. Kövesse az egészségügyi szolgáltatótól kapott utasításokat az izolációra vonatkozóan."</string>
+    <!-- YTXT: text for contact card -->
+    <string name="submission_status_card_positive_result_contact">""</string>
+    <!-- YTXT: text for share result card-->
+    <string name="submission_status_card_positive_result_share">"Ossza meg a fertőzésére vonatkozó információt és ezzel figyelmeztessen másokat!"</string>
+
+    <!-- Test Result Card -->
+    <string name="test_result_card_headline">"Teszteredménye"</string>
+    <!-- YTXT: virus name text -->
+    <string name="test_result_card_virus_name_text">"SARS-CoV-2"</string>
+    <!-- YTXT: registered at text -->
+    <string name="test_result_card_registered_at_text">"%s-ra regisztrált"</string>
+    <!-- YTXT: negative status text -->
+    <string name="test_result_card_status_negative">"Negatív"</string>
+    <!-- YTXT: positive status text -->
+    <string name="test_result_card_status_positive">"Pozitív"</string>
+    <!-- YTXT: invalid status text -->
+    <string name="test_result_card_status_invalid">"Az értékelés nem lehetséges."</string>
+    <!-- YTXT: pending status text -->
+    <string name="test_result_card_status_pending">"Eredménye nem áll rendelkezésre."</string>
+    <!-- XHED: Title for further info of test result negative -->
+    <string name="test_result_card_negative_further_info_title">"Egyéb információk:"</string>
+    <!-- YTXT: Content for further info of test result negative -->
+    <string-array name="test_result_card_negative_further_info_bullet_points">
+        <item>"Még mindig rosszul érzi magát? Ha nagyon rosszul érzi magát és/vagy tünetei súlyosbodtak, vegye fel a kapcsolatot háziorvosával! "</item>
+        <item>"Maradjon otthon, amíg közérzete nem javul. Ha koronavírussal (SARS-CoV-2) fertőződik meg, miközben egy másik fertőzés miatt gyengélkedik, ez a betegség súlyos kimeneteléhez vezethet."</item>
+        <item>"Ha nem érzi jól magát, ne járjon dolgozni, és gondoskodjon arról, hogy ne veszélyeztessen másokat. Ha tünetei súlyosbodnak, akkor esetleg újabb tesztet kell elvégeztetnie a SARS-CoV-2 vírusfertőzésre."</item>
+    </string-array>
+
+    <!-- ####################################
+          Button Tooltips for Accessibility
+    ###################################### -->
+    <!-- XACT: back button-->
+    <string name="button_back">"Vissza az előző oldalra"</string>
+    <!-- XACT: proceed button-->
+    <string name="button_proceed">"Folytassa Gomb"</string>
+    <!-- XACT: share button-->
+    <string name="button_share">"Ossza meg"</string>
+    <!-- XACT: menu button-->
+    <string name="button_menu">"Menü"</string>
+    <!-- XACT: Accessibility needs a suffix to strings, to reduce the amount of manual translations this string is appended to accessibility button strings, e.g. "Zurück Taste", "Taste" is the default used by android in german -->
+    <string name="suffix_button">"Gomb"</string>
+    <!-- XACT: Accessibility needs a suffix to strings, to reduce the amount of manual translations this string is appended to accessibility content description strings for images, e.g. "Eine Gruppe von... Bild" -->
+    <string name="suffix_image">"Kép"</string>
+
+    <!-- ####################################
+               Business Error Messages
+        ###################################### -->
+    <!-- XTXT: error dialog - detailed text if device is offline  -->
+    <string name="errors_no_network">"Nincs internet kapcsolata."</string>
+    <!-- XTXT: error dialog - detailed text if device has not enough device space  -->
+    <string name="errors_not_enough_device_storage">"Nem áll rendelkezésre elég memória."</string>
+    <!-- XTXT: error dialog - detailed text if there is error with Google API  -->
+    <string name="errors_communication_with_api">"Hiba a Google API-val való kommunikációban"</string>
+    <!-- XTXT: error dialog - detailed text if there is an error during external navigation / external action -->
+    <string name="errors_external_action">"Ezt a műveletet nem lehet elvégezni. Hívja fel az ügyfélszolgálatot!"</string>
+    <!-- XTXT: error dialog - phone still needs Google Play Services or Google Mobile Services update -->
+    <string name="errors_google_update_needed">"Sikeresen telepítette az #OstaniZdrav« alkalmazást. A SARS-CoV-2 fertőzésnek való kitettségre vonatkozó értesítések sajnos jelenleg nem állnak rendelkezésre az ön készülékén és nem tudja használni az #OstaniZdrav alkalmazást. További információt a: https://www.gov.si/hu/temak/covid-19-jarvany/mobilna-aplikacija-ostanizdrav/  \n oldalon talál"</string>
+
+    <!-- ####################################
+               Generic Error Messages
+        ###################################### -->
+    <!-- XHED: error dialog - headline -->
+    <string name="errors_generic_headline">"Valami hiba történt."</string>
+    <!-- XTXT: error dialog - short text for error reason -->
+    <string name="errors_generic_details_headline">"Oka"</string>
+    <!-- XBUT: error dialog - button close -->
+    <string name="errors_generic_button_positive">"Rendben"</string>
+    <!-- XBUT: error dialog - button show details -->
+    <string name="errors_generic_button_negative">"Részletek"</string>
+    <!-- XTXT: error dialog - text when no error description is available  -->
+    <string name="errors_generic_text_unknown_error_cause">"Ismeretlen hiba lépett fel."</string>
+
+    <!-- ####################################
+           Just for Development
+    ###################################### -->
+    <!-- NOTR -->
+    <string name="lorem_ipsum">"Lorem Ipsum"</string>
+    <!-- NOTR -->
+    <string name="menu_test_api">"Test API"</string>
+    <!-- NOTR -->
+    <string name="menu_test_risk_level">"Test Risk Level"</string>
+    <!-- NOTR -->
+    <string name="menu_test_notification">"Test Notification"</string>
+    <!-- NOTR -->
+    <string name="test_api_button_api_launch">"Android API Test(Manual Test)"</string>
+    <!-- NOTR -->
+    <string name="test_api_button_start">"Start (Broadcast/Receive Bluetooth)"</string>
+    <!-- NOTR -->
+    <string name="test_api_button_get_exposure_keys">"Get Exposure keys (my keys history from api)"</string>
+    <!-- NOTR -->
+    <string name="test_api_button_share_my_keys">"Share my keys via Email"</string>
+    <!-- NOTR -->
+    <string name="test_api_button_enter_other_keys">"Submit Exposure Key"</string>
+    <!-- NOTR -->
+    <string name="test_api_button_show_qr_code">"Show QR Code"</string>
+    <!-- NOTR -->
+    <string name="test_api_button_submit_keys">"Submit keys to Server"</string>
+    <!-- NOTR -->
+    <string name="test_api_button_scan_qr_code">"Scan Exposure Key"</string>
+    <!-- NOTR -->
+    <string name="test_api_switch_last_three_hours_from_server">"Last 3 Hours Mode"</string>
+    <!-- NOTR -->
+    <string name="test_api_button_check_exposure">"Check Exposure Summary"</string>
+    <!-- NOTR -->
+    <string name="test_api_exposure_summary_headline">"Exposure summary"</string>
+    <!-- NOTR -->
+    <string name="test_api_body_daysSinceLastExposure">"Days since last exposure: %1$s"</string>
+    <!-- NOTR -->
+    <string name="test_api_body_attenuation">"Attenuation Durations in Minutes: %1$s"</string>
+    <!-- NOTR -->
+    <string name="test_api_body_summation_risk">"Summation Risk Score: %1$s"</string>
+    <!-- NOTR -->
+    <string name="test_api_body_matchedKeyCount">"Matched key count: %1$s"</string>
+    <!-- NOTR -->
+    <string name="test_api_body_maximumRiskScore">"Maximum risk score %1$s"</string>
+    <!-- NOTR -->
+    <string name="test_api_body_my_keys">"My keys (count: %1$d)"</string>
+    <!-- NOTR -->
+    <string name="test_api_body_other_keys">"Other key"</string>
+    <!-- NOTR -->
+    <string name="test_api_calculate_risk_level">"Calculate Risk Level"</string>
+
+</resources>
