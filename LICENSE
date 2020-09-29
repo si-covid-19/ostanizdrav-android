@@ -1,106 +1,202 @@
-                             Apache Licenca
-                       Različica 2.0, januar 2004
-                    https://www.apache.org/licenses/
 
-POGOJI UPORABE, REPRODUKCIJE IN DISTRIBUCIJE
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
 
-    Opredelitve.
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
-    "Licenca" pomeni pogoje za uporabo, reprodukcijo in distribucijo, kakor so opredeljeni v 1. do 9. razdelku tega dokumenta.
+   1. Definitions.
 
-    "Dajalec licence" pomeni lastnika avtorskih pravic ali subjekt, ki ga pooblasti lastnik avtorskih pravic, ki podeljuje licenco.
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
 
-    "Pravna oseba" pomeni združenje delujočega subjekta in vseh drugih subjektov, ki nadzorujejo, so nadzorovani ali so pod skupnim nadzorom s tem subjektom. Za namene te opredelitve "nadzor" pomeni i) moč, neposredno ali posredno, da se s pogodbo ali kako drugače povzroči usmerjanje ali upravljanje takega subjekta ali ii) lastništvo petdeset odstotkov (50 %) oz. več neporavnanih delnic ali iii) koristno lastništvo takega podjetja.
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
 
-    »Vi" (ali »Vaš") pomeni fizično ali pravno osebo, ki izvaja dovoljenja, odobrena s to licenco.
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
 
-    "Izvorna" oblika pomeni prednostno obliko za izdelavo sprememb, vključno z, a ne omejeno na izvorno kodo programske opreme, vir dokumentacije in konfiguracijske datoteke.
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
 
-    "Predmetna" oblika pomeni vsako obliko, ki je posledica mehanske preobrazbe ali prevoda izvorne oblike, vključno z, a ne omejeno na sestavljeno objektno kodo, ustvarjeno dokumentacijo in pretvorbo v druge vrste medijev.
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
 
-    "Delo" pomeni avtorsko delo bodisi v izvorni ali predmetni obliki, ki je na voljo pod licenco, kot je navedeno v obvestilu o avtorskih pravicah, ki je vključeno ali priloženo delu (primer je naveden v prilogi spodaj).
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
 
-    "Izpeljana dela" pomeni vsako delo bodisi v izvorni ali predmetni obliki, ki temelji na (ali izhaja iz) dela in za katero uredniške revizije, pripombe, izdelave ali druge spremembe kot celota predstavljajo izvirno avtorsko delo. Izpeljana dela za namene te licence ne vključujejo del, ki ostanejo ločena od njihovih del ali izpeljanih del ali se zgolj povezujejo (ali povezujejo po imenu) z njihovimi vmesniki.
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
 
-    "Prispevek" pomeni vsako avtorsko delo, vključno z izvirno različico dela in vsemi njegovimi spremembami ali dopolnitvami tega dela ali izpeljanega dela, ki ga dajalcu licence namerno predloži imetnik avtorskih pravic ali posameznik oz. pravna oseba, pooblaščena za oddajo v imenu lastnika avtorskih pravic. Za opredelitev te definicije "predloženi" pomeni vsako obliko elektronske, ustne ali pisne komunikacije, ki se pošlje dajalcu licence ali njegovim predstavnikom, vključno s komunikacijo na elektronskih poštnih seznamih, sistemih za nadzor izvorne kode in sistemih za sledenje izdajam, ki jih upravlja dajalec licence ali nekdo drug v njegovem imenu, da bi razpravljali o delu in ga izboljšali, vendar izključuje komunikacijo, ki jo lastnik avtorskih pravic vidno označi ali drugače pisno označi kot "Ni prispevek.
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
 
-    "Sodelavec" pomeni dajalca licence in vsako posamezno ali pravno osebo, v imenu katere je dajalec licence prejel prispevek in ga nato vključil v delo.
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
 
-    Podelitev avtorskih pravic. Ob upoštevanju pogojev te licence vam vsak sodelavec podeljuje trajno, globalno, neekskluzivno, brezplačno, nepreklicno avtorsko pravico za razmnoževanje, pripravo izpeljanih del, javno prikazovanje, javno izvajanje, izdajo podlicence in distribuiranje dela in izpeljanih del v izvorni ali predmetni obliki.
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
 
-    Podelitev patentne licence. Ob upoštevanju pogojev te licence vam vsak sodelavec podeljuje trajno, globalno, neekskluzivno, brezplačno, nepreklicno (razen kot je navedeno v tem razdelku) patentno licenco, da lahko izdelate, uporabite, ponudite v prodajo, prodate, uvozite ali drugače prenesete delo, pri tem pa taka licenca velja samo za tiste patentne zahtevke, ki jih lahko podeli ta sodelavec in ki jih lahko krši(-jo) samo njihov(-i) prispevek(-i) ali kombinacija njihovega(-ih) prispevka(-ov) z delom, za katero je(so) bil(-i) tak prispevek(-i) predložen(-i). Če vložite patentni spor proti kateremu koli subjektu (vključno z navzkrižnim zahtevkom ali nasprotnim zahtevkom v tožbi), ki navaja, da delo ali prispevek, vključen v delo, pomeni neposredno ali prispevno kršitev patenta, z dnem vložitve takih pravd prenehajo vse patentne licence, ki so vam bile podeljene v skladu s to licenco za to delo.
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
 
-    Redistribucija. Kopije dela ali izpeljanih del lahko reproducirate in razširjate na katerem koli nosilcu s spremembami ali brez njih in v izvorni ali predmetni obliki, če izpolnjujete naslednje pogoje:
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
 
-    (a) vsakemu prejemniku dela ali izpeljanih del
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
 
-    morate dati kopijo te licence; in
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
 
-    ((b) zagotoviti, da vse spremenjene datoteke vsebujejo vidna obvestila,
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
 
-    da ste datoteke spremenili vi; in
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
 
-    ((c) v izvorni obliki katerega koli izpeljanega dela, ki ga distribuirate,
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
 
-    obdržati vsa obvestila o avtorskih pravicah, patentu, blagovni znamki in dodelitvi iz izvorne oblike dela razen tistih obvestil, ki se ne nanašajo na noben del izpeljanih del; in
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
 
-    (d) če delo vključuje besedilno datotek "OBVESTIOLO" kot del svoje distribucije,
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
 
-    morajo vsa izpeljana dela, ki jih distribuirate, vsebovati berljivo kopijo obvestil o dodelitvi, ki jih vsebuje taka datoteka OBVESTILO, razen tistih obvestil, ki se ne nanašajo na noben del izpeljanih del, na vsaj enem izmed naslednjih mest: v besedilni datoteki OBVESTILO, distribuirani kot del izpeljanih del, v izvorni obliki ali dokumentaciji, če je priložena izpeljanim delom ali v prikazovalniku, ki ga ustvarijo izpeljana dela, če in kjer se običajno pojavijo taka obvestila tretjih oseb. Vsebina datoteke OBVESTILO je samo informativne narave in ne spreminja licence. Svoja obvestila o dodelitvi lahko dodate v izpeljana dela, ki jih distribuirate, ob besedilu OBVESTILO iz dela ali kot njegov dodatek, če takih dodatnih obvestil o dodelitvi ni mogoče razlagati kot spreminjanje licence.
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
 
-    Svojim spremembam lahko dodate svojo izjavo o avtorskih pravicah in postavite dodatne ali drugačne licenčne pogoje za uporabo, razmnoževanje ali distribucijo vaših sprememb ali za kakršna koli izpeljana dela kot celoto, če vaša uporaba, razmnoževanje in distribucija dela sicer izpolnjuje pogoje, navedene v tej licenci.
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
 
-    Oddaja prispevkov. Če izrecno ne določite drugače, za vsak prispevek, ki ga namerno predložite dajalcu licence za vključitev v delo, veljajo pogoji te licence brez kakršnih koli dodatnih pogojev. Ne glede na zgoraj navedeno nič ne nadomešča ali spreminja pogojev katere koli ločene licenčne pogodbe, ki ste jo sklenili z dajalcem licence v zvezi s takimi prispevki.
-    Blagovne znamke. Ta licenca ne dovoljuje uporabe trgovskih imen, blagovnih znamk, storitvenih znamk ali imen izdelkov dajalca licence, razen če je to potrebno za razumno in običajno uporabo pri opisovanju izvora dela in reproduciranju vsebine datoteke OBVESTILO.
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
 
-    Izjava o neprevzemanju jamstva. Dajalec licence, razen če to zahteva veljavna zakonodaja ali je pisno dogovorjeno, zagotavlja delo (in vsak sodelavec daje svoje prispevke) na podlagi "KOT JE" BREZ KAKRŠNIH KOLI JAMSTEV ALI POGOJEV bodisi izrecnih ali implicitnih, vključno z, a ne omejeno na kakršna koli jamstva ali pogoje NAZIVA, NEKRŠITVE, PRIMERNOSTI ZA PRODAJO ali PRIMERNOSTI ZA DOLOČEN NAMEN. Izključno ste odgovorni za določitev ustreznosti uporabe ali redistribucije dela in prevzemate vsa tveganja, povezana s svojim izvajanjem dovoljenj iz te licence.
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
 
-    Omejitev odgovornosti. Nikakor in po nobeni pravni teoriji bodisi zaradi kaznivega dejanja (vključno z malomarnostjo), po pogodbi ali kako drugače, razen če to zahteva veljavna zakonodaja (kot so namerna in hudo malomarna dejanja) ali je tako pisno dogovorjeno, noben sodelavec ni vam odgovoren za škodo, vključno z vsako neposredno, posredno, posebno, naključno ali posledično kakršno koli škodo, ki je nastala zaradi te licence, uporabe ali nezmožnosti uporabe dela (vključno, a ne omejeno na škodo zaradi izgube dobrega imena, prekinitve dela, okvare ali napake v delovanju računalnika ali kakršne koli in vse druge komercialne škode ali izgub), čeprav je bil tak sodelavec obveščen o možnosti nastanka take škode.
+   END OF TERMS AND CONDITIONS
 
-    Sprejem jamstva ali dodatne odgovornosti. Med redistribucijo dela ali njegovih izpeljanih del se lahko odločite in ponudite zaračunavanje pristojbine za sprejem podpore, jamstva, odškodninske odgovornosti ali drugih obveznosti in/ali pravic, ki so skladne s to licenco. Toda pri sprejemanju takih obveznosti lahko delujete samo v svojem imenu in izključno s svojo odgovornostjo, ne v imenu katerega koli drugega sodelavca, in samo, če se strinjate, da vsakemu sodelavcu poravnate škodo, ga branite in varujete pred kakršno koli odgovornostjo ali zahtevki do njega, ki so se pojavili zato, ker ste sprejeli kakršno koli jamstvo ali dodatno odgovornost.
+   APPENDIX: How to apply the Apache License to your work.
 
-    KONEC POGOJEV
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
 
-Licenca MIT
+   Copyright [yyyy] [name of copyright owner]
 
-Avtorske pravice (c) 2007 sodelavci Mockitos
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
 
-Vsaki osebi, ki pridobi kopijo te programske opreme in pripadajočih datotek z dokumentacijo ("programska oprema"), se brezplačno dodeli dovoljenje za ravnanje s programsko opremo brez omejitev, vključno s pravicami do uporabe, kopiranja, spreminjanja, združevanja, objavljanja, distribucije, izdajo podlicenc in/ali prodajo kopij programske opreme; osebam, katerim je programska oprema nameščena, se dovoli, da storijo vse zgoraj navedeno, če:
+       http://www.apache.org/licenses/LICENSE-2.0
 
-Tsta zgoraj navedeni obvestilo o avtorskih pravicah in to dovoljenje vključeni v vse kopije ali pomembne dele programske opreme.
-
-PROGRAMSKA OPREMA JE PONUJENA "KOT JE" BREZ KAKRŠNIH KOLI IZRECNIH ALI IMPLICITNIH JAMSTEV, VKLJUČNO Z, A NE OMEJENO NA JAMSTVA PRIMERNOSTI ZA PRODAJO, PRIMERNOSTI ZA DOLOČEN NAMEN IN NEKRŠITVE. AVTORJI ALI IMETNIKI AVTORSKIH PRAVIC NIKAKOR NISO ODGOVORNI ZA KAKRŠEN KOLI ZAHTEVEK, ŠKODO ALI DRUGO ODGOVORNOST, NE GLEDE NA POGODBO, ODŠKODNINSKI ZAHTEVEK ALI KAR KOLI DRUGEGA, KI IZHAJA ALI JE POVEZANO S SAMO PROGRAMSKO OPREMO ALI Z DRUGIMI POSLI S PROGRAMSKO OPREMO.
-
-Licenca MIT
-
-Avtorske pravice (c) 2010 Xtreme Labs, Pivotal Labs in Google Inc.
-
-Vsaki osebi, ki pridobi kopijo te programske opreme in pripadajočih datotek z dokumentacijo ("programska oprema"), se brezplačno dodeli dovoljenje za ravnanje s programsko opremo brez omejitev, vključno s pravicami do uporabe, kopiranja, spreminjanja, združevanja, objavljanja, distribucije, izdajo podlicenc in/ali prodajo kopij programske opreme; osebam, katerim je programska oprema nameščena, se dovoli, da storijo vse zgoraj navedeno, če:
-
-sta zgoraj navedeni obvestilo o avtorskih pravicah in to dovoljenje vključeni v vse kopije ali pomembne dele programske opreme.
-
-PROGRAMSKA OPREMA JE PONUJENA "KOT JE" BREZ KAKRŠNIH KOLI IZRECNIH ALI IMPLICITNIH JAMSTEV, VKLJUČNO Z, A NE OMEJENO NA JAMSTVA PRIMERNOSTI ZA PRODAJO, PRIMERNOSTI ZA DOLOČEN NAMEN IN NEKRŠITVE. AVTORJI ALI IMETNIKI AVTORSKIH PRAVIC NIKAKOR NISO ODGOVORNI ZA KAKRŠEN KOLI ZAHTEVEK, ŠKODO ALI DRUGO ODGOVORNOST, NE GLEDE NA POGODBO, ODŠKODNINSKI ZAHTEVEK ALI KAR KOLI DRUGEGA, KI IZHAJA ALI JE POVEZANO S SAMO PROGRAMSKO OPREMO ALI Z DRUGIMI POSLI S PROGRAMSKO OPREMO.
-
-Licenca MIT
-
-Avtorske pravice (c) 2020 Jonathan Leitschuh
-
-saki osebi, ki pridobi kopijo te programske opreme in pripadajočih datotek z dokumentacijo ("programska oprema"), se brezplačno dodeli dovoljenje za ravnanje s programsko opremo brez omejitev, vključno s pravicami do uporabe, kopiranja, spreminjanja, združevanja, objavljanja, distribucije, izdajo podlicenc in/ali prodajo kopij programske opreme; osebam, katerim je programska oprema nameščena, se dovoli, da storijo vse zgoraj navedeno, če:
-
-sta zgoraj navedeni obvestilo o avtorskih pravicah in to dovoljenje vključeni v vse kopije ali pomembne dele programske opreme.
-
-PROGRAMSKA OPREMA JE PONUJENA "KOT JE" BREZ KAKRŠNIH KOLI IZRECNIH ALI IMPLICITNIH JAMSTEV, VKLJUČNO Z, A NE OMEJENO NA JAMSTVA PRIMERNOSTI ZA PRODAJO, PRIMERNOSTI ZA DOLOČEN NAMEN IN NEKRŠITVE. AVTORJI ALI IMETNIKI AVTORSKIH PRAVIC NIKAKOR NISO ODGOVORNI ZA KAKRŠEN KOLI ZAHTEVEK, ŠKODO ALI DRUGO ODGOVORNOST, NE GLEDE NA POGODBO, ODŠKODNINSKI ZAHTEVEK ALI KAR KOLI DRUGEGA, KI IZHAJA ALI JE POVEZANO S SAMO PROGRAMSKO OPREMO ALI Z DRUGIMI POSLI S PROGRAMSKO OPREMO.
-
-BSD 3-Clause (Protobuf gradle plugin)
-
-Avtorske pravice izvirnega dela (c) 2015, Alex Antonov. Vse pravice pridržane. Avtorske pravice spremenjenega dela (c) 2015, Google Inc. Vse pravice pridržane.
-
-Redistribucija in uporaba v izvornih in binarnih oblikah s spremembami ali brez njih sta dovoljeni, če:
-
-    So pri redistribuciji izvorne kode podani zgoraj navedeno obvestilo o avtorskih pravicah, ta seznam pogojev in naslednja izjava o omejitvi odgovornosti;
-
-    Redistribucija v binarni obliki vsebuje zgoraj navedeno obvestilo o avtorskih pravicah, ta seznam pogojev in naslednjo izjavo o omejitvi odgovornosti v dokumentaciji in/ali drugem gradivu, priloženem distribuciji.
-
-    Imena imetnika avtorskih pravic in imen njegovih sodelavcev se ne sme uporabiti za podporo ali promocijo izdelkov, pridobljenih iz te programske opreme, brez posebnega predhodnega pisnega dovoljenja.
-
-TO PROGRAMSKO OPREMO PONUJAJO IMETNIK AVTORSKIH PRAVIC IN NJEGOVI SODELAVCI "KOT JE", IN VSA IZRECNA ALI IMPLICITNA JAMSTVA, VKLJUČNO Z, A NE OMEJENO NA IMPLICITNA JAMSTVA PRIMERNOSTI ZA PRODAJO IN PRIMERNOSTI ZA DOLOČEN NAMEN, SE ZAVRNEJO. IMETNIK AVTORSKIH PRAVIC ALI NJEGOVI SODELAVCI NIKAKOR NISO ODGOVORNI ZA KAKRŠNE KOLI NEPOSREDNE, POSREDNE, NAKLJUČNE, POSEBNE, EKSEMPLARIČNE ALI POSLEDIČNE ŠKODE (VKLJUČNO Z, A NE OMEJENO NA NABAVO BLAGA ALI STORITEV, IZGUBO UPORABE, PODATKOV ALI DOBIČKA ALI PREKINITEV POSLOVANJA), NASTALE KAKOR KOLI, IN PO NOBENI TEORIJI ODGOVORNOSTI BODISI PO POGODBI, STROGI ODGOVORNOSTI ALI ODŠKODNINSKEM ZAHTEVKU (VKLJUČNO Z MALOMARNOSTJO ALI DRUGIM), KI IZHAJA IZ KAKRŠNE KOLI UPORABE TE PROGRAMSKE OPREME, ČEPRAV BI BILI OBVEŠČENI O MOŽNOSTI TAKE ŠKODE.
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
