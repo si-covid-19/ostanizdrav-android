@@ -845,7 +845,7 @@
     <!-- YTXT: text after submission: contagious -->
     <string name="submission_done_contagious">"Pri vas je bila potrjena okužba s SARS-CoV-2."</string>
     <!-- YTXT: text after submission: isolate -->
-    <string name="submission_done_isolate">"Spoštujte navodila o izolaciji, ki se jih prejeli s strani zdravstvene službe."</string>
+    <string name="submission_done_isolate">"Spoštujte navodila o izolaciji, ki ste jih prejeli s strani zdravstvene službe."</string>
     <!-- XHED: Title for further info -->
     <string name="submission_done_further_info_title">"Druge informacije:"</string>
     <!-- YTXT: submission done further info bullet points -->
