@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <import type="de.rki.coronawarnapp.util.formatter.FormatterSubmissionHelper" />
-
         <variable
             name="registerDate"
             type="java.util.Date" />
 
         <variable
             name="deviceUIState"
-            type="de.rki.coronawarnapp.util.DeviceUIState" />
+            type="de.rki.coronawarnapp.util.NetworkRequestWrapper&lt;de.rki.coronawarnapp.util.DeviceUIState,java.lang.Throwable>" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/test_result_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/card_dark"

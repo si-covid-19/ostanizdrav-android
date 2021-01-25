@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <color name="colorSloRed">#ce172b</color>
     <color name="colorSloRedDark">#9C1221</color>
     <color name="colorSloBlue">#0f6fc7</color>
     <color name="colorSloBlueDark">#0A5091</color>
     <color name="colorSloGreen">#78A22F</color>
     <color name="colorSloGreenDark">#66952E</color>
-
-    <!-- Brand Colors -->
     <color name="colorBrandPrimary">#BD1200</color>
     <color name="colorBrandSecondary">#80CDEC</color>
     <color name="colorBrandTertiary">#59112B</color>
@@ -20,12 +17,19 @@
     <color name="colorSurface2">#F5F5F5</color>
     <color name="colorSurface2Pressed">#D7D7D7</color>
     <color name="colorHairline">#3317191A</color>
+    <color name="cwaGrayHighlight">#5D6F80</color>
+
+    <!--Cards-->
+    <color name="colorCardBackgroundHighlightGray">@color/cwaGrayHighlight</color>
 
     <!-- Text -->
     <color name="colorTextPrimary1">#17191A</color>
+    <color name="colorTextPrimary1Stable">#17191A</color>
+    <color name="colorTextPrimary1InvertedStable">#FFFFFF</color>
     <color name="colorTextPrimary2">#9917191A</color>
     <color name="colorTextPrimary3">#4D17191A</color>
     <color name="colorTextEmphasizedButton">#FFFFFF</color>
+    <color name="colorTextSixteen">#17191A</color>
     <color name="colorTextSemanticRed">@color/colorSloRed</color>
     <color name="colorTextSemanticGreen">@color/colorSloGreen</color>
     <color name="colorTextSemanticNeutral">#5D6E80</color>
@@ -40,11 +44,14 @@
     <color name="colorSemanticNeutralRiskPressed">@color/colorSloBlueDark</color>
     <color name="colorSemanticUnknownRisk">#FFFFFF</color>
     <color name="colorSemanticUnknownRiskPressed">#E7E8E8</color>
+    <color name="colorSemanticMediumRisk">#f77f00</color>
+    <color name="colorSemanticMediumRiskPressed">#f77f00</color>
 
     <!-- Accent -->
     <color name="colorAccentTintButton">@color/colorSloBlue</color>
     <color name="colorAccentTintButtonPressed">@color/colorSloBlueDark</color>
     <color name="colorAccentTintIcon">@color/colorSloBlue</color>
+
 
     <!-- Misc -->
     <color name="colorTransparent">#00FFFFFF</color>
@@ -58,5 +65,18 @@
     <color name="colorStableLight">#FFFFFF</color>
     <color name="colorStableHairlineLight">#33FFFFFF</color>
     <color name="colorStableHairlineDark">#3317191A</color>
+
+    <!-- Calendar -->
+    <color name="colorCalendarSelectedDayBackground">@color/colorSloBlue</color>
+    <color name="colorCalendarTodayBorder">#007FAD</color>
+    <color name="colorCalendarTodayText">#007FAD</color>
+    <color name="colorCalendarMonthText">#DE000000</color>
+    <color name="colorCalendarLayoutFocusOn">@color/colorSloBlue</color>
+    <color name="colorCalendarLayoutFocusOff">#F5F5F5</color>
+
+    <!-- Contact Diary -->
+    <color name="colorContactDiaryListItem">#F5F5F5</color>
+    <color name="colorContactDiaryListItemPressed">#D7D7D7</color>
+    <color name="colorContactDiaryBackground">#FFFFFF</color>
 
 </resources>

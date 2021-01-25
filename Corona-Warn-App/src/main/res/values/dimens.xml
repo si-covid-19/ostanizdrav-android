@@ -76,6 +76,10 @@
     <dimen name="circle_small">23dp</dimen>
     <dimen name="circle_large_width">10</dimen>
     <dimen name="circle_small_width">5</dimen>
+    <dimen name="circle_icon">32dp</dimen>
+    <dimen name="circle_icon_padding">6dp</dimen>
+    <dimen name="circle_icon_big">40dp</dimen>
+    <dimen name="circle_icon_big_padding">8dp</dimen>
 
     <!-- todo illustration sizes -->
 
@@ -111,6 +115,9 @@
     <dimen name="submission_scan_qr_code_viewfinder_size">240dp</dimen>
     <dimen name="submission_scan_qr_code_viewfinder_center_offset">120dp</dimen>
 
+    <!-- Submission Country Select -->
+    <dimen name="submission_country_selection_country_icon_size">40dp</dimen>
+
     <!-- Bullet Points -->
     <dimen name="bullet_point_size">4dp</dimen>
     <dimen name="bullet_point_baseline_offset">8sp</dimen>
@@ -120,4 +127,16 @@
 
     <dimen name="match_constraint">0dp</dimen>
     <dimen name="no_padding">0dp</dimen>
+
+    <!-- Calendar -->
+    <dimen name="calendar_header_height">72dp</dimen>
+    <dimen name="calendar_header_initial_radius">1dp</dimen>
+    <dimen name="calendar_header_top_radius">4dp</dimen>
+    <dimen name="calendar_header_bottom_radius">4dp</dimen>
+    <dimen name="calendar_layout_stroke">2dp</dimen>
+    <dimen name="calendar_day_size">40dp</dimen>
+    <dimen name="calendar_day_spacing">4dp</dimen>
+
+    <!-- Contact Diary -->
+    <dimen name="contact_diary_list_item">65dp</dimen>
 </resources>

@@ -22,7 +22,7 @@
                 android:layout_width="@dimen/icon_size_button"
                 android:layout_height="@dimen/icon_size_button"
                 android:importantForAccessibility="no"
-                android:src="@drawable/ic_main_about"
+                android:src="@drawable/ic_splash_logo_round"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/main_card_header_headline"
                 app:layout_constraintStart_toStartOf="parent"

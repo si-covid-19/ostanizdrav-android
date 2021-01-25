@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+    <!-- ####################################
+                 Contact Diary
+     ###################################### -->
+    <string name="contact_diary_day_person_tab_title" translatable="false">"People"</string>
+    <string name="contact_diary_day_person_fab_title" translatable="false">"Person"</string>
+    <string name="contact_diary_day_location_tab_title" translatable="false">"Places"</string>
+    <string name="contact_diary_day_location_fab_title" translatable="false">"Place"</string>
+    <string name="contact_diary_location_list_no_items_title" translatable="false">"No places defined yet"</string>
+    <string name="contact_diary_location_list_no_items_subtitle" translatable="false">"Create a place and add it to your contact journal."</string>
+    <string name="contact_diary_person_list_no_items_title" translatable="false">"No people defined yet"</string>
+    <string name="contact_diary_person_list_no_items_subtitle" translatable="false">"Create a person and add them to your contact journal."</string>
+    <string name="contact_diary_person_bottom_sheet_title" translatable="false">"Person"</string>
+    <string name="contact_diary_person_bottom_sheet_text_input_hint" translatable="false">"First name, last name"</string>
+    <string name="contact_diary_person_bottom_sheet_save_button" translatable="false">"Save"</string>
+    <string name="contact_diary_location_bottom_sheet_title" translatable="false">"Place"</string>
+    <string name="contact_diary_location_bottom_sheet_text_input_hint" translatable="false">"Description"</string>
+    <string name="contact_diary_location_bottom_sheet_save_button" translatable="false">"Save"</string>
+
+    <!-- XHED: Title for the contact diary card displayed in the homescreen -->
+    <string name="contact_diary_homescreen_card_header" translatable="false">"Contact Journal"</string>
+    <!-- XTXT: Body for the contact diary card displayed in the homescreen  -->
+    <string name="contact_diary_homescreen_card_body" translatable="false">"Keep track of where you have been and whom you met."</string>
+    <!-- XBUT: Button text for the contact diary card button in the homescreen   -->
+    <string name="contact_diary_homescreen_card_button_text" translatable="false">"Manage Journal"</string>
+    <!-- XBUT: Button text for the contact diary card button in the homescreen   -->
+    <string name="contact_diary_onboarding_button_text" translatable="false">"Manage Journal"</string>
+
+    <!-- XTXT: Title for the contact diary onboarding screen -->
+    <string name="contact_diary_information_card_title" translatable="false">"Keep track of your contacts."</string>
+    <!-- XTXT: Contact diary onboarding screen -->
+    <string name="contact_diary_onboarding_body" translatable="false">"Create an overview of your contacts in the last 14 days, so you’ll have a complete list at hand quickly if needed."</string>
+    <!-- XTXT: Contact diary onboarding screen first functionality -->
+    <string name="contact_diary_onboarding_functionality_first_section" translatable="false">"Enter the people you have met."</string>
+    <!-- XTXT: Contact diary onboarding screen second functionality -->
+    <string name="contact_diary_onboarding_functionality_second_section" translatable="false">"Enter the places where you’ve encountered others."</string>
+    <!-- XTXT: Contact diary onboarding screen third functionality -->
+    <string name="contact_diary_onboarding_functionality_third_section" translatable="false">"You are the only one who can access your journal entries. Your entries will be saved only on your smartphone."</string>
+    <!-- XTXT: Contact diary onboarding screen fourth functionality -->
+    <string name="contact_diary_onboarding_functionality_fourth_section" translatable="false">"You can remove entries for people and places from your journal at any time. Journal entries will be deleted automatically after 16 days."</string>
+    <!-- XTXT: Contact diary onboarding screen fifth functionality -->
+    <string name="contact_diary_onboarding_functionality_fifth_section" translatable="false">"You can export your contact journal in plain text format and then print out the entries, edit them, or provide them to your public health authority as needed."</string>
+    <!-- XTXT: Title for the contact diary onboarding screen -->
+    <string name="contact_diary_title" translatable="false">"Contact Journal"</string>
+    <!-- XTXT: Body for legal information of the contact diary onboarding screen -->
+    <string name="contact_diary_onboarding_legal_information" translatable="false">"For more information, please refer to the privacy notice."</string>
+
+
+    <!-- XTXT: Menu information entry for contact diary overview screen -->
+    <string name="menu_contact_diary_information" translatable="false">"Information"</string>
+    <!-- XTXT: Menu export entry for contact diary overview screen -->
+    <string name="menu_contact_export_entries" translatable="false">"Export Entries"</string>
+    <!-- XTXT: Menu edit persons entry for contact diary overview screen -->
+    <string name="menu_contact_diary_edit_persons" translatable="false">"Edit People"</string>
+    <!-- XTXT: Menu edit locations entry for contact diary overview screen -->
+    <string name="menu_contact_diary_edit_locations" translatable="false">"Edit Places"</string>
+    <!-- XTXT: Title for contact diary overview screen -->
+    <string name="contact_diary_overview_title" translatable="false">"Contact Journal"</string>
+    <!-- XTXT: Subtitle for contact diary overview screen -->
+    <string name="contact_diary_overview_subtitle" translatable="false">"Write down the people you have met and places you have visited."</string>
+    <!-- XTXT: Header for contact diary overview screen -->
+    <string name="contact_diary_overview_header" translatable="false">"Start Page"</string>
+
+    <!-- XTXT: content description of contact journal image on home screen -->
+    <string name="contact_diary_homescreen_card_image_content_description" translatable="false">"A closed book with a bookmark"</string>
+    <!-- XTXT: content description of contact journal header image on onboarding screen -->
+    <string name="contact_diary_onboarding_image_content_description" translatable="false">"Several people are outside, looking at their smartphones."</string>
+    <!-- XTXT: content description of contact journal background image on edit persons screen -->
+    <string name="contact_diary_edit_persons_image_content_description" translatable="false">"A silhouette of a woman who is walking across a meadow."</string>
+    <!-- XTXT: content description of contact journal background image on edit locations screen -->
+    <string name="contact_diary_edit_locations_image_content_description" translatable="false">"A building is marked with a location flag."</string>
+
+
+    <!-- XHED: Title for the contact diary edit locations -->
+    <string name="contact_diary_edit_locations_title" translatable="false">"Edit Places"</string>
+    <!-- XHED: Title for the contact diary edit persons -->
+    <string name="contact_diary_edit_persons_title" translatable="false">"Edit People"</string>
+    <!-- XBUT: Button text for the contact diary edit screen button to delete all locations/persons -->
+    <string name="contact_diary_remove_all_button" translatable="false">"Remove All"</string>
+    <!-- XBUT: Button text for the contact diary dialog to delete all locations/persons -->
+    <string name="contact_diary_delete_button_positive" translatable="false">"Remove"</string>
+    <!-- XBUT: Button text for the contact diary dialog to delete all locations/persons -->
+    <string name="contact_diary_delete_button_negative" translatable="false">"Cancel"</string>
+    <!-- XHED: Title for the contact diary dialog to delete all locations -->
+    <string name="contact_diary_delete_locations_title" translatable="false">"Do you really want to remove all places?"</string>
+    <!-- XHED: Title for the contact diary dialog to delete all persons -->
+    <string name="contact_diary_delete_persons_title" translatable="false">"Do you really want to remove all people?"</string>
+    <!-- XTXT: Message for the contact diary dialog to delete all locations -->
+    <string name="contact_diary_delete_locations_message" translatable="false">"If you remove a place, all the entries for that place will be removed from your journal."</string>
+    <!-- XTXT: Message for the contact diary dialog to delete all persons -->
+    <string name="contact_diary_delete_persons_message" translatable="false">"If you remove a person, all the entries for that person will be removed from your journal."</string>
+    <!-- XACT: edit icon description for screen readers -->
+    <string name="contact_diary_edit_icon_content_description" translatable="false">"Edit Entry"</string>
+    <!-- XACT: edit icon description for screen readers -->
+    <string name="contact_diary_delete_icon_content_description" translatable="false">"Delete Entry"</string>
+    <!-- XHED: Title for the contact diary dialog to delete delete a single location -->
+    <string name="contact_diary_delete_location_title" translatable="false">"Do you really want to remove this place?"</string>
+    <!-- XHED: Title for the contact diary dialog to delete delete a single person -->
+    <string name="contact_diary_delete_person_title" translatable="false">"Do you really want to remove this person?"</string>
+
+    <!-- XHED: Title for the contact journal export email subject -->
+    <string name="contact_diary_export_subject" translatable="false">"Mein Kontakt-Tagebuch"</string>
+    <!-- XTXT: Intro text  for the contact journal email export part one-->
+    <string name="contact_diary_export_intro_one" translatable="false">"Kontakte der letzten 14 Tage (%1$s - %2$s)"</string>
+    <!-- XTXT: Intro text  for the contact journal email export part two-->
+    <string name="contact_diary_export_intro_two" translatable="false">"Die nachfolgende Liste dient dem zuständigen Gesundheitsamt zur Kontaktnachverfolgung gem. § 25 IfSG."</string>
+</resources>

@@ -1,162 +1,88 @@
 package de.rki.coronawarnapp.service.submission
 
-import de.rki.coronawarnapp.exception.NoGUIDOrTANSetException
-import de.rki.coronawarnapp.exception.NoRegistrationTokenSetException
-import de.rki.coronawarnapp.http.WebRequestBuilder
-import de.rki.coronawarnapp.storage.LocalData
-import de.rki.coronawarnapp.transaction.SubmitDiagnosisKeysTransaction
+import de.rki.coronawarnapp.playbook.Playbook
+import de.rki.coronawarnapp.util.di.AppInjector
+import de.rki.coronawarnapp.util.di.ApplicationComponent
 import de.rki.coronawarnapp.util.formatter.TestResult
-import io.mockk.Runs
+import de.rki.coronawarnapp.verification.server.VerificationKeyType
+import io.kotest.matchers.shouldBe
+import io.mockk.MockKAnnotations
+import io.mockk.clearAllMocks
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.every
-import io.mockk.just
+import io.mockk.impl.annotations.MockK
 import io.mockk.mockkObject
-import io.mockk.verify
 import kotlinx.coroutines.runBlocking
-import org.hamcrest.CoreMatchers.equalTo
-import org.hamcrest.MatcherAssert.assertThat
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 
 class SubmissionServiceTest {
+
+    private val tan = "123456-12345678-1234-4DA7-B166-B86D85475064"
     private val guid = "123456-12345678-1234-4DA7-B166-B86D85475064"
     private val registrationToken = "asdjnskjfdniuewbheboqudnsojdff"
 
-    @Before
-    fun setUp() {
-        mockkObject(LocalData)
-        mockkObject(WebRequestBuilder)
-        mockkObject(SubmitDiagnosisKeysTransaction)
+    @MockK lateinit var mockPlaybook: Playbook
+    @MockK lateinit var appComponent: ApplicationComponent
 
-        every { LocalData.teletan() } returns null
-        every { LocalData.testGUID() } returns null
-        every { LocalData.registrationToken() } returns null
+    lateinit var submissionService: SubmissionService
+
+    @BeforeEach
+    fun setUp() {
+        MockKAnnotations.init(this)
+        mockkObject(AppInjector)
+        every { AppInjector.component } returns appComponent
+        every { appComponent.playbook } returns mockPlaybook
+
+        submissionService = SubmissionService(mockPlaybook)
     }
 
-    @Test(expected = NoGUIDOrTANSetException::class)
-    fun registerDeviceWithoutTANOrGUIDFails() {
-        runBlocking {
-            SubmissionService.asyncRegisterDevice()
-        }
+    @AfterEach
+    fun cleanUp() {
+        clearAllMocks()
     }
 
     @Test
     fun registrationWithGUIDSucceeds() {
-        every { LocalData.testGUID() } returns guid
-
-        every { LocalData.testGUID(any()) } just Runs
-        every { LocalData.registrationToken(any()) } just Runs
-        every { LocalData.devicePairingSuccessfulTimestamp(any()) } just Runs
-
         coEvery {
-            WebRequestBuilder.getInstance()
-                .asyncGetRegistrationToken(any(), SubmissionConstants.QR_CODE_KEY_TYPE)
-        } returns registrationToken
+            mockPlaybook.initialRegistration(guid, VerificationKeyType.GUID)
+        } returns (registrationToken to TestResult.PENDING)
 
         runBlocking {
-            SubmissionService.asyncRegisterDevice()
+            submissionService.asyncRegisterDeviceViaGUID(guid)
         }
 
-        verify(exactly = 1) {
-            LocalData.registrationToken(registrationToken)
-            LocalData.devicePairingSuccessfulTimestamp(any())
-            LocalData.testGUID(null)
+        coVerify(exactly = 1) {
+            mockPlaybook.initialRegistration(guid, VerificationKeyType.GUID)
         }
     }
 
     @Test
     fun registrationWithTeleTANSucceeds() {
-        every { LocalData.teletan() } returns guid
-
-        every { LocalData.teletan(any()) } just Runs
-        every { LocalData.registrationToken(any()) } just Runs
-        every { LocalData.devicePairingSuccessfulTimestamp(any()) } just Runs
-
         coEvery {
-            WebRequestBuilder.getInstance()
-                .asyncGetRegistrationToken(any(), SubmissionConstants.TELE_TAN_KEY_TYPE)
-        } returns registrationToken
+            mockPlaybook.initialRegistration(any(), VerificationKeyType.TELETAN)
+        } returns (registrationToken to TestResult.PENDING)
 
         runBlocking {
-            SubmissionService.asyncRegisterDevice()
+            submissionService.asyncRegisterDeviceViaTAN(tan)
         }
 
-        verify(exactly = 1) {
-            LocalData.registrationToken(registrationToken)
-            LocalData.devicePairingSuccessfulTimestamp(any())
-            LocalData.teletan(null)
-        }
-    }
-
-    @Test(expected = NoRegistrationTokenSetException::class)
-    fun requestTestResultWithoutRegistrationTokenFails() {
-        runBlocking {
-            SubmissionService.asyncRequestTestResult()
+        coVerify(exactly = 1) {
+            mockPlaybook.initialRegistration(tan, VerificationKeyType.TELETAN)
         }
     }
 
     @Test
     fun requestTestResultSucceeds() {
-        every { LocalData.registrationToken() } returns registrationToken
-        coEvery {
-            WebRequestBuilder.getInstance().asyncGetTestResult(registrationToken)
-        } returns TestResult.NEGATIVE.value
+        coEvery { mockPlaybook.testResult(registrationToken) } returns TestResult.NEGATIVE
 
         runBlocking {
-            assertThat(SubmissionService.asyncRequestTestResult(), equalTo(TestResult.NEGATIVE))
+            submissionService.asyncRequestTestResult(registrationToken) shouldBe TestResult.NEGATIVE
         }
-    }
-
-    @Test(expected = NoRegistrationTokenSetException::class)
-    fun submitExposureKeysWithoutRegistrationTokenFails() {
-        runBlocking {
-            SubmissionService.asyncSubmitExposureKeys(listOf())
+        coVerify(exactly = 1) {
+            mockPlaybook.testResult(registrationToken)
         }
-    }
-
-    @Test
-    fun submitExposureKeysSucceeds() {
-        every { LocalData.registrationToken() } returns registrationToken
-        coEvery { SubmitDiagnosisKeysTransaction.start(registrationToken, any()) } just Runs
-
-        runBlocking {
-            SubmissionService.asyncSubmitExposureKeys(listOf())
-        }
-    }
-
-    @Test
-    fun deleteRegistrationTokenSucceeds() {
-        every { LocalData.registrationToken(null) } just Runs
-        every { LocalData.devicePairingSuccessfulTimestamp(0L) } just Runs
-
-        SubmissionService.deleteRegistrationToken()
-
-        verify(exactly = 1) {
-            LocalData.registrationToken(null)
-            LocalData.devicePairingSuccessfulTimestamp(0L)
-        }
-    }
-
-    @Test
-    fun containsValidGUID() {
-        // valid
-        assertThat(
-            SubmissionService.containsValidGUID("https://bs-sd.de/covid-19/?$guid"),
-            equalTo(true)
-        )
-
-        // invalid
-        assertThat(
-            SubmissionService.containsValidGUID("https://no-guid-here"),
-            equalTo(false)
-        )
-    }
-
-    @Test
-    fun extractGUID() {
-        assertThat(
-            SubmissionService.extractGUID("https://bs-sd.de/covid-19/?$guid"),
-            equalTo(guid)
-        )
     }
 }

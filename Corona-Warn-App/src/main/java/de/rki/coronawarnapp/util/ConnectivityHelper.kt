@@ -1,11 +1,7 @@
 package de.rki.coronawarnapp.util
 
 import android.app.ActivityManager
-import android.bluetooth.BluetoothAdapter
-import android.content.BroadcastReceiver
 import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
@@ -13,7 +9,7 @@ import android.net.NetworkRequest
 import android.os.Build
 import de.rki.coronawarnapp.exception.ExceptionCategory
 import de.rki.coronawarnapp.exception.reporting.report
-import timber.log.Timber
+import de.rki.coronawarnapp.util.di.AppInjector
 
 /**
  * Helper for connectivity statuses.
@@ -21,54 +17,8 @@ import timber.log.Timber
 object ConnectivityHelper {
     private val TAG: String? = ConnectivityHelper::class.simpleName
 
-    /**
-     * Register bluetooth state change listener.
-     *
-     * @param context the context
-     * @param callback the bluetooth state callback
-     *
-     * @see [BluetoothAdapter.ACTION_STATE_CHANGED]
-     * @see [BluetoothCallback]
-     */
-    fun registerBluetoothStatusCallback(context: Context, callback: BluetoothCallback) {
-        val receiver = object : BroadcastReceiver() {
-            override fun onReceive(context: Context?, intent: Intent) {
-                val action = intent.action
-                if (BluetoothAdapter.ACTION_STATE_CHANGED == action) {
-                    when (intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, -1)) {
-                        BluetoothAdapter.STATE_OFF -> {
-                            callback.onBluetoothUnavailable()
-                        }
-                        BluetoothAdapter.STATE_ON -> {
-                            callback.onBluetoothAvailable()
-                        }
-                    }
-                }
-            }
-        }
-        callback.recevier = receiver
-        context.registerReceiver(
-            callback.recevier,
-            IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED)
-        )
-        // bluetooth state doesn't change when you register
-        if (isBluetoothEnabled())
-            callback.onBluetoothAvailable()
-        else
-            callback.onBluetoothUnavailable()
-    }
-
-    /**
-     * Unregister bluetooth state change listener.
-     *
-     * @param context the context
-     * @param callback the bluetooth state callback
-     *
-     * @see [BluetoothCallback]
-     */
-    fun unregisterBluetoothStatusCallback(context: Context, callback: BluetoothCallback) {
-        context.unregisterReceiver(callback.recevier)
-        callback.recevier = null
+    private val backgroundPrioritization by lazy {
+        AppInjector.component.connectivityHelperInjection.backgroundPrioritization
     }
 
     /**
@@ -132,30 +82,28 @@ object ConnectivityHelper {
      * @param context the context
      *
      * @return Boolean
-     *
-     * @see isBackgroundRestricted
      */
-    fun isBackgroundJobEnabled(context: Context): Boolean {
+    // TODO Can be replaced by **[BackgroundModeStatus]** at somepoint
+    fun isBackgroundRestricted(context: Context): Boolean {
         val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            !activityManager.isBackgroundRestricted
-        } else true
+            activityManager.isBackgroundRestricted
+        } else false
     }
 
     /**
-     * Get bluetooth enabled status.
+     * Background jobs are enabled only if the background activity prioritization is enabled and
+     * the background activity is not restricted
      *
-     * @return current bluetooth status
+     * @param context the context
      *
-     * @see [BluetoothAdapter]
+     * @return Boolean
+     *
+     * @see isBackgroundRestricted
      */
-    fun isBluetoothEnabled(): Boolean {
-        val bAdapter = BluetoothAdapter.getDefaultAdapter()
-        if (bAdapter == null) {
-            Timber.d("Device does not have bluetooth hardware")
-            return false
-        }
-        return bAdapter.isEnabled
+    // TODO Can be replaced by **[BackgroundModeStatus]** at somepoint
+    fun autoModeEnabled(context: Context): Boolean {
+        return !isBackgroundRestricted(context) || backgroundPrioritization.isBackgroundActivityPrioritized
     }
 
     /**
@@ -169,25 +117,6 @@ object ConnectivityHelper {
         val activeNetwork: Network? = manager.activeNetwork
         val caps: NetworkCapabilities? = manager.getNetworkCapabilities(activeNetwork)
         return caps?.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) ?: false
-    }
-
-    /**
-     * Abstract bluetooth state change callback.
-     *
-     * @see BroadcastReceiver
-     */
-    abstract class BluetoothCallback {
-        var recevier: BroadcastReceiver? = null
-
-        /**
-         * Called when bluetooth is turned on.
-         */
-        abstract fun onBluetoothAvailable()
-
-        /**
-         * Called when bluetooth is turned off.
-         */
-        abstract fun onBluetoothUnavailable()
     }
 
     /**
