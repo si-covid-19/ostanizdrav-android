@@ -1,6 +1,6 @@
 package de.rki.coronawarnapp.util
 
-import KeyExportFormat.SignatureInfo
+import de.rki.coronawarnapp.server.protocols.external.exposurenotification.TemporaryExposureKeyExportOuterClass.SignatureInfo
 
 object SignatureHelper {
     val clientSig: SignatureInfo = SignatureInfo.newBuilder()

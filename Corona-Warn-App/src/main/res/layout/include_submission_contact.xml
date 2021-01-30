@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <data>
-
-        <import type="de.rki.coronawarnapp.util.formatter.FormatterAccessibilityHelper" />
-
-    </data>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,89 +17,103 @@
                 android:layout_width="@dimen/match_constraint"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_submission_illustration_hotline"
-                android:contentDescription="@{FormatterAccessibilityHelper.formatImage(@string/information_contact_illustration_description)}"
                 android:focusable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                bind:cwaContentDescription="@{@string/information_contact_illustration_description}"
+                tools:ignore="ContentDescription" />
 
-            <TextView
-                android:id="@+id/submission_contact_body"
-                style="@style/subtitle"
-                android:layout_width="@dimen/match_constraint"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:text="@string/submission_contact_body"
-                android:focusable="true"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-                app:layout_constraintStart_toStartOf="@+id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/submission_contact_illustration" />
+                      <TextView
+                          android:id="@+id/submission_contact_body"
+                          style="@style/subtitle"
+                          android:layout_width="@dimen/match_constraint"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/spacing_small"
+                          android:text="@string/submission_contact_body"
+                          android:focusable="true"
+                          app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                          app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                          app:layout_constraintTop_toBottomOf="@id/submission_contact_illustration" />
 
-            <TextView
-                android:id="@+id/submission_contact_headline"
-                style="@style/headline5"
-                android:accessibilityHeading="true"
-                android:layout_width="@dimen/match_constraint"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_medium"
-                android:text="@string/submission_contact_headline"
-                android:focusable="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@+id/submission_contact_body" />
+                      <TextView
+                          android:id="@+id/submission_contact_headline"
+                          style="@style/headline5"
+                          android:accessibilityHeading="true"
+                          android:layout_width="@dimen/match_constraint"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/spacing_medium"
+                          android:text="@string/submission_contact_headline"
+                          android:focusable="true"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="@id/guideline_start"
+                          app:layout_constraintTop_toBottomOf="@+id/submission_contact_body" />
 
-            <de.rki.coronawarnapp.ui.view.StepEntry
-                android:id="@+id/submission_contact_step_1"
-                android:layout_width="@dimen/match_constraint"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_normal"
-                android:focusable="true"
-                android:contentDescription="@string/submission_contact_step_1_content"
-                app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-                app:layout_constraintStart_toStartOf="@+id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/submission_contact_headline"
-                app:step_entry_final="false"
-                app:step_entry_icon="@drawable/ic_main_overview_1">
+                      <de.rki.coronawarnapp.ui.view.StepEntry
+                          android:id="@+id/submission_contact_step_1"
+                          android:layout_width="@dimen/match_constraint"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="@dimen/spacing_normal"
+                          android:focusable="true"
+                          android:contentDescription="@string/submission_contact_step_1_content"
+                          app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                          app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                          app:layout_constraintTop_toBottomOf="@id/submission_contact_headline"
+                          app:step_entry_final="false"
+                          app:step_entry_icon="@drawable/ic_main_overview_1">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                          <androidx.constraintlayout.widget.ConstraintLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/submission_contact_step_1_body"
-                        style="@style/subtitle"
-                        android:layout_width="@dimen/match_constraint"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/button_icon_margin"
-                        android:text="@string/submission_contact_step_1_body"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                              <TextView
+                                  android:id="@+id/submission_contact_step_1_body"
+                                  style="@style/subtitle"
+                                  android:layout_width="@dimen/match_constraint"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginTop="@dimen/button_icon_margin"
+                                  android:text="@string/submission_contact_step_1_body"
+                                  app:layout_constraintEnd_toEndOf="parent"
+                                  app:layout_constraintStart_toStartOf="parent"
+                                  app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/submission_contact_step_1_number"
-                        style="@style/headline5"
-                        android:accessibilityHeading="true"
-                        android:layout_width="@dimen/match_constraint"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacing_small"
-                        android:text="@string/submission_contact_number_display"
-                        android:textColor="@color/colorTextTint"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/submission_contact_step_1_body" />
+                              <TextView
+                                  android:id="@+id/submission_contact_step_1_number"
+                                  style="@style/headline5"
+                                  android:layout_width="@dimen/match_constraint"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginTop="12dp"
+                                  android:accessibilityHeading="true"
+                                  android:clickable="true"
+                                  android:text="@string/submission_contact_number_display"
+                                  android:textColor="@color/colorTextTint"
+                                  app:layout_constraintEnd_toEndOf="parent"
+                                  app:layout_constraintHorizontal_bias="0.0"
+                                  app:layout_constraintStart_toStartOf="parent"
+                                  app:layout_constraintTop_toBottomOf="@id/submission_contact_step_1_body" />
+                              <!-- XTXT:
+                                 <TextView
+                                     android:id="@+id/submission_contact_operating_hours_body"
+                                     style="@style/body2"
+                                     android:layout_width="@dimen/match_constraint"
+                                     android:layout_height="wrap_content"
+                                     android:layout_marginTop="@dimen/spacing_small"
+                                     android:text="@string/submission_contact_operating_hours_body"
+                                     app:layout_constraintEnd_toEndOf="parent"
+                                     app:layout_constraintStart_toStartOf="parent"
+                                     app:layout_constraintTop_toBottomOf="@id/submission_contact_step_1_number" />
 
-                    <TextView
-                        android:id="@+id/submission_contact_operating_hours_body"
-                        style="@style/body2"
-                        android:layout_width="@dimen/match_constraint"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/spacing_small"
-                        android:text="@string/submission_contact_operating_hours_body"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/submission_contact_step_1_number" />
-
+                                 <TextView
+                                     android:id="@+id/submission_contact_body_other"
+                                     style="@style/body2"
+                                     android:layout_width="@dimen/match_constraint"
+                                     android:layout_height="wrap_content"
+                                     android:layout_marginTop="@dimen/spacing_small"
+                                     android:text="@string/submission_contact_body_other"
+                                     app:layout_constraintEnd_toEndOf="parent"
+                                     app:layout_constraintStart_toStartOf="parent"
+                                     app:layout_constraintTop_toBottomOf="@id/submission_contact_operating_hours_body" />
+             -->
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </de.rki.coronawarnapp.ui.view.StepEntry>

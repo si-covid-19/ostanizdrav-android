@@ -1,15 +1,16 @@
 package de.rki.coronawarnapp.risk
 
 import com.google.android.gms.common.api.ApiException
-import de.rki.coronawarnapp.BuildConfig
 import de.rki.coronawarnapp.CoronaWarnApplication
 import de.rki.coronawarnapp.exception.ExceptionCategory
 import de.rki.coronawarnapp.exception.reporting.report
 import de.rki.coronawarnapp.nearby.InternalExposureNotificationClient
 import de.rki.coronawarnapp.storage.LocalData
 import de.rki.coronawarnapp.storage.tracing.TracingIntervalRepository
+import de.rki.coronawarnapp.util.CWADebug
 import de.rki.coronawarnapp.util.TimeAndDateExtensions.daysToMilliseconds
 import de.rki.coronawarnapp.util.TimeAndDateExtensions.roundUpMsToDays
+import timber.log.Timber
 
 object TimeVariables {
 
@@ -33,8 +34,10 @@ object TimeVariables {
     /**
      * The maximal runtime of a transaction
      * In milliseconds
+     * Stay below 10min with this timeout!
+     * We only 10min background execution time via WorkManager.
      */
-    private const val TRANSACTION_TIMEOUT = 60000L
+    private const val TRANSACTION_TIMEOUT = 8 * 60 * 1000L
 
     /**
      * Getter function for [TRANSACTION_TIMEOUT]
@@ -77,20 +80,7 @@ object TimeVariables {
      */
     fun getMinActivatedTracingTime(): Int = MIN_ACTIVATED_TRACING_TIME
 
-    /**
-     * The timeRange until the calculated exposure figures are rated as stale.
-     * In hours.
-     */
-    private const val MAX_STALE_EXPOSURE_RISK_RANGE = 48
-
-    /**
-     * Getter function for [MAX_STALE_EXPOSURE_RISK_RANGE]
-     *
-     * @return stale threshold in hours
-     */
-    fun getMaxStaleExposureRiskRange(): Int = MAX_STALE_EXPOSURE_RISK_RANGE
-
-    private const val MILISECONDS_IN_A_SECOND = 1000
+    private const val MILLISECONDS_IN_A_SECOND = 1000
     private const val SECONDS_IN_A_MINUTES = 60
     private const val MINUTES_IN_AN_HOUR = 60
     private const val HOURS_IN_AN_DAY = 24
@@ -99,20 +89,15 @@ object TimeVariables {
      * Delay in milliseconds for manual key retrieval process
      * Value for testing: 1 min =  1000 * 60 * 1
      * Value: 24 hours = 1000 * 60 * 60 * 24 milliseconds
-     */
-    private val MANUAL_KEY_RETRIEVAL_DELAY =
-        if (BuildConfig.FLAVOR == "deviceForTesters") {
-            MILISECONDS_IN_A_SECOND * SECONDS_IN_A_MINUTES
-        } else {
-            MILISECONDS_IN_A_SECOND * SECONDS_IN_A_MINUTES * MINUTES_IN_AN_HOUR * HOURS_IN_AN_DAY
-        }
-
-    /**
-     * Getter function for [MANUAL_KEY_RETRIEVAL_DELAY]
      *
      * @return delay of key retrieval in milliseconds
      */
-    fun getManualKeyRetrievalDelay() = MANUAL_KEY_RETRIEVAL_DELAY
+    fun getManualKeyRetrievalDelay() =
+        if (CWADebug.buildFlavor == CWADebug.BuildFlavor.DEVICE_FOR_TESTERS) {
+            MILLISECONDS_IN_A_SECOND * SECONDS_IN_A_MINUTES
+        } else {
+            MILLISECONDS_IN_A_SECOND * SECONDS_IN_A_MINUTES * MINUTES_IN_AN_HOUR * HOURS_IN_AN_DAY
+        }
 
     /**
      * This is the maximum attenuation duration value for the risk level calculation
@@ -142,32 +127,9 @@ object TimeVariables {
     fun getInitialExposureTracingActivationTimestamp(): Long? =
         LocalData.initialTracingActivationTimestamp()
 
-    /**
-     * timestamp when the last successful exposureRisk calculation happened read from the mobile device storage.
-     * Last time when the transaction was successfully executed
-     *
-     * @return last time in milliseconds [de.rki.coronawarnapp.transaction.RetrieveDiagnosisKeysTransaction]
-     * was run successfully
-     */
-    // because we have risk level calculation and key retrieval calculation
-    fun getLastTimeDiagnosisKeysFromServerFetch(): Long? =
-        LocalData.lastTimeDiagnosisKeysFromServerFetch()?.time
-
     /****************************************************
      * CALCULATED TIME VARIABLES
      ****************************************************/
-
-    /**
-     * The time since the last successful exposure calculation ran in foreground or background.
-     * In milliseconds
-     *
-     * @return time in milliseconds since the exposure calculation was run successfully
-     */
-    fun getTimeSinceLastDiagnosisKeyFetchFromServer(): Long? {
-        val lastTimeDiagnosisKeysFromServerFetch =
-            getLastTimeDiagnosisKeysFromServerFetch() ?: return null
-        return System.currentTimeMillis() - lastTimeDiagnosisKeysFromServerFetch
-    }
 
     /**
      * The time the tracing is active.
@@ -175,44 +137,53 @@ object TimeVariables {
      * @return in milliseconds
      */
     fun getTimeActiveTracingDuration(): Long = System.currentTimeMillis() -
-            (getInitialExposureTracingActivationTimestamp() ?: 0L) -
-            LocalData.totalNonActiveTracing()
+        (getInitialExposureTracingActivationTimestamp() ?: 0L) -
+        LocalData.totalNonActiveTracing()
 
     suspend fun getActiveTracingDaysInRetentionPeriod(): Long {
         // the active tracing time during the retention period - all non active tracing times
         val tracingActiveMS = getTimeRangeFromRetentionPeriod()
+        val retentionPeriodInMS = getDefaultRetentionPeriodInMS()
+        val lastNonActiveTracingTimestamp = LocalData.lastNonActiveTracingTimestamp()
+        val current = System.currentTimeMillis()
+        val retentionTimestamp = current - retentionPeriodInMS
         val inactiveTracingIntervals = TracingIntervalRepository
             .getDateRepository(CoronaWarnApplication.getAppContext())
             .getIntervals()
             .toMutableList()
 
         // by default the tracing is assumed to be activated
-        // if the API is reachable we set the value accordingly 
-        var enIsDisabled = false
-
-        try {
-            enIsDisabled = !InternalExposureNotificationClient.asyncIsEnabled()
+        // if the API is reachable we set the value accordingly
+        val enIsDisabled = try {
+            !InternalExposureNotificationClient.asyncIsEnabled()
         } catch (e: ApiException) {
             e.report(ExceptionCategory.EXPOSURENOTIFICATION)
+            false
         }
 
-        if (enIsDisabled) {
-            val current = System.currentTimeMillis()
-            var lastTimeTracingWasNotActivated =
+        // lastNonActiveTracingTimestamp could be null when en is disabled
+        // it only gets updated when you turn the en back on
+        // if en is disabled and lastNonActiveTracingTimestamp != null, only then we add a pair to
+        // the inactive intervals list to account for the time of inactivity between the last time
+        // en was not active and now.
+        if (enIsDisabled && lastNonActiveTracingTimestamp != null) {
+            val lastTimeTracingWasNotActivated =
                 LocalData.lastNonActiveTracingTimestamp() ?: current
-
-            if (lastTimeTracingWasNotActivated < (current - getTimeRangeFromRetentionPeriod())) {
-                lastTimeTracingWasNotActivated = current - getTimeRangeFromRetentionPeriod()
-            }
-
             inactiveTracingIntervals.add(Pair(lastTimeTracingWasNotActivated, current))
         }
-
-        val finalTracingMS = tracingActiveMS - inactiveTracingIntervals
-            .map { it.second - it.first }
+        val inactiveTracingMS = inactiveTracingIntervals
+            .map { it.second - maxOf(it.first, retentionTimestamp) }
             .sum()
 
-        return finalTracingMS.roundUpMsToDays()
+        // because we delete periods that are past 14 days but tracingActiveMS counts from first
+        // ever activation, there are edge cases where tracingActiveMS gets to be > 14 days
+        val activeTracingDays = (minOf(tracingActiveMS, retentionPeriodInMS) - inactiveTracingMS).roundUpMsToDays()
+        return if (activeTracingDays >= 0) {
+            activeTracingDays
+        } else {
+            Timber.w("Negative active tracing days: %d", activeTracingDays)
+            0
+        }
     }
 
     /****************************************************

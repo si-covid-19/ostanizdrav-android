@@ -25,6 +25,16 @@ object BackgroundConstants {
     const val DIAGNOSIS_TEST_RESULT_PERIODIC_WORKER_TAG = "DIAGNOSIS_TEST_RESULT_PERIODIC_WORKER"
 
     /**
+     * Tag for background noise playbook periodic work
+     */
+    const val BACKGROUND_NOISE_PERIODIC_WORKER_TAG = "BACKGROUND_NOISE_PERIODIC_WORKER"
+
+    /**
+     * Tag for background noise playbook one time work
+     */
+    const val BACKGROUND_NOISE_ONE_TIME_WORKER_TAG = "BACKGROUND_NOISE_PERIODIC_WORKER"
+
+    /**
      * Unique name for diagnosis key retrieval one time work
      */
     const val DIAGNOSIS_KEY_ONE_TIME_WORK_NAME = "DiagnosisKeyBackgroundOneTimeWork"
@@ -40,21 +50,19 @@ object BackgroundConstants {
     const val DIAGNOSIS_TEST_RESULT_PERIODIC_WORK_NAME = "DiagnosisTestResultBackgroundPeriodicWork"
 
     /**
+     * Unique name for background noise playbook periodic work
+     */
+    const val BACKGROUND_NOISE_PERIODIC_WORK_NAME = "BackgroundNoisePeriodicWork"
+
+    /**
+     * Unique name for background noise playbook one time work
+     */
+    const val BACKGROUND_NOISE_ONE_TIME_WORK_NAME = "BackgroundNoiseOneTimeWork"
+
+    /**
      * Total minutes in one day
      */
     const val MINUTES_IN_DAY = 1440
-
-    /**
-     * Total tries count for diagnosis key retrieval per day
-     * Internal requirement
-     */
-    const val DIAGNOSIS_KEY_RETRIEVAL_TRIES_PER_DAY = 12
-
-    /**
-     * Maximum tries count for diagnosis key retrieval per day
-     * Google API limit
-     */
-    const val GOOGLE_API_MAX_CALLS_PER_DAY = 20
 
     /**
      * Total tries count for diagnosis key retrieval per day
@@ -94,4 +102,25 @@ object BackgroundConstants {
      * @see TimeUnit.MINUTES
      */
     const val BACKOFF_INITIAL_DELAY = 8L
+
+    /**
+     * The minimum time in hours to wait between playbook executions
+     *
+     * @see TimeUnit.HOURS
+     */
+    const val MIN_HOURS_TO_NEXT_BACKGROUND_NOISE_EXECUTION = 0L
+
+    /**
+     * The maximum time in hours to wait between playbook executions
+     *
+     * @see TimeUnit.HOURS
+     */
+    const val MAX_HOURS_TO_NEXT_BACKGROUND_NOISE_EXECUTION = 0L
+
+    /**
+     * The total time in days to run the playbook
+     *
+     * @see TimeUnit.DAYS
+     */
+    const val NUMBER_OF_DAYS_TO_RUN_PLAYBOOK = 0
 }

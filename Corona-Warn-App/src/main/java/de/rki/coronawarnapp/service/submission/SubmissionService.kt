@@ -1,98 +1,38 @@
 package de.rki.coronawarnapp.service.submission
 
-import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
-import de.rki.coronawarnapp.exception.NoGUIDOrTANSetException
-import de.rki.coronawarnapp.exception.NoRegistrationTokenSetException
-import de.rki.coronawarnapp.http.WebRequestBuilder
-import de.rki.coronawarnapp.service.submission.SubmissionConstants.QR_CODE_KEY_TYPE
-import de.rki.coronawarnapp.service.submission.SubmissionConstants.TELE_TAN_KEY_TYPE
-import de.rki.coronawarnapp.storage.LocalData
-import de.rki.coronawarnapp.transaction.SubmitDiagnosisKeysTransaction
+import de.rki.coronawarnapp.playbook.Playbook
 import de.rki.coronawarnapp.util.formatter.TestResult
+import de.rki.coronawarnapp.verification.server.VerificationKeyType
+import javax.inject.Inject
 
-object SubmissionService {
-    suspend fun asyncRegisterDevice() {
-        val testGUID = LocalData.testGUID()
-        val testTAN = LocalData.teletan()
+class SubmissionService @Inject constructor(
+    private val playbook: Playbook
+) {
 
-        when {
-            testGUID != null -> asyncRegisterDeviceViaGUID(testGUID)
-            testTAN != null -> asyncRegisterDeviceViaTAN(testTAN)
-            else -> throw NoGUIDOrTANSetException()
-        }
-        LocalData.devicePairingSuccessfulTimestamp(System.currentTimeMillis())
+    suspend fun asyncRequestTestResult(registrationToken: String): TestResult {
+        return playbook.testResult(registrationToken)
     }
 
-    private suspend fun asyncRegisterDeviceViaGUID(guid: String) {
-        val registrationToken =
-            WebRequestBuilder.getInstance().asyncGetRegistrationToken(
+    suspend fun asyncRegisterDeviceViaGUID(guid: String): RegistrationData {
+        val (registrationToken, testResult) =
+            playbook.initialRegistration(
                 guid,
-                QR_CODE_KEY_TYPE
+                VerificationKeyType.GUID
             )
-
-        LocalData.registrationToken(registrationToken)
-        deleteTestGUID()
+        return RegistrationData(registrationToken, testResult)
     }
 
-    private suspend fun asyncRegisterDeviceViaTAN(tan: String) {
-        val registrationToken =
-            WebRequestBuilder.getInstance().asyncGetRegistrationToken(
+    suspend fun asyncRegisterDeviceViaTAN(tan: String): RegistrationData {
+        val (registrationToken, testResult) =
+            playbook.initialRegistration(
                 tan,
-                TELE_TAN_KEY_TYPE
+                VerificationKeyType.TELETAN
             )
-
-        LocalData.registrationToken(registrationToken)
-        deleteTeleTAN()
+        return RegistrationData(registrationToken, testResult)
     }
 
-    suspend fun asyncRequestAuthCode(registrationToken: String): String {
-        return WebRequestBuilder.getInstance().asyncGetTan(registrationToken)
-    }
-
-    suspend fun asyncSubmitExposureKeys(keys: List<TemporaryExposureKey>) {
-        val registrationToken =
-            LocalData.registrationToken() ?: throw NoRegistrationTokenSetException()
-        SubmitDiagnosisKeysTransaction.start(registrationToken, keys)
-    }
-
-    suspend fun asyncRequestTestResult(): TestResult {
-        val registrationToken =
-            LocalData.registrationToken() ?: throw NoRegistrationTokenSetException()
-        return TestResult.fromInt(
-            WebRequestBuilder.getInstance().asyncGetTestResult(registrationToken)
-        )
-    }
-
-    fun containsValidGUID(scanResult: String): Boolean {
-        if (scanResult.length > SubmissionConstants.MAX_QR_CODE_LENGTH ||
-            scanResult.count { it == SubmissionConstants.GUID_SEPARATOR } != 1
-        )
-            return false
-
-        val potentialGUID = extractGUID(scanResult)
-
-        return !(potentialGUID.isEmpty() || potentialGUID.length > SubmissionConstants.MAX_GUID_LENGTH)
-    }
-
-    fun extractGUID(scanResult: String): String =
-        scanResult.substringAfterLast(SubmissionConstants.GUID_SEPARATOR, "")
-
-    fun storeTestGUID(guid: String) = LocalData.testGUID(guid)
-
-    fun deleteTestGUID() {
-        LocalData.testGUID(null)
-    }
-
-    fun deleteRegistrationToken() {
-        LocalData.registrationToken(null)
-        LocalData.devicePairingSuccessfulTimestamp(0L)
-    }
-
-    fun submissionSuccessful() {
-        LocalData.numberOfSuccessfulSubmissions(1)
-    }
-
-    private fun deleteTeleTAN() {
-        LocalData.teletan(null)
-    }
+    data class RegistrationData(
+        val registrationToken: String,
+        val testResult: TestResult
+    )
 }

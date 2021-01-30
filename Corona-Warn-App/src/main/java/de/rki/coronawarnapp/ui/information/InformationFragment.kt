@@ -1,46 +1,58 @@
 package de.rki.coronawarnapp.ui.information
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.nearby.exposurenotification.ExposureNotificationClient
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.databinding.FragmentInformationBinding
 import de.rki.coronawarnapp.ui.doNavigate
 import de.rki.coronawarnapp.ui.main.MainActivity
 import de.rki.coronawarnapp.util.ExternalActionHelper
+import de.rki.coronawarnapp.util.di.AutoInject
+import de.rki.coronawarnapp.util.ui.observe2
+import de.rki.coronawarnapp.util.ui.setGone
+import de.rki.coronawarnapp.util.ui.viewBindingLazy
+import de.rki.coronawarnapp.util.viewmodel.CWAViewModelFactoryProvider
+import de.rki.coronawarnapp.util.viewmodel.cwaViewModels
+import timber.log.Timber
+import javax.inject.Inject
 
 /**
  * Basic Fragment which links to static and web content.
  */
-class InformationFragment : Fragment() {
-    companion object {
-        private val TAG: String? = InformationFragment::class.simpleName
-    }
+class InformationFragment : Fragment(R.layout.fragment_information), AutoInject {
 
-    private var _binding: FragmentInformationBinding? = null
-    private val binding: FragmentInformationBinding get() = _binding!!
+    @Inject lateinit var viewModelFactory: CWAViewModelFactoryProvider.Factory
+    private val vm: InformationFragmentViewModel by cwaViewModels { viewModelFactory }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentInformationBinding.inflate(inflater)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+    private val binding: FragmentInformationBinding by viewBindingLazy()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        vm.currentENFVersion.observe2(this) {
+            binding.informationEnfVersion.apply {
+                setGone(it == null)
+                text = it
+            }
+        }
+        vm.appVersion.observe2(this) {
+            binding.informationVersion.text = it
+        }
+
+        binding.informationEnfVersion.setOnClickListener {
+            try {
+                startActivity(Intent(ExposureNotificationClient.ACTION_EXPOSURE_NOTIFICATION_SETTINGS))
+            } catch (e: Exception) {
+                Timber.e(e, "Can't open ENF settings.")
+            }
+        }
+
         setButtonOnClickListener()
         setAccessibilityDelegate()
     }

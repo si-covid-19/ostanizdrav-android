@@ -80,27 +80,15 @@
                     app:subtitle="@{@string/information_contact_button_phone}" />
 
                 <TextView
-                    android:id="@+id/information_contact_body_phone"
-                    style="@style/body2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/information_contact_body_phone"
-                    android:focusable="true"
-                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
-                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
-                    app:layout_constraintTop_toBottomOf="@+id/information_contact_navigation_row_phone" />
-
-                <TextView
                     android:id="@+id/information_contact_body_open"
                     style="@style/body2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_normal"
                     android:text="@string/information_contact_body_open"
                     android:focusable="true"
                     app:layout_constraintEnd_toEndOf="@+id/guideline_end"
                     app:layout_constraintStart_toStartOf="@+id/guideline_start"
-                    app:layout_constraintTop_toBottomOf="@+id/information_contact_body_phone" />
+                    app:layout_constraintTop_toBottomOf="@+id/information_contact_navigation_row_phone" />
 
                 <TextView
                     android:id="@+id/information_contact_body_other"
@@ -114,7 +102,52 @@
                     android:textColorLink="@color/colorTextTint"
                     app:layout_constraintEnd_toEndOf="@+id/guideline_end"
                     app:layout_constraintStart_toStartOf="@+id/guideline_start"
-                    app:layout_constraintTop_toBottomOf="@+id/information_contact_body_open" />
+                    app:layout_constraintTop_toBottomOf="@+id/information_contact_body_open"
+                    android:visibility="gone"/>
+
+                <include
+                    android:id="@+id/divider2"
+                    layout="@layout/include_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/information_contact_body_other" />
+
+                <TextView
+                    android:id="@+id/information_contact_subtitle"
+                    style="@style/headline6"
+                    android:accessibilityHeading="true"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:text="@string/information_contact_headline"
+                    android:focusable="true"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+                    app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+                <include
+                    android:id="@+id/information_contact_navigation_row"
+                    layout="@layout/include_navigation_row"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/information_contact_subtitle"
+                    app:subtitle="@{@string/information_contact_button_phone1}" />
+
+                <TextView
+                    android:id="@+id/information_contact"
+                    style="@style/body2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/information_contact_body_phone"
+                    android:focusable="true"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/information_contact_navigation_row" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline_start"

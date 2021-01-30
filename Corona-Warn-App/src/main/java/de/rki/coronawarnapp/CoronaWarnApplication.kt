@@ -1,30 +1,148 @@
 package de.rki.coronawarnapp
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.IntentFilter
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.WindowManager
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
-import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import androidx.work.WorkManager
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import de.rki.coronawarnapp.appconfig.ConfigChangeDetector
+import de.rki.coronawarnapp.bugreporting.loghistory.LogHistoryTree
+import de.rki.coronawarnapp.contactdiary.retention.ContactDiaryWorkScheduler
+import de.rki.coronawarnapp.deadman.DeadmanNotificationScheduler
 import de.rki.coronawarnapp.exception.reporting.ErrorReportReceiver
 import de.rki.coronawarnapp.exception.reporting.ReportingConstants.ERROR_REPORT_LOCAL_BROADCAST_CHANNEL
 import de.rki.coronawarnapp.notification.NotificationHelper
+import de.rki.coronawarnapp.risk.RiskLevelChangeDetector
+import de.rki.coronawarnapp.storage.LocalData
+import de.rki.coronawarnapp.task.TaskController
+import de.rki.coronawarnapp.util.CWADebug
+import de.rki.coronawarnapp.util.ForegroundState
+import de.rki.coronawarnapp.util.WatchdogService
+import de.rki.coronawarnapp.util.di.AppInjector
+import de.rki.coronawarnapp.util.di.ApplicationComponent
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import org.conscrypt.Conscrypt
 import timber.log.Timber
 import java.security.Security
+import javax.inject.Inject
 
-class CoronaWarnApplication : Application(), LifecycleObserver,
-    Application.ActivityLifecycleCallbacks {
+class CoronaWarnApplication : Application(), HasAndroidInjector {
+
+    @Inject lateinit var component: ApplicationComponent
+
+    @Inject lateinit var androidInjector: DispatchingAndroidInjector<Any>
+
+    override fun androidInjector(): AndroidInjector<Any> = androidInjector
+
+    @Inject lateinit var watchdogService: WatchdogService
+    @Inject lateinit var taskController: TaskController
+    @Inject lateinit var foregroundState: ForegroundState
+    @Inject lateinit var workManager: WorkManager
+    @Inject lateinit var configChangeDetector: ConfigChangeDetector
+    @Inject lateinit var riskLevelChangeDetector: RiskLevelChangeDetector
+    @Inject lateinit var deadmanNotificationScheduler: DeadmanNotificationScheduler
+    @Inject lateinit var contactDiaryWorkScheduler: ContactDiaryWorkScheduler
+    @Inject lateinit var notificationHelper: NotificationHelper
+    @LogHistoryTree @Inject lateinit var rollingLogHistory: Timber.Tree
+
+    override fun onCreate() {
+        instance = this
+        super.onCreate()
+        CWADebug.init(this)
+
+        Timber.v("onCreate(): Initializing Dagger")
+        AppInjector.init(this)
+
+        Timber.plant(rollingLogHistory)
+
+        Timber.v("onCreate(): WorkManager setup done: $workManager")
+
+        notificationHelper.createNotificationChannel()
+
+        // Enable Conscrypt for TLS1.3 Support below API Level 29
+        Security.insertProviderAt(Conscrypt.newProvider(), 1)
+
+        registerActivityLifecycleCallbacks(activityLifecycleCallback)
+
+        watchdogService.launch()
+
+        foregroundState.isInForeground
+            .onEach { isAppInForeground = it }
+            .launchIn(GlobalScope)
+
+        if (LocalData.onboardingCompletedTimestamp() != null) {
+            deadmanNotificationScheduler.schedulePeriodic()
+            contactDiaryWorkScheduler.schedulePeriodic()
+        }
+
+        configChangeDetector.launch()
+        riskLevelChangeDetector.launch()
+    }
+
+    private val activityLifecycleCallback = object : ActivityLifecycleCallbacks {
+        private val localBM by lazy {
+            LocalBroadcastManager.getInstance(this@CoronaWarnApplication)
+        }
+        private var errorReceiver: ErrorReportReceiver? = null
+
+        override fun onActivityPaused(activity: Activity) {
+            errorReceiver?.let {
+                localBM.unregisterReceiver(it)
+                errorReceiver = null
+            }
+            disableAppLauncherPreviewAndScreenshots(activity)
+        }
+
+        override fun onActivityStarted(activity: Activity) {
+            enableAppLauncherPreviewAndScreenshots(activity)
+        }
+
+        override fun onActivityDestroyed(activity: Activity) {
+            // NOOP
+        }
+
+        override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
+            // NOOP
+        }
+
+        override fun onActivityStopped(activity: Activity) {
+            disableAppLauncherPreviewAndScreenshots(activity)
+        }
+
+        override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
+            // NOOP
+        }
+
+        override fun onActivityResumed(activity: Activity) {
+            errorReceiver?.let {
+                localBM.unregisterReceiver(it)
+                errorReceiver = null
+            }
+
+            errorReceiver = ErrorReportReceiver(activity).also {
+                localBM.registerReceiver(it, IntentFilter(ERROR_REPORT_LOCAL_BROADCAST_CHANNEL))
+            }
+            enableAppLauncherPreviewAndScreenshots(activity)
+        }
+    }
+
+    private fun enableAppLauncherPreviewAndScreenshots(activity: Activity) {
+        activity.window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
+    }
+
+    private fun disableAppLauncherPreviewAndScreenshots(activity: Activity) {
+        activity.window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
+    }
 
     companion object {
-        val TAG: String? = CoronaWarnApplication::class.simpleName
         private lateinit var instance: CoronaWarnApplication
 
         /* describes if the app is in foreground
@@ -34,84 +152,6 @@ class CoronaWarnApplication : Application(), LifecycleObserver,
          */
         var isAppInForeground = false
 
-        fun getAppContext(): Context =
-            instance.applicationContext
-    }
-
-    private lateinit var errorReceiver: ErrorReportReceiver
-
-    override fun onCreate() {
-        super.onCreate()
-        instance = this
-        NotificationHelper.createNotificationChannel()
-        // Enable Conscrypt for TLS1.3 Support below API Level 29
-        Security.insertProviderAt(Conscrypt.newProvider(), 1)
-        ProcessLifecycleOwner.get().lifecycle.addObserver(this)
-        registerActivityLifecycleCallbacks(this)
-
-        if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
-        }
-    }
-
-    /**
-     * Callback when the app is open but backgrounded
-     */
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    fun onAppBackgrounded() {
-        isAppInForeground = false
-        Timber.v("App backgrounded")
-    }
-
-    /**
-     * Callback when the app is foregrounded
-     */
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onAppForegrounded() {
-        isAppInForeground = true
-        Timber.v("App foregrounded")
-    }
-
-    override fun onActivityPaused(activity: Activity) {
-        // unregisters error receiver
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(errorReceiver)
-    }
-
-    override fun onActivityStarted(activity: Activity) {
-        // does not override function. Empty on intention
-    }
-
-    override fun onActivityDestroyed(activity: Activity) {
-        // does not override function. Empty on intention
-    }
-
-    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
-        // does not override function. Empty on intention
-    }
-
-    override fun onActivityStopped(activity: Activity) {
-        // does not override function. Empty on intention
-    }
-
-    @SuppressLint("SourceLockedOrientationActivity")
-    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
-        // prevents screenshot of the app for all activities,
-        // except for deviceForTesters build flavor, which is used for testing
-        if (BuildConfig.FLAVOR != "deviceForTesters") {
-            activity.window.setFlags(
-                WindowManager.LayoutParams.FLAG_SECURE,
-                WindowManager.LayoutParams.FLAG_SECURE
-            )
-        }
-
-        // set screen orientation to portrait
-        activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT
-    }
-
-    override fun onActivityResumed(activity: Activity) {
-        errorReceiver =
-            ErrorReportReceiver(activity)
-        LocalBroadcastManager.getInstance(this)
-            .registerReceiver(errorReceiver, IntentFilter(ERROR_REPORT_LOCAL_BROADCAST_CHANNEL))
+        fun getAppContext(): Context = instance.applicationContext
     }
 }
