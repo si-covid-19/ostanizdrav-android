@@ -487,7 +487,7 @@
     <string name="submission_dispatcher_tan_tele_card_text">V kolikor TAN kode še niste dobili ali vam je ta potekla, jo dobite preko spletnega obrazca.</string>
     <string name="submission_done_body">Vaš prispevek je dragocen. Hvala za podporo. Zdaj lahko drugi prejmejo opozorilo in se ustrezno odzovejo.</string>
     <string name="submission_done_button_done">Končano</string>
-    <string name="submission_done_contagious">Na brezplačni telefonski številki 080 51 00 vam je 24 ur na dan in vse dni v tednu na voljo psihološka podpora ob epidemiji COVID-19.</string
+    <string name="submission_done_contagious">Na brezplačni telefonski številki 080 51 00 vam je 24 ur na dan in vse dni v tednu na voljo psihološka podpora ob epidemiji COVID-19.</string>
     <string-array name="submission_done_further_info_bullet_points">
         <item>O trajanju izolacije presoja vaš lečeči zdravnik.</item>
         <item>V primeru poslabšanja bolezni se po telefonu posvetujte z vašim izbranim osebnim ali dežurnim zdravnikom.</item>
