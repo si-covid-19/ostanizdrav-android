@@ -15,7 +15,40 @@
         android:paddingBottom="32dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            style="@style/card"
+            style="@style/Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorContactDiaryListItem"
+            android:layout_margin="@dimen/spacing_tiny">
+
+            <TextView
+                android:id="@+id/duration_picker"
+                style="@style/body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Open duration picker dialog"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/duration_value"
+                style="@style/bodyNeutral"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:text="@string/duration_dialog_default_value"
+                android:background="@drawable/contact_diary_duration_background_default"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/duration_picker"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/spacing_tiny"
@@ -76,7 +109,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            style="@style/card"
+            style="@style/Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/spacing_tiny">
@@ -124,7 +157,7 @@
 
             <View
                 android:id="@+id/divider_top"
-                android:layout_width="@dimen/match_constraint"
+                android:layout_width="0dp"
                 android:layout_height="@dimen/card_divider"
                 android:layout_marginTop="@dimen/spacing_small"
                 android:background="@color/colorHairline"
@@ -166,7 +199,7 @@
 
             <View
                 android:id="@+id/divider_bottom"
-                android:layout_width="@dimen/match_constraint"
+                android:layout_width="0dp"
                 android:layout_height="@dimen/card_divider"
                 android:layout_marginTop="@dimen/spacing_small"
                 android:background="@color/colorHairline"
@@ -196,7 +229,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            style="@style/card"
+            style="@style/Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/spacing_tiny">

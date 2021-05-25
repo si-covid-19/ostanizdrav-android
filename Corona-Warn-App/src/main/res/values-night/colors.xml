@@ -32,8 +32,9 @@
     <color name="colorTextSixteen">#17191A</color>
     <color name="colorTextSemanticRed">@color/colorSloRed</color>
     <color name="colorTextSemanticGreen">@color/colorSloGreen</color>
-    <color name="colorTextSemanticNeutral">#5D6E80</color>
+    <color name="colorTextSemanticNeutral">@color/colorSloBlue</color>
     <color name="colorTextTint">@color/colorSloBlue</color>
+    <color name="colorTextPrimary1Inverted">#FFFFFF</color>
 
     <!-- Semantic -->
     <color name="colorSemanticHighRisk">@color/colorSloRed</color>
@@ -68,7 +69,7 @@
 
     <!-- Calendar -->
     <color name="colorCalendarSelectedDayBackground">@color/colorSloBlue</color>
-    <color name="colorCalendarTodayBorder">#007FAD</color>
+    <color name="colorCalendarTodayBorder">@color/colorSloBlue</color>
     <color name="colorCalendarTodayText">#007FAD</color>
     <color name="colorCalendarMonthText">#DE000000</color>
     <color name="colorCalendarLayoutFocusOn">@color/colorSloBlue</color>
@@ -79,4 +80,25 @@
     <color name="colorContactDiaryListItemPressed">#D7D7D7</color>
     <color name="colorContactDiaryBackground">#FFFFFF</color>
 
+    <!-- Accent -->
+    <color name="colorAccent">@color/colorSloBlue</color>
+    <color name="colorCrashReporter">@color/colorSloBlueDark</color>
+
+
+    <!-- Symptoms / Calendar -->
+    <color name="colorCalendarBackgroundSelected">@color/colorSloBlue</color>
+    <color name="colorCalendarBackgroundUnselected">@color/colorSurface2</color>
+    <color name="colorCalendarTextSelected">@color/colorTextPrimary1Inverted</color>
+    <color name="colorCalendarTextUnselected">@color/colorTextPrimary1</color>
+
+    <!-- Statistics -->
+    <color name="colorStatisticsValueLabel">#747576</color>
+    <color name="colorStatisticsPrimaryValue">#000000</color>
+    <color name="colorStatisticsTrendPositive">@color/colorSloGreenDark</color>
+    <color name="colorStatisticsTrendNegative">@color/colorSloRedDark</color>
+    <color name="colorStatisticsTrendNeutral">@color/colorSloBlueDark</color>
+
+    <!-- Bottom Nav bar-->
+    <color name="navItemColorSelected">@color/colorAccent</color>
+    <color name="navItemColorNormal">#999999</color>
 </resources>

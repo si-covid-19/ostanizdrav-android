@@ -14,7 +14,7 @@
         android:paddingBottom="32dp">
 
         <LinearLayout
-            style="@style/card"
+            style="@style/Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/spacing_tiny"
@@ -74,7 +74,30 @@
         </LinearLayout>
 
         <LinearLayout
-            style="@style/card"
+            style="@style/Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_tiny"
+            android:orientation="vertical">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/fake_correct_devicetime_toggle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:layout_weight="1"
+                android:text="Fake correct device time" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:text="This sets the offset between server time and device time to 0 and therefore allows device time travelling while still getting positive device time checks." />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/spacing_tiny"

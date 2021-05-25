@@ -1,5 +1,7 @@
 package de.rki.coronawarnapp.http.playbook
 
+import de.rki.coronawarnapp.exception.TanPairingException
+import de.rki.coronawarnapp.exception.http.BadRequestException
 import de.rki.coronawarnapp.playbook.DefaultPlaybook
 import de.rki.coronawarnapp.playbook.Playbook
 import de.rki.coronawarnapp.submission.server.SubmissionServer
@@ -8,14 +10,13 @@ import de.rki.coronawarnapp.verification.server.VerificationKeyType
 import de.rki.coronawarnapp.verification.server.VerificationServer
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldBe
+import io.kotest.matchers.types.shouldBeInstanceOf
 import io.mockk.MockKAnnotations
-import io.mockk.clearAllMocks
 import io.mockk.coEvery
 import io.mockk.coVerifySequence
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
-import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import testhelpers.BaseTest
@@ -37,11 +38,6 @@ class DefaultPlaybookTest : BaseTest() {
 
         coEvery { submissionServer.submitKeysToServer(any()) } returns mockk()
         coEvery { submissionServer.submitKeysToServerFake() } returns mockk()
-    }
-
-    @AfterEach
-    fun teardown() {
-        clearAllMocks()
     }
 
     private fun createPlaybook() = DefaultPlaybook(
@@ -90,7 +86,7 @@ class DefaultPlaybookTest : BaseTest() {
                 registrationToken = "token",
                 temporaryExposureKeys = listOf(),
                 consentToFederation = true,
-                visistedCountries = listOf("DE")
+                visitedCountries = listOf("DE")
             )
         )
 
@@ -99,6 +95,44 @@ class DefaultPlaybookTest : BaseTest() {
             verificationServer.retrieveTan(any())
             verificationServer.retrieveTanFake()
             submissionServer.submitKeysToServer(any())
+        }
+    }
+
+    @Test
+    fun `tan retrieval throws human readable exception`(): Unit = runBlocking {
+        coEvery { verificationServer.retrieveTan(any()) } throws BadRequestException(null)
+        try {
+            createPlaybook().submit(
+                Playbook.SubmissionData(
+                    registrationToken = "token",
+                    temporaryExposureKeys = listOf(),
+                    consentToFederation = true,
+                    visitedCountries = listOf("DE")
+                )
+            )
+        } catch (e: Exception) {
+            e.shouldBeInstanceOf<TanPairingException>()
+            e.cause.shouldBeInstanceOf<BadRequestException>()
+            e.message shouldBe "Tan has been retrieved before for this registration token"
+        }
+    }
+
+    @Test
+    fun `keys submission throws human readable exception`(): Unit = runBlocking {
+        coEvery { submissionServer.submitKeysToServer(any()) } throws BadRequestException(null)
+        try {
+            createPlaybook().submit(
+                Playbook.SubmissionData(
+                    registrationToken = "token",
+                    temporaryExposureKeys = listOf(),
+                    consentToFederation = true,
+                    visitedCountries = listOf("DE")
+                )
+            )
+        } catch (e: Exception) {
+            e.shouldBeInstanceOf<TanPairingException>()
+            e.cause.shouldBeInstanceOf<BadRequestException>()
+            e.message shouldBe "Invalid payload or missing header"
         }
     }
 
@@ -112,7 +146,7 @@ class DefaultPlaybookTest : BaseTest() {
                     registrationToken = "token",
                     temporaryExposureKeys = listOf(),
                     consentToFederation = true,
-                    visistedCountries = listOf("DE")
+                    visitedCountries = listOf("DE")
                 )
             )
         }
@@ -226,7 +260,7 @@ class DefaultPlaybookTest : BaseTest() {
                     registrationToken = "token",
                     temporaryExposureKeys = listOf(),
                     consentToFederation = true,
-                    visistedCountries = listOf("DE")
+                    visitedCountries = listOf("DE")
                 )
             )
         }

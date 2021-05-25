@@ -75,6 +75,7 @@
                     layout="@layout/include_settings_switch_row"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     app:enabled="@{false}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -82,14 +83,12 @@
                     app:showDivider="@{true}"
                     app:status="@{state.isNotificationsTestEnabled}"
                     app:statusText="@{state.getTestNotificationStatusText(context)}"
-                    app:subtitle="@{@string/settings_notifications_subtitle_update_test}"
-                    android:visibility="gone"
-                    />
+                    app:subtitle="@{@string/settings_notifications_subtitle_update_test}" />
 
                 <include
                     android:id="@+id/settings_notifications_card"
                     layout="@layout/include_tracing_status_card"
-                    android:layout_width="@dimen/match_constraint"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_small"
                     gone="@{state == null || state.isNotificationsEnabled}"

@@ -1,18 +1,17 @@
 package de.rki.coronawarnapp.ui.settings.start
 
 import android.content.Context
-import de.rki.coronawarnapp.storage.SettingsRepository
+import de.rki.coronawarnapp.datadonation.analytics.Analytics
 import de.rki.coronawarnapp.tracing.GeneralTracingStatus
 import de.rki.coronawarnapp.ui.settings.notifications.NotificationSettings
+import de.rki.coronawarnapp.util.device.BackgroundModeStatus
 import io.kotest.matchers.shouldBe
 import io.mockk.MockKAnnotations
-import io.mockk.clearAllMocks
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.verify
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
-import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -26,8 +25,9 @@ class SettingsFragmentViewModelTest : BaseTest() {
 
     @MockK lateinit var context: Context
     @MockK lateinit var tracingStatus: GeneralTracingStatus
-    @MockK lateinit var settingsRepository: SettingsRepository
     @MockK lateinit var notificationSettings: NotificationSettings
+    @MockK lateinit var backgroundModeStatus: BackgroundModeStatus
+    @MockK lateinit var analytics: Analytics
 
     @BeforeEach
     fun setup() {
@@ -37,19 +37,17 @@ class SettingsFragmentViewModelTest : BaseTest() {
         every { notificationSettings.isNotificationsRiskEnabled } returns flow { emit(false) }
         every { notificationSettings.isNotificationsTestEnabled } returns flow { emit(true) }
 
-        every { settingsRepository.isBackgroundPriorityEnabledFlow } returns flow { emit(true) }
-    }
+        every { backgroundModeStatus.isIgnoringBatteryOptimizations } returns flow { emit(true) }
 
-    @AfterEach
-    fun teardown() {
-        clearAllMocks()
+        every { analytics.isAnalyticsEnabledFlow() } returns flow { emit(true) }
     }
 
     private fun createInstance(): SettingsFragmentViewModel = SettingsFragmentViewModel(
-        dispatcherProvider = TestDispatcherProvider,
+        dispatcherProvider = TestDispatcherProvider(),
         tracingStatus = tracingStatus,
-        settingsRepository = settingsRepository,
-        notificationSettings = notificationSettings
+        backgroundModeStatus = backgroundModeStatus,
+        notificationSettings = notificationSettings,
+        analytics = analytics
     )
 
     @Test
@@ -79,11 +77,22 @@ class SettingsFragmentViewModelTest : BaseTest() {
     @Test
     fun `background priority status is forwarded`() {
         createInstance().apply {
-            backgroundPrioritystate.observeForever { }
-            backgroundPrioritystate.value shouldBe SettingsBackgroundState(
+            backgroundPriorityState.observeForever { }
+            backgroundPriorityState.value shouldBe SettingsBackgroundState(
                 isEnabled = true
             )
         }
-        verify { settingsRepository.isBackgroundPriorityEnabledFlow }
+        verify { backgroundModeStatus.isIgnoringBatteryOptimizations }
+    }
+
+    @Test
+    fun `analytics status is forwarded`() {
+        createInstance().apply {
+            analyticsState.observeForever { }
+            analyticsState.value shouldBe SettingsPrivacyPreservingAnalyticsState(
+                isEnabled = true
+            )
+        }
+        verify { analytics.isAnalyticsEnabledFlow() }
     }
 }

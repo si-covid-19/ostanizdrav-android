@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.databinding.FragmentOnboardingNotificationsBinding
 import de.rki.coronawarnapp.util.di.AutoInject
+import de.rki.coronawarnapp.util.ui.doNavigate
 import de.rki.coronawarnapp.util.ui.observe2
 import de.rki.coronawarnapp.util.ui.viewBindingLazy
 import de.rki.coronawarnapp.util.viewmodel.CWAViewModelFactoryProvider
@@ -21,7 +22,8 @@ import javax.inject.Inject
  * @see NotificationManagerCompat
  * @see AlertDialog
  */
-class OnboardingNotificationsFragment : Fragment(R.layout.fragment_onboarding_notifications),
+class OnboardingNotificationsFragment :
+    Fragment(R.layout.fragment_onboarding_notifications),
     AutoInject {
 
     @Inject lateinit var viewModelFactory: CWAViewModelFactoryProvider.Factory
@@ -32,15 +34,17 @@ class OnboardingNotificationsFragment : Fragment(R.layout.fragment_onboarding_no
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             onboardingButtonNext.setOnClickListener { vm.onNextButtonClick() }
-            onboardingButtonBack.buttonIcon.setOnClickListener { vm.onBackButtonClick() }
+            onboardingButtonBack.buttonIcon.setOnClickListener { requireActivity().onBackPressed() }
         }
         vm.routeToScreen.observe2(this) {
-            when (it) {
-                is OnboardingNavigationEvents.NavigateToMainActivity ->
-                    (requireActivity() as OnboardingActivity).completeOnboarding()
-                is OnboardingNavigationEvents.NavigateToOnboardingTest ->
-                    (activity as OnboardingActivity).goBack()
-            }
+            (requireActivity() as OnboardingActivity).completeOnboarding()
+//            when (it) {
+//                is OnboardingNavigationEvents.NavigateToOnboardingAnalytics ->
+//                    doNavigate(
+//                        OnboardingNotificationsFragmentDirections
+//                            .actionOnboardingNotificationsFragmentToOnboardingAnalyticsFragment()
+//                    )
+//            }
         }
     }
 

@@ -15,6 +15,9 @@ package de.rki.coronawarnapp.ui
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
+ *
+ *  Modifications Copyright SAP SE. 2020.  All rights reserved.
+ *
  */
 
 import androidx.annotation.MainThread
@@ -45,11 +48,14 @@ class SingleLiveEvent<T> : MutableLiveData<T>() {
                 .w("Multiple observers registered but only one will be notified of changes.")
         }
         // Observe the internal MutableLiveData
-        super.observe(owner, Observer { t ->
-            if (pending.compareAndSet(true, false)) {
-                observer.onChanged(t)
+        super.observe(
+            owner,
+            Observer { t ->
+                if (pending.compareAndSet(true, false)) {
+                    observer.onChanged(t)
+                }
             }
-        })
+        )
     }
 
     @MainThread

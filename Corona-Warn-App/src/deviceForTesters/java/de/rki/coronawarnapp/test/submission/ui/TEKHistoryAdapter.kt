@@ -23,7 +23,7 @@ class TEKHistoryAdapter : BaseAdapter<TEKHistoryAdapter.VH>(), AsyncDiffUtilAdap
 
     override fun onCreateBaseVH(parent: ViewGroup, viewType: Int): VH = VH(parent)
 
-    override fun onBindBaseVH(holder: VH, position: Int) {
+    override fun onBindBaseVH(holder: VH, position: Int, payloads: MutableList<Any>) {
         val item = data[position]
         holder.bind(item)
     }
@@ -31,22 +31,29 @@ class TEKHistoryAdapter : BaseAdapter<TEKHistoryAdapter.VH>(), AsyncDiffUtilAdap
     class VH(
         val parent: ViewGroup
     ) : BaseAdapter.VH(
-        R.layout.fragment_test_submission_tekhistory_line, parent
-    ), BindableVH<TEKHistoryItem, FragmentTestSubmissionTekhistoryLineBinding> {
+        R.layout.fragment_test_submission_tekhistory_line,
+        parent
+    ),
+        BindableVH<TEKHistoryItem, FragmentTestSubmissionTekhistoryLineBinding> {
 
         override val viewBinding = lazy { FragmentTestSubmissionTekhistoryLineBinding.bind(itemView) }
 
-        override val onBindData: FragmentTestSubmissionTekhistoryLineBinding.(item: TEKHistoryItem) -> Unit = { item ->
+        override val onBindData: FragmentTestSubmissionTekhistoryLineBinding.(
+            item: TEKHistoryItem,
+            payloads: List<Any>
+        ) -> Unit = { item, _ ->
             val key = item.key
-            primary.text = """
+            primary.text =
+                """
                 rollingStartIntervalNumber=${key.rollingStartIntervalNumber}  rollingPeriod=${key.rollingPeriod}
                 transmissionRiskLevel=${key.transmissionRiskLevel}  reportType=${key.reportType}
                 daysSinceOnsetOfSymptoms=${key.daysSinceOnsetOfSymptoms}
-            """.trimIndent()
-            secondary.text = """
+                """.trimIndent()
+            secondary.text =
+                """
                 keyData=${key.keyData.toByteString().base64()}
                 obtainedAt=${item.obtainedAt}
-            """.trimIndent()
+                """.trimIndent()
         }
     }
 }

@@ -3,14 +3,15 @@ package de.rki.coronawarnapp.ui.settings.notification
 import android.content.Context
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.ui.settings.notifications.NotificationSettingsState
+import de.rki.coronawarnapp.util.ContextExtensions
+import de.rki.coronawarnapp.util.ContextExtensions.getDrawableCompat
 import io.kotest.matchers.shouldBe
 import io.mockk.MockKAnnotations
-import io.mockk.clearAllMocks
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
+import io.mockk.mockkObject
 import io.mockk.verify
-import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import testhelpers.BaseTest
@@ -22,14 +23,12 @@ class NotificationSettingsStateTest : BaseTest() {
     @BeforeEach
     fun setup() {
         MockKAnnotations.init(this)
-        every { context.getString(any()) } returns ""
-        every { context.getColor(any()) } returns 0
-        every { context.getDrawable(any()) } returns mockk()
-    }
-
-    @AfterEach
-    fun teardown() {
-        clearAllMocks()
+        mockkObject(ContextExtensions)
+        with(context) {
+            every { getString(any()) } returns ""
+            every { getColor(any()) } returns 0
+            every { getDrawableCompat(any()) } returns mockk()
+        }
     }
 
     private fun createInstance(
@@ -63,10 +62,10 @@ class NotificationSettingsStateTest : BaseTest() {
     @Test
     fun getNotificationsImage() {
         createInstance().getNotificationsImage(context)
-        verify(exactly = 1) { context.getDrawable(R.drawable.ic_illustration_notification_on) }
+        verify(exactly = 1) { context.getDrawableCompat(R.drawable.ic_illustration_notification_on) }
 
         createInstance(isNotificationsEnabled = false).getNotificationsImage(context)
-        verify(exactly = 1) { context.getDrawable(R.drawable.ic_settings_illustration_notification_off) }
+        verify(exactly = 1) { context.getDrawableCompat(R.drawable.ic_settings_illustration_notification_off) }
     }
 
     @Test

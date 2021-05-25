@@ -1,5 +1,7 @@
 package de.rki.coronawarnapp.ui.submission.qrcode.consent
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.accessibility.AccessibilityEvent
@@ -10,6 +12,7 @@ import de.rki.coronawarnapp.ui.submission.viewmodel.SubmissionNavigationEvents
 import de.rki.coronawarnapp.util.di.AutoInject
 import de.rki.coronawarnapp.util.ui.doNavigate
 import de.rki.coronawarnapp.util.ui.observe2
+import de.rki.coronawarnapp.util.ui.popBackStack
 import de.rki.coronawarnapp.util.ui.viewBindingLazy
 import de.rki.coronawarnapp.util.viewmodel.CWAViewModelFactoryProvider
 import de.rki.coronawarnapp.util.viewmodel.cwaViewModels
@@ -32,12 +35,15 @@ class SubmissionConsentFragment : Fragment(R.layout.fragment_submission_consent)
                 is SubmissionNavigationEvents.NavigateToQRCodeScan -> doNavigate(
                     SubmissionConsentFragmentDirections.actionSubmissionConsentFragmentToSubmissionQRCodeScanFragment()
                 )
-                is SubmissionNavigationEvents.NavigateToDispatcher -> doNavigate(
-                    SubmissionConsentFragmentDirections.actionSubmissionConsentFragmentToHomeFragment()
-                )
+                is SubmissionNavigationEvents.NavigateToDispatcher -> popBackStack()
                 is SubmissionNavigationEvents.NavigateToDataPrivacy -> doNavigate(
                     SubmissionConsentFragmentDirections.actionSubmissionConsentFragmentToInformationPrivacyFragment()
                 )
+                is SubmissionNavigationEvents.ResolvePlayServicesException ->
+                    it.exception.status.startResolutionForResult(
+                        requireActivity(),
+                        REQUEST_USER_RESOLUTION
+                    )
             }
         }
         viewModel.countries.observe2(this) {
@@ -48,5 +54,16 @@ class SubmissionConsentFragment : Fragment(R.layout.fragment_submission_consent)
     override fun onResume() {
         super.onResume()
         binding.contentContainer.sendAccessibilityEvent(AccessibilityEvent.TYPE_ANNOUNCEMENT)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_USER_RESOLUTION) {
+            viewModel.giveGoogleConsentResult(resultCode == Activity.RESULT_OK)
+        }
+    }
+
+    companion object {
+        private const val REQUEST_USER_RESOLUTION = 3000
     }
 }

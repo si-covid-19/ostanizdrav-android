@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/colorSemanticMediumRiskPressed" android:state_pressed="true" /> <!-- pressed -->
-    <item android:color="@color/colorSemanticMediumRisk" /> <!-- default -->
+<!--    <item android:color="@color/colorSemanticMediumRiskPressed" android:state_pressed="true" /> &lt;!&ndash; pressed &ndash;&gt;-->
+<!--    <item android:color="@color/colorSemanticMediumRisk" /> &lt;!&ndash; default &ndash;&gt;-->
 </selector>

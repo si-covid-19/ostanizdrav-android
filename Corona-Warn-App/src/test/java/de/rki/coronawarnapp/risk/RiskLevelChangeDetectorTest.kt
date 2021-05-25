@@ -3,6 +3,7 @@ package de.rki.coronawarnapp.risk
 import android.content.Context
 import androidx.core.app.NotificationManagerCompat
 import com.google.android.gms.nearby.exposurenotification.ExposureWindow
+import de.rki.coronawarnapp.datadonation.survey.Surveys
 import de.rki.coronawarnapp.notification.NotificationHelper
 import de.rki.coronawarnapp.risk.RiskState.CALCULATION_FAILED
 import de.rki.coronawarnapp.risk.RiskState.INCREASED_RISK
@@ -10,13 +11,13 @@ import de.rki.coronawarnapp.risk.RiskState.LOW_RISK
 import de.rki.coronawarnapp.risk.result.AggregatedRiskResult
 import de.rki.coronawarnapp.risk.storage.RiskLevelStorage
 import de.rki.coronawarnapp.storage.LocalData
-import de.rki.coronawarnapp.util.ForegroundState
 import de.rki.coronawarnapp.util.TimeStamper
+import de.rki.coronawarnapp.util.device.ForegroundState
 import io.kotest.matchers.shouldBe
 import io.mockk.Called
 import io.mockk.MockKAnnotations
 import io.mockk.Runs
-import io.mockk.clearAllMocks
+import io.mockk.coEvery
 import io.mockk.coVerifySequence
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
@@ -26,7 +27,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runBlockingTest
 import org.joda.time.Instant
-import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import testhelpers.BaseTest
@@ -40,6 +40,7 @@ class RiskLevelChangeDetectorTest : BaseTest() {
     @MockK lateinit var foregroundState: ForegroundState
     @MockK lateinit var riskLevelSettings: RiskLevelSettings
     @MockK lateinit var notificationHelper: NotificationHelper
+    @MockK lateinit var surveys: Surveys
 
     @BeforeEach
     fun setup() {
@@ -53,11 +54,7 @@ class RiskLevelChangeDetectorTest : BaseTest() {
         every { notificationManagerCompat.areNotificationsEnabled() } returns true
         every { riskLevelSettings.lastChangeCheckedRiskLevelTimestamp = any() } just Runs
         every { riskLevelSettings.lastChangeCheckedRiskLevelTimestamp } returns null
-    }
-
-    @AfterEach
-    fun tearDown() {
-        clearAllMocks()
+        coEvery { surveys.resetSurvey(Surveys.Type.HIGH_RISK_ENCOUNTER) } just Runs
     }
 
     private fun createRiskLevel(
@@ -80,12 +77,13 @@ class RiskLevelChangeDetectorTest : BaseTest() {
         notificationManagerCompat = notificationManagerCompat,
         foregroundState = foregroundState,
         riskLevelSettings = riskLevelSettings,
-        notificationHelper = notificationHelper
+        notificationHelper = notificationHelper,
+        surveys = surveys
     )
 
     @Test
     fun `nothing happens if there is only one result yet`() {
-        every { riskLevelStorage.riskLevelResults } returns flowOf(listOf(createRiskLevel(LOW_RISK)))
+        every { riskLevelStorage.latestRiskLevelResults } returns flowOf(listOf(createRiskLevel(LOW_RISK)))
 
         runBlockingTest {
             val instance = createInstance(scope = this)
@@ -96,13 +94,14 @@ class RiskLevelChangeDetectorTest : BaseTest() {
             coVerifySequence {
                 LocalData wasNot Called
                 notificationManagerCompat wasNot Called
+                surveys wasNot Called
             }
         }
     }
 
     @Test
     fun `no risklevel change, nothing should happen`() {
-        every { riskLevelStorage.riskLevelResults } returns flowOf(
+        every { riskLevelStorage.latestRiskLevelResults } returns flowOf(
             listOf(
                 createRiskLevel(LOW_RISK),
                 createRiskLevel(LOW_RISK)
@@ -118,13 +117,14 @@ class RiskLevelChangeDetectorTest : BaseTest() {
             coVerifySequence {
                 LocalData wasNot Called
                 notificationManagerCompat wasNot Called
+                surveys wasNot Called
             }
         }
     }
 
     @Test
     fun `risklevel went from HIGH to LOW`() {
-        every { riskLevelStorage.riskLevelResults } returns flowOf(
+        every { riskLevelStorage.latestRiskLevelResults } returns flowOf(
             listOf(
                 createRiskLevel(LOW_RISK, calculatedAt = Instant.EPOCH.plus(1)),
                 createRiskLevel(INCREASED_RISK, calculatedAt = Instant.EPOCH)
@@ -141,13 +141,14 @@ class RiskLevelChangeDetectorTest : BaseTest() {
                 LocalData.submissionWasSuccessful()
                 foregroundState.isInForeground
                 LocalData.isUserToBeNotifiedOfLoweredRiskLevel = any()
+                surveys.resetSurvey(Surveys.Type.HIGH_RISK_ENCOUNTER)
             }
         }
     }
 
     @Test
     fun `risklevel went from LOW to HIGH`() {
-        every { riskLevelStorage.riskLevelResults } returns flowOf(
+        every { riskLevelStorage.latestRiskLevelResults } returns flowOf(
             listOf(
                 createRiskLevel(INCREASED_RISK, calculatedAt = Instant.EPOCH.plus(1)),
                 createRiskLevel(LOW_RISK, calculatedAt = Instant.EPOCH)
@@ -163,13 +164,14 @@ class RiskLevelChangeDetectorTest : BaseTest() {
             coVerifySequence {
                 LocalData.submissionWasSuccessful()
                 foregroundState.isInForeground
+                surveys wasNot Called
             }
         }
     }
 
     @Test
     fun `risklevel went from LOW to HIGH but it is has already been processed`() {
-        every { riskLevelStorage.riskLevelResults } returns flowOf(
+        every { riskLevelStorage.latestRiskLevelResults } returns flowOf(
             listOf(
                 createRiskLevel(INCREASED_RISK, calculatedAt = Instant.EPOCH.plus(1)),
                 createRiskLevel(LOW_RISK, calculatedAt = Instant.EPOCH)
@@ -186,6 +188,7 @@ class RiskLevelChangeDetectorTest : BaseTest() {
             coVerifySequence {
                 LocalData wasNot Called
                 notificationManagerCompat wasNot Called
+                surveys wasNot Called
             }
         }
     }

@@ -3,8 +3,9 @@ package de.rki.coronawarnapp.nearby
 import android.app.Activity
 import android.content.Intent
 import androidx.annotation.VisibleForTesting
-import com.squareup.inject.assisted.Assisted
-import com.squareup.inject.assisted.AssistedInject
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 import de.rki.coronawarnapp.storage.LocalData
 import de.rki.coronawarnapp.util.coroutine.AppScope
 import kotlinx.coroutines.CoroutineScope
@@ -53,7 +54,9 @@ class TracingPermissionHelper @AssistedInject constructor(
     fun handleActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
         Timber.v(
             "handleActivityResult(requesutCode=%d, resultCode=%d, data=%s)",
-            requestCode, resultCode, data
+            requestCode,
+            resultCode,
+            data
         )
         if (requestCode != TRACING_PERMISSION_REQUESTCODE) {
             Timber.tag(TAG).w("Not our request code ($requestCode): %s", data)
@@ -90,7 +93,7 @@ class TracingPermissionHelper @AssistedInject constructor(
         internal const val TRACING_PERMISSION_REQUESTCODE = 3010
     }
 
-    @AssistedInject.Factory
+    @AssistedFactory
     interface Factory {
         fun create(callback: Callback): TracingPermissionHelper
     }

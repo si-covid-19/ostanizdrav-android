@@ -4,8 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import androidx.annotation.VisibleForTesting
 import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
-import com.squareup.inject.assisted.Assisted
-import com.squareup.inject.assisted.AssistedInject
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 import de.rki.coronawarnapp.exception.ExceptionCategory
 import de.rki.coronawarnapp.exception.reporting.report
 import de.rki.coronawarnapp.nearby.ENFClient
@@ -29,23 +30,25 @@ class TEKHistoryUpdater @AssistedInject constructor(
 ) {
 
     private val tracingPermissionHelper by lazy {
-        tracingPermissionHelperFactory.create(object : TracingPermissionHelper.Callback {
-            override fun onUpdateTracingStatus(isTracingEnabled: Boolean) {
-                if (isTracingEnabled) {
-                    updateTEKHistoryOrRequestPermission()
-                } else {
-                    Timber.tag(TAG).w("Can't start TEK update, tracing permission was declined.")
+        tracingPermissionHelperFactory.create(
+            object : TracingPermissionHelper.Callback {
+                override fun onUpdateTracingStatus(isTracingEnabled: Boolean) {
+                    if (isTracingEnabled) {
+                        updateTEKHistoryOrRequestPermission()
+                    } else {
+                        Timber.tag(TAG).w("Can't start TEK update, tracing permission was declined.")
+                    }
                 }
+
+                override fun onTracingConsentRequired(onConsentResult: (given: Boolean) -> Unit) =
+                    callback.onTracingConsentRequired(onConsentResult)
+
+                override fun onPermissionRequired(permissionRequest: (Activity) -> Unit) =
+                    callback.onPermissionRequired(permissionRequest)
+
+                override fun onError(error: Throwable) = callback.onError(error)
             }
-
-            override fun onTracingConsentRequired(onConsentResult: (given: Boolean) -> Unit) =
-                callback.onTracingConsentRequired(onConsentResult)
-
-            override fun onPermissionRequired(permissionRequest: (Activity) -> Unit) =
-                callback.onPermissionRequired(permissionRequest)
-
-            override fun onError(error: Throwable) = callback.onError(error)
-        })
+        )
     }
 
     fun updateTEKHistoryOrRequestPermission() {
@@ -60,6 +63,16 @@ class TEKHistoryUpdater @AssistedInject constructor(
     }
 
     private suspend fun updateTEKHistoryInternal() {
+        val latestKeys = tekHistoryStorage.tekData.first()
+            .maxByOrNull { it.obtainedAt }?.keys
+            .orEmpty()
+
+        // Use cached keys if there are any
+        if (latestKeys.isNotEmpty()) {
+            callback.onTEKAvailable(latestKeys)
+            return
+        }
+
         enfClient.getTEKHistoryOrRequestPermission(
             onTEKHistoryAvailable = {
                 Timber.tag(TAG).d("TEKS were directly available.")
@@ -142,7 +155,7 @@ class TEKHistoryUpdater @AssistedInject constructor(
         fun onError(error: Throwable)
     }
 
-    @AssistedInject.Factory
+    @AssistedFactory
     interface Factory {
         fun create(callback: Callback): TEKHistoryUpdater
     }

@@ -19,16 +19,25 @@ class TestSettings @Inject constructor(
         context.getSharedPreferences("test_settings", Context.MODE_PRIVATE)
     }
 
+    val fakeCorrectDeviceTime = prefs.createFlowPreference(
+        key = "config.devicetimecheck.fake.correct",
+        defaultValue = false
+    )
+
     val fakeMeteredConnection = prefs.createFlowPreference(
         key = "connections.metered.fake",
         defaultValue = false
     )
 
-    val fakeExposureWindows = FlowPreference(
-        preferences = prefs,
+    val fakeExposureWindows: FlowPreference<FakeExposureWindowTypes> = prefs.createFlowPreference(
         key = "riskleve.exposurewindows.fake",
-        reader = FlowPreference.gsonReader<FakeExposureWindowTypes>(gson, FakeExposureWindowTypes.DISABLED),
+        reader = FlowPreference.gsonReader(gson, FakeExposureWindowTypes.DISABLED),
         writer = FlowPreference.gsonWriter(gson)
+    )
+
+    val skipSafetyNetTimeCheck = prefs.createFlowPreference(
+        key = "safetynet.skip.timecheck",
+        defaultValue = false
     )
 
     enum class FakeExposureWindowTypes {
@@ -37,6 +46,9 @@ class TestSettings @Inject constructor(
 
         @SerializedName("INCREASED_RISK_DEFAULT")
         INCREASED_RISK_DEFAULT,
+
+        @SerializedName("INCREASED_RISK_DUE_LOW_RISK_ENCOUNTER_DEFAULT")
+        INCREASED_RISK_DUE_LOW_RISK_ENCOUNTER_DEFAULT,
 
         @SerializedName("LOW_RISK_DEFAULT")
         LOW_RISK_DEFAULT

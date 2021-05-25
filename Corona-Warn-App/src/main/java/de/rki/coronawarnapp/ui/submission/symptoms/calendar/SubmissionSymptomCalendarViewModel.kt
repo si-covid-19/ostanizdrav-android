@@ -1,12 +1,18 @@
 package de.rki.coronawarnapp.ui.submission.symptoms.calendar
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.asLiveData
 import androidx.navigation.NavDirections
-import com.squareup.inject.assisted.Assisted
-import com.squareup.inject.assisted.AssistedInject
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 import de.rki.coronawarnapp.bugreporting.reportProblem
-import de.rki.coronawarnapp.storage.SubmissionRepository
+import de.rki.coronawarnapp.datadonation.analytics.modules.keysubmission.AnalyticsKeySubmissionCollector
+import de.rki.coronawarnapp.datadonation.analytics.modules.keysubmission.Screen
+import de.rki.coronawarnapp.submission.SubmissionRepository
 import de.rki.coronawarnapp.submission.Symptoms
+import de.rki.coronawarnapp.submission.auto.AutoSubmission
 import de.rki.coronawarnapp.util.coroutine.DispatcherProvider
 import de.rki.coronawarnapp.util.ui.SingleLiveEvent
 import de.rki.coronawarnapp.util.viewmodel.CWAViewModel
@@ -18,7 +24,9 @@ import timber.log.Timber
 class SubmissionSymptomCalendarViewModel @AssistedInject constructor(
     @Assisted val symptomIndication: Symptoms.Indication,
     dispatcherProvider: DispatcherProvider,
-    private val submissionRepository: SubmissionRepository
+    private val submissionRepository: SubmissionRepository,
+    private val autoSubmission: AutoSubmission,
+    private val analyticsKeySubmissionCollector: AnalyticsKeySubmissionCollector
 ) : CWAViewModel(dispatcherProvider = dispatcherProvider) {
 
     private val symptomStartInternal = MutableStateFlow<Symptoms.StartOf?>(null)
@@ -26,8 +34,17 @@ class SubmissionSymptomCalendarViewModel @AssistedInject constructor(
 
     val routeToScreen = SingleLiveEvent<NavDirections>()
     val showCancelDialog = SingleLiveEvent<Unit>()
-    val showUploadDialog = submissionRepository.isSubmissionRunning
-        .asLiveData(context = dispatcherProvider.Default)
+    private val mediatorShowUploadDialog = MediatorLiveData<Boolean>()
+
+    init {
+        mediatorShowUploadDialog.addSource(
+            autoSubmission.isSubmissionRunning.asLiveData(context = dispatcherProvider.Default)
+        ) { show ->
+            mediatorShowUploadDialog.postValue(show)
+        }
+    }
+
+    val showUploadDialog: LiveData<Boolean> = mediatorShowUploadDialog
 
     fun onLastSevenDaysStart() {
         updateSymptomStart(Symptoms.StartOf.LastSevenDays)
@@ -70,21 +87,24 @@ class SubmissionSymptomCalendarViewModel @AssistedInject constructor(
                 startOfSymptoms = symptomStartInternal.value
             ).also { Timber.tag(TAG).v("Symptoms updated to %s", it) }
         }
-        performSubmission()
+        performSubmission { analyticsKeySubmissionCollector.reportSubmittedAfterSymptomFlow() }
     }
 
     fun onCancelConfirmed() {
         Timber.d("onCancelConfirmed() clicked on calendar screen.")
-        performSubmission()
+        performSubmission { analyticsKeySubmissionCollector.reportSubmittedAfterCancel() }
     }
 
-    private fun performSubmission() {
+    private fun performSubmission(onSubmitted: () -> Unit) {
         launch {
             try {
-                submissionRepository.startSubmission()
+                autoSubmission.runSubmissionNow()
+                onSubmitted()
             } catch (e: Exception) {
                 Timber.tag(TAG).e(e, "performSubmission() failed.")
             } finally {
+                Timber.i("Hide uploading progress and navigate to HomeFragment")
+                mediatorShowUploadDialog.postValue(false)
                 routeToScreen.postValue(
                     SubmissionSymptomCalendarFragmentDirections.actionSubmissionSymptomCalendarFragmentToMainFragment()
                 )
@@ -92,7 +112,13 @@ class SubmissionSymptomCalendarViewModel @AssistedInject constructor(
         }
     }
 
-    @AssistedInject.Factory
+    fun onNewUserActivity() {
+        Timber.d("onNewUserActivity()")
+        analyticsKeySubmissionCollector.reportLastSubmissionFlowScreen(Screen.SYMPTOM_ONSET)
+        autoSubmission.updateLastSubmissionUserActivity()
+    }
+
+    @AssistedFactory
     interface Factory : CWAViewModelFactory<SubmissionSymptomCalendarViewModel> {
 
         fun create(symptomIndication: Symptoms.Indication): SubmissionSymptomCalendarViewModel

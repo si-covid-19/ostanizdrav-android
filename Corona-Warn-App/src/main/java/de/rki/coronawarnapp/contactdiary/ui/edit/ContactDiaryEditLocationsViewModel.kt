@@ -1,7 +1,8 @@
 package de.rki.coronawarnapp.contactdiary.ui.edit
 
 import androidx.lifecycle.asLiveData
-import com.squareup.inject.assisted.AssistedInject
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 import de.rki.coronawarnapp.contactdiary.model.ContactDiaryLocation
 import de.rki.coronawarnapp.contactdiary.storage.entity.ContactDiaryLocationEntity
 import de.rki.coronawarnapp.contactdiary.storage.entity.toContactDiaryLocationEntity
@@ -19,7 +20,7 @@ class ContactDiaryEditLocationsViewModel @AssistedInject constructor(
     private val contactDiaryRepository: ContactDiaryRepository,
     dispatcherProvider: DispatcherProvider
 ) : CWAViewModel(dispatcherProvider = dispatcherProvider) {
-    private val coroutineExceptionHandler = CoroutineExceptionHandler { coroutineContext, ex ->
+    private val coroutineExceptionHandler = CoroutineExceptionHandler { _, ex ->
         ex.report(ExceptionCategory.INTERNAL, TAG)
     }
 
@@ -28,10 +29,10 @@ class ContactDiaryEditLocationsViewModel @AssistedInject constructor(
 
     val navigationEvent = SingleLiveEvent<NavigationEvent>()
 
-    val isButtonEnabled = contactDiaryRepository.locations.map { !it.isNullOrEmpty() }
+    val isButtonEnabled = contactDiaryRepository.locations.map { it.isNotEmpty() }
         .asLiveData(dispatcherProvider.IO)
 
-    val isListVisible = contactDiaryRepository.locations.map { !it.isNullOrEmpty() }
+    val isListVisible = contactDiaryRepository.locations.map { it.isNotEmpty() }
         .asLiveData(dispatcherProvider.IO)
 
     fun onDeleteAllLocationsClick() {
@@ -46,18 +47,16 @@ class ContactDiaryEditLocationsViewModel @AssistedInject constructor(
     }
 
     fun onEditLocationClick(location: ContactDiaryLocation) {
-        navigationEvent.postValue(NavigationEvent.ShowLocationDetailSheet(location.toContactDiaryLocationEntity()))
+        navigationEvent.postValue(NavigationEvent.ShowLocationDetailFragment(location.toContactDiaryLocationEntity()))
     }
 
-    companion object {
-        private val TAG = ContactDiaryEditLocationsViewModel::class.java.simpleName
-    }
-
-    @AssistedInject.Factory
+    @AssistedFactory
     interface Factory : SimpleCWAViewModelFactory<ContactDiaryEditLocationsViewModel>
 
     sealed class NavigationEvent {
         object ShowDeletionConfirmationDialog : NavigationEvent()
-        data class ShowLocationDetailSheet(val location: ContactDiaryLocationEntity) : NavigationEvent()
+        data class ShowLocationDetailFragment(val location: ContactDiaryLocationEntity) : NavigationEvent()
     }
 }
+
+private val TAG = ContactDiaryEditLocationsViewModel::class.java.simpleName

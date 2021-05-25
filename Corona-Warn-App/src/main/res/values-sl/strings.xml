@@ -1,15 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" tools:ignore="MissingTranslation">
+    <string name="accessibility_action_deselect">Prekliči izbor</string>
+    <string name="accessibility_action_select">Izberi</string>
     <string name="accessibility_back">Nazaj</string>
     <string name="accessibility_button">Gumb</string>
     <string name="accessibility_close">Zapri</string>
-    <string name="accessibility_logo">#OstaniZdrav</string>
-    <string name="accessibility_menu">Meni</string>
-    <string name="accessibility_next">Naprej</string>
+    <string name="accessibility_day_add_location">Dodaj kraj</string>
+    <string name="accessibility_day_add_person">Dodaj osebo</string>
+    <string name="accessibility_day_view_header">Dnevni pogled</string>
+    <string name="accessibility_edit">Uredi</string>
+    <string name="accessibility_location">Kraj %s</string>
+    <string name="accessibility_location_selected">Kraj %s je izbran</string>
+    <string name="accessibility_location_unselected">Kraj %s ni izbran</string>
+    <string name="accessibility_logo">Oseba %s</string>
+    <string name="accessibility_menu">Izbrana je oseba %s</string>
+    <string name="accessibility_next">Oseba %s ni izbrana</string>
+    <string name="accessibility_person">Oseba %s</string>
+    <string name="accessibility_person_selected">Oseba %s je izbrana</string>
+    <string name="accessibility_person_unselected">Oseba %s ni izbrana</string>
+    <string name="accessibility_statistics_card_announcement">Statistične ploščice</string>
+    <string name="accessibility_statistics_card_navigation_information">Podrsajte horizontalno med ploščicami za prikaz več statistike</string>
+    <string name="analytics_userinput_agegroup_0_to_29"></string>
+    <string name="analytics_userinput_agegroup_30_to_59"></string>
+    <string name="analytics_userinput_agegroup_from_60"></string>
+    <string name="analytics_userinput_agegroup_title"></string>
+    <string name="analytics_userinput_agegroup_unspecified"></string>
+    <string name="analytics_userinput_district_title"></string>
+    <string name="analytics_userinput_district_unspecified"></string>
+    <string name="analytics_userinput_federalstate_bb"></string>
+    <string name="analytics_userinput_federalstate_be"></string>
+    <string name="analytics_userinput_federalstate_bw"></string>
+    <string name="analytics_userinput_federalstate_by"></string>
+    <string name="analytics_userinput_federalstate_hb"></string>
+    <string name="analytics_userinput_federalstate_he"></string>
+    <string name="analytics_userinput_federalstate_hh"></string>
+    <string name="analytics_userinput_federalstate_mv"></string>
+    <string name="analytics_userinput_federalstate_ni"></string>
+    <string name="analytics_userinput_federalstate_nrw"></string>
+    <string name="analytics_userinput_federalstate_rp"></string>
+    <string name="analytics_userinput_federalstate_sh"></string>
+    <string name="analytics_userinput_federalstate_sl"></string>
+    <string name="analytics_userinput_federalstate_sn"></string>
+    <string name="analytics_userinput_federalstate_st"></string>
+    <string name="analytics_userinput_federalstate_th"></string>
+    <string name="analytics_userinput_federalstate_title"></string>
+    <string name="analytics_userinput_federalstate_unspecified"></string>
+    <string name="app_shortcut_contact_diary_title">Dodaj vnos</string>
+    <string name="bottom_nav_diary_title">Dnevnik</string>
+    <string name="bottom_nav_home_title">Domov</string>
     <string name="button_back">Nazaj na prejšnjo stran</string>
     <string name="button_menu">Meni</string>
     <string name="button_proceed">Nadaljuj</string>
     <string name="button_share">Delite</string>
+    <string name="contact_diary_add_location_save_button">Shrani</string>
+    <string name="contact_diary_add_location_text_input_hint">Kraj</string>
+    <string name="contact_diary_add_location_title">Kraj</string>
+    <string name="contact_diary_add_person_save_button">Shrani</string>
+    <string name="contact_diary_add_person_text_input_name_hint">Ime, priimek</string>
+    <string name="contact_diary_add_person_title">Oseba</string>
+    <string name="contact_diary_add_text_input_email_hint">elektronski naslov</string>
+    <string name="contact_diary_add_text_input_phone_hint">Telefon</string>
+    <string name="contact_diary_comment_info_screen_body">Zapišite okoliščine, ki bi lahko povečale tveganje za okužbo, na primer, kako blizu drugih ljudi ste bili ali aktivnosti, ki ste se jih udeležili skupaj z drugimi. Primeri: sedel tesno skupaj, sodeloval pri športni aktivnosti (npr. igral košarko), druženje v majhnem prostoru, petje.\n\nČe se okužite, lahko te informacije NIJZ pomagajo pri odkrivanju potencialnih verig okužbe.</string>
+    <string name="contact_diary_comment_info_screen_description">Tukaj lahko vnesete opombe, ki bodo pomagale oceniti tveganje za okužbo.</string>
+    <string name="contact_diary_comment_info_screen_title">Opomba</string>
+    <string name="contact_diary_day_location_fab_title">Kraj</string>
+    <string name="contact_diary_day_location_tab_title">Kraji</string>
+    <string name="contact_diary_day_person_fab_title">Oseba</string>
+    <string name="contact_diary_day_person_tab_title">Osebe</string>
+    <string name="contact_diary_delete_button_negative">Prekliči</string>
+    <string name="contact_diary_delete_button_positive">Odstrani</string>
+    <string name="contact_diary_delete_icon_content_description">Izbriši vnos</string>
+    <string name="contact_diary_delete_location_title">Ali ste prepričani, da želite odstraniti ta kraj?</string>
+    <string name="contact_diary_delete_locations_message">Če odstranite kraje, bodo vsi vnosi odstranjeni iz vašega dnevnika.</string>
+    <string name="contact_diary_delete_locations_title">Ali ste prepričani, da želite odstraniti vse kraje?</string>
+    <string name="contact_diary_delete_person_title">Ali ste prepričani, da želite odstraniti to osebo?</string>
+    <string name="contact_diary_delete_persons_message">Če odstranite osebe, bodo vsi vnosi odstranjeni iz vašega dnevnika.</string>
+    <string name="contact_diary_delete_persons_title">Ali ste prepričani, da želite odstraniti vse osebe?</string>
+    <string name="contact_diary_edit_icon_content_description">Uredi vnos</string>
+    <string name="contact_diary_edit_locations_image_content_description">Stavba je označena z lokacijsko zastavo.</string>
+    <string name="contact_diary_edit_locations_title">Uredi kraj</string>
+    <string name="contact_diary_edit_persons_image_content_description">Silhueta ženske, ki hodi po travniku.</string>
+    <string name="contact_diary_edit_persons_title">Urejanje oseb</string>
+    <string name="contact_diary_high_risk_title">Večje tveganje</string>
+    <string name="contact_diary_homescreen_card_body">Spremljajte, kje ste bili in koga ste srečali.</string>
+    <string name="contact_diary_homescreen_card_button_text">Odpri dnevnik</string>
+    <string name="contact_diary_homescreen_card_header">Dnevnik srečanj</string>
+    <string name="contact_diary_homescreen_card_image_content_description">Zaprta knjiga z zaznamkom</string>
+    <string name="contact_diary_information_card_title"></string>
+    <string name="contact_diary_location_list_no_items_subtitle">Ustvari kraj in ga dodaj v svoj dnevnik srečanj.</string>
+    <string name="contact_diary_location_list_no_items_title">Ni še določenih krajev</string>
+    <string name="contact_diary_location_visit_circumstances_hint">Opomba</string>
+    <string name="contact_diary_location_visit_duration_label">Trajanje</string>
+    <string name="contact_diary_low_risk_title">Majhno tveganje</string>
+    <string name="contact_diary_onboarding_body">Ustvarite seznam svojih stikov v zadnjih 14 dneh, tako boste imeli pri roki celoten seznam, če bi ga potrebovali.</string>
+    <string name="contact_diary_onboarding_button_text">Odpri dnevnik</string>
+    <string name="contact_diary_onboarding_functionality_fifth_section">Svoj dnevnik srečanj lahko izvozite v obliki navadnega besedila in ga uredite.</string>
+    <string name="contact_diary_onboarding_functionality_first_section">Vnesite podatke o osebah, ki ste jih srečali.</string>
+    <string name="contact_diary_onboarding_functionality_fourth_section">Vnose podatkov o osebah in krajih lahko kadar koli odstranite iz svojega dnevnika. Vnosi v dnevniku bodo samodejno izbrisani po 16 dneh.</string>
+    <string name="contact_diary_onboarding_functionality_second_section">Vnesite podatke o krajih, kjer ste imeli stike z drugimi.</string>
+    <string name="contact_diary_onboarding_functionality_sixth_section">Navedene izpostavljenosti niso nujno povezane z osebami in kraji, ki ste jih zaznali. Ne sklepajte napačno." </string>
+    <string name="contact_diary_onboarding_functionality_third_section">Ste edini, ki lahko dostopa do vašega dnevnika srečanj. Dnevnik je shranjen lokalno na vaši napravi.</string>
+    <string name="contact_diary_onboarding_image_content_description">Več ljudi je zunaj in gleda svoje pametne telefone.</string>
+    <string name="contact_diary_onboarding_legal_information">Za več informacij glejte \'Obvestilo o varstvu podatkov\'.</string>
+    <string name="contact_diary_onboarding_privacy_information_first_section_body_one">Uporaba te dodatne funkcije aplikacije #OstaniZdrav je prostovoljna. Sami se odločite, katere podatke o osebah in krajih boste zabeležili.</string>
+    <string name="contact_diary_onboarding_privacy_information_first_section_body_two">Niti NIJZ niti katera koli druga agencija nimata dostopa do podatkov, ki jih vnesete v dnevnik srečanj. Podatki se v vašem pametnem telefonu Android shranijo le v šifrirani obliki.</string>
+    <string name="contact_diary_onboarding_privacy_information_first_section_title">Ohranili boste popoln nadzor nad vsemi podatki, ki jih zabeležite.</string>
+    <string name="contact_diary_onboarding_privacy_information_second_section_body_one">Prosimo, dobro premislite, s kom delite podatke, zabeležene v vašem dnevniku srečanj, in kako jih delite. Informacije v dnevniku srečanj naj bi vam pomagale, da se spomnite svojih stikov - niso namenjene nikomur drugemu. Če NIJZ prosi za pomoč pri iskanju stikov, si lahko z dnevnikom srečanj pomagate, da se spomnite s kom ste bili v stiku.</string>
+    <string name="contact_diary_onboarding_privacy_information_second_section_body_two">Zasebniki in podjetja od vas ne smejo zahtevati, da razkrijete podatke, ki ste jih zabeležili. Prosimo, upoštevajte želje vseh, ki ne želijo, da bi bili zabeleženi v vašem dnevniku srečanj.</string>
+    <string name="contact_diary_onboarding_privacy_information_second_section_title">Prosimo za spoštovanje zasebnosti drugih ljudi.</string>
+    <string name="contact_diary_onboarding_privacy_information_title">Varstvo podatkov</string>
+    <string name="contact_diary_overview_header">Začetna stran</string>
+    <string name="contact_diary_overview_subtitle">Zapišite osebe, ki ste jih srečali, in kraje, ki ste jih obiskali.</string>
+    <string name="contact_diary_overview_title">Dnevnik srečanj</string>
+    <string name="contact_diary_person_encounter_circumstances_hint">Opomba (npr. majhna razdalja)</string>
+    <string name="contact_diary_person_encounter_duration_above_15_min">Več kot 15 minut</string>
+    <string name="contact_diary_person_encounter_duration_below_15_min">Manj kot 15 minut</string>
+    <string name="contact_diary_person_encounter_environment_inside">Zaprt prostor</string>
+    <string name="contact_diary_person_encounter_environment_outside">Odprt prostor</string>
+    <string name="contact_diary_person_encounter_mask_with">Nošena maska</string>
+    <string name="contact_diary_person_encounter_mask_without">Brez maske</string>
+    <string name="contact_diary_person_list_no_items_subtitle">Ustvari osebo in jo dodaj v svoj dnevnik srečanj.</string>
+    <string name="contact_diary_person_list_no_items_title">Ni še shranjenih oseb</string>
+    <string name="contact_diary_remove_all_button">Odstrani vse</string>
+    <string name="contact_diary_risk_body">Tveganje ni nujno povezano z ljudmi in kraji, ki ste jih vpisali v dnevnik srečanj.</string>
+    <string name="contact_diary_risk_body_extended"></string>
+    <string name="contact_diary_risk_body_high_risk_due_to_low_risk_encounters">Imeli ste več izpostavljenosti z majhnim tveganjem. Tveganje ni nujno povezano z ljudmi in kraji, ki ste jih vpisali v dnevnik srečanj.</string>
+    <string name="contact_diary_title">Dnevnik srečanj</string>
     <string name="country_name_at">Avstrija</string>
     <string name="country_name_be">Belgija</string>
     <string name="country_name_bg">Bolgarija</string>
@@ -42,8 +158,57 @@
     <string name="country_name_si">Slovenija</string>
     <string name="country_name_sk">Slovaška</string>
     <string name="country_name_uk">Velika Britanija</string>
+    <string name="datadonation_details_access_survey_card_button_text"></string>
+    <string name="datadonation_details_access_survey_card_content"></string>
+    <string name="datadonation_details_access_survey_card_title"></string>
+    <string name="datadonation_details_survey_consent_bottom_link"></string>
+    <string name="datadonation_details_survey_consent_bullet_point_one"></string>
+    <string name="datadonation_details_survey_consent_bullet_point_three"></string>
+    <string name="datadonation_details_survey_consent_bullet_point_two"></string>
+    <string name="datadonation_details_survey_consent_button_title"></string>
+    <string name="datadonation_details_survey_consent_details_title"></string>
+    <string name="datadonation_details_survey_consent_error_ALREADY_PARTICIPATED"></string>
+    <string name="datadonation_details_survey_consent_error_CHANGE_DEVICE_TIME"></string>
+    <string name="datadonation_details_survey_consent_error_DEVICE_NOT_SUPPORTED"></string>
+    <string name="datadonation_details_survey_consent_error_DEVICE_NOT_TRUSTED"></string>
+    <string name="datadonation_details_survey_consent_error_TIME_SINCE_ONBOARDING_UNVERIFIED"></string>
+    <string name="datadonation_details_survey_consent_error_TRY_AGAIN_LATER"></string>
+    <string name="datadonation_details_survey_consent_error_TRY_AGAIN_NEXT_MONTH"></string>
+    <string name="datadonation_details_survey_consent_error_UPDATE_PLAY_SERVICES"></string>
+    <string name="datadonation_details_survey_consent_error_dialog_pos_button"></string>
+    <string name="datadonation_details_survey_consent_error_dialog_title"></string>
+    <string name="datadonation_details_survey_consent_info_card_body"></string>
+    <string name="datadonation_details_survey_consent_info_card_title"></string>
+    <string name="datadonation_details_survey_consent_progress_dialog_msg"></string>
+    <string name="datadonation_details_survey_consent_top_body"></string>
+    <string name="datadonation_details_survey_consent_top_title"></string>
+    <string name="datadonation_survey_consent_details_text"></string>
+    <string name="datadonation_survey_consent_details_text_below"></string>
+    <string name="datadonation_survey_consent_details_title"></string>
+    <string name="datadonation_survey_consent_details_title_below"></string>
+    <string name="debugging_debuglog_action_share_log"></string>
+    <string name="debugging_debuglog_action_start_recording"></string>
+    <string name="debugging_debuglog_action_stop_recording"></string>
+    <string name="debugging_debuglog_intro_explanation"></string>
+    <string name="debugging_debuglog_intro_warning"></string>
+    <string name="debugging_debuglog_sharing_dialog_title"></string>
+    <string name="debugging_debuglog_status_additional_infos"></string>
+    <string name="debugging_debuglog_status_not_recording"></string>
+    <string name="debugging_debuglog_status_recording"></string>
+    <string name="debugging_debuglog_title"></string>
+    <string name="device_time_incorrect_dialog_body">Čas, nastavljen na vaši napravi, se ne ujema s trenutnim časom. Posledično vašega tveganja trenutno ni mogoče preveriti. V nastavitvah naprave nastavite pravi čas.</string>
+    <string name="device_time_incorrect_dialog_button_confirm">V redu</string>
+    <string name="device_time_incorrect_dialog_headline">Beleženje izpostavljenosti ni mogoče</string>
+    <string name="dialog_reactivate_risk_calculation_button_negative">Prekliči</string>
+    <string name="dialog_reactivate_risk_calculation_button_positive">Aktiviraj</string>
+    <string name="dialog_reactivate_risk_calculation_message">Vnos potrditve okužbe se bo izbrisal in ponovno boste aktivirali beleženje izpostavljenosti.</string>
+    <string name="dialog_reactivate_risk_calculation_title">Aktivirajte beleženje izpostavljenosti</string>
+    <string name="duration_dialog_cancel_button">Prekliči</string>
+    <string name="duration_dialog_default_value">00:00</string>
+    <string name="duration_dialog_ok_button">V redu</string>
+    <string name="duration_dialog_title">Trajanje</string>
     <string name="errors_communication_with_api">Napaka pri komuniciranju z vmesnikom Google API</string>
-    <string name="errors_external_action">Tega dejanja ni možno izvesti. Pokličite Enotni kontaktni center za pomoč uporabnikom.</string>
+    <string name="errors_external_action">Tega dejanja ni možno izvesti. Pišite Enotnemu kontaktnemu centru za pomoč uporabnikom.</string>
     <string name="errors_generic_button_negative">Podrobnosti</string>
     <string name="errors_generic_button_positive">V redu</string>
     <string name="errors_generic_details_headline">Vzrok</string>
@@ -57,36 +222,34 @@
     <string name="errors_not_enough_device_storage">Na voljo ni dovolj pomnilnika.</string>
     <string name="errors_risk_detection_limit_reached_description">Za danes ste dosegli največje število preverjanj vaše izpostavljenosti. Prosimo preverite ponovno jutri.</string>
     <string name="errors_risk_detection_limit_reached_title">Doseženo največje število preverjanj</string>
+    <string name="errors_ssl_certificate_deactivated"></string>
     <string name="hint_external_webpage">Več o aplikaciji #OstaniZdrav najdete na spletni strani gov.si. Preusmerili vas bomo na zunanjo spletno stran.</string>
     <string name="information_about_body">Kdor uporablja aplikacijo, pomaga pri spremljanju in prekinitvi verige prenosa okužb. V aplikaciji se lokalno na vaši napravi shranijo stiki z drugimi napravami. Aplikacija vas obvesti, če ste bili v stiku z osebami, pri katerih je pozneje bila potrjena okužba s SARS-CoV-2. Vaša identiteta in zasebnost sta vedno zaščiteni.</string>
     <string name="information_about_body_emphasized">Nacionalni inštitut za javno zdravje (NIJZ) je osrednja ustanova za varovanje zdravja v Sloveniji. NIJZ zagotavlja strokovno oziroma vsebinsko podporo aplikaciji, ki jo upravlja in vzdržuje Ministrstvo za javno upravo RS. Poleg doslednega upoštevanja preventivnih ukrepov za preprečevanje okužbe s SARS-CoV-2 lahko s pomočjo aplikacije še dodatno omejimo širjenje bolezni.</string>
     <string name="information_about_headline">Obvarujmo sebe in druge pred COVID-19</string>
     <string name="information_about_illustration_description">Skupina ljudi uporablja svoje pametne telefone v mestu.</string>
     <string name="information_about_title">O aplikaciji</string>
-    <string name="information_contact_body">Če imate vprašanja o aplikaciji #OstaniZdrav, pokličite enotni kontaktni center. Če potrebujete psihološko podporo pokličite telefon za psihološko podporo.</string>
-    <string name="information_contact_body_open">Jeziki: slovenščina in angleščina \nDelovni čas: Vse dni v tednu od 8:00 do 20:00\nKlic je brezplačen.\nKlici iz tujine: +386 1 478 7557</string>
+    <string name="information_contact_body">Če imate vprašanja o delovanju aplikacije #OstaniZdrav, pišite na ekc@gov.si.\n\nDelovni čas: \nPonedeljek - petek\n8:00 - 22:00</string>
+    <string name="information_contact_body_open"></string>
     <string name="information_contact_body_other"></string>
     <string name="information_contact_body_phone">Na brezplačni telefonski številki vam je 24 ur na dan in vse dni v tednu na voljo psihološka podpora ob epidemiji COVID-19.</string>
-    <string name="information_contact_button_phone">080 17 87</string>
-    <string name="information_contact_button_phone1">080 51 00</string>
-    <string name="information_contact_headline">Telefon za psihološko podporo ob epidemiji COVID-19</string>
+    <string name="information_contact_button_phone">080 51 00</string>
+    <string name="information_contact_headline">Enotni kontaktni center</string>
     <string name="information_contact_illustration_description">Moški ima med telefoniranjem na glavi slušalke z mikrofonom.</string>
-    <string name="information_contact_phone_call_number">080 17 87</string>
-    <string name="information_contact_phone_call_number1">080 51 00</string>
-    <string name="information_contact_subtitle_phone">Enotni kontaktni center</string>
+    <string name="information_contact_phone_call_number">080 51 00</string>
+    <string name="information_contact_subtitle_phone">Telefon za psihološko podporo</string>
     <string name="information_contact_title">Pomoč uporabnikom</string>
     <string name="information_help_title">Več o aplikaciji #OstaniZdrav</string>
     <string name="information_help_title_accessibility">Več o aplikaciji #OstaniZdrav. Preusmerili vas bomo na zunanjo spletno stran.</string>
-    <string name="information_legal_body_publisher">Aplikacijo #OstaniZdrav sta pripravila Nacionalni inštitut za javno zdravje in Ministrstvo za javno upravo, pri čemer NIJZ skrbi za vsebinski del aplikacije, MJU pa za tehničnega. Oba sta tako skupna upravljavca podatkov, ki se obdelujejo v okviru aplikacije #OstaniZdrav.</string>
+    <string name="information_legal_body_publisher"></string>
     <string name="information_legal_headline_contact">Kontakt</string>
     <string name="information_legal_headline_publisher">Objavil/-a</string>
-    <string name="information_legal_headline_taxid"></string>
+    <string name="information_legal_headline_taxid">Podporo interoperabilnosti aplikacije #OstaniZdrav je financirala Evropska komisija</string>
     <string name="information_legal_illustration_description">Roka drži pametno napravo, na zaslonu katere je veliko besedila. Ob besedilu je znak za začetek odstavka, ki predstavlja impresum.</string>
-    <string name="information_legal_subtitle_contact">E-naslov: ekc@gov.si"<xliff:g id="line_break">"\n"</xliff:g>"Telefonska številka: 080 17 87"<xliff:g id="line_break">"\n"</xliff:g>"iz tujine: +386 1 478 7557</string>
+    <string name="information_legal_subtitle_contact">E-naslov: \nkorona@nijz.si \nrazvoj.mju@gov.si</string>
     <string name="information_legal_subtitle_contact_form_non_en_de"></string>
-    <string name="information_legal_subtitle_contact_label"></string>
     <string name="information_legal_subtitle_contact_url"></string>
-    <string name="information_legal_subtitle_publisher"></string>
+    <string name="information_legal_subtitle_publisher">Aplikacijo #OstaniZdrav sta pripravila Nacionalni inštitut za javno zdravje in Ministrstvo za javno upravo, pri čemer NIJZ skrbi za vsebinski del aplikacije, MJU pa za tehničnega. Oba sta tako skupna upravljavca podatkov, ki se obdelujejo v okviru aplikacije #OstaniZdrav.</string>
     <string name="information_legal_subtitle_taxid"></string>
     <string name="information_legal_title">Impresum</string>
     <string name="information_privacy_html_path">privacy_sl.html</string>
@@ -101,6 +264,7 @@
     <string name="information_terms_title">Pogoji uporabe</string>
     <string name="information_title">Informacije o aplikaciji</string>
     <string name="information_version">Različica: %1s</string>
+    <string name="interop_consent_body"></string>
     <string name="interop_consent_headline">Soglasje</string>
     <string name="interoperability_configuration_first_section">Številne države sodelujejo pri omogočanju čezmejnega obveščanja o izpostavljenosti preko skupnega strežnika za izmenjavo ključev. Na primer stiki z uporabniki tujih uradnih aplikacij za boj proti Covid-19 bodo upoštevani pri oceni vaše stopnje tveganja.</string>
     <string name="interoperability_configuration_information">Politika zasebnosti aplikacije (vključno z informacijo o obdelavi podatkov pri čezmejni izmenjavi ključev) se nahaja v meniju pod Informacije o aplikaciji in Zasebnost.\n</string>
@@ -110,8 +274,11 @@
     <string name="interoperability_eu_illustration_description">Roka drži pametno napravo. V ozadju je ilustracija Evrope in zastava Evropske unije.</string>
     <string name="interoperability_onboarding_delta_expanded_terms_text_part_1">Pogoji uporabe so bili posodobljeni.</string>
     <string name="interoperability_onboarding_delta_expanded_terms_text_part_2"></string>
+    <string name="interoperability_onboarding_delta_footerDescription">Z vaše strani niso potrebne nobene spremembe. Poskrbite samo, da je beleženje izpostavljenosti vključeno.</string>
+    <string name="interoperability_onboarding_delta_footerTitle">Informacije o varstvu podatkov</string>
+    <string name="interoperability_onboarding_delta_free_download"></string>
     <string name="interoperability_onboarding_delta_randomid"></string>
-    <string name="interoperability_onboarding_delta_subtitle">"Številne države sodelujejo pri omogočanju čezmejnega obveščanja o izpostavljenosti preko skupnega strežnika za izmenjavo ključev. To pomeni, da bodo stiki z uporabniki tujih uradnih aplikacij za boj proti COVID-19 upoštevani pri oceni vaše stopnje tveganja. "</string>
+    <string name="interoperability_onboarding_delta_subtitle">Številne države sodelujejo pri omogočanju čezmejnega obveščanja o izpostavljenosti preko skupnega strežnika za izmenjavo ključev. To pomeni, da bodo stiki z uporabniki tujih uradnih aplikacij za boj proti COVID-19 upoštevani pri oceni vaše stopnje tveganja. </string>
     <string name="interoperability_onboarding_delta_terms_link">Pogoji uporabe</string>
     <string name="interoperability_onboarding_delta_title">Čezmejno beleženje izpostavljenosti</string>
     <string name="interoperability_onboarding_first_section">Številne države sodelujejo pri omogočanju čezmejnega obveščanja o izpostavljenosti preko skupnega strežnika za izmenjavo ključev. To pomeni, da bodo stiki z uporabniki tujih uradnih aplikacij za boj proti COVID-19 upoštevani pri oceni vaše stopnje tveganja. </string>
@@ -160,19 +327,46 @@
     <string name="main_share_message">Skupaj proti COVID-19<xliff:g id="line_break">"\n"</xliff:g>"Jaz sodelujem, kaj pa vi?"<xliff:g id="line_break">"\n"</xliff:g><xliff:g id="link_play_store">"https://gov.si/ostanizdrav"</xliff:g>"\n"<xliff:g id="line_break">"\n"</xliff:g></string>
     <string name="main_share_title">Delite aplikacijo #OstaniZdrav</string>
     <string name="main_title">Glavna stran aplikacije #OstaniZdrav</string>
+    <string name="menu_contact_diary_edit_locations">Uredi kraje</string>
+    <string name="menu_contact_diary_edit_persons">Uredi osebe</string>
+    <string name="menu_contact_diary_information">Informacije</string>
+    <string name="menu_contact_export_entries">Izvozi vnose</string>
     <string name="menu_help">Pregled</string>
     <string name="menu_information">Informacije o aplikaciji</string>
     <string name="menu_settings">Nastavitve</string>
     <string name="menu_test_notification">Test Notification</string>
+    <string-array name="new_release_body">
+        <item>Aplikacijo lahko uporabljate za prostovoljno beleženje podatkov o osebah, ki ste jih srečali, in krajih, ki ste jih obiskali. To so pomembne informacije za sledenje verigi okužbe. Vendar se je teh informacij težko spomniti v časovnem obdobju dveh tednov, zato dnevnik srečanj služi kot koristen spominski pripomoček.</item>
+        <item>V dnevnik srečanj lahko neposredno dodate vnos, ne da bi vam bilo treba najprej odpreti aplikacijo. To storite tako, da tapnete ikono za aplikacijo #OstaniZdrav in jo držite približno 2 sekundi, dokler se ne prikaže meni, nato pa tapnite "Dodaj vnos v dnevnik za danes".</item>
+        <item>Če aplikacija pokaže, da imate povečano tveganje, lahko zdaj vidite, ali je stanje tveganja prikazano na podlagi ene ali več izpostavljenosti s povečanim tveganjem ali ene ali več izpostavljenosti z majhnim tveganjem.</item>
+        <item>Poglejte podatke o dnevnem vnosu TAN.</item>
+    </string-array>
+    <string name="new_release_bottom">Seznam sprememb v tej izdaji najdete v Informacije o aplikaciji v razdelku »Novosti«.</string>
+    <string-array name="new_release_linkified_labels">
+        <item/>
+        <item/>
+        <item/>
+        <item/>
+    </string-array>
+    <string-array name="new_release_target_urls">
+        <item/>
+        <item/>
+        <item/>
+        <item/>
+    </string-array>
+    <string-array name="new_release_title">
+        <item>Dnevnik srečanj</item>
+        <item>Direkten dostop do dnevnika srečanj</item>
+        <item>Več podrobnosti o vašem statusu tveganja</item>
+        <item>Statistika</item>
+    </string-array>
     <string name="notification_body">Imate nova sporočila v aplikaciji #OstaniZdrav.</string>
     <string name="notification_body_share_positive_result">Vnesite potrditev okužbe</string>
     <string name="notification_body_test_result_ready">Imate nova sporočila v aplikaciji #OstaniZdrav.</string>
-    <string name="notification_channel_id"><xliff:g id="notification_channel_id">"de.rki.coronawarnapp.notification.exposureNotificationChannelId"</xliff:g></string>
     <string name="notification_description">Obvestila iz aplikacije #OstaniZdrav</string>
     <string name="notification_headline">#OstaniZdrav</string>
     <string name="notification_headline_share_positive_result">Lahko pomagate!</string>
-    <string name="notification_headline_test_result_ready"></string>
-    <string name="notification_id"><xliff:g id="notification_id">"1"</xliff:g></string>
+    <string name="notification_headline_test_result_ready">#OstaniZdrav</string>
     <string name="notification_name">#OstaniZdrav</string>
     <string name="onboarding_background_fetch_dialog_body">Izklopili ste delovanje v ozadju za aplikacijo #OstaniZdrav. Če želite prejemati obvestila prosimo aktivirajte delovanje v ozadju. To lahko storite v nastavitvah naprave. </string>
     <string name="onboarding_background_fetch_dialog_button_negative">Ročno aktiviraj beleženje izpostavljenosti</string>
@@ -201,6 +395,49 @@
     <string name="onboarding_notifications_illustration_description">Ženska je prejela obvestilo od svoje aplikacije #OstaniZdrav.</string>
     <string name="onboarding_notifications_subtitle">Aplikacija vas lahko samodejno obvesti o vašem stanju tveganja za okužbo.</string>
     <string name="onboarding_onboarding_accessibility_title">Začetni prikazni zaslon, stran 1 od 5: Skupaj proti COVID-19</string>
+    <string name="onboarding_ppa_age_title"></string>
+    <string name="onboarding_ppa_body">Lahko nam pomagate izboljšati aplikacijo #OstaniZdrav. Podatke o uporabi aplikacije delite z RKI. To bo RKI pomagalo oceniti učinkovitost aplikacije. Vaši podatki bodo pripomogli tudi k izboljšanju funkcij in uporabnosti aplikacije.</string>
+    <string name="onboarding_ppa_body_short"></string>
+    <string name="onboarding_ppa_consent_donate_button">Sprejmi</string>
+    <string name="onboarding_ppa_consent_not_donate_button">Ne deli</string>
+    <string name="onboarding_ppa_district_title"></string>
+    <string name="onboarding_ppa_headline">Deli</string>
+    <string name="onboarding_ppa_illustration_description">Oseba v roki drži pametno napravo</string>
+    <string name="onboarding_ppa_more_info_data_processing_body"></string>
+    <string name="onboarding_ppa_more_info_data_processing_point_1_text"></string>
+    <string name="onboarding_ppa_more_info_data_processing_point_2_text"></string>
+    <string name="onboarding_ppa_more_info_data_processing_point_3_text"></string>
+    <string name="onboarding_ppa_more_info_data_processing_point_4_text"></string>
+    <string name="onboarding_ppa_more_info_data_processing_title"></string>
+    <string name="onboarding_ppa_more_info_decline_processing_text"></string>
+    <string name="onboarding_ppa_more_info_headline"></string>
+    <string name="onboarding_ppa_more_info_much_privacy_body"></string>
+    <string name="onboarding_ppa_more_info_other_info_body"></string>
+    <string name="onboarding_ppa_more_info_other_info_point_1_text"></string>
+    <string name="onboarding_ppa_more_info_other_info_point_2_text"></string>
+    <string name="onboarding_ppa_more_info_other_info_point_3_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_body_1"></string>
+    <string name="onboarding_ppa_more_info_rki_data_body_2"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_10_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_11_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_12_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_13_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_14_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_15_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_16_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_1_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_2_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_3_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_4_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_5_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_6_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_7_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_8_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_point_9_text"></string>
+    <string name="onboarding_ppa_more_info_rki_data_title"></string>
+    <string name="onboarding_ppa_more_info_title"></string>
+    <string name="onboarding_ppa_regional_evaluation_text"></string>
+    <string name="onboarding_ppa_state_title"></string>
     <string name="onboarding_privacy_accessibility_title">Začetni prikazni zaslon, stran 2 od 5: varstvo podatkov. Sledi daljše besedilo. Za nadaljevanje uporabite gumb na dnu zaslona.</string>
     <string name="onboarding_privacy_headline">Varstvo podatkov</string>
     <string name="onboarding_privacy_illustration_description">Ženska uporablja aplikacijo #OstaniZdrav na svoji pametni napravi. Ob njej je ilustracija ščita s ključavnico, ki je predstavlja šifrirane podatke.</string>
@@ -212,6 +449,7 @@
     <string name="onboarding_test_subtitle">… vas vljudno prosimo, da to delite v aplikaciji #OstaniZdrav. Deljenje informacije o vaši okužbi je prostovoljno in varno. To storite zaradi zdravja drugih.</string>
     <string name="onboarding_tracing_accessibility_title">Začetni prikazni zaslon, stran 3 od 5: Kako vklopiti beleženje izpostavljenosti</string>
     <string name="onboarding_tracing_body">Beleženje izpostavljenosti deluje tako, da vaša naprava prek Bluetootha prejme naključne oddajne kode drugih uporabnikov, vašo naključno oddajno kodo pa posreduje njihovim napravam. To funkcionalnost lahko izklopite kadar koli.</string>
+    <string name="onboarding_tracing_body_consent">Če želite ugotoviti stopnjo tveganja za okužbo s SARS-CoV-2, morate omogočiti funkcijo beleženja izpostavljenosti v aplikaciji. S klikom na gumb »Omogoči« soglašate z vklopom funkcije beleženja izpostavljenosti v aplikaciji in obdelavo s tem povezanih podatkov.\n\nZa celovito delovanje aplikacije mora biti omogočena funkcija beleženja izpostavljenosti COVID-19, ki jo na vašem pametnem telefonu zagotavlja Google. Aplikaciji #OstaniZdrav morate dovoliti, da funkcijo uporablja.\n\nKo boste omogočili beleženje izpostavljenosti, bo vaš pametni telefon prek Bluetootha nenehno ustvarjal in prenašal naključne oddajne kode, ki jih bodo sprejemali drugi pametni telefoni Android ali Apple v bližini, in sicer pod pogojem, da je tudi na njih omogočeno beleženje izpostavljenosti. Vaš pametni telefon pa ob tem prejema naključne oddajne kode drugih pametnih telefonov. Vaši dnevni ključi in naključne oddajne kode, ki ste jih prejeli od drugih pametnih telefonov, se zabeležijo v dnevnik izpostavljenosti, v katerem se hranijo 14 dni.\n\nZa potrebe spremljanja vašega tveganja za okužbo, bo aplikacija dnevno naložila seznam dnevnih ključev vseh uporabnikov, ki so svoji aplikaciji sporočili, da so okuženi s SARS-CoV-2. Ta seznam se nato primerja z naključnimi oddajnimi kodami v dnevniku izpostavljenosti. Če aplikacija odkrije, da ste bili v stiku z okuženim uporabnikom, vas bo o tem obvestila in vam sporočila, da obstaja tveganje za okužbo.\n\nZ jakostjo Bluetooth signala se določi fizična oddaljenost (močnejši kot je signal, manjša je oddaljenost). Aplikacija nato analizira te informacije in oceni verjetnost okužbe s SARS-CoV-2 ter vam poda priporočila, kako ukrepati. Ta ocena se izvede le lokalno, na vašem pametnem telefonu. Razen vas ne bo nihče vedel, ali ste bili v stiku z okuženo osebo in kakšno je vaše tveganje za okužbo.\n\nZa preklic soglasja glede uporabe funkcije beleženja izpostavljenosti lahko to funkcijo onemogočite s preklopnim gumbom v aplikaciji ali pa aplikacijo izbrišete. Če se odločite, da boste funkcijo beleženja izpostavljenosti ponovno uporabljali, lahko funkcijo ponovno vklopite ali si aplikacijo ponovno namestite. Če izklopite funkcijo beleženja izpostavljenosti, aplikacija ne bo več preverjala ali ste bili v stiku z okuženim uporabnikom. Če bi prav tako želeli, da vaša naprava preneha pošiljati in prejemati naključne oddajne kode, boste morali v nastavitvah svojega pametnega telefona onemogočiti beleženje izpostavljenosti COVID-19. Ne pozabite, da vaše naključne oddajne kode in tiste, ki ste jih prejeli z drugih pametnih telefonov in so shranjene v dnevniku izpostavljenosti, v aplikaciji ne bodo izbrisane. Podatke, shranjene v dnevniku izpostavljenosti, lahko trajno izbrišete le v nastavitvah svojega pametnega telefona.\n\nObvestilo o zasebnosti v aplikaciji (vključno z razlago obdelave podatkov, ki se izvaja za funkcijo beleženja izpostavljenosti) lahko najdete v meniju pod naslovom “Zasebnost”. </string>
     <string name="onboarding_tracing_body_emphasized">Z naključnimi oddajnimi kodami se posredujejo le informacije o datumu, trajanju in bližini do drugih naprav, ki je izračunana s pomočjo jakosti Bluetooth signala. Osebni podatki, kot so ime, naslov in lokacija, se ne beležijo in tudi ne izmenjujejo. Posameznikov ni mogoče prepoznati.</string>
     <string name="onboarding_tracing_button_next">Aktiviraj</string>
     <string name="onboarding_tracing_dialog_body">To pomeni, da aplikacija #OstaniZdrav ne more pošiljati ali prejemati obvestil o vašem stanju tveganja za okužbo s SARS-CoV-2. To funkcionalnost lahko izklopite kadar koli.</string>
@@ -221,17 +459,31 @@
     <string name="onboarding_tracing_easy_language_explanation"><a href= "https://arhiv.mm.gov.si/vlada/MJJ/TolmačkaAPPvodič.mp4">Predstavitev aplikacije v slovenskem znakovnem jeziku</a></string>
     <string name="onboarding_tracing_easy_language_explanation_url">https://arhiv.mm.gov.si/vlada/MJJ/TolmačkaAPPvodič.mp4</string>
     <string name="onboarding_tracing_headline">Kako vklopiti beleženje izpostavljenosti</string>
+    <string name="onboarding_tracing_headline_consent">Soglasje</string>
     <string name="onboarding_tracing_illustration_description">Tri osebe so na svojih napravah aktivirali beleženje izpostavljenosti, s čimer bodo beležili medsebojne stike.</string>
     <string name="onboarding_tracing_location_body">Bluetooth na napravah Android za pravilno delovanje potrebuje vklopljene lokacijske storitve.</string>
     <string name="onboarding_tracing_location_button">Odpri nastavitve naprave</string>
     <string name="onboarding_tracing_location_headline">Lokacijske storitve</string>
     <string name="onboarding_tracing_subtitle"></string>
+    <string name="ppa_onboarding_consent_title"></string>
+    <string name="ppa_onboarding_more_info_body"></string>
+    <string name="ppa_onboarding_more_info_title"></string>
+    <string name="ppa_onboarding_privacy_information_body"></string>
+    <string name="ppa_onboarding_privacy_information_point_consent"></string>
+    <string name="ppa_onboarding_privacy_information_point_identity"></string>
+    <string name="ppa_onboarding_privacy_information_point_sixteen"></string>
+    <string name="ppa_onboarding_privacy_information_title"></string>
+    <string name="ppa_settings_privacy_information_body"></string>
+    <string name="preference_auth_code"></string>
     <string name="preference_background_check_done"><xliff:g id="preference">"preference_background_check_done"</xliff:g></string>
     <string name="preference_background_job_allowed"><xliff:g id="preference">"preference_background_job_enabled"</xliff:g></string>
+    <string name="preference_background_notification"></string>
     <string name="preference_database_password"><xliff:g id="preference">"preference_database_password"</xliff:g></string>
     <string name="preference_device_pairing_successful_time"><xliff:g id="preference">"preference_device_pairing_successful_time"</xliff:g></string>
     <string name="preference_initial_result_received_time"><xliff:g id="preference">"preference_initial_result_received_time"</xliff:g></string>
     <string name="preference_initial_tracing_activation_time"><xliff:g id="preference">"preference_initial_tracing_activation_time"</xliff:g></string>
+    <string name="preference_interoperability_all_countries_selected"></string>
+    <string name="preference_interoperability_selected_country_codes"></string>
     <string name="preference_is_allowed_to_submit_diagnosis_keys"><xliff:g id="preference">"preference_is_allowed_to_submit_diagnosis_keys"</xliff:g></string>
     <string name="preference_last_non_active_tracing_timestamp"><xliff:g id="preference">"preference_last_non_active_tracing_timestamp"</xliff:g></string>
     <string name="preference_mobile_data_allowed"><xliff:g id="preference">"preference_mobile_data_enabled"</xliff:g></string>
@@ -244,56 +496,80 @@
     <string name="preference_registration_token"><xliff:g id="preference">"preference_registration_token"</xliff:g></string>
     <string name="preference_reset_app"><xliff:g id="preference">"preference_reset_app"</xliff:g></string>
     <string name="preference_risk_days_explanation_shown"><xliff:g id="preference">"preference_risk_days_explanation_shown"</xliff:g></string>
-    <string name="preference_risk_level_score_successful">" "</string>
-    <string name="preference_string_google_api_token">" "</string>
-    <string name="preference_teletan">" "</string>
-    <string name="preference_test_guid">" "</string>
+    <string name="preference_risk_level_score"></string>
+    <string name="preference_risk_level_score_successful"> </string>
+    <string name="preference_string_google_api_token"> </string>
+    <string name="preference_teletan"> </string>
+    <string name="preference_test_guid"> </string>
     <string name="preference_test_result_notification"><xliff:g id="preference">"preference_test_result_notification"</xliff:g></string>
     <string name="preference_timestamp_manual_diagnosis_keys_retrieval"><xliff:g id="preference">"preference_timestamp_manual_diagnosis_keys_retrieval"</xliff:g></string>
-    <string name="preference_timestamp_risk_level_calculation">" "</string>
+    <string name="preference_timestamp_risk_level_calculation"> </string>
     <string name="preference_total_non_active_tracing"><xliff:g id="preference">"preference_total_non_active_tracing"</xliff:g></string>
     <string name="preference_tracing"><xliff:g id="preference">"preference_tracing"</xliff:g></string>
+    <string name="reenable_risk_card_button_text">Ponovno aktiviraj</string>
+    <string name="reenable_risk_card_description_text">Osveževanje tveganja za okužbo se je končalo, saj je bila pri vas portjena okužba s SARS-CoV-2 in ste trenutno v izolaciji. Osveževanje tveganja lahko kadarkoli ponovno aktivirate. Po končani izolaciji pritisnite \'Ponovno aktiviraj\'.</string>
+    <string name="reenable_risk_card_test_registration_string"></string>
+    <string name="reenable_risk_card_title"></string>
+    <string name="release_info_continue_button">Naprej</string>
+    <string name="release_info_header">Novosti</string>
+    <string name="release_info_version_body">Poleg odprave napak ta posodobitev vključuje še nove funkcionalnosti.</string>
+    <string name="release_info_version_title">Različica %1$s</string>
     <string name="risk_card_body_contact"></string>
     <plurals name="risk_card_body_contact_value">
         <item quantity="few"></item>
-        <item quantity="one" tools:ignore="ImpliedQuantity"></item>
+        <item quantity="many"></item>
+        <item quantity="one"></item>
         <item quantity="other"></item>
-        <item quantity="two" tools:ignore="ImpliedQuantity"></item>
+        <item quantity="two"></item>
+        <item quantity="zero"></item>
     </plurals>
     <plurals name="risk_card_body_contact_value_high_risk">
         <item quantity="few"></item>
-        <item quantity="one" tools:ignore="ImpliedQuantity"></item>
+        <item quantity="many"></item>
+        <item quantity="one"></item>
         <item quantity="other"></item>
-        <item quantity="two" tools:ignore="ImpliedQuantity"></item>
+        <item quantity="two"></item>
+        <item quantity="zero"></item>
     </plurals>
-    <string name="risk_card_body_not_yet_fetched">Stiki še niso bili posodobljeni.</string>
+    <string name="risk_card_body_not_yet_fetched">Stanje še ni bilo posodobljeno.</string>
     <string name="risk_card_body_open_daily">Opomba: Prosimo, da aplikacijo odprete vsaj enkrat na 24 ur, da lahko oceni status tveganja.</string>
     <string name="risk_card_body_saved_days">Aktivirano %1$s od 14 dni</string>
     <string name="risk_card_body_saved_days_full">Beleženje izpostavljenosti je aktivno.</string>
     <string name="risk_card_body_time_fetched">Posodobljeno: %1$s</string>
     <string name="risk_card_body_tracing_off">Vklopite beleženje izpostavljenosti za oceno tveganja za okužbo na današnji dan.</string>
-    <string name="risk_card_button_cooldown">" "</string>
+    <string name="risk_card_button_cooldown"> </string>
     <string name="risk_card_button_enable_tracing">Vklopite beleženje izpostavljenosti</string>
     <string name="risk_card_button_update">Posodobitev</string>
     <string name="risk_card_check_failed_no_internet_body">Sinhronizacija ni uspela. </string>
     <string name="risk_card_check_failed_no_internet_headline">Preverjanje izpostavljenosti ni uspelo</string>
     <string name="risk_card_check_failed_no_internet_restart_button">Ponovno zaženi</string>
-    <string name="risk_card_increased_risk_headline">Večje tveganje</string>
     <plurals name="risk_card_high_risk_encounter_days_body">
-        <item quantity="few">Bili ste izpostavljeni v %1$d dneh</item>
-        <item quantity="many">Bili ste izpostavljeni v %1$d dneh</item>
-        <item quantity="one">Bili ste izpostavljeni v %1$d dnevu</item>
-        <item quantity="other">Bili ste izpostavljeni v %1$d dneh</item>
-        <item quantity="two">Bili ste izpostavljeni v %1$d dneh</item>
-        <item quantity="zero">Bili ste izpostavljeni v %1$d dneh</item>
+        <item quantity="few">Izpostavljeni ste bili v %1$d dneh</item>
+        <item quantity="many">Izpostavljeni ste bili v %1$d dneh</item>
+        <item quantity="one">Izpostavljeni ste bili v %1$d dnevu</item>
+        <item quantity="other">Izpostavljeni ste bili v %1$d dneh</item>
+        <item quantity="two">Izpostavljeni ste bili v %1$d dneh</item>
+        <item quantity="zero">Izpostavljeni ste bili v %1$d dneh</item>
     </plurals>
+    <plurals name="risk_card_high_risk_encounter_days_body_description">
+        <item quantity="few"></item>
+        <item quantity="many"></item>
+        <item quantity="one"></item>
+        <item quantity="other"></item>
+        <item quantity="two"></item>
+        <item quantity="zero"></item>
+    </plurals>
+    <string name="risk_card_high_risk_most_recent_body_encounter_on_single_day">Dne %1$s</string>
+    <string name="risk_card_high_risk_most_recent_body_encounters_on_more_than_one_day">Zadnja izpostavljenost %1$s</string>
     <plurals name="risk_card_increased_risk_body_contact_last">
         <item quantity="few"></item>
-        <item quantity="one" tools:ignore="ImpliedQuantity"></item>
+        <item quantity="many"></item>
+        <item quantity="one"></item>
         <item quantity="other"></item>
-        <item quantity="two" tools:ignore="ImpliedQuantity"></item>
+        <item quantity="two"></item>
+        <item quantity="zero"></item>
     </plurals>
-    <string name="risk_card_low_risk_headline">Majhno tveganje</string>
+    <string name="risk_card_increased_risk_headline">Večje tveganje</string>
     <plurals name="risk_card_low_risk_encounter_days_body">
         <item quantity="few">Bili ste izpostavljeni v %1$d dneh</item>
         <item quantity="many">Bili ste izpostavljeni v %1$d dneh</item>
@@ -302,6 +578,17 @@
         <item quantity="two">Bili ste izpostavljeni v %1$d dneh</item>
         <item quantity="zero">Bili ste izpostavljeni v %1$d dneh</item>
     </plurals>
+    <plurals name="risk_card_low_risk_encounter_days_body_description">
+        <item quantity="few"></item>
+        <item quantity="many"></item>
+        <item quantity="one"></item>
+        <item quantity="other"></item>
+        <item quantity="two"></item>
+        <item quantity="zero"></item>
+    </plurals>
+    <string name="risk_card_low_risk_headline">Majhno tveganje</string>
+    <string name="risk_card_low_risk_most_recent_body_encounter_on_single_day">Dne %1$s</string>
+    <string name="risk_card_low_risk_most_recent_body_encounters_on_more_than_one_day">Zadnja izpostavljenost %1$s</string>
     <string name="risk_card_low_risk_no_encounters_body">Brez izpostavljenosti</string>
     <string name="risk_card_no_calculation_possible_body_saved_risk">Zadnje beleženje izpostavljenosti:"<xliff:g id="line_break">"\n"</xliff:g>"%1$s</string>
     <string name="risk_card_no_calculation_possible_headline">Beleženje izpostavljenosti je ustavljeno.</string>
@@ -313,6 +600,7 @@
     <string name="risk_card_progress_download_body">To lahko traja več minut.</string>
     <string name="risk_card_progress_download_headline">Prenašajo in preverjajo se trenutni podatki</string>
     <string name="risk_card_unknown_risk_body">Beleženja izpostavljenosti niste imeli vklopljenega dovolj dolgo, zato nismo mogli oceniti vašega tveganja za okužbo.</string>
+    <string name="risk_card_unknown_risk_headline"></string>
     <string name="risk_details_accessibility_title">Stanje vašega tveganja za okužbo</string>
     <string name="risk_details_additional_info_subtitle"></string>
     <string name="risk_details_additional_info_text">Vaše tveganje za okužbo je majhno, ker so bili vaši stiki kratkotrajni ali na večji razdalji. Ni razloga za skrb ter posebne potrebe po ukrepanju. Priporočamo, da se držite veljavnih priporočil za preprečevanje širjenja okužbe s SARS-CoV-2.</string>
@@ -320,24 +608,24 @@
     <string name="risk_details_behavior_body_contact_doctor">Spremljajte svoje zdravstveno stanje. Če se pri vas pojavi kateri od naštetih simptomov ali znakov, po telefonu kontaktirajte izbranega ali dežurnega zdravnika:</string>
     <string name="risk_details_behavior_body_cough_sneeze">Preden zakašljate ali kihnete, si pokrijte usta in nos s papirnatim robčkom ali pa zakašljajte ali kihnite v zgornji del rokava.</string>
     <string name="risk_details_behavior_body_stay_away">Vzdržujte medosebno razdaljo najmanj 2 metra in se izogibajte zaprtim prostorom. Prostore pogosto zračite.</string>
-    <string name="risk_details_behavior_body_stay_home">V času, ko vas aplikacija opozarja na večje tveganje, svetujemo, da ostanete doma. Potrdilo o karanteni na domu lahko pridobite na portalu eUprava.</string>
+    <string name="risk_details_behavior_body_stay_home">V času, ko vas aplikacija opozarja na večje tveganje, svetujemo, da ostanete doma.</string>
     <string name="risk_details_behavior_body_wash_hands">Redno in temeljito si umivajte roke z milom in vodo. Ne dotikajte se oči, nosu in ust z neumitimi ali nerazkuženimi rokami.</string>
     <string name="risk_details_behavior_body_wear_mask">Svetujemo uporabo mask.</string>
     <string name="risk_details_behavior_increased_body_1">Slabo počutje, prehladni znaki, kašelj, vročina, težko dihanje, glavobol, bolečine v mišicah, izguba vonja ali okusa, bolečine v žrelu.</string>
     <string name="risk_details_behavior_increased_body_2">Še naprej upoštevajte splošne ukrepe za preprečevanje širjenja okužbe.</string>
-    <string name="risk_details_behavior_increased_body_3"></string>
+    <string name="risk_details_behavior_increased_body_3">Na brezplačni telefonski številki 080 51 00 vam je 24 ur na dan in vse dni v tednu na voljo psihološka podpora ob epidemiji COVID-19.</string>
     <string name="risk_details_button_enable_tracing">@string/risk_card_button_enable_tracing</string>
     <string name="risk_details_button_update">@string/risk_card_button_update</string>
-    <string name="risk_details_deadman_notification_body"></string>
+    <string name="risk_details_deadman_notification_body">Ne pozabite redno odpirati aplikacije #OstaniZdrav, da preverite svoje tveganje.</string>
     <string name="risk_details_deadman_notification_title">Vaše tveganje za okužbo</string>
     <string name="risk_details_explanation_dialog_faq_body">Splošne informacije o COVID-19 so dostopne na <a href = "https://www.nijz.si/sl/koronavirus-2019-ncov">spletni strani Nacionalnega inštituta za javno zdravje.</a></string>
     <string name="risk_details_explanation_dialog_title">Informacije o funkcionalnosti beleženja izpostavljenosti</string>
-    <string name="risk_details_explanation_dialog_gov_body">Potrdilo o karanteni na domu lahko pridobite na portalu <a href = "https://e-uprava.gov.si/podrocja/sociala-zdravje-smrt/zdravje/potrdilo-o-karanteni.html">eUprava</a>.</string>
-    <string name="risk_details_explanation_gov_link">https://e-uprava.gov.si/podrocja/sociala-zdravje-smrt/zdravje/potrdilo-o-karanteni.html</string>
-    <string name="risk_details_explanation_faq_link">https://www.nijz.si/sl/koronavirus-2019-ncov</string>
     <string name="risk_details_headline_behavior">Priporočila</string>
     <string name="risk_details_headline_infection_risk">Tveganje za okužbo</string>
     <string name="risk_details_headline_period_logged">Obdobje beleženja</string>
+    <string name="risk_details_increased_risk_faq_link_text">Potrdilo o karanteni na domu lahko pridobite na portalu eUprava.</string>
+    <string name="risk_details_increased_risk_faq_url">https://e-uprava.gov.si/podrocja/sociala-zdravje-smrt/zdravje/potrdilo-o-karanteni.html</string>
+    <string name="risk_details_information_active_tracing_days_circle_progress">%s/14</string>
     <plurals name="risk_details_information_body_increased_risk">
         <item quantity="few">Vaše tveganje za okužbo je večje, ker ste bili izpostavljeni dlje časa in v bližini vsaj ene osebe, pri kateri je bila pozneje potrjena okužba s SARS-CoV-2. Nazadnje ste bili izpostavljeni pred %1$s dnevi.</item>
         <item quantity="many">Vaše tveganje za okužbo je večje, ker ste bili izpostavljeni dlje časa in v bližini vsaj ene osebe, pri kateri je bila pozneje potrjena okužba s SARS-CoV-2. Nazadnje ste bili izpostavljeni pred %1$s dnevi.</item>
@@ -346,10 +634,11 @@
         <item quantity="two">Vaše tveganje za okužbo je večje, ker ste bili izpostavljeni dlje časa in v bližini vsaj ene osebe, pri kateri je bila pozneje potrjena okužba s SARS-CoV-2. Nazadnje ste bili izpostavljeni pred %1$s dnevi.</item>
         <item quantity="zero"></item>
     </plurals>
+    <string name="risk_details_information_body_increased_risk_date">You have an increased risk of infection because you were last exposed on %1$s over a longer period of time and at close proximity to at least one person diagnosed with coronavirus.</string>
     <string name="risk_details_information_body_low_risk">Vaše tveganje za okužbo je majhno, ker ni bilo zabeleženega stika z osebami, pri katerih je bila pozneje potrjena okužba s SARS-CoV-2.</string>
     <string name="risk_details_information_body_low_risk_with_encounter">Vaše tveganje za okužbo je majhno, ker so bili vaši stiki z osebami, pri katerih je bila pozneje potrjena okužba s SARS-CoV-2, kratkotrajni ali na večji razdalji. Priporočamo, da upoštevate veljavna priporočila za preprečevanje širjenja okužbe s SARS-CoV-2. </string>
     <string name="risk_details_information_body_notice">Vaše tveganje za okužbo smo ocenili lokalno na vaši napravi na podlagi podatkov o beleženju izpostavljenosti (trajanje in bližina). Podatka o vašem tveganju za okužbo ne more videti nihče drug in tudi posredovati ga ne morete nikomur.</string>
-    <string name="risk_details_information_body_notice_increased">Na brezplačni telefonski številki 080 51 00 vam je 24 ur na dan in vse dni v tednu na voljo psihološka podpora ob epidemiji COVID-19. </string>
+    <string name="risk_details_information_body_notice_increased">Vaše tveganje za okužbo je večje, ker ste bili izpostavljeni dlje časa in v bližini vsaj ene osebe, pri kateri je bila pozneje potrjena okužba s SARS-CoV-2.</string>
     <string name="risk_details_information_body_outdated_risk">Beleženja izpostavljenosti nismo mogli posodobiti več kot 24 ur.</string>
     <string name="risk_details_information_body_period_logged">Vaša stopnja tveganja za okužbo se lahko oceni samo za obdobje v katerem je bilo aktivno beleženje izpostavljenosti, zato mora biti beleženje izpostavljenosti aktivirano ves čas.</string>
     <string name="risk_details_information_body_period_logged_assessment">Beleženje izpostavljenosti zajema zadnjih 14 dni. V tem času je bila funkcija beleženja aktivna %1$s dni. Aplikacija samodejno briše starejše zapise, saj te izpostavljenosti nimajo več vpliva na tveganje za okužbo.</string>
@@ -363,6 +652,7 @@
     <string name="risk_lowered_dialog_button_cancel">Več</string>
     <string name="risk_lowered_dialog_button_confirm">Potrdi</string>
     <string name="risk_lowered_dialog_headline">Sprememba stanja tveganja</string>
+    <string name="settings_analytics_switch_subtitle"></string>
     <string name="settings_background_priority_body">Da zagotovite pravilno delovanje aplikacije #OstaniZdrav v ozadju, v nastavitvah za #OstaniZdrav onemogočite optimizacijo porabe energije. S tem boste omogočili, da bo aplikacija lahko kadarkoli ocenila stanje tveganja za okužbo.</string>
     <string name="settings_background_priority_body_description">Dovolite avtomatsko posodabljanje stanja tveganja za okužbo.</string>
     <string name="settings_background_priority_card_body">Delovanje aplikacije #OstaniZdrav v ozadju lahko izklopite v nastavitvah telefona.</string>
@@ -370,6 +660,8 @@
     <string name="settings_background_priority_card_headline">Delovanje aplikacije v ozadju</string>
     <string name="settings_background_priority_headline">Delovanje v ozadju</string>
     <string name="settings_background_priority_illustration_description"></string>
+    <string name="settings_background_priority_off_illustration_description"></string>
+    <string name="settings_background_priority_on_illustration_description"></string>
     <string name="settings_background_priority_title">Prednostno delovanje v ozadju</string>
     <string name="settings_interoperability_subtitle">Sodelujoče države</string>
     <string name="settings_interoperability_title">Čezmejno beleženje izpostavljenosti</string>
@@ -388,6 +680,8 @@
     <string name="settings_notifications_title">Obvestila</string>
     <string name="settings_off">Izklopljeno</string>
     <string name="settings_on">Vklopljeno</string>
+    <string name="settings_privacy_preserving_analytics_body_description"></string>
+    <string name="settings_privacy_preserving_analytics_title"></string>
     <string name="settings_reset_body">Ne boste več prejemali obvestil o izpostavljenosti in ne boste več mogli opozarjati drugih uporabnikov.</string>
     <string name="settings_reset_body_description">Izbrišite vse podatke v aplikaciji.</string>
     <string name="settings_reset_body_keys">Dnevnik izpostavljenosti morate izbrisati ločeno v nastavitvah svoje naprave.</string>
@@ -414,7 +708,7 @@
     <string name="settings_tracing_headline">Delovanje beleženja izpostavljenosti</string>
     <string name="settings_tracing_illustration_description_active">Tri osebe so na svojih napravah aktivirale beleženje izpostavljenosti, s čimer bodo beležile medsebojne stike.</string>
     <string name="settings_tracing_illustration_description_inactive">Ena oseba je na svoji napravi izklopila beleženje izpostavljenosti, zato stik z dvema drugima osebama ni bil zabeležen.</string>
-    <string name="settings_tracing_location_illustration_description_inactive">" "</string>
+    <string name="settings_tracing_location_illustration_description_inactive"> </string>
     <string name="settings_tracing_status_active">Aktivirano</string>
     <string name="settings_tracing_status_bluetooth_body">Da bi beležili stike, mora biti za beleženje izpostavljenosti vklopljen Bluetooth. Vklopite Bluetooth v nastavitvah svoje naprave.</string>
     <string name="settings_tracing_status_bluetooth_button">Odpri nastavitve naprave</string>
@@ -439,6 +733,55 @@
     <string name="settings_tracing_title">Beleženje izpostavljenosti</string>
     <string name="sixteen_description_text">Aplikacija je namenjena osebam, ki prebivajo v Republiki Sloveniji in so stare najmanj 16 let.</string>
     <string name="sixteen_title_text">Od 16 let naprej</string>
+    <string name="statistics_card_incidence_title">7-dnevna incidenca</string>
+    <string name="statistics_card_incidence_value_description">potrjene nove okužbe na 100.000 prebivalcev</string>
+    <string name="statistics_card_infections_secondary_label">7-dnevno povprečje</string>
+    <string name="statistics_card_infections_tertiary_label">Skupaj</string>
+    <string name="statistics_card_infections_title">Potrjene nove okužbe</string>
+    <string name="statistics_card_submission_bottom_text">z aplikacijo #OstaniZdrav</string>
+    <string name="statistics_card_submission_title">Obvestila uporabnikov aplikacije</string>
+    <string name="statistics_explanation_confirmed_new_infection_text">Število oseb, ki so jim potrdili okužbo s SARS-CoV-2 in o tem poročali na NIJZ.</string>
+    <string name="statistics_explanation_confirmed_new_infection_title">Potrjene nove okužbe</string>
+    <string name="statistics_explanation_faq_url">https://app.powerbi.com/view?r=eyJrIjoiYWQ3NGE1NTMtZWJkMi00NzZmLWFiNDItZDc5YjU5MGRkOGMyIiwidCI6ImFkMjQ1ZGFlLTQ0YTAtNGQ5NC04OTY3LTVjNjk5MGFmYTQ2MyIsImMiOjl9</string>
+    <string name="statistics_explanation_illustration_description">Abstraktna slika pametnega telefona s štirimi razdelki za informacije</string>
+    <string name="statistics_explanation_legend_title">Legenda</string>
+    <string name="statistics_explanation_period_seven_day_subtitle">7-dnevno povprečje</string>
+    <string name="statistics_explanation_period_seven_day_text">Povprečna vrednost v zadnjih 7 dneh.</string>
+    <string name="statistics_explanation_period_title">Časovno obdobje</string>
+    <string name="statistics_explanation_period_total_subtitle">Skupaj</string>
+    <string name="statistics_explanation_period_total_text">Skupno število od 7. aprila 2021</string>
+    <string name="statistics_explanation_period_yesterday_subtitle">Včeraj / do včeraj</string>
+    <string name="statistics_explanation_period_yesterday_text">Podatek za prejšnji dan / do prejšnjega dne. Če še ni podatkov za prejšnji dan, se prikaže zadnji datum, za katerega podatki so na voljo.</string>
+    <string name="statistics_explanation_seven_day_incidence_text">Skupno število potrjenih novih okužb v zadnjih 7 dneh (po datumu poročanja) na 100.000 prebivalcev.</string>
+    <string name="statistics_explanation_seven_day_incidence_title">7-dnevna incidenca</string>
+    <string name="statistics_explanation_seven_day_r_link_label">cepimose.si</string>
+    <string name="statistics_explanation_seven_day_r_value_text">Za interaktivni prikaz podatkov o cepivih in cepljenju proti Covid-19 obiščite cepimose.si</string>
+    <string name="statistics_explanation_seven_day_r_value_title">7-dnevna vrednost R</string>
+    <string name="statistics_explanation_subtitle">Pojasnilo statistike</string>
+    <string name="statistics_explanation_title">Ključni podatki</string>
+    <string name="statistics_explanation_trend_decreasing_title">Trend: navzdol</string>
+    <string name="statistics_explanation_trend_description">Ocena trenda opozoril uporabnikov aplikacije se spreminja glede na trenutno pojavnost okužbe, zato je ta trend vedno prikazan z nevtralno barvo.</string>
+    <string name="statistics_explanation_trend_icons_title">Prikazani so lahko naslednji trendi:</string>
+    <string name="statistics_explanation_trend_increasing_title">Trend: navzgor</string>
+    <string name="statistics_explanation_trend_stable_title">Trend: enakomerno</string>
+    <string name="statistics_explanation_trend_text">Smer puščice označuje, ali se trend povečuje, zmanjšuje ali ostaja enakomeren - to pomeni, da je odstopanje manjše od 1%% v primerjavi s prejšnjim dnem ali 5%% v primerjavi s prejšnjim tednom. Barva označuje ta trend kot pozitiven (zelena), negativen (rdeča) ali nevtralen (modra).  Trend primerja vrednost prejšnjega dne z vrednostjo izpred dveh dni, oziroma za sedemdnevne trende, povprečno vrednost zadnjih 7 dni s povprečno vrednostjo za 7 dni pred tem. </string>
+    <string name="statistics_explanation_trend_title">Trend</string>
+    <string name="statistics_explanation_warned_persons_text">Število uporabnikov aplikacije, ki so jim potrdili okužbo s SARS-CoV-2 in so prek aplikacije opozorili druge.</string>
+    <string name="statistics_explanation_warned_persons_title">Obvestila uporabnikov aplikacije</string>
+    <string name="statistics_info_button">Nadaljne informacije</string>
+    <string name="statistics_primary_value_current">Trenutno</string>
+    <string name="statistics_primary_value_today">Danes</string>
+    <string name="statistics_primary_value_until">Do %s</string>
+    <string name="statistics_primary_value_until_today">Do danes</string>
+    <string name="statistics_primary_value_until_yesterday">Do včeraj</string>
+    <string name="statistics_primary_value_yesterday">Včeraj</string>
+    <string name="statistics_reproduction_average">povprečno število oseb, ki jih na novo okuži vsaka okužena oseba</string>
+    <string name="statistics_reproduction_title">Trenutno</string>
+    <string name="statistics_title_reproduction">7-dnevna vrednost R</string>
+    <string name="statistics_trend_decreasing">Trend: navzdol</string>
+    <string name="statistics_trend_increasing">Trend: navzgor</string>
+    <string name="statistics_trend_stable">Trend: enakomerno</string>
+    <string name="statistics_value_suffix_million">milijon</string>
     <string name="submission_accept_button">Sprejmi</string>
     <string name="submission_consent_call_test_result"></string>
     <string name="submission_consent_call_test_result_body"></string>
@@ -446,34 +789,40 @@
     <string name="submission_consent_call_test_result_scan_your_test_only"></string>
     <string name="submission_consent_help_by_warning_others_body">Anonimno delite informacijo o svoji okužbi in s tem opozorite druge. Opozorilo deluje v več državah. Trenutno sodelujejo naslednje države:</string>
     <string name="submission_consent_help_by_warning_others_headline">Prosim, pomagajte drugim, s katerimi ste se srečali, tako da jih opozorite!</string>
-    <string name="submission_consent_main_bottom_body">Podrobne informacije o obdelavi podatkov in vaši privolitvi</string>
+    <string name="submission_consent_main_bottom_body">Podrobne informacije o varstvu podatkov v aplikaciji lahko najdete v meniju pod naslovom “Zasebnost”.</string>
     <string name="submission_consent_main_first_point">Vaše soglasje je prostovoljno.</string>
     <string name="submission_consent_main_fourth_point">Za oddajo soglasja morate imeti najmanj 16 let.</string>
     <string name="submission_consent_main_headline">Vaše soglasje</string>
     <string name="submission_consent_main_headline_body">Vaše soglasje je potrebno predno lahko opozorite druge.</string>
+    <string name="submission_consent_main_illustration_description"></string>
     <string name="submission_consent_main_second_point">Anonimno delite informacijo o svoji okužbi in s tem opozorite druge.</string>
     <string name="submission_consent_main_third_point">Vaša identiteta in zasebnost sta vedno zaščiteni.</string>
     <string name="submission_consent_view_consent_given">Soglasje\n“Opozori druge” podano</string>
     <string name="submission_consent_view_consent_not_given">Soglasje\n“Opozori druge” ni podano</string>
+    <string name="submission_consent_your_consent_subsection_first_point"></string>
+    <string name="submission_consent_your_consent_subsection_headline">Vaše soglasje</string>
+    <string name="submission_consent_your_consent_subsection_second_point"><b>If you have tested positive for coronavirus, the app will share your test result in order to warn other users whom you have encountered. This includes users of the official coronavirus apps of the countries mentioned above. If you provide additional information about the onset of your symptoms, this will also be shared.</b></string>
+    <string name="submission_consent_your_consent_subsection_tapping_agree">S klikom na »Sprejmi« boste oddali svoje soglasje, s katerim dovoljujete:</string>
+    <string name="submission_consent_your_consent_subsection_third_point">You can withdraw your consent at any time. The setting for this can be found under “Display Test”. Before sharing your test result, you will be reminded of your consent and asked to confirm your willingness to share your test result.</string>
     <string name="submission_contact_accessibility_title">Pridobite TAN kodo</string>
-    <string name="submission_contact_body">" "</string>
-    <string name="submission_contact_body_other">" "</string>
-    <string name="submission_contact_button_call">Odpri obrazec</string>
+    <string name="submission_contact_body"> </string>
+    <string name="submission_contact_body_other"> </string>
+    <string name="submission_contact_button_call">Odpri</string>
     <string name="submission_contact_button_enter">Vnos TAN kode</string>
     <string name="submission_contact_headline">Za pridobitev TAN kode:</string>
     <string name="submission_contact_number_dial">https://www.nijz.si/koda</string>
-    <string name="submission_contact_number_display">NIJZ</string>
+    <string name="submission_contact_number_display"></string>
     <string name="submission_contact_operating_hours_body"></string>
-    <string name="submission_contact_step_1_body">S klikom na gumb "Odpri obrazec" dostopate do spletne strani </string>
-    <string name="submission_contact_step_1_content">S klikom na gumb "Odpri obrazec" dostopate do spletne strani NIJZ</string>
+    <string name="submission_contact_step_1_body">S klikom na gumb \"Odpri\" dostopate do spletne strani </string>
+    <string name="submission_contact_step_1_content">S klikom na gumb \"Odpri\" dostopate do spletne strani NIJZ</string>
     <string name="submission_contact_step_2_body">Z vnosom podatkov v spletni obrazec boste preko SMS sporočila pridobili TAN kodo.</string>
     <string name="submission_contact_step_2_content">Z vnosom podatkov v spletni obrazec boste preko sms sporočila pridobili TAN kodo.</string>
     <string name="submission_contact_title">Pridobite TAN kodo</string>
-    <string name="submission_country_no_selection_headline">""</string>
-    <string name="submission_country_selection_button">""</string>
-    <string name="submission_country_selection_data_faq_body">""</string>
-    <string name="submission_country_selector_headline">""</string>
-    <string name="submission_dispatcher_accessibility_title">""</string>
+    <string name="submission_country_no_selection_headline"></string>
+    <string name="submission_country_selection_button"></string>
+    <string name="submission_country_selection_data_faq_body"></string>
+    <string name="submission_country_selector_headline"></string>
+    <string name="submission_dispatcher_accessibility_title"></string>
     <string name="submission_dispatcher_already_positive_subheadline"></string>
     <string name="submission_dispatcher_card_qr"></string>
     <string name="submission_dispatcher_card_tan_code">Vnesite TAN kodo</string>
@@ -482,7 +831,10 @@
     <string name="submission_dispatcher_needs_testing_subheadline"></string>
     <string name="submission_dispatcher_qr_card_text"></string>
     <string name="submission_dispatcher_qr_privacy_dialog_body"></string>
-    <string name="submission_dispatcher_subheadline">"Obveščanje stikov preko aplikacije je popolnoma anonimno."</string>
+    <string name="submission_dispatcher_qr_privacy_dialog_button_negative"></string>
+    <string name="submission_dispatcher_qr_privacy_dialog_button_positive"></string>
+    <string name="submission_dispatcher_qr_privacy_dialog_headline"></string>
+    <string name="submission_dispatcher_subheadline">Obveščanje stikov preko aplikacije je popolnoma anonimno.</string>
     <string name="submission_dispatcher_tan_code_card_text">Podatek o okužbi s SARS-CoV-2 anonimno delite z vnosom TAN kode, ki ste jo prejeli preko SMS sporočila.</string>
     <string name="submission_dispatcher_tan_tele_card_text">V kolikor TAN kode še niste dobili ali vam je ta potekla, jo dobite preko spletnega obrazca.</string>
     <string name="submission_done_body">Vaš prispevek je dragocen. Hvala za podporo. Zdaj lahko drugi prejmejo opozorilo in se ustrezno odzovejo.</string>
@@ -490,9 +842,8 @@
     <string name="submission_done_contagious">Na brezplačni telefonski številki 080 51 00 vam je 24 ur na dan in vse dni v tednu na voljo psihološka podpora ob epidemiji COVID-19.</string>
     <string-array name="submission_done_further_info_bullet_points">
         <item>O trajanju izolacije presoja vaš lečeči zdravnik.</item>
-        <item>V primeru poslabšanja bolezni se po telefonu posvetujte z vašim izbranim osebnim ali dežurnim zdravnikom.</item>
+        <item>V primeru poslabšanja bolezni se po telefonu posvetujte z vašim izbranim osebnim ali dežurnim zdravnikom. </item>
         <item>V nujnih primerih pokličite 112. Povejte, da je bila pri vas potrjena okužba s SARS-CoV-2.</item>
-        <item>Po zaključeni izolaciji aplikacijo ponastavite v nastavitvah, da jo lahko ponovno uporabljate.</item>
     </string-array>
     <string name="submission_done_further_info_title">Druge informacije:</string>
     <string name="submission_done_illustration_description">Vsi v skupini se veselijo, ker je nekdo delil informacijo o svoji okužbi.</string>
@@ -517,7 +868,7 @@
     <string name="submission_error_dialog_web_paring_invalid_body">Dokazila ni bilo mogoče kreirati. Prosimo, da težavo sporočite na elektronski naslov razvoj.mju@gov.si.</string>
     <string name="submission_error_dialog_web_paring_invalid_button_positive">Nazaj</string>
     <string name="submission_error_dialog_web_paring_invalid_title">Napaka</string>
-    <string name="submission_error_dialog_web_tan_invalid_body">Nismo uspeli ustvariti dokazila za oddajo. Pokličite klicni center za tehnično pomoč: Informacije o aplikaciji → Klicni center za tehnično pomoč.</string>
+    <string name="submission_error_dialog_web_tan_invalid_body">Nismo uspeli ustvariti dokazila za oddajo. Pišite centru za tehnično pomoč: Informacije o aplikaciji → Pomoč uporabnikom.</string>
     <string name="submission_error_dialog_web_tan_invalid_button_positive">Nazaj</string>
     <string name="submission_error_dialog_web_tan_invalid_title">Napaka</string>
     <string name="submission_error_dialog_web_tan_redeemed_body"></string>
@@ -529,17 +880,31 @@
     <string name="submission_error_dialog_web_test_paired_title">Napaka</string>
     <string name="submission_error_dialog_web_test_paired_title_tan"></string>
     <string name="submission_interoperability_list_title">Pri čezmejnem beleženju stikov in obveščanju trenutno sodelujejo naslednje države:</string>
+    <string name="submission_intro_accessibility_title"></string>
     <string-array name="submission_intro_bullet_points">
         <item>Če je bila pri vas potrjena okužba s SARS-CoV-2, lahko z vnosom TAN kode o tem obvestite druge. TAN kodo ste dobili preko SMS sporočila.</item>
         <item>V kolikor TAN kode še niste dobili ali vam je ta potekla, jo dobite preko spletnega obrazca v naslednjem koraku.</item>
+        <item></item>
+        <item></item>
     </string-array>
     <string name="submission_intro_button_next">Naprej</string>
+    <string name="submission_intro_headline"></string>
+    <string name="submission_intro_illustration_description"></string>
+    <string name="submission_intro_text"></string>
+    <string name="submission_intro_title"></string>
+    <string name="submission_no_consent_your_consent_subsection_body_first_part">S klikom na »Sprejmi« boste oddali svoje soglasje, s katerim dovoljujete:</string>
+    <string name="submission_no_consent_your_consent_subsection_body_second_part">Aplikacija bo delila vaše dnevne ključe, da bo opozorila druge uporabnike uradnih koronavirusnih aplikacij. Opozorilo bo delovalo v zgoraj omenjenih državah. Če navedete dodatne informacije o začetku simptomov, se bodo tudi ti delili. V naslednjem koraku prosimo delite svoje dnevne ključe v zadnjih 14 dneh, tako da tapnete »Sprejmi«.</string>
+    <string name="submission_no_consent_your_consent_subsection_body_third_part">Če ste druge uporabnike že opozorili, lahko soglasje umaknete z brisanjem aplikacije.</string>
     <string name="submission_positive_country_selection_headline">Katere države ste obiskali v zadnjih 14. dneh?</string>
+    <string name="submission_positive_country_selection_title">Opozorila po vsej Evropi</string>
     <string name="submission_positive_other_illustration_description">Naprava prenaša šifrirano potrjeno okužbo v sistem.</string>
     <string name="submission_positive_other_warning_body">Omogočite lahko, da aplikacija #OstaniZdrav vaše dnevne ključe iz preteklih 14 dni anonimno deli z drugimi. Če boste to storili, boste lahko opozorili druge in pomagali, da se prekine veriga prenosa okužbe.\n\nPrenašajo se le dnevni ključi, torej bo vaša identiteta ostala anonimna.</string>
+    <string name="submission_positive_other_warning_button"></string>
     <string name="submission_positive_other_warning_headline">Pomagajte pri zajezitvi širjenja okužbe.</string>
     <string name="submission_positive_other_warning_no_consent_body_first_part">Anonimno delite informacijo o svoji okužbi in s tem opozorite druge. </string>
     <string name="submission_positive_other_warning_no_consent_body_second_part">Opozorilo deluje v več državah. Naslednje države trenutno sodelujejo pri čezmejni izmenjavi ključev:</string>
+    <string name="submission_positive_other_warning_privacy_body">Aplikacija bo delila vaše dnevne ključe, da bo opozorila druge uporabnike uradnih koronavirusnih aplikacij. Opozorilo bo delovalo v zgoraj omenjenih državah. Če navedete dodatne informacije o začetku simptomov, se bodo tudi ti delili. V naslednjem koraku prosimo delite svoje dnevne ključe v zadnjih 14 dneh, tako da tapnete »Sprejmi«.</string>
+    <string name="submission_positive_other_warning_privacy_title">Zasebnost</string>
     <string name="submission_positive_other_warning_title">Opozorite druge</string>
     <string name="submission_qr_code_scan_body"></string>
     <string name="submission_qr_code_scan_invalid_dialog_body"></string>
@@ -554,6 +919,11 @@
     <string name="submission_qr_code_scan_permission_rationale_dialog_button_positive">Dovoli</string>
     <string name="submission_qr_code_scan_permission_rationale_dialog_headline"></string>
     <string name="submission_qr_code_scan_title"></string>
+    <string name="submission_qr_info_headline"></string>
+    <string name="submission_qr_info_point_1_body"></string>
+    <string name="submission_qr_info_point_2_body"></string>
+    <string name="submission_qr_info_point_3_body"></string>
+    <string name="submission_qr_info_point_4_body"></string>
     <string name="submission_status_card_body_failed"></string>
     <string name="submission_status_card_body_fetching"></string>
     <string name="submission_status_card_body_invalid"></string>
@@ -621,8 +991,8 @@
     <string name="submission_test_result_available_text_consent_given"></string>
     <string name="submission_test_result_available_text_consent_not_given"></string>
     <string name="submission_test_result_available_title"></string>
-    <string name="submission_test_result_card_positive_body"></string>
-    <string name="submission_test_result_card_positive_title">Potrjena okužba s SARS-CoV-2</string>
+    <string name="submission_test_result_card_positive_body">Beleženje izpostavljenosti se je izključilo, ker je bila pri vas potrjena okužba s SARS-CoV-2. Po končani izolaciji pritisnite gumb Ponovno aktiviraj in beleženje izpostavljenosti se bo aktiviralo.</string>
+    <string name="submission_test_result_card_positive_title">Potrjena okužba \ns SARS-CoV-2</string>
     <string name="submission_test_result_consent_given_body"></string>
     <string name="submission_test_result_consent_given_breakup_button"></string>
     <string name="submission_test_result_consent_given_heading">Opozorite druge</string>
@@ -662,8 +1032,12 @@
     <string name="submission_test_result_positive_steps_warning_others_heading">Vnesite dan začetka simptomov</string>
     <string name="submission_test_result_steps_added_body"></string>
     <string name="submission_test_result_steps_added_heading">Rezultat vašega testiranja je bil uspešno zabeležen</string>
+    <string name="submission_test_result_subtitle"></string>
     <string name="submission_your_consent_about_agreement">You have granted the following consent:</string>
-    <string name="submission_your_consent_agreement_details">Podrobne informacije o obdelavi podatkov in vaši privolitvi</string>
+    <string name="submission_your_consent_agreement_details">Podrobne informacije o varstvu podatkov v aplikaciji lahko najdete v meniju pod naslovom “Zasebnost”.</string>
+    <string name="submission_your_consent_agreement_share_symptoms"><b>If you provide additional information about the onset of your symptoms, this will also be shared.</b>\n\nYou can withdraw your consent by disabling “Warn Others” above.</string>
+    <string name="submission_your_consent_agreement_share_symptoms_2"><b>If you provide additional information about the onset of your symptoms, this will also be shared.</b>\n\nYou can withdraw your consent by disabling “Warn others” above. Your test result will then be shown to you.</string>
+    <string name="submission_your_consent_agreement_share_test_results"><b>If you have tested positive for coronavirus, the app will share your test result in order to warn other users whom you have encountered.</b>\n\n<b>The warning will reach users of the official coronavirus apps of the following participating countries:</b></string>
     <string name="submission_your_consent_agreement_title"><b>"Soglasje"</b></string>
     <string name="submission_your_consent_switch_status_off">Ustavljeno</string>
     <string name="submission_your_consent_switch_status_on">Aktivno</string>
@@ -672,6 +1046,10 @@
     <string name="suffix_button">Gumb</string>
     <string name="suffix_image">Slika</string>
     <string name="symptoms_calendar_exact_date_button">Točen datum</string>
+    <string name="test_api_body_attenuation"></string>
+    <string name="test_api_body_daysSinceLastExposure"></string>
+    <string name="test_api_body_matchedKeyCount"></string>
+    <string name="test_api_body_maximumRiskScore"></string>
     <string name="test_api_body_my_keys">My keys (count: %1$d)</string>
     <string name="test_api_body_other_keys">Other key</string>
     <string name="test_api_body_summation_risk">Summation Risk Score: %1$s</string>
@@ -686,6 +1064,7 @@
     <string name="test_api_button_submit_keys">Submit keys to Server</string>
     <string name="test_api_calculate_risk_level">Calculate Risk Level</string>
     <string name="test_api_exposure_summary_headline">Exposure summary</string>
+    <string name="test_api_switch_background_notifications"></string>
     <string name="test_api_switch_last_three_hours_from_server">Last 3 Hours Mode</string>
     <string name="test_result_card_headline">Rezultat vašega testiranja:</string>
     <string-array name="test_result_card_negative_further_info_bullet_points">
@@ -704,13 +1083,31 @@
     <string name="update_dialog_button">Posodobitev</string>
     <string name="update_dialog_message">Aplikacijo #OstaniZdrav boste lahko ponovno uporabljali šele, ko boste namestili najnovejšo posodobitev.</string>
     <string name="update_dialog_title">Na voljo je posodobitev</string>
-    <string name="preference_auth_code"></string>
-    <string name="preference_background_notification"></string>
-    <string name="preference_interoperability_all_countries_selected"></string>
-    <string name="preference_interoperability_selected_country_codes"></string>
-    <string name="preference_risk_level_score"></string>
-    <string name="risk_card_high_risk_most_recent_body">Zadnja izpostavljenost %1$s</string>
-    <string name="risk_card_unknown_risk_headline"></string>
-    <string name="submission_positive_country_selection_title">Opozorila po vsej Evropi</string>
-
+    <string name="contact_diary_export_subject" >Moj dnevnik srečanj</string>
+    <!-- XTXT: Intro text for the contact journal email export part one-->
+    <string name="contact_diary_export_intro_one" >Srečanja zadnjih 15 dni (%1$s - %2$s)</string>
+    <!-- XTXT: Intro text for the contact journal email export part two-->
+    <!-- XTXT: Phone number prefix in the contact journal export-->
+    <string name="contact_diary_export_prefix_phone" >"Tel."</string>
+    <!-- XTXT: EMail prefix in the contact journal export-->
+    <string name="contact_diary_export_prefix_email">"E-Mail"</string>
+    <!-- XTXT: Additional information about duration that was longer than 15 minutes in the contact journal export-->
+    <string name="contact_diary_export_durations_longer_than_15min">Več kot 15 minut</string>
+    <!-- XTXT: Additional information about duration that was less than 15 minutes in the contact journal export-->
+    <string name="contact_diary_export_durations_less_than_15min" >Manj kot 15 minut</string>
+    <!-- XTXT: Additional information about wearing a mask in the contact journal export-->
+    <string name="contact_diary_export_wearing_mask">Nošena maska</string>
+    <!-- XTXT: Additional information about wearing no mask in the contact journal export-->
+    <string name="contact_diary_export_wearing_no_mask" >Brez maske</string>
+    <!-- XTXT: Additional information about being indoors in the contact journal export-->
+    <string name="contact_diary_export_indoor" >Zaprt prostor</string>
+    <!-- XTXT: Additional information about being outdoor in the contact journal export-->
+    <string name="contact_diary_export_outdoor" >Odprt prostor</string>
+    <!-- XTXT: Location duration prefix in the contact journal export-->
+    <string name="contact_diary_export_location_duration_prefix">Trajanje</string>
+    <!-- XTXT: Location duration postfix in the contact journal export-->
+    <string name="contact_diary_export_location_duration_suffix">ur</string>
+    <!-- XTXT: Location duration prefix in the contact journal overview-->
+    <string name="contact_diary_overview_location_duration_suffix">ur</string>
+    <string name="risk_details_increased_risk_faq_link_label">eUprava</string>
 </resources>

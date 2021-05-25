@@ -26,6 +26,8 @@ class ContactDiaryEditPersonsViewModelTest {
     private val person = object : ContactDiaryPerson {
         override val personId = 1L
         override var fullName = "Julia"
+        override val phoneNumber: String? = null
+        override val emailAddress: String? = null
         override val stableId = 1L
     }
 
@@ -39,7 +41,7 @@ class ContactDiaryEditPersonsViewModelTest {
     @Test
     fun testOnDeleteAllLocationsClick() {
         every { contactDiaryRepository.people } returns MutableStateFlow(personList)
-        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.navigationEvent.observeForever { }
         viewModel.onDeleteAllPersonsClick()
         viewModel.navigationEvent.value shouldBe ContactDiaryEditPersonsViewModel.NavigationEvent.ShowDeletionConfirmationDialog
@@ -50,7 +52,7 @@ class ContactDiaryEditPersonsViewModelTest {
         coEvery { contactDiaryRepository.deleteAllPeople() } just Runs
         coEvery { contactDiaryRepository.deleteAllPersonEncounters() } just Runs
         every { contactDiaryRepository.people } returns MutableStateFlow(personList)
-        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.onDeleteAllConfirmedClick()
         coVerify(exactly = 1) {
             contactDiaryRepository.deleteAllPeople()
@@ -61,17 +63,17 @@ class ContactDiaryEditPersonsViewModelTest {
     @Test
     fun testOnEditLocationClick() {
         every { contactDiaryRepository.people } returns MutableStateFlow(personList)
-        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.navigationEvent.observeForever { }
         viewModel.onEditPersonClick(person)
         viewModel.navigationEvent.value shouldBe
-            ContactDiaryEditPersonsViewModel.NavigationEvent.ShowPersonDetailSheet(person.toContactDiaryPersonEntity())
+            ContactDiaryEditPersonsViewModel.NavigationEvent.ShowPersonDetailFragment(person.toContactDiaryPersonEntity())
     }
 
     @Test
     fun testIsButtonEnabled() {
         every { contactDiaryRepository.people } returns MutableStateFlow(personList)
-        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.isButtonEnabled.observeForever { }
         viewModel.isButtonEnabled.value shouldBe true
     }
@@ -79,7 +81,7 @@ class ContactDiaryEditPersonsViewModelTest {
     @Test
     fun testIsButtonNotEnabledWhenListIsEmpty() {
         every { contactDiaryRepository.people } returns MutableStateFlow(emptyList())
-        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.isButtonEnabled.observeForever { }
         viewModel.isButtonEnabled.value shouldBe false
     }
@@ -87,7 +89,7 @@ class ContactDiaryEditPersonsViewModelTest {
     @Test
     fun testLocations() {
         every { contactDiaryRepository.people } returns MutableStateFlow(personList)
-        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditPersonsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.personsLiveData.observeForever { }
         viewModel.personsLiveData.value shouldBe personList
     }

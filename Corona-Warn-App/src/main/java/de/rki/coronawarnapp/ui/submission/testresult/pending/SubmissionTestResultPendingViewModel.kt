@@ -3,9 +3,10 @@ package de.rki.coronawarnapp.ui.submission.testresult.pending
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import androidx.navigation.NavDirections
-import com.squareup.inject.assisted.AssistedInject
-import de.rki.coronawarnapp.notification.TestResultNotificationService
-import de.rki.coronawarnapp.storage.SubmissionRepository
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
+import de.rki.coronawarnapp.notification.ShareTestResultNotificationService
+import de.rki.coronawarnapp.submission.SubmissionRepository
 import de.rki.coronawarnapp.ui.submission.testresult.TestResultUIState
 import de.rki.coronawarnapp.util.DeviceUIState
 import de.rki.coronawarnapp.util.NetworkRequestWrapper
@@ -16,7 +17,9 @@ import de.rki.coronawarnapp.util.ui.SingleLiveEvent
 import de.rki.coronawarnapp.util.viewmodel.CWAViewModel
 import de.rki.coronawarnapp.util.viewmodel.SimpleCWAViewModelFactory
 import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.filterIsInstance
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -24,7 +27,7 @@ import timber.log.Timber
 
 class SubmissionTestResultPendingViewModel @AssistedInject constructor(
     dispatcherProvider: DispatcherProvider,
-    private val testResultNotificationService: TestResultNotificationService,
+    private val shareTestResultNotificationService: ShareTestResultNotificationService,
     private val submissionRepository: SubmissionRepository
 ) : CWAViewModel(dispatcherProvider = dispatcherProvider) {
 
@@ -61,13 +64,16 @@ class SubmissionTestResultPendingViewModel @AssistedInject constructor(
         .onEach { testResultUIState ->
             testResultUIState.deviceUiState.withSuccess { deviceState ->
                 when (deviceState) {
-                    DeviceUIState.PAIRED_POSITIVE -> SubmissionTestResultPendingFragmentDirections
-                        .actionSubmissionTestResultPendingFragmentToSubmissionTestResultAvailableFragment()
-                    DeviceUIState.PAIRED_NEGATIVE -> SubmissionTestResultPendingFragmentDirections
-                        .actionSubmissionTestResultPendingFragmentToSubmissionTestResultNegativeFragment()
+                    DeviceUIState.PAIRED_POSITIVE ->
+                        SubmissionTestResultPendingFragmentDirections
+                            .actionSubmissionTestResultPendingFragmentToSubmissionTestResultAvailableFragment()
+                    DeviceUIState.PAIRED_NEGATIVE ->
+                        SubmissionTestResultPendingFragmentDirections
+                            .actionSubmissionTestResultPendingFragmentToSubmissionTestResultNegativeFragment()
                     DeviceUIState.PAIRED_REDEEMED,
-                    DeviceUIState.PAIRED_ERROR -> SubmissionTestResultPendingFragmentDirections
-                        .actionSubmissionTestResultPendingFragmentToSubmissionTestResultInvalidFragment()
+                    DeviceUIState.PAIRED_ERROR ->
+                        SubmissionTestResultPendingFragmentDirections
+                            .actionSubmissionTestResultPendingFragmentToSubmissionTestResultInvalidFragment()
                     else -> {
                         Timber.w("Unknown success state: %s", deviceState)
                         null
@@ -85,9 +91,10 @@ class SubmissionTestResultPendingViewModel @AssistedInject constructor(
         }
         .asLiveData(context = dispatcherProvider.Default)
 
-    fun onTestOpened() {
-        submissionRepository.setViewedTestResult()
-    }
+    val cwaWebExceptionLiveData = submissionRepository.deviceUIStateFlow
+        .filterIsInstance<NetworkRequestWrapper.RequestFailed<DeviceUIState, Throwable>>()
+        .map { it.error }
+        .asLiveData()
 
     fun observeTestResultToSchedulePositiveTestResultReminder() = launch {
         submissionRepository.deviceUIStateFlow
@@ -96,14 +103,13 @@ class SubmissionTestResultPendingViewModel @AssistedInject constructor(
                     it == DeviceUIState.PAIRED_POSITIVE || it == DeviceUIState.PAIRED_POSITIVE_TELETAN
                 }
             }
-            .also { testResultNotificationService.schedulePositiveTestResultReminder() }
+            .also { shareTestResultNotificationService.scheduleSharePositiveTestResultReminder() }
     }
 
     fun deregisterTestFromDevice() {
         Timber.d("deregisterTestFromDevice()")
         launch {
             submissionRepository.removeTestFromDevice()
-
             routeToScreen.postValue(null)
         }
     }
@@ -119,7 +125,7 @@ class SubmissionTestResultPendingViewModel @AssistedInject constructor(
         )
     }
 
-    @AssistedInject.Factory
+    @AssistedFactory
     interface Factory : SimpleCWAViewModelFactory<SubmissionTestResultPendingViewModel>
 
     companion object {

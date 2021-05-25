@@ -39,13 +39,13 @@
     <path
         android:pathData="M158.5,164.483L201.5,164.483A3,3 0,0 1,204.5 167.483L204.5,167.483A3,3 0,0 1,201.5 170.483L158.5,170.483A3,3 0,0 1,155.5 167.483L155.5,167.483A3,3 0,0 1,158.5 164.483z"
         android:strokeWidth="1"
-        android:fillColor="#0088B2"
+        android:fillColor="#0f6fc7"
         android:fillType="evenOdd"
         android:strokeColor="#00000000"/>
     <path
         android:pathData="M155.5,75.483L204.042,75.483A4,4 0,0 1,208.042 79.483L208.042,117.483A4,4 0,0 1,204.042 121.483L155.5,121.483A4,4 0,0 1,151.5 117.483L151.5,79.483A4,4 0,0 1,155.5 75.483z"
         android:strokeWidth="1"
-        android:fillColor="#2E854B"
+        android:fillColor="#66952E"
         android:fillType="evenOdd"
         android:strokeColor="#00000000"/>
   </group>

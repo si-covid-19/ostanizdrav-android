@@ -1,10 +1,16 @@
 package de.rki.coronawarnapp.ui.submission.symptoms.introduction
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.asLiveData
 import androidx.navigation.NavDirections
-import com.squareup.inject.assisted.AssistedInject
-import de.rki.coronawarnapp.storage.SubmissionRepository
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
+import de.rki.coronawarnapp.datadonation.analytics.modules.keysubmission.AnalyticsKeySubmissionCollector
+import de.rki.coronawarnapp.datadonation.analytics.modules.keysubmission.Screen
+import de.rki.coronawarnapp.submission.SubmissionRepository
 import de.rki.coronawarnapp.submission.Symptoms
+import de.rki.coronawarnapp.submission.auto.AutoSubmission
 import de.rki.coronawarnapp.util.coroutine.DispatcherProvider
 import de.rki.coronawarnapp.util.ui.SingleLiveEvent
 import de.rki.coronawarnapp.util.viewmodel.CWAViewModel
@@ -14,7 +20,9 @@ import timber.log.Timber
 
 class SubmissionSymptomIntroductionViewModel @AssistedInject constructor(
     dispatcherProvider: DispatcherProvider,
-    private val submissionRepository: SubmissionRepository
+    private val submissionRepository: SubmissionRepository,
+    private val autoSubmission: AutoSubmission,
+    private val analyticsKeySubmissionCollector: AnalyticsKeySubmissionCollector
 ) : CWAViewModel(dispatcherProvider = dispatcherProvider) {
 
     private val symptomIndicationInternal = MutableStateFlow<Symptoms.Indication?>(null)
@@ -23,8 +31,17 @@ class SubmissionSymptomIntroductionViewModel @AssistedInject constructor(
     val navigation = SingleLiveEvent<NavDirections>()
 
     val showCancelDialog = SingleLiveEvent<Unit>()
-    val showUploadDialog = submissionRepository.isSubmissionRunning
-        .asLiveData(context = dispatcherProvider.Default)
+    private val mediatorShowUploadDialog = MediatorLiveData<Boolean>()
+
+    init {
+        mediatorShowUploadDialog.addSource(
+            autoSubmission.isSubmissionRunning.asLiveData(context = dispatcherProvider.Default)
+        ) { show ->
+            mediatorShowUploadDialog.postValue(show)
+        }
+    }
+
+    val showUploadDialog: LiveData<Boolean> = mediatorShowUploadDialog
 
     fun onNextClicked() {
         launch {
@@ -46,7 +63,15 @@ class SubmissionSymptomIntroductionViewModel @AssistedInject constructor(
                     }
                     doSubmit()
                 }
-                Symptoms.Indication.NO_INFORMATION -> showCancelDialog.postValue(Unit)
+                Symptoms.Indication.NO_INFORMATION -> {
+                    submissionRepository.currentSymptoms.update {
+                        Symptoms(
+                            startOfSymptoms = null,
+                            symptomIndication = Symptoms.Indication.NO_INFORMATION
+                        )
+                    }
+                    doSubmit()
+                }
             }
         }
     }
@@ -80,10 +105,12 @@ class SubmissionSymptomIntroductionViewModel @AssistedInject constructor(
     private fun doSubmit() {
         launch {
             try {
-                submissionRepository.startSubmission()
+                autoSubmission.runSubmissionNow()
             } catch (e: Exception) {
                 Timber.e(e, "doSubmit() failed.")
             } finally {
+                Timber.i("Hide uploading progress and navigate to HomeFragment")
+                mediatorShowUploadDialog.postValue(false)
                 navigation.postValue(
                     SubmissionSymptomIntroductionFragmentDirections
                         .actionSubmissionSymptomIntroductionFragmentToMainFragment()
@@ -92,6 +119,12 @@ class SubmissionSymptomIntroductionViewModel @AssistedInject constructor(
         }
     }
 
-    @AssistedInject.Factory
+    fun onNewUserActivity() {
+        Timber.d("onNewUserActivity()")
+        analyticsKeySubmissionCollector.reportLastSubmissionFlowScreen(Screen.SYMPTOMS)
+        autoSubmission.updateLastSubmissionUserActivity()
+    }
+
+    @AssistedFactory
     interface Factory : SimpleCWAViewModelFactory<SubmissionSymptomIntroductionViewModel>
 }

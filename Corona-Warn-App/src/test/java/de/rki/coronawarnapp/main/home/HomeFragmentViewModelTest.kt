@@ -1,33 +1,43 @@
 package de.rki.coronawarnapp.main.home
 
 import android.content.Context
-import de.rki.coronawarnapp.notification.TestResultNotificationService
-import de.rki.coronawarnapp.storage.SubmissionRepository
+import de.rki.coronawarnapp.appconfig.AppConfigProvider
+import de.rki.coronawarnapp.deadman.DeadmanNotificationScheduler
+import de.rki.coronawarnapp.environment.BuildConfigWrap
+import de.rki.coronawarnapp.main.CWASettings
+import de.rki.coronawarnapp.notification.ShareTestResultNotificationService
+import de.rki.coronawarnapp.risk.TimeVariables
+import de.rki.coronawarnapp.statistics.source.StatisticsProvider
+import de.rki.coronawarnapp.storage.LocalData
 import de.rki.coronawarnapp.storage.TracingRepository
+import de.rki.coronawarnapp.submission.SubmissionRepository
+import de.rki.coronawarnapp.submission.ui.homecards.SubmissionDone
+import de.rki.coronawarnapp.submission.ui.homecards.SubmissionStateProvider
 import de.rki.coronawarnapp.tracing.GeneralTracingStatus
 import de.rki.coronawarnapp.tracing.GeneralTracingStatus.Status
+import de.rki.coronawarnapp.tracing.states.LowRisk
+import de.rki.coronawarnapp.tracing.states.TracingStateProvider
+import de.rki.coronawarnapp.tracing.ui.statusbar.TracingHeaderState
+import de.rki.coronawarnapp.ui.main.home.HomeFragmentEvents
 import de.rki.coronawarnapp.ui.main.home.HomeFragmentViewModel
-import de.rki.coronawarnapp.ui.main.home.SubmissionCardState
-import de.rki.coronawarnapp.ui.main.home.SubmissionCardsStateProvider
-import de.rki.coronawarnapp.ui.main.home.TracingHeaderState
-import de.rki.coronawarnapp.ui.tracing.card.TracingCardState
-import de.rki.coronawarnapp.ui.tracing.card.TracingCardStateProvider
-import de.rki.coronawarnapp.ui.viewmodel.SettingsViewModel
 import de.rki.coronawarnapp.util.DeviceUIState.PAIRED_POSITIVE
 import de.rki.coronawarnapp.util.DeviceUIState.PAIRED_POSITIVE_TELETAN
 import de.rki.coronawarnapp.util.NetworkRequestWrapper
 import de.rki.coronawarnapp.util.security.EncryptionErrorResetTool
+import de.rki.coronawarnapp.util.shortcuts.AppShortcutsHelper
 import io.kotest.matchers.shouldBe
 import io.mockk.MockKAnnotations
-import io.mockk.clearAllMocks
+import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
+import io.mockk.mockkObject
 import io.mockk.verify
+import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
-import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -35,6 +45,7 @@ import testhelpers.BaseTest
 import testhelpers.TestDispatcherProvider
 import testhelpers.extensions.CoroutinesTestExtension
 import testhelpers.extensions.InstantExecutorExtension
+import testhelpers.extensions.getOrAwaitValue
 import testhelpers.extensions.observeForTesting
 
 @ExtendWith(InstantExecutorExtension::class, CoroutinesTestExtension::class)
@@ -43,38 +54,49 @@ class HomeFragmentViewModelTest : BaseTest() {
     @MockK lateinit var generalTracingStatus: GeneralTracingStatus
     @MockK lateinit var context: Context
     @MockK lateinit var errorResetTool: EncryptionErrorResetTool
-    @MockK lateinit var settingsViewModel: SettingsViewModel
-    @MockK lateinit var tracingCardStateProvider: TracingCardStateProvider
-    @MockK lateinit var submissionCardsStateProvider: SubmissionCardsStateProvider
+    @MockK lateinit var tracingStateProvider: TracingStateProvider
+    @MockK lateinit var tracingStateProviderFactory: TracingStateProvider.Factory
+    @MockK lateinit var submissionStateProvider: SubmissionStateProvider
     @MockK lateinit var tracingRepository: TracingRepository
-    @MockK lateinit var testResultNotificationService: TestResultNotificationService
+    @MockK lateinit var shareTestResultNotificationService: ShareTestResultNotificationService
     @MockK lateinit var submissionRepository: SubmissionRepository
+    @MockK lateinit var cwaSettings: CWASettings
+    @MockK lateinit var appConfigProvider: AppConfigProvider
+    @MockK lateinit var statisticsProvider: StatisticsProvider
+    @MockK lateinit var deadmanNotificationScheduler: DeadmanNotificationScheduler
+    @MockK lateinit var appShortcutsHelper: AppShortcutsHelper
 
     @BeforeEach
     fun setup() {
         MockKAnnotations.init(this)
 
         every { generalTracingStatus.generalStatus } returns flow { emit(Status.TRACING_ACTIVE) }
-        every { submissionCardsStateProvider.state } returns flow { emit(mockk<SubmissionCardState>()) }
-        every { tracingCardStateProvider.state } returns flow { emit(mockk<TracingCardState>()) }
-        every { submissionRepository.hasViewedTestResult } returns flow { emit(true) }
-    }
 
-    @AfterEach
-    fun teardown() {
-        clearAllMocks()
+        every { tracingStateProviderFactory.create(isDetailsMode = false) } returns tracingStateProvider
+        every { tracingStateProvider.state } returns flowOf(mockk<LowRisk>())
+
+        every { submissionStateProvider.state } returns flowOf(mockk<SubmissionDone>())
+
+        every { submissionRepository.hasViewedTestResult } returns flowOf(true)
+
+        coEvery { appConfigProvider.currentConfig } returns emptyFlow()
+        coEvery { statisticsProvider.current } returns emptyFlow()
     }
 
     private fun createInstance(): HomeFragmentViewModel = HomeFragmentViewModel(
-        dispatcherProvider = TestDispatcherProvider,
+        dispatcherProvider = TestDispatcherProvider(),
         errorResetTool = errorResetTool,
-        settingsViewModel = settingsViewModel,
         tracingStatus = generalTracingStatus,
-        tracingCardStateProvider = tracingCardStateProvider,
-        submissionCardsStateProvider = submissionCardsStateProvider,
         tracingRepository = tracingRepository,
-        testResultNotificationService = testResultNotificationService,
-        submissionRepository = submissionRepository
+        shareTestResultNotificationService = shareTestResultNotificationService,
+        submissionRepository = submissionRepository,
+        submissionStateProvider = submissionStateProvider,
+        tracingStateProviderFactory = tracingStateProviderFactory,
+        cwaSettings = cwaSettings,
+        appConfigProvider = appConfigProvider,
+        statisticsProvider = statisticsProvider,
+        deadmanNotificationScheduler = deadmanNotificationScheduler,
+        appShortcutsHelper = appShortcutsHelper
     )
 
     @Test
@@ -113,48 +135,68 @@ class HomeFragmentViewModelTest : BaseTest() {
     }
 
     @Test
-    fun `tracing card status is forwarded`() {
-        every { tracingCardStateProvider.state } returns flowOf(mockk())
+    fun `simple home item generation`() {
         createInstance().apply {
-            this.tracingCardState.observeForTesting { }
-            verify { tracingCardStateProvider.state }
-        }
-    }
-
-    @Test
-    fun `submission card state is forwarded`() {
-        every { submissionCardsStateProvider.state } returns flowOf(mockk())
-        createInstance().apply {
-            this.submissionCardState.observeForTesting { }
-            verify { submissionCardsStateProvider.state }
+            this.homeItems.observeForTesting { }
+            coVerify {
+                tracingStateProvider.state
+                submissionStateProvider.state
+            }
         }
     }
 
     @Test
     fun `positive test result notification is triggered on positive QR code result`() {
-        val state = SubmissionCardState(NetworkRequestWrapper.RequestSuccessful(PAIRED_POSITIVE), true, true)
-        every { submissionCardsStateProvider.state } returns flowOf(state)
-        every { testResultNotificationService.schedulePositiveTestResultReminder() } returns Unit
+        every { submissionRepository.deviceUIStateFlow } returns flowOf(
+            NetworkRequestWrapper.RequestSuccessful(PAIRED_POSITIVE)
+        )
+        every { shareTestResultNotificationService.scheduleSharePositiveTestResultReminder() } returns Unit
 
         runBlocking {
             createInstance().apply {
                 observeTestResultToSchedulePositiveTestResultReminder()
-                verify { testResultNotificationService.schedulePositiveTestResultReminder() }
+                verify { shareTestResultNotificationService.scheduleSharePositiveTestResultReminder() }
             }
         }
     }
 
     @Test
     fun `positive test result notification is triggered on positive TeleTan code result`() {
-        val state = SubmissionCardState(NetworkRequestWrapper.RequestSuccessful(PAIRED_POSITIVE_TELETAN), true, true)
-        every { submissionCardsStateProvider.state } returns flowOf(state)
-        every { testResultNotificationService.schedulePositiveTestResultReminder() } returns Unit
+        every { submissionRepository.deviceUIStateFlow } returns flowOf(
+            NetworkRequestWrapper.RequestSuccessful(PAIRED_POSITIVE_TELETAN)
+        )
+        every { shareTestResultNotificationService.scheduleSharePositiveTestResultReminder() } returns Unit
 
         runBlocking {
             createInstance().apply {
                 observeTestResultToSchedulePositiveTestResultReminder()
-                verify { testResultNotificationService.schedulePositiveTestResultReminder() }
+                verify { shareTestResultNotificationService.scheduleSharePositiveTestResultReminder() }
             }
+        }
+    }
+
+    @Test
+    fun `test correct order of displaying delta onboarding, release notes and popups`() {
+
+        mockkObject(LocalData)
+        every { LocalData.isInteroperabilityShownAtLeastOnce } returns false andThen true
+
+        mockkObject(BuildConfigWrap)
+        every { BuildConfigWrap.VERSION_CODE } returns 1120004
+        every { cwaSettings.lastChangelogVersion.value } returns 1L andThen 1120004
+
+        every { LocalData.tracingExplanationDialogWasShown() } returns false andThen true
+        mockkObject(TimeVariables)
+        coEvery { TimeVariables.getActiveTracingDaysInRetentionPeriod() } coAnswers { 1 }
+
+        every { errorResetTool.isResetNoticeToBeShown } returns false andThen true
+
+        with(createInstance()) {
+            showPopUps()
+            popupEvents.getOrAwaitValue() shouldBe HomeFragmentEvents.ShowTracingExplanation(1)
+
+            showPopUps()
+            popupEvents.getOrAwaitValue() shouldBe HomeFragmentEvents.ShowErrorResetDialog
         }
     }
 }

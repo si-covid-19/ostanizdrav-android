@@ -2,16 +2,22 @@ package de.rki.coronawarnapp.contactdiary.ui.onboarding
 
 import android.os.Bundle
 import android.view.View
+import android.view.accessibility.AccessibilityEvent
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.contactdiary.ui.ContactDiarySettings
 import de.rki.coronawarnapp.databinding.ContactDiaryOnboardingFragmentBinding
+import de.rki.coronawarnapp.util.ContextExtensions.getDrawableCompat
 import de.rki.coronawarnapp.util.di.AutoInject
 import de.rki.coronawarnapp.util.ui.doNavigate
 import de.rki.coronawarnapp.util.ui.observe2
 import de.rki.coronawarnapp.util.ui.viewBindingLazy
 import de.rki.coronawarnapp.util.viewmodel.CWAViewModelFactoryProvider
 import de.rki.coronawarnapp.util.viewmodel.cwaViewModels
+import org.joda.time.LocalDate
 import javax.inject.Inject
 
 class ContactDiaryOnboardingFragment : Fragment(R.layout.contact_diary_onboarding_fragment), AutoInject {
@@ -22,20 +28,23 @@ class ContactDiaryOnboardingFragment : Fragment(R.layout.contact_diary_onboardin
 
     private val vm: ContactDiaryOnboardingFragmentViewModel by cwaViewModels { viewModelFactory }
     private val binding: ContactDiaryOnboardingFragmentBinding by viewBindingLazy()
+    private val args by navArgs<ContactDiaryOnboardingFragmentArgs>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             contactDiaryOnboardingNextButton.setOnClickListener {
-
                 vm.onNextButtonClick()
             }
-
-            contactDiaryOnboardingHeader.headerButtonBack.buttonIcon.setOnClickListener {
-                vm.onBackButtonPress()
+            if (!args.showBottomNav) {
+                toolbar.apply {
+                    navigationIcon = context.getDrawableCompat(R.drawable.ic_close)
+                    navigationContentDescription = getString(R.string.accessibility_close)
+                    setNavigationOnClickListener { vm.onBackButtonPress() }
+                }
             }
 
-            contactDiaryOnboardingPrivacyInformationContainer.setOnClickListener {
+            contactDiaryOnboardingPrivacyInformation.setOnClickListener {
                 vm.onPrivacyButtonPress()
             }
         }
@@ -56,16 +65,32 @@ class ContactDiaryOnboardingFragment : Fragment(R.layout.contact_diary_onboardin
 
                 ContactDiaryOnboardingNavigationEvents.NavigateToOverviewFragment -> {
                     onboardingComplete()
-                    doNavigate(
-                        ContactDiaryOnboardingFragmentDirections
-                            .actionContactDiaryOnboardingFragmentToContactDiaryOverviewFragment()
-                    )
+                    if (arguments?.containsKey(OPEN_CURRENT_DAY) == true) {
+                        findNavController().apply {
+                            popBackStack(R.id.contactDiaryOnboardingFragment, true)
+                            navigate("coronawarnapp://contact-journal/day/${LocalDate()}".toUri())
+                        }
+                    } else {
+                        doNavigate(
+                            ContactDiaryOnboardingFragmentDirections
+                                .actionContactDiaryOnboardingFragmentToContactDiaryOverviewFragment()
+                        )
+                    }
                 }
             }
         }
     }
 
-    fun onboardingComplete() {
-        settings.isOnboarded.update { true }
+    private fun onboardingComplete() {
+        settings.onboardingStatus = ContactDiarySettings.OnboardingStatus.RISK_STATUS_1_12
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.contentContainer.sendAccessibilityEvent(AccessibilityEvent.TYPE_ANNOUNCEMENT)
+    }
+
+    companion object {
+        private const val OPEN_CURRENT_DAY = "goToDay"
     }
 }

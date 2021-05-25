@@ -1,12 +1,19 @@
 package de.rki.coronawarnapp.util.di
 
+import android.app.ActivityManager
 import android.app.Application
+import android.app.NotificationManager
 import android.bluetooth.BluetoothAdapter
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.getSystemService
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.navigation.NavDeepLinkBuilder
 import androidx.work.WorkManager
+import com.google.android.gms.safetynet.SafetyNet
+import com.google.android.gms.safetynet.SafetyNetClient
 import dagger.Module
 import dagger.Provides
 import de.rki.coronawarnapp.CoronaWarnApplication
@@ -39,6 +46,12 @@ class AndroidModule {
 
     @Provides
     @Singleton
+    fun notificationManager(
+        @AppContext context: Context
+    ): NotificationManager = context.getSystemService()!!
+
+    @Provides
+    @Singleton
     fun workManager(
         workManagerProvider: WorkManagerProvider
     ): WorkManager = workManagerProvider.workManager
@@ -50,4 +63,17 @@ class AndroidModule {
 
     @Provides
     fun navDeepLinkBuilder(@AppContext context: Context): NavDeepLinkBuilder = NavDeepLinkBuilder(context)
+
+    @Provides
+    @Singleton
+    fun activityManager(@AppContext context: Context): ActivityManager = context.getSystemService()!!
+
+    @Provides
+    @Singleton
+    @ProcessLifecycle
+    fun procressLifecycleOwner(): LifecycleOwner = ProcessLifecycleOwner.get()
+
+    @Provides
+    @Singleton
+    fun safetyNet(@AppContext context: Context): SafetyNetClient = SafetyNet.getClient(context)
 }

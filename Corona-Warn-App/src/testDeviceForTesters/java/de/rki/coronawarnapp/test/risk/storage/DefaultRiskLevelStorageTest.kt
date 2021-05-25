@@ -11,7 +11,6 @@ import de.rki.coronawarnapp.server.protocols.internal.v2.RiskCalculationParamete
 import io.kotest.matchers.shouldBe
 import io.mockk.MockKAnnotations
 import io.mockk.Runs
-import io.mockk.clearAllMocks
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -19,14 +18,14 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.just
 import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.TestCoroutineScope
 import kotlinx.coroutines.test.runBlockingTest
 import org.joda.time.Instant
-import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import testhelpers.BaseTest
+import testhelpers.BaseTestInstrumentation
 
-class DefaultRiskLevelStorageTest : BaseTest() {
+class DefaultRiskLevelStorageTest : BaseTestInstrumentation() {
 
     @MockK lateinit var databaseFactory: RiskResultDatabase.Factory
     @MockK lateinit var database: RiskResultDatabase
@@ -78,6 +77,8 @@ class DefaultRiskLevelStorageTest : BaseTest() {
         coEvery { riskLevelResultMigrator.getLegacyResults() } returns emptyList()
 
         every { riskResultTables.allEntries() } returns flowOf(listOf(testRiskLevelResultDao))
+        every { riskResultTables.latestEntries(2) } returns emptyFlow()
+        every { riskResultTables.latestAndLastSuccessful() } returns emptyFlow()
         coEvery { riskResultTables.insertEntry(any()) } just Runs
         coEvery { riskResultTables.deleteOldest(any()) } returns 7
 
@@ -87,12 +88,8 @@ class DefaultRiskLevelStorageTest : BaseTest() {
         coEvery { exposureWindowTables.deleteByRiskResultId(any()) } returns 1
     }
 
-    @AfterEach
-    fun tearDown() {
-        clearAllMocks()
-    }
-
     private fun createInstance() = DefaultRiskLevelStorage(
+        scope = TestCoroutineScope(),
         riskResultDatabaseFactory = databaseFactory,
         riskLevelResultMigrator = riskLevelResultMigrator
     )

@@ -6,12 +6,13 @@ import de.rki.coronawarnapp.appconfig.download.AppConfigApiV2
 import de.rki.coronawarnapp.appconfig.internal.ApplicationConfigurationCorruptException
 import de.rki.coronawarnapp.appconfig.internal.ApplicationConfigurationInvalidException
 import de.rki.coronawarnapp.appconfig.internal.InternalConfigData
+import de.rki.coronawarnapp.storage.TestSettings
+import de.rki.coronawarnapp.util.CWADebug
 import de.rki.coronawarnapp.util.TimeStamper
 import de.rki.coronawarnapp.util.ZipHelper.readIntoMap
 import de.rki.coronawarnapp.util.ZipHelper.unzip
 import de.rki.coronawarnapp.util.retrofit.etag
 import de.rki.coronawarnapp.util.security.VerificationKeys
-import okhttp3.Cache
 import okhttp3.CacheControl
 import org.joda.time.Duration
 import org.joda.time.Instant
@@ -27,7 +28,7 @@ class AppConfigServer @Inject constructor(
     private val api: Lazy<AppConfigApiV2>,
     private val verificationKeys: VerificationKeys,
     private val timeStamper: TimeStamper,
-    @AppConfigHttpCache private val cache: Cache
+    private val testSettings: TestSettings
 ) {
 
     internal suspend fun downloadAppConfig(): InternalConfigData {
@@ -55,8 +56,7 @@ class AppConfigServer @Inject constructor(
             exportBinary
         }
 
-        // If this is a cached response, we need the original timestamp to calculate the time offset
-        val localTime = response.getCacheTimestamp() ?: timeStamper.nowUTC
+        val localTime = timeStamper.nowUTC
 
         val headers = response.headers()
 
@@ -65,7 +65,12 @@ class AppConfigServer @Inject constructor(
             ?: throw ApplicationConfigurationInvalidException(message = "Server has no ETAG.")
 
         val serverTime = response.getServerDate() ?: localTime
-        val offset = Duration(serverTime, localTime)
+        val offset = if (CWADebug.isDeviceForTestersBuild && testSettings.fakeCorrectDeviceTime.value) {
+            Timber.tag(TAG).w("Test setting 'fakeCorrectDeviceTime' is active; time offset is now 0")
+            Duration.ZERO
+        } else {
+            Duration(serverTime, localTime)
+        }
         Timber.tag(TAG).v("Time offset was %dms", offset.millis)
 
         val cacheControl = CacheControl.parse(headers)
@@ -89,18 +94,6 @@ class AppConfigServer @Inject constructor(
     } catch (e: Exception) {
         Timber.e("Failed to get server time.")
         null
-    }
-
-    private fun <T> Response<T>.getCacheTimestamp(): Instant? {
-        val cacheResponse = raw().cacheResponse
-        return cacheResponse?.sentRequestAtMillis?.let {
-            Instant.ofEpochMilli(it)
-        }
-    }
-
-    internal fun clearCache() {
-        Timber.tag(TAG).v("clearCache()")
-        cache.evictAll()
     }
 
     companion object {

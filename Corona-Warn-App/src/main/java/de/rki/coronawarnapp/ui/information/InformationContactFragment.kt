@@ -8,6 +8,7 @@ import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.databinding.FragmentInformationContactBinding
 import de.rki.coronawarnapp.ui.main.MainActivity
 import de.rki.coronawarnapp.util.ExternalActionHelper
+import de.rki.coronawarnapp.util.linkifyPhoneNumbers
 import de.rki.coronawarnapp.util.ui.viewBindingLazy
 
 /**
@@ -20,6 +21,8 @@ class InformationContactFragment : Fragment(R.layout.fragment_information_contac
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setButtonOnClickListener()
+
+        binding.informationContactBodyOther.linkifyPhoneNumbers()
     }
 
     override fun onResume() {
@@ -31,12 +34,12 @@ class InformationContactFragment : Fragment(R.layout.fragment_information_contac
         binding.informationContactHeader.headerButtonBack.buttonIcon.setOnClickListener {
             (activity as MainActivity).goBack()
         }
+    //    binding.informationContactNavigationRowPhone.navigationRow.setOnClickListener {
+      //      val number = getString(R.string.information_contact_phone_call_number)
+        //    ExternalActionHelper.openUrl(this, "mailto:$number")
+       // }
         binding.informationContactNavigationRowPhone.navigationRow.setOnClickListener {
             val number = getString(R.string.information_contact_phone_call_number)
-            ExternalActionHelper.call(this, number)
-        }
-        binding.informationContactNavigationRow.navigationRow.setOnClickListener {
-            val number = getString(R.string.information_contact_phone_call_number1)
             ExternalActionHelper.call(this, number)
         }
     }

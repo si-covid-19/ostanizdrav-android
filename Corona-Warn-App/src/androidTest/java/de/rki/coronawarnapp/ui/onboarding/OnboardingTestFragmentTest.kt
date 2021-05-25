@@ -1,29 +1,38 @@
 package de.rki.coronawarnapp.ui.onboarding
 
-import androidx.fragment.app.testing.launchFragment
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import io.mockk.MockKAnnotations
-import io.mockk.impl.annotations.MockK
 import org.junit.After
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import testhelpers.BaseUITest
+import testhelpers.Screenshot
+import testhelpers.SystemUIDemoModeRule
+import testhelpers.launchFragment2
+import testhelpers.launchFragmentInContainer2
+import testhelpers.takeScreenshot
+import tools.fastlane.screengrab.locale.LocaleTestRule
 
 @RunWith(AndroidJUnit4::class)
 class OnboardingTestFragmentTest : BaseUITest() {
 
-    @MockK lateinit var viewModel: OnboardingTestViewModel
+    @Rule
+    @JvmField
+    val localeTestRule = LocaleTestRule()
+
+    @get:Rule
+    val systemUIDemoModeRule = SystemUIDemoModeRule()
 
     @Before
     fun setup() {
-        MockKAnnotations.init(this, relaxed = true)
-
-        setupMockViewModel(object : OnboardingTestViewModel.Factory {
-            override fun create(): OnboardingTestViewModel = viewModel
-        })
+        setupMockViewModel(
+            object : OnboardingTestViewModel.Factory {
+                override fun create(): OnboardingTestViewModel = OnboardingTestViewModel()
+            }
+        )
     }
 
     @After
@@ -33,7 +42,14 @@ class OnboardingTestFragmentTest : BaseUITest() {
 
     @Test
     fun launch_fragment() {
-        launchFragment<OnboardingTestFragment>()
+        launchFragment2<OnboardingTestFragment>()
+    }
+
+    @Screenshot
+    @Test
+    fun capture_screenshot() {
+        launchFragmentInContainer2<OnboardingTestFragment>()
+        takeScreenshot<OnboardingTestFragment>()
     }
 }
 

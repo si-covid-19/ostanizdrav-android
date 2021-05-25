@@ -1,18 +1,23 @@
 package de.rki.coronawarnapp.util.worker
 
+import android.content.Context
 import androidx.work.ListenableWorker
+import com.google.gson.Gson
 import dagger.Component
 import dagger.Module
 import dagger.Provides
+import de.rki.coronawarnapp.datadonation.analytics.Analytics
+import de.rki.coronawarnapp.datadonation.analytics.worker.DataDonationAnalyticsScheduler
 import de.rki.coronawarnapp.deadman.DeadmanNotificationScheduler
 import de.rki.coronawarnapp.deadman.DeadmanNotificationSender
 import de.rki.coronawarnapp.nearby.ENFClient
 import de.rki.coronawarnapp.notification.NotificationHelper
-import de.rki.coronawarnapp.notification.TestResultAvailableNotification
+import de.rki.coronawarnapp.notification.TestResultAvailableNotificationService
 import de.rki.coronawarnapp.playbook.Playbook
 import de.rki.coronawarnapp.risk.storage.RiskLevelStorage
 import de.rki.coronawarnapp.task.TaskController
-import de.rki.coronawarnapp.util.di.AssistedInjectModule
+import de.rki.coronawarnapp.util.di.AppContext
+import de.rki.coronawarnapp.util.serialization.BaseGson
 import io.github.classgraph.ClassGraph
 import io.kotest.matchers.collections.shouldContainAll
 import io.mockk.mockk
@@ -64,7 +69,7 @@ class WorkerBinderTest : BaseTest() {
 }
 
 @Singleton
-@Component(modules = [AssistedInjectModule::class, WorkerBinder::class, MockProvider::class])
+@Component(modules = [WorkerBinder::class, MockProvider::class])
 interface WorkerTestComponent {
 
     val factories: @JvmSuppressWildcards Map<Class<out ListenableWorker>, Provider<InjectedWorkerFactory<out ListenableWorker>>>
@@ -89,6 +94,14 @@ class MockProvider {
     @Provides
     fun scheduler(): DeadmanNotificationScheduler = mockk()
 
+    // For Analytics periodic worker
+    @Provides
+    fun dataDonationAnalyticsScheduler(): DataDonationAnalyticsScheduler = mockk()
+
+    // For Analytics one time worker
+    @Provides
+    fun analytics(): Analytics = mockk()
+
     @Provides
     fun taskController(): TaskController = mockk()
 
@@ -100,8 +113,16 @@ class MockProvider {
     fun exposureSummaryRepository(): RiskLevelStorage = mockk()
 
     @Provides
-    fun testResultAvailableNotification(): TestResultAvailableNotification = mockk()
+    fun testResultAvailableNotification(): TestResultAvailableNotificationService = mockk()
 
     @Provides
     fun notificationHelper(): NotificationHelper = mockk()
+
+    @Provides
+    @AppContext
+    fun context(): Context = mockk()
+
+    @Provides
+    @BaseGson
+    fun baseGson(): Gson = mockk()
 }

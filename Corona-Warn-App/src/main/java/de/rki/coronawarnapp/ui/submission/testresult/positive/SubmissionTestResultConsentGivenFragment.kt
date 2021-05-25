@@ -22,7 +22,8 @@ import javax.inject.Inject
  * [SubmissionTestResultConsentGivenFragment], the test result screen that is shown to the user if they have provided
  * consent.
  */
-class SubmissionTestResultConsentGivenFragment : Fragment(R.layout.fragment_submission_test_result_consent_given),
+class SubmissionTestResultConsentGivenFragment :
+    Fragment(R.layout.fragment_submission_test_result_consent_given),
     AutoInject {
 
     @Inject lateinit var viewModelFactory: CWAViewModelFactoryProvider.Factory
@@ -77,6 +78,7 @@ class SubmissionTestResultConsentGivenFragment : Fragment(R.layout.fragment_subm
     override fun onResume() {
         super.onResume()
         binding.submissionTestResultContainer.sendAccessibilityEvent(AccessibilityEvent.TYPE_ANNOUNCEMENT)
+        viewModel.onNewUserActivity()
     }
 
     private fun setButtonOnClickListener() {
@@ -98,7 +100,7 @@ class SubmissionTestResultConsentGivenFragment : Fragment(R.layout.fragment_subm
             setTitle(R.string.submission_error_dialog_confirm_cancellation_title)
             setMessage(R.string.submission_error_dialog_confirm_cancellation_body)
             setPositiveButton(R.string.submission_error_dialog_confirm_cancellation_button_positive) { _, _ ->
-                viewModel.cancelTestSubmission()
+                viewModel.onCancelConfirmed()
             }
             setNegativeButton(R.string.submission_error_dialog_confirm_cancellation_button_negative) { _, _ ->
                 // NOOP

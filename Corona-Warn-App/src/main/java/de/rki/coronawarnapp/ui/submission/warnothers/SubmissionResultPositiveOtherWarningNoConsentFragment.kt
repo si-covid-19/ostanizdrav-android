@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import de.rki.coronawarnapp.R
 import de.rki.coronawarnapp.databinding.FragmentSubmissionNoConsentPositiveOtherWarningBinding
 import de.rki.coronawarnapp.tracing.ui.TracingConsentDialog
+import de.rki.coronawarnapp.ui.submission.SubmissionBlockingDialog
 import de.rki.coronawarnapp.util.DialogHelper
 import de.rki.coronawarnapp.util.di.AutoInject
+import de.rki.coronawarnapp.util.shortcuts.AppShortcutsHelper
 import de.rki.coronawarnapp.util.ui.doNavigate
 import de.rki.coronawarnapp.util.ui.observe2
 import de.rki.coronawarnapp.util.ui.viewBindingLazy
@@ -24,6 +26,7 @@ import javax.inject.Inject
 class SubmissionResultPositiveOtherWarningNoConsentFragment :
     Fragment(R.layout.fragment_submission_no_consent_positive_other_warning), AutoInject {
 
+    @Inject lateinit var appShortcutsHelper: AppShortcutsHelper
     @Inject lateinit var viewModelFactory: CWAViewModelFactoryProvider.Factory
     private val viewModel: SubmissionResultPositiveOtherWarningNoConsentViewModel by cwaViewModelsAssisted(
         factoryProducer = { viewModelFactory },
@@ -38,15 +41,22 @@ class SubmissionResultPositiveOtherWarningNoConsentFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val keysRetrievalProgress = SubmissionBlockingDialog(requireContext())
+
         binding.submissionPositiveOtherWarningNoConsentButtonNext.setOnClickListener {
             viewModel.onConsentButtonClicked()
         }
-        binding.submissionPositiveOtherWarningHeader.headerButtonBack.buttonIcon.setOnClickListener {
+        binding.toolbar.setNavigationOnClickListener {
             viewModel.onBackPressed()
         }
 
         viewModel.routeToScreen.observe2(this) {
             doNavigate(it)
+        }
+
+        viewModel.showKeysRetrievalProgress.observe2(this) { show ->
+            keysRetrievalProgress.setState(show)
+            binding.submissionPositiveOtherWarningNoConsentButtonNext.isEnabled = !show
         }
 
         viewModel.showPermissionRequest.observe2(this) { permissionRequest ->
@@ -81,10 +91,12 @@ class SubmissionResultPositiveOtherWarningNoConsentFragment :
 
     override fun onResume() {
         super.onResume()
+        viewModel.onResume()
+        appShortcutsHelper.removeAppShortcut()
         binding.submissionPositiveOtherPrivacyContainer.sendAccessibilityEvent(AccessibilityEvent.TYPE_ANNOUNCEMENT)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        viewModel.handleActivityRersult(requestCode, resultCode, data)
+        viewModel.handleActivityResult(requestCode, resultCode, data)
     }
 }

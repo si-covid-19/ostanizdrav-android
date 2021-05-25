@@ -1,8 +1,11 @@
 package de.rki.coronawarnapp.ui.submission.resultready
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.asLiveData
-import com.squareup.inject.assisted.AssistedInject
-import de.rki.coronawarnapp.storage.SubmissionRepository
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
+import de.rki.coronawarnapp.submission.auto.AutoSubmission
 import de.rki.coronawarnapp.ui.submission.viewmodel.SubmissionNavigationEvents
 import de.rki.coronawarnapp.util.coroutine.DispatcherProvider
 import de.rki.coronawarnapp.util.ui.SingleLiveEvent
@@ -11,31 +14,48 @@ import de.rki.coronawarnapp.util.viewmodel.SimpleCWAViewModelFactory
 import timber.log.Timber
 
 class SubmissionResultReadyViewModel @AssistedInject constructor(
-    private val submissionRepository: SubmissionRepository,
+    private val autoSubmission: AutoSubmission,
     dispatcherProvider: DispatcherProvider
 ) : CWAViewModel(dispatcherProvider = dispatcherProvider) {
 
-    val showUploadDialog = submissionRepository.isSubmissionRunning
-        .asLiveData(context = dispatcherProvider.Default)
+    private val mediatorShowUploadDialog = MediatorLiveData<Boolean>()
+
+    init {
+        mediatorShowUploadDialog.addSource(
+            autoSubmission.isSubmissionRunning.asLiveData(context = dispatcherProvider.Default)
+        ) { show ->
+            mediatorShowUploadDialog.postValue(show)
+        }
+    }
+
+    val showUploadDialog: LiveData<Boolean> = mediatorShowUploadDialog
+
     val routeToScreen: SingleLiveEvent<SubmissionNavigationEvents> = SingleLiveEvent()
 
     fun onContinueWithSymptomRecordingPressed() {
         routeToScreen.postValue(SubmissionNavigationEvents.NavigateToSymptomIntroduction)
     }
 
-    fun onSkipSymptomInput() {
-        Timber.d("Symptom submission was cancelled.")
+    fun onSkipSymptomsConfirmed() {
+        Timber.d("Symptom submission was skipped.")
         launch {
             try {
-                submissionRepository.startSubmission()
+                autoSubmission.runSubmissionNow()
             } catch (e: Exception) {
-                Timber.e(e, "onCancelConfirmed() failed.")
+                Timber.e(e, "greenlightSubmission() failed.")
             } finally {
+                Timber.i("Hide uploading progress and navigate to MainActivity")
+                mediatorShowUploadDialog.postValue(false)
                 routeToScreen.postValue(SubmissionNavigationEvents.NavigateToMainActivity)
             }
         }
     }
 
-    @AssistedInject.Factory
+    fun onNewUserActivity() {
+        Timber.d("onNewUserActivity()")
+        autoSubmission.updateLastSubmissionUserActivity()
+    }
+
+    @AssistedFactory
     interface Factory : SimpleCWAViewModelFactory<SubmissionResultReadyViewModel>
 }

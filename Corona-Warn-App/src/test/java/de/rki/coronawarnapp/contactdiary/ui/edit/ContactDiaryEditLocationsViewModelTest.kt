@@ -26,6 +26,8 @@ class ContactDiaryEditLocationsViewModelTest {
     private val location = object : ContactDiaryLocation {
         override val locationId = 1L
         override var locationName = "Supermarket"
+        override val phoneNumber: String? = null
+        override val emailAddress: String? = null
         override val stableId = 1L
     }
     private val locationList = listOf(location)
@@ -38,7 +40,7 @@ class ContactDiaryEditLocationsViewModelTest {
     @Test
     fun testOnDeleteAllLocationsClick() {
         every { contactDiaryRepository.locations } returns MutableStateFlow(locationList)
-        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.navigationEvent.observeForever { }
         viewModel.onDeleteAllLocationsClick()
         viewModel.navigationEvent.value shouldBe ContactDiaryEditLocationsViewModel.NavigationEvent.ShowDeletionConfirmationDialog
@@ -49,7 +51,7 @@ class ContactDiaryEditLocationsViewModelTest {
         coEvery { contactDiaryRepository.deleteAllLocationVisits() } just Runs
         coEvery { contactDiaryRepository.deleteAllLocations() } just Runs
         every { contactDiaryRepository.locations } returns MutableStateFlow(locationList)
-        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.onDeleteAllConfirmedClick()
         coVerify(exactly = 1) {
             contactDiaryRepository.deleteAllLocationVisits()
@@ -60,17 +62,17 @@ class ContactDiaryEditLocationsViewModelTest {
     @Test
     fun testOnEditLocationClick() {
         every { contactDiaryRepository.locations } returns MutableStateFlow(locationList)
-        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.navigationEvent.observeForever { }
         viewModel.onEditLocationClick(location)
         viewModel.navigationEvent.value shouldBe
-            ContactDiaryEditLocationsViewModel.NavigationEvent.ShowLocationDetailSheet(location.toContactDiaryLocationEntity())
+            ContactDiaryEditLocationsViewModel.NavigationEvent.ShowLocationDetailFragment(location.toContactDiaryLocationEntity())
     }
 
     @Test
     fun testIsButtonEnabled() {
         every { contactDiaryRepository.locations } returns MutableStateFlow(locationList)
-        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.isButtonEnabled.observeForever { }
         viewModel.isButtonEnabled.value shouldBe true
     }
@@ -78,7 +80,7 @@ class ContactDiaryEditLocationsViewModelTest {
     @Test
     fun testIsButtonNotEnabledWhenListIsEmpty() {
         every { contactDiaryRepository.locations } returns MutableStateFlow(emptyList())
-        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.isButtonEnabled.observeForever { }
         viewModel.isButtonEnabled.value shouldBe false
     }
@@ -86,7 +88,7 @@ class ContactDiaryEditLocationsViewModelTest {
     @Test
     fun testLocations() {
         every { contactDiaryRepository.locations } returns MutableStateFlow(locationList)
-        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider)
+        viewModel = ContactDiaryEditLocationsViewModel(contactDiaryRepository, TestDispatcherProvider())
         viewModel.locationsLiveData.observeForever { }
         viewModel.locationsLiveData.value shouldBe locationList
     }

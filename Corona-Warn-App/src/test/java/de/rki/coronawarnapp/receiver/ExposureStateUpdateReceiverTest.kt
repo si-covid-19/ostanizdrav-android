@@ -13,7 +13,6 @@ import de.rki.coronawarnapp.nearby.modules.detectiontracker.TrackedExposureDetec
 import de.rki.coronawarnapp.util.di.AppInjector
 import io.mockk.MockKAnnotations
 import io.mockk.Runs
-import io.mockk.clearAllMocks
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.just
@@ -21,7 +20,6 @@ import io.mockk.mockk
 import io.mockk.mockkObject
 import io.mockk.verifySequence
 import kotlinx.coroutines.test.TestCoroutineScope
-import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import testhelpers.BaseTest
@@ -62,18 +60,13 @@ class ExposureStateUpdateReceiverTest : BaseTest() {
         val broadcastReceiverInjector = AndroidInjector<Any> {
             it as ExposureStateUpdateReceiver
             it.exposureDetectionTracker = exposureDetectionTracker
-            it.dispatcherProvider = TestDispatcherProvider
+            it.dispatcherProvider = TestDispatcherProvider()
             it.scope = scope
             it.workManager = workManager
         }
         every { application.androidInjector() } returns broadcastReceiverInjector
 
         every { exposureDetectionTracker.finishExposureDetection(any(), any()) } just Runs
-    }
-
-    @AfterEach
-    fun teardown() {
-        clearAllMocks()
     }
 
     @Test

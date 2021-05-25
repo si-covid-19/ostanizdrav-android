@@ -3,12 +3,16 @@ package de.rki.coronawarnapp.risk.storage.internal
 import android.content.Context
 import androidx.room.Dao
 import androidx.room.Database
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import de.rki.coronawarnapp.risk.storage.internal.migrations.RiskResultDatabaseMigration1To2
+import de.rki.coronawarnapp.risk.storage.internal.migrations.RiskResultDatabaseMigration2To3
+import de.rki.coronawarnapp.risk.storage.internal.riskresults.PersistedAggregatedRiskPerDateResult
 import de.rki.coronawarnapp.risk.storage.internal.riskresults.PersistedRiskLevelResultDao
 import de.rki.coronawarnapp.risk.storage.internal.windows.PersistedExposureWindowDao
 import de.rki.coronawarnapp.risk.storage.internal.windows.PersistedExposureWindowDaoWrapper
@@ -23,9 +27,10 @@ import javax.inject.Inject
     entities = [
         PersistedRiskLevelResultDao::class,
         PersistedExposureWindowDao::class,
-        PersistedExposureWindowDao.PersistedScanInstance::class
+        PersistedExposureWindowDao.PersistedScanInstance::class,
+        PersistedAggregatedRiskPerDateResult::class
     ],
-    version = 1,
+    version = 3,
     exportSchema = true
 )
 @TypeConverters(
@@ -39,16 +44,24 @@ abstract class RiskResultDatabase : RoomDatabase() {
 
     abstract fun exposureWindows(): ExposureWindowsDao
 
+    abstract fun aggregatedRiskPerDate(): AggregatedRiskPerDateResultDao
+
     @Dao
     interface RiskResultsDao {
-        @Query("SELECT * FROM riskresults")
+        @Query("SELECT * FROM riskresults ORDER BY monotonicId DESC")
         fun allEntries(): Flow<List<PersistedRiskLevelResultDao>>
+
+        @Query("SELECT * FROM riskresults ORDER BY monotonicId DESC LIMIT :limit")
+        fun latestEntries(limit: Int): Flow<List<PersistedRiskLevelResultDao>>
+
+        @Query("SELECT * FROM (SELECT * FROM riskresults ORDER BY monotonicId DESC LIMIT 1) UNION ALL SELECT * FROM (SELECT * FROM riskresults where failureReason is null ORDER BY monotonicId DESC LIMIT 1)")
+        fun latestAndLastSuccessful(): Flow<List<PersistedRiskLevelResultDao>>
 
         @Insert(onConflict = OnConflictStrategy.ABORT)
         suspend fun insertEntry(riskResultDao: PersistedRiskLevelResultDao)
 
         @Query(
-            "DELETE FROM riskresults where id NOT IN (SELECT id from riskresults ORDER BY calculatedAt DESC LIMIT :keep)"
+            "DELETE FROM riskresults where id NOT IN (SELECT id from riskresults ORDER BY monotonicId DESC LIMIT :keep)"
         )
         suspend fun deleteOldest(keep: Int): Int
     }
@@ -57,6 +70,9 @@ abstract class RiskResultDatabase : RoomDatabase() {
     interface ExposureWindowsDao {
         @Query("SELECT * FROM exposurewindows")
         fun allEntries(): Flow<List<PersistedExposureWindowDaoWrapper>>
+
+        @Query("SELECT * FROM exposurewindows WHERE riskLevelResultId IN (:riskResultIds)")
+        fun getWindowsForResult(riskResultIds: List<String>): Flow<List<PersistedExposureWindowDaoWrapper>>
 
         @Insert(onConflict = OnConflictStrategy.REPLACE)
         suspend fun insertWindows(exposureWindows: List<PersistedExposureWindowDao>): List<Long>
@@ -70,13 +86,25 @@ abstract class RiskResultDatabase : RoomDatabase() {
         suspend fun deleteByRiskResultId(riskResultIds: List<String>): Int
     }
 
+    @Dao
+    interface AggregatedRiskPerDateResultDao {
+        @Query("SELECT * FROM riskperdate ORDER BY dateMillisSinceEpoch DESC")
+        fun allEntries(): Flow<List<PersistedAggregatedRiskPerDateResult>>
+
+        @Insert(onConflict = OnConflictStrategy.REPLACE)
+        suspend fun insertRisk(persistedAggregatedRiskPerDateResults: List<PersistedAggregatedRiskPerDateResult>)
+
+        @Delete
+        suspend fun delete(persistedAggregatedRiskPerDateResults: List<PersistedAggregatedRiskPerDateResult>)
+    }
+
     class Factory @Inject constructor(@AppContext private val context: Context) {
 
-        fun create(): RiskResultDatabase {
+        fun create(databaseName: String = DATABASE_NAME): RiskResultDatabase {
             Timber.d("Instantiating risk result database.")
             return Room
-                .databaseBuilder(context, RiskResultDatabase::class.java, DATABASE_NAME)
-                .fallbackToDestructiveMigrationFrom()
+                .databaseBuilder(context, RiskResultDatabase::class.java, databaseName)
+                .addMigrations(RiskResultDatabaseMigration1To2, RiskResultDatabaseMigration2To3)
                 .build()
         }
     }

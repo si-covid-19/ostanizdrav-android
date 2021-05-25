@@ -9,7 +9,6 @@ import de.rki.coronawarnapp.submission.SubmissionModule
 import de.rki.coronawarnapp.util.headerSizeIgnoringContentLength
 import io.kotest.matchers.shouldBe
 import io.mockk.MockKAnnotations
-import io.mockk.clearAllMocks
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -50,7 +49,6 @@ class SubmissionServerTest : BaseTest() {
 
     @AfterEach
     fun teardown() {
-        clearAllMocks()
         webServer.shutdown()
         testDir.deleteRecursively()
     }
@@ -86,7 +84,7 @@ class SubmissionServerTest : BaseTest() {
             authCode = "testAuthCode",
             keyList = listOf(googleKeyList),
             consentToFederation = true,
-            visistedCountries = listOf("DE")
+            visitedCountries = listOf("DE")
         )
         server.submitKeysToServer(submissionData)
 
@@ -146,7 +144,7 @@ class SubmissionServerTest : BaseTest() {
             authCode = "39ec4930-7a1f-4d5d-921f-bfad3b6f1269",
             keyList = listOf(googleKeyList),
             consentToFederation = true,
-            visistedCountries = listOf("DE")
+            visitedCountries = listOf("DE")
         )
         webServer.enqueue(MockResponse().setBody("{}"))
         server.submitKeysToServer(submissionData)

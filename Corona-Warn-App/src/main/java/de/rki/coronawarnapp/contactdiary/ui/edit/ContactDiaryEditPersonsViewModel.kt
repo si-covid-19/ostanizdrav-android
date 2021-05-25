@@ -1,7 +1,8 @@
 package de.rki.coronawarnapp.contactdiary.ui.edit
 
 import androidx.lifecycle.asLiveData
-import com.squareup.inject.assisted.AssistedInject
+import dagger.assisted.AssistedFactory
+import dagger.assisted.AssistedInject
 import de.rki.coronawarnapp.contactdiary.model.ContactDiaryPerson
 import de.rki.coronawarnapp.contactdiary.storage.entity.ContactDiaryPersonEntity
 import de.rki.coronawarnapp.contactdiary.storage.entity.toContactDiaryPersonEntity
@@ -19,20 +20,21 @@ class ContactDiaryEditPersonsViewModel @AssistedInject constructor(
     private val contactDiaryRepository: ContactDiaryRepository,
     dispatcherProvider: DispatcherProvider
 ) : CWAViewModel(dispatcherProvider = dispatcherProvider) {
-    private val coroutineExceptionHandler = CoroutineExceptionHandler { coroutineContext, ex ->
-        ex.report(ExceptionCategory.INTERNAL, TAG)
-    }
-
-    val personsLiveData = contactDiaryRepository.people
-        .asLiveData(dispatcherProvider.IO)
 
     val navigationEvent = SingleLiveEvent<NavigationEvent>()
 
-    val isButtonEnabled = contactDiaryRepository.people.map { !it.isNullOrEmpty() }
+    val personsLiveData = contactDiaryRepository.people
+        .asLiveData()
+
+    val isButtonEnabled = contactDiaryRepository.people.map { it.isNotEmpty() }
         .asLiveData(dispatcherProvider.IO)
 
-    val isListVisible = contactDiaryRepository.people.map { !it.isNullOrEmpty() }
+    val isListVisible = contactDiaryRepository.people.map { it.isNotEmpty() }
         .asLiveData(dispatcherProvider.IO)
+
+    private val coroutineExceptionHandler = CoroutineExceptionHandler { _, ex ->
+        ex.report(ExceptionCategory.INTERNAL, TAG)
+    }
 
     fun onDeleteAllPersonsClick() {
         navigationEvent.postValue(NavigationEvent.ShowDeletionConfirmationDialog)
@@ -46,18 +48,16 @@ class ContactDiaryEditPersonsViewModel @AssistedInject constructor(
     }
 
     fun onEditPersonClick(person: ContactDiaryPerson) {
-        navigationEvent.postValue(NavigationEvent.ShowPersonDetailSheet(person.toContactDiaryPersonEntity()))
+        navigationEvent.postValue(NavigationEvent.ShowPersonDetailFragment(person.toContactDiaryPersonEntity()))
     }
 
-    companion object {
-        private val TAG = ContactDiaryEditPersonsViewModel::class.java.simpleName
-    }
-
-    @AssistedInject.Factory
+    @AssistedFactory
     interface Factory : SimpleCWAViewModelFactory<ContactDiaryEditPersonsViewModel>
 
     sealed class NavigationEvent {
         object ShowDeletionConfirmationDialog : NavigationEvent()
-        data class ShowPersonDetailSheet(val person: ContactDiaryPersonEntity) : NavigationEvent()
+        data class ShowPersonDetailFragment(val person: ContactDiaryPersonEntity) : NavigationEvent()
     }
 }
+
+private val TAG = ContactDiaryEditPersonsViewModel::class.java.simpleName
