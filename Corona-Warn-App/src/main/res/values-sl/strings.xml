@@ -937,7 +937,7 @@
     <string name="submission_status_card_button_show_results"></string>
     <string name="submission_status_card_button_unregistered">Vnos TAN kode</string>
     <string name="submission_status_card_positive_result_contact">Na brezplačni telefonski številki 080 51 00 vam je 24 ur na dan in vse dni v tednu na voljo psihološka podpora ob epidemiji COVID-19.</string>
-    <string name="submission_status_card_positive_result_contagious">Spoštujte navodila o izolaciji, ki se jih prejeli s strani zdravstvene službe.</string>
+    <string name="submission_status_card_positive_result_contagious">Spoštujte navodila o izolaciji, ki ste jih prejeli s strani zdravstvene službe.</string>
     <string name="submission_status_card_positive_result_share">Anonimno delite informacijo o svoji okužbi in s tem opozorite druge.</string>
     <string name="submission_status_card_positive_result_subtitle">Ne pozabite:</string>
     <string name="submission_status_card_subtitle_invalid"></string>
